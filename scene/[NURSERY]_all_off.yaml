@@ -1,0 +1,6 @@
+name: Nursery All Off
+entities:
+  light.lifx_nursery_1:
+    state: off
+  light.lifx_nursery_2:
+    state: off

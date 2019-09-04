@@ -1,0 +1,8 @@
+platform: template
+sensors:
+  espresso_on_for:
+    value_template: >
+      {% if is_state("switch.espresso", "on") -%} {{ relative_time(states.switch.espresso.last_changed) }} {%- else -%} not on {%-endif %}
+    friendly_name: 'Espresso On For'
+    #unit_of_measurement: 'w'
+ 

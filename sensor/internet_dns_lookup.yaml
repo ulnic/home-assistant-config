@@ -1,0 +1,4 @@
+platform: dnsip
+hostname: !secret dns_name_resolver
+name: dns_domain_resolver
+resolver: 8.8.8.8

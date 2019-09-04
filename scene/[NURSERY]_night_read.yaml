@@ -1,0 +1,12 @@
+name: Nursery Night Read
+entities:
+  light.lifx_nursery_1:
+    state: on
+    brightness: 5
+    color_temp: 374
+    transition: 1
+  light.lifx_nursery_2:
+    state: on
+    brightness: 5
+    color_temp: 374
+    transition: 1

@@ -1,0 +1,19 @@
+alias: '[HOME] Trigger Alarm'
+hide_entity: True
+trigger:
+  - platform: state
+    entity_id: binary_sensor.door_sensor_158_entrance
+    to: 'on'
+  - platform: state
+    entity_id:  binary_sensor.door_sensor_158_balconydoor
+    to: 'on'
+  - platform: state
+    entity_id: group.motion_sensors
+    to: 'on'
+condition:
+  condition: state
+  entity_id: alarm_control_panel.ha_alarm
+  state: armed_away
+action:
+  service: alarm_control_panel.alarm_trigger
+  entity_id: alarm_control_panel.ha_alarm

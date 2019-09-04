@@ -1,0 +1,49 @@
+#push:
+#categories:
+- name: AIRCON Durations
+  identifier: 'aircon_duration'
+  actions:
+    - identifier: 'turn_aircon_off'
+      title: 'Turn Aircon Off'
+      activationMode: 'background'
+      authenticationRequired: yes
+      destructive: yes
+      behavior: 'default'
+- name: Espresso Durations
+  identifier: 'espresso_duration'
+  actions:
+    - identifier: 'turn_espresso_off'
+      title: 'Turn Espresso Machine Off'
+      activationMode: 'background'
+      authenticationRequired: yes
+      destructive: yes
+      behavior: 'default'
+- name: Nic Bedlamp Duration
+  identifier: 'bedroom_nic_light_duration'
+  actions:
+    - identifier: 'turn_light_bedroom_off'
+      title: 'Turn Off Nics Bedlight'
+      activationMode: 'background'
+      authenticationRequired: yes
+      destructive: yes
+      behavior: 'default'
+- name: Cancel Turn Home Off
+  identifier: 'ios_home_turnoff_cancel'
+  actions:
+    - identifier: 'home_turnoff_cancel'
+      title: 'Cancel home turnoff sequence'
+      activationMode: 'background'
+      authenticationRequired: yes
+      destructive: yes
+      behavior: 'default'
+- name: Cancel Bibop
+  identifier: 'bibop_started'
+  actions:
+    - identifier: 'bibop_return_home'
+      title: 'Go Home Bibop'
+      activationMode: 'background'
+      authenticationRequired: yes
+      destructive: yes
+      behavior: 'default'
+
+

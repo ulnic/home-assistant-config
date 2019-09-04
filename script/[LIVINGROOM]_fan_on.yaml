@@ -1,0 +1,15 @@
+livingroom_ceilingfan_on:
+  alias: livingroom ceiling fan on
+  sequence:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.fan_state_livingroom
+    - service: broadlink.send 
+      data:
+        host: !secret climate_broadlink_smartir_controller_data_host
+        packet:
+          - "shYcAAkOFA0VDRQNFA4UGAoYChgJDhQYChgKGAkAAXwAAAAAAAAAAAAAAAA"
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.fan_speed_livingroom
+        option: '1'

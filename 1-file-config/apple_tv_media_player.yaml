@@ -1,0 +1,3 @@
+name: apple_tv_livingroom
+host: !secret media_player_appletv_host
+login_id: !secret media_player_appletv_login_id

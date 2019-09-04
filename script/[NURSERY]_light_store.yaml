@@ -1,0 +1,47 @@
+nursery_light_store:
+  alias: Nursery light store
+  sequence:
+    - service: python_script.light_store
+      data:
+        store_name: flash_store
+        entity_id:
+          - light.lifx_dining1
+          - light.lifx_livingroom1
+          - light.lifx_dining2
+          - light.lifx_livingroom2
+          - light.lifx_kitchen2
+          - light.lifx_kitchen1
+          - light.lifx_hallway_1
+          - light.lifx_laundry
+          - light.led
+          - light.tv
+          - light.lifx_bedroom1
+          - light.lifx_bedroom2
+          - light.desk
+    - service: light.turn_off
+      entity_id:
+        - light.lifx_dining1
+        - light.lifx_livingroom1
+        - light.lifx_dining2
+        - light.lifx_livingroom2
+        - light.lifx_kitchen2
+        - light.lifx_kitchen1
+        - light.lifx_hallway_1
+        - light.lifx_laundry
+        - light.led
+        - light.tv
+        - light.lifx_bedroom1
+        - light.lifx_bedroom2
+        - light.desk
+    - condition: state
+      entity_id: switch.media_unit
+      state: 'on'
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.denon_amp
+        source: "DVD"
+    - condition: state
+      entity_id: media_player.apple_tv_livingroom
+      state: 'playing'
+    - service: media_player.media_pause
+      entity_id: media_player.apple_tv_livingroom

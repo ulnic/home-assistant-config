@@ -1,0 +1,5 @@
+platform: group
+name: Nursery Ceiling
+entities:
+  - light.lifx_nursery_1
+  - light.lifx_nursery_2

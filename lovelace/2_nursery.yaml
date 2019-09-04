@@ -1,0 +1,179 @@
+id: baby_2  # Automatically created id
+icon: mdi:baby
+title: Nursery
+cards:
+  - type: custom:swipe-card
+    parameters:
+      effect: coverflow
+    cards:
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.temperature_158_nursery
+        name: Temp
+        points_per_hour: 1
+        #height: 35
+        color_thresholds:
+          - value: 0
+            color: "#CCE5FF"
+          - value: 10
+            color: "#66B2FF"
+          - value: 15
+            color: "#0080FF"
+          - value: 18
+            color: "#87c087"
+          - value: 21
+            color: "#389638"
+          - value: 24
+            color: "#FF9932"
+          - value: 25
+            color: "#FF8000"
+          - value: 26
+            color: "#ff0000"
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.humidity_158_nursery
+        name: Humidity
+        points_per_hour: 1
+        line_color: blue
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.illumination_158_nursery
+        name: Light
+        points_per_hour: 1
+        line_color: yellow
+
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.nursery_show_all_lights
+            state: 'on'
+        card:
+          type: custom:vertical-stack-in-card
+          cards:
+            - type: horizontal-stack
+              cards:
+                - type: entity-button
+                  entity: scene.nursery_all_off
+                  name: All OFF
+                  tap_action:
+                    action: call-service
+                    service: scene.turn_on
+                    service_data:
+                      entity_id: scene.nursery_all_off
+                - type: entity-button
+                  entity: scene.nursery_night_read
+                  name: Night Reading
+                  tap_action:
+                    action: call-service
+                    service: scene.turn_on
+                    service_data:
+                      entity_id: scene.nursery_night_read
+                - type: entity-button
+                  entity: scene.nursery_full_on
+                  name: All ON
+                  tap_action:
+                    action: call-service
+                    service: scene.turn_on
+                    service_data:
+                      entity_id: scene.nursery_full_on
+                - type: entity-button
+                  entity: fan.nursery_ceiling_fan
+                  tap_action:
+                    action: more-info
+                  hold_action:
+                    action: call-service
+                    service: fan.toggle
+                    service_data:
+                      entity_id: fan.nursery_ceiling_fan
+            - type: entities
+              entities:
+                - type: custom:slider-entity-row
+                  entity:  light.nursery_ceiling
+                  toggle: true
+                  full_row: true
+                  name: Nursery
+                - type: custom:slider-entity-row
+                  entity:  light.lifx_nursery_1
+                  toggle: true
+                  name: Balcony
+                - type: custom:slider-entity-row
+                  entity:  light.lifx_nursery_2
+                  toggle: true
+                  name: Cot
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.nursery_show_all_lights
+            state: 'off'
+        card:
+          type: horizontal-stack
+          cards:
+            - type: entity-button
+              entity: scene.nursery_all_off
+              name: All OFF
+              tap_action:
+                action: call-service
+                service: scene.turn_on
+                service_data:
+                  entity_id: scene.nursery_all_off
+            - type: entity-button
+              entity: fan.nursery_ceiling_fan
+              tap_action:
+                action: more-info
+              hold_action:
+                action: call-service
+                service: fan.toggle
+                service_data:
+                  entity_id: fan.nursery_ceiling_fan
+            - type: entity-button
+              entity: input_boolean.nursery_sleeping_override
+              tap_action:
+                action: call-service
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.nursery_sleeping_override
+
+  - type: custom:mini-graph-card
+    entities:
+      - sensor.temperature_158_nursery
+    name: 2wk Temp trend
+    points_per_hour: .75
+    hours_to_show: 240
+    show:
+      icon: true
+      fill: true
+    color_thresholds:
+      - value: 0
+        color: "#CCE5FF"
+      - value: 10
+        color: "#66B2FF"
+      - value: 15
+        color: "#0080FF"
+      - value: 18
+        color: "#87c087"
+      - value: 21
+        color: "#389638"
+      - value: 24
+        color: "#FF9932"
+      - value: 25
+        color: "#FF8000"
+      - value: 26
+        color: "#ff0000"
+
+
+  - id: 2342343424j234j234242423bfgfg  # Automatically created id
+    type: entities
+    title: Doors & Motion
+    show_header_toggle: false
+    entities:
+      - entity: binary_sensor.door_sensor_158_nursery
+        name: Nursery Door
+        secondary_info: last-changed
+      - entity: binary_sensor.door_sensor_158_nursery_balcony
+        name: Nursery Balcony
+        secondary_info: last-changed
+      - entity: binary_sensor.motion_sensor_158_nursery
+        secondary_info: last-changed
+
+  - type: picture
+    image: /local/ergopouch-temperature-guide.jpg

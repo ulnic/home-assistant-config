@@ -1,0 +1,9 @@
+family_location_update:
+  alias: "Update Locations"
+  sequence:
+    - service: notify.ios_nicsiphone7
+      data:
+        message: "request_location_update"
+    - service: notify.ullisiphone
+      data:
+        message: "request_location_update"

@@ -1,0 +1,21 @@
+nursery_light_restore:
+  alias: Nursery light restore
+  sequence:
+    - delay: 00:00:01
+    - service: python_script.light_store
+      data:
+        store_name: flash_store
+        operation: restore
+    - condition: template
+      value_template: >
+        {% if is_state_attr("media_player.denon_amp", "source", "DVD") %}
+          true
+        {% else %}
+          true
+        {% endif %}
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.denon_amp
+        source: "Apple TV"
+    #- service: media_player.media_play
+    #  entity_id: media_player.apple_tv_livingroom

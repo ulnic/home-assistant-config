@@ -1,0 +1,11 @@
+name: Kitchen LED morning light
+entities:
+  light.kitchen_ceiling:
+    state: on
+    xy_color: [0.421,0.409]
+    brightness: 250
+  light.led:
+    state: on
+    xy_color: [0.397,0.441]
+    brightness: 153
+    transition: 1

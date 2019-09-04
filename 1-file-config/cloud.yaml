@@ -1,0 +1,24 @@
+filter:
+  include_entities:
+    - scene.apple_tv_channel
+    - scene.chromecast_channel
+entity_config:
+  scene.apple_tv_channel:
+    name: Apple TV
+    aliases:
+      - Apple
+      - Apple TV
+    room: living room
+  scene.chromecast_channel:
+    name: ChromeCast
+    aliases:
+      - Google ChromeCast
+      - Chromecast
+    room: living room
+  scene.all_off:
+    name: All all_off
+    aliases:
+      - Home
+      - House
+      - Apartment
+      - Everything

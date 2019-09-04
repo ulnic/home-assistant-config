@@ -1,0 +1,7 @@
+platform: xiaomi_miio
+host: !secret bibop_host
+token: !secret bibop_token
+name: BiBop
+# https://community.home-assistant.io/t/xiaomi-gateway-integration/8213/3051
+# execute after:
+# docker exec -it home-assistant /bin/bash

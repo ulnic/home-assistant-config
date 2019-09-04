@@ -1,0 +1,5 @@
+platform: group
+name: Living Ceiling Lights
+entities:
+  - light.lifx_livingroom1
+  - light.lifx_livingroom2

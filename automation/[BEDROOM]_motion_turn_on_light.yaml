@@ -1,0 +1,31 @@
+alias: '[BEDROOM] motion - turn ON light'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.motion_sensor_158_bedroom
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+    - condition: time
+      after: '17:00:00'
+      before: '21:00:00'
+    #- condition: state
+    #  entity_id: binary_sensor.workday_sensor
+    #  state: 'on'
+    - condition: state
+      entity_id: light.bedroom_lights_grp
+      state: 'off'
+    - condition: state
+      entity_id: light.master_switch
+      state: 'on'
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.lifx_bedroom2
+      brightness: 250
+      transition: 1
+      xy_color: [0.499,0.388]

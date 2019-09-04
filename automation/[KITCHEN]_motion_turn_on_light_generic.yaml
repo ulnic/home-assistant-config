@@ -1,0 +1,29 @@
+alias: '[KITCHEN] motion - turn ON light'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.motion_sensor_158_kitchen
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: light.led
+      state: 'off'
+    - condition: time
+      after: '05:30:00'
+      before: '23:00:00'
+    - condition: state
+      entity_id: input_boolean.kitchen_light_override
+      state: 'off'
+action:
+  service: scene.turn_on
+  data_template: #TODO: Update below sometime
+    entity_id: >
+      {% if   states('sensor.illumination_158_kitchen') | int > 800 %}
+        scene.kitchen_daytime_light
+      {% elif states('sensor.illumination_158_kitchen') | int > 20  %}
+        scene.kitchen_led_morning_light
+      {% else %}
+        scene.kitchen_led_night_light
+      {% endif %}

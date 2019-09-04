@@ -1,0 +1,5 @@
+platform: group
+name: Bedroom Ceiling
+entities:
+  - light.lifx_bedroom1
+  - light.lifx_bedroom2

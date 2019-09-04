@@ -1,0 +1,13 @@
+username: !secret arlo_username
+password: !secret arlo_password
+packet_dump: True
+#db_motion_time: 30
+#db_ding_time: 10
+recent_time: 10
+last_format: '%m-%d %H:%M'
+conf_dir: /config/.aarlo
+no_media_upload: True
+mode_api: auto
+refresh_devices_every: 0
+http_connections: 5
+http_max_size: 10

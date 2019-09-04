@@ -1,0 +1,23 @@
+alias: '[KITCHEN] dim brighten OFF'
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.wall_switch_left_158_kitchen
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: binary_sensor.switch_158_button_nic
+    from: 'on'
+    to: 'off'
+condition:
+  condition: and
+  conditions:
+  - condition: state
+    entity_id: input_boolean.kitchen_dim
+    state: 'off'
+  - condition: state
+    entity_id: light.kitchen_ceiling
+    state: 'on'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.kitchen_dim

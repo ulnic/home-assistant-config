@@ -1,0 +1,121 @@
+homeassistant:
+  name: Home
+  latitude: !secret zone_home_latitude
+  longitude: !secret zone_home_longitude
+  elevation: !secret elevation
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+  whitelist_external_dirs:
+    - /tmp
+http: !include 1-file-config/http.yaml
+sun:
+# Enables support for tracking state changes over time.
+history:
+# View all events in a logbook
+logbook:
+# Enables the frontend
+frontend: !include 1-file-config/themes.yaml
+# Discover some devices automatically
+discovery:
+# Allows you to issue voice commands from the frontend
+conversation:
+# Checks for available updates
+updater:
+  reporting: yes
+# Set recorder options
+recorder: !include 1-file-config/recorder.yaml
+history_graph: !include 1-file-config/history_graph.yaml
+map:
+config:
+system_health:
+lovelace:
+  mode: yaml
+person:
+mobile_app:
+ssdp:
+zeroconf:
+notify:
+  - name: all_ios
+    platform: group
+    services:
+      - service: ios_nicsiphone7
+      - service: ios_ullisiphone
+
+################################################
+## Test
+################################################
+
+
+################################################
+## Add integrations
+################################################
+weather:
+  # - platform: bom
+  #   station: !secret bom_station
+  - platform: darksky
+    api_key: !secret dark_sky_api_key
+
+python_script:
+hacs:
+  token: !secret HACS_token
+  theme: true
+  appdaemon: true
+  python_script: true
+geo_location:
+  - platform: nsw_rural_fire_service_feed
+    radius: 50
+google: !include 1-file-config/calendar.yaml
+xiaomi_aqara: !include 1-file-config/xiaomi_aqara.yaml
+homekit: !include 1-file-config/homekit.yaml
+smartir:
+  update_branch: rc
+asuswrt: !include 1-file-config/asuswrt.yaml
+influxdb: !include 1-file-config/influxdb.yaml
+climate: !include 1-file-config/climate_broadlink.yaml
+speedtestdotnet: !include 1-file-config/speedtestdotnet.yaml
+cloud:
+  google_actions: !include 1-file-config/cloud.yaml
+tts: !include 1-file-config/tts.yaml
+dialogflow:
+#intent_script: !include 1-file-config/intent_script.yaml
+ios:
+  push:
+    categories:  !include 1-file-config/ios_push.yaml
+alarm_control_panel: !include 1-file-config/alarm.yaml
+fan: !include 1-file-config/fan.yaml
+#remote: !include 1-file-config/harmony.yaml
+logger: !include 1-file-config/logger.yaml
+ifttt: !include 1-file-config/ifttt.yaml
+#mqtt: !include 1-file-config/mqtt.yaml
+#ring: !include 1-file-config/ring.yaml 
+input_boolean: !include 1-file-config/input_boolean.yaml
+input_select: !include 1-file-config/input_select.yaml
+wemo: !include 1-file-config/wemo.yaml
+switch: !include 1-file-config/switch.yaml
+camera: !include 1-file-config/aarlo_camera.yaml
+aarlo: !include 1-file-config/aarlo.yaml
+apple_tv: !include 1-file-config/apple_tv_media_player.yaml
+proximity: !include 1-file-config/proximity.yaml
+vacuum: !include 1-file-config/vacuum.yaml
+hue: !include 1-file-config/light_hue.yaml
+yeelight: !include 1-file-config/light_yee.yaml
+
+################################################
+## Component Includes (DIR LIST)
+################################################
+automation: !include_dir_list automation
+binary_sensor: !include_dir_list binary_sensor
+device_tracker: !include_dir_list device_trackers
+light: !include_dir_list light
+media_player: !include_dir_list media_players
+scene: !include_dir_list scene
+sensor: !include_dir_list sensor
+zone: !include_dir_list zone
+
+################################################
+## Component Includes (Merge Named)
+################################################
+group: !include_dir_merge_named group
+script: !include_dir_merge_named script

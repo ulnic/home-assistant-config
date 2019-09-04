@@ -1,0 +1,15 @@
+alias: '[KITCHEN] motion - turn OFF if nobody around'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.motion_sensor_158_kitchen
+  to: 'off'
+  for:
+    minutes: 2
+condition:
+  - condition: state
+    entity_id: input_boolean.kitchen_light_override
+    state: 'off'
+action:
+  service: scene.turn_on
+  entity_id: scene.kitchen_lamps_off

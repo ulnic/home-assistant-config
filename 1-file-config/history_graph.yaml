@@ -1,0 +1,20 @@
+gr2:
+  name: Internet Speed
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+  hours_to_show: 240
+  refresh: 90
+gr3:
+  name: Smart Plugs
+  entities:
+    - sensor.espresso_current_power
+    - sensor.winefridge_current_power
+  hours_to_show: 24
+  refresh: 5
+gr4:
+  name: Fuel Price
+  entities:
+    - sensor.united_petroleum_dee_why_e10
+  hours_to_show: 72
+  refresh: 300

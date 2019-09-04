@@ -1,0 +1,10 @@
+host: !secret router_host
+username: !secret router_username
+protocol: ssh
+port: !secret router_port
+ssh_key: !secret router_ssh_key
+sensors:
+  - upload
+  - download
+  - upload_speed
+  - download_speed

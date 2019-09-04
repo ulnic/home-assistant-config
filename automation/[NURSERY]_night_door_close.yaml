@@ -1,0 +1,21 @@
+alias: '[NURSERY] door CLOSE at night'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.door_sensor_158_nursery
+  to: 'off'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+    - condition: time
+      after: '18:00:00'
+      #before: '21:00:00'
+    - condition: state
+      entity_id: light.nursery_ceiling
+      state: 'off'
+action:
+  - service: script.turn_on
+    entity_id: script.nursery_light_restore

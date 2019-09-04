@@ -1,0 +1,29 @@
+alias: '[HOME] Water Leak ALARM'
+trigger:
+  platform: state
+  entity_id: binary_sensor.water_leak_sensor_158_kitchen
+  to: 'on'
+action:
+  - service: notify.all_ios
+    data:
+      message: 'WATER LEAK ALARM TRIGGERED {{now().strftime("%Y%m%d-%H%M%S")}}'
+      title: "CRITICAL"
+      data:
+        attachment:
+          url: !secret water_leak_alarm_picture_url
+          content-type: png
+          hide-thumbnail: false
+  - service: xiaomi_aqara.play_ringtone
+    data:
+      gw_mac: !secret xiaomi_aqara_mac
+      ringtone_id: 10001
+      ringtone_vol: 100
+  - service: light.turn_on
+    entity_id:
+      - light.dining_lights
+      - light.kitchen_ceiling
+      - light.gateway_light
+      - light.livingroom
+    data:
+      brightness: 250
+      color_name: red

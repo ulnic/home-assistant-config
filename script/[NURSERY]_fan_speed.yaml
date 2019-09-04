@@ -1,0 +1,24 @@
+nursery_ceilingfan_speed:
+  alias: nursery ceilingfan speed
+  sequence:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.fan_speed_nursery
+        option: '{{ speed }}'
+    - service: broadlink.send 
+      data_template:
+        host: !secret climate_broadlink_smartir_controller_data_host
+        packet: >-
+          {% if speed == '1' %}
+            'shIcAAsMFgwWDRYMFhcKGAsXChcLDBYXCxcLFwsAAX8AAAAAAAAAAAAAAAA'
+          {% elif speed == '2' %}
+            'sgscAAsMFg0WDBYMFhgLFwsXCxcLDRYXCwwWGAsAAX8AAAAAAAAAAAAAAAA'
+          {% elif speed == '3' %}
+            'sg4cAAsMFg0WDBYMFhgLFwsXCw0WGAsXCxcLFwsAAX8AAAAAAAAAAAAAAAA'
+          {% elif speed == '4' %}
+            'shIcAAsMFQwVDRYMFRcKFwsXCwwWDBYXCxcLFwsAAX8AAAAAAAAAAAAAAAA'
+          {% elif speed == '5' %}
+            'shIcAAsMFg0VDRUMFRcLFwsNFRgKGAoYCg0VGAoAAX8AAAAAAAAAAAAAAAA'
+          {% elif speed == '6' %}
+            'shYcAAsMFgwVDRYMFRcKFwsMFRcLFwsXCxcKFwoAAX8AAAAAAAAAAAAAAAA'
+          {% endif %}

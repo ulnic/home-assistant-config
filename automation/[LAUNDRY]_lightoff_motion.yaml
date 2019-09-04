@@ -1,0 +1,14 @@
+alias: '[LAUNDRY] motion light off timer'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.motion_sensor_158_laundry
+    to: 'off'
+    for:
+      minutes: 2
+# condition:
+#   - condition: state
+#     entity_id: binary_sensor.motion_sensor_158_laundry
+#     state: 'off'
+action:
+  - service: light.turn_off
+    entity_id: light.lifx_laundry

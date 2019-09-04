@@ -1,0 +1,5 @@
+platform: group
+name: Dining Lights
+entities:
+  - light.lifx_dining1
+  - light.lifx_dining2

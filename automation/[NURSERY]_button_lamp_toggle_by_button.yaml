@@ -1,0 +1,12 @@
+alias: "Desk lamp toggle" #TODO: check if this one still needed
+trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158_button_nursery
+      click_type: single
+action:
+  service: light.toggle
+  data:
+    entity_id: light.desk 
+    transition: 1

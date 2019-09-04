@@ -1,0 +1,12 @@
+alias: '[HOME] Alarm Triggered Flash'
+hide_entity: True
+trigger:
+  platform: state
+  entity_id: alarm_control_panel.ha_alarm
+  to: 'triggered'
+action:
+  - service: script.turn_on
+    entity_id: script.alarm_light_flash
+  - service: notify.ios_nicsiphone7
+    data:
+      message: 'Home Alarm Triggered {{now().strftime("%d/%m/%Y - %H:%M")}}'

@@ -1,0 +1,315 @@
+id: Floorplan_5  # Automatically created id
+icon: mdi:floor-plan
+title: Floorplan
+panel: true
+cards:
+  - id: 8782a6d9f0d94a908efb941e3b280c48  # Automatically created id
+    type: vertical-stack
+    cards:
+      - type: custom:plan-coordinates
+      # Floorplan map
+      - type: picture-elements
+        title: Latitude 33
+        image: /local/floorplan4.png
+        elements:
+         #Kitchen
+          - type: state-label
+            entity: sensor.temperature_158_kitchen
+            style:
+              top: 70%
+              left: 52.5%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.humidity_158_kitchen
+            style:
+              top: 73%
+              left: 52.5%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.illumination_158_kitchen
+            style:
+              top: 76%
+              left: 52.5%
+              color: black
+              font-weight: normal
+          - type: state-icon
+            tap_action: toggle
+            entity: light.led
+            style:
+              top: 85%
+              left: 53%
+          - type: state-icon
+            entity: switch.espresso
+            style:
+              top: 93%
+              left: 42.5%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_kitchen1
+            style:
+              top: 85%
+              left: 47.5%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_kitchen2
+            style:
+              top: 75%
+              left: 47.5%
+         #livingroom
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_dining1
+            style:
+              top: 24%
+              left: 37%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_dining2
+            style:
+              top: 24%
+              left: 48%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_livingroom2
+            style:
+              top: 52%
+              left: 48%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_livingroom1
+            style:
+              top: 52%
+              left: 37%
+          - type: state-icon
+            tap_action: toggle
+            entity: binary_sensor.door_sensor_158_balconydoor
+            style:
+              top: 10%
+              left: 31%
+          - type: state-icon
+            entity: fan.livingroom_ceiling_fan
+            style:
+              top: 38%
+              left: 42.5%
+          - type: state-label
+            entity: sensor.temperature_158_livingroom
+            style:
+              top: 7%
+              left: 44%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.humidity_158_livingroom
+            style:
+              top: 10%
+              left: 44%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.illumination_158_livingroom
+            style:
+              top: 13%
+              left: 44%
+              color: black
+              font-weight: normal
+
+         #Bedroom
+          - type: state-icon
+            tap_action: toggle
+            entity: light.bedroom
+            style:
+              top: 91%
+              left: 78%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_bedroom1
+            style:
+              top: 60%
+              left: 78%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_bedroom2
+            style:
+              top: 90%
+              left: 65%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.desk
+            style:
+              top: 54%
+              left: 76%
+          - type: state-icon
+            entity: vacuum.bibop
+            style:
+              top: 54%
+              left: 78%
+          - type: state-label
+            entity: sensor.temperature_158_bedroom
+            style:
+              top: 60%
+              left: 71%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.humidity_158_bedroom
+            style:
+              top: 63%
+              left: 71%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.illumination_158_bedroom
+            style:
+              top: 66%
+              left: 71%
+              color: black
+              font-weight: normal
+          - type: state-icon
+            entity: fan.bedroom_ceiling_fan
+            style:
+              top: 75%
+              left: 71%
+
+         # Nursery
+          - type: state-icon
+            tap_action: toggle
+            entity: binary_sensor.door_sensor_158_nursery_balcony
+            style:
+              top: 37%
+              left: 22%
+          - type: state-label
+            entity: sensor.temperature_158_nursery
+            style:
+              top: 40%
+              left: 15%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.humidity_158_nursery
+            style:
+              top: 43%
+              left: 15%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.illumination_158_nursery
+            style:
+              top: 46%
+              left: 15%
+              color: black
+              font-weight: normal
+          - type: state-icon
+            entity: binary_sensor.door_sensor_158_nursery
+            style:
+              top: 63%
+              left: 25%
+              color: black
+              font-weight: normal
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_nursery_1
+            style:
+              top: 45%
+              left: 20%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_nursery_2
+            style:
+              top: 60%
+              left: 8%
+          - type: state-icon
+            entity: fan.nursery_ceiling_fan
+            style:
+              top: 52%
+              left: 14%
+         # Hallway
+          - type: state-icon
+            tap_action: toggle
+            entity: binary_sensor.door_sensor_158_entrance
+            style:
+              top: 88%
+              left: 28.5%
+          - type: state-icon
+            tap_action: toggle
+            entity: binary_sensor.door_sensor_158_hallway_cupboard
+            style:
+              top: 86%
+              left: 24%
+          - type: state-icon
+            tap_action: toggle
+            entity: light.lifx_hallway_1
+            style:
+              top: 82%
+              left: 29%
+
+
+         #Balcony
+          - type: state-label
+            entity: sensor.temperature_158_balcony
+            style:
+              top: 8%
+              left: 6%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.humidity_158_balcony
+            style:
+              top: 11%
+              left: 6%
+              color: black
+              font-weight: normal
+          - type: state-label
+            entity: sensor.pressure_158_balcony
+            style:
+              top: 14%
+              left: 6%
+              color: black
+              font-weight: normal
+          - type: state-icon
+            entity: light.balcony_ceiling
+            style:
+              top: 16%
+              left: 16%
+
+          # Laundry
+          - type: state-icon
+            entity: binary_sensor.motion_sensor_158_laundry
+            style:
+              top: 72%
+              left: 36%
+          - type: state-label
+            entity: sensor.illumination_158_laundry
+            style:
+              top: 76%
+              left: 36%
+              color: black
+              font-weight: normal
+          - type: state-icon
+            entity: binary_sensor.door_sensor_158_laundry
+            style:
+              top: 80%
+              left: 34%
+          - type: state-icon
+            entity: light.lifx_laundry
+            style:
+              top: 80%
+              left: 37%
+         #General for HOME
+          - type: service-button
+            title: Lights Off
+            style:
+              top: 10%
+              left: 80%
+              padding: 0px
+            service: homeassistant.turn_off
+            service_data:
+              entity_id: group.all_lights
+          - type: icon
+            icon: mdi:home
+            tap_action: navigate
+            navigation_path: /lovelace/0
+            style:
+              top: 10%
+              left: 10%

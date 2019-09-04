@@ -1,0 +1,16 @@
+# Send an iOS notification when Bedroom light is on for longer than 30 min
+alias: '[BEDROOM] Light On Alert'
+trigger:
+  platform: state
+  entity_id: light.bedroom
+  to: 'on'
+  for:
+    minutes: 20
+action:
+  service: notify.ios_nicsiphone7
+  data:
+    message: "The bedroom light is ON, shall I turn it off?"
+    data:
+      push:
+        badge: 1
+        category: "bedroom_nic_light_duration" # Needs to match the top level identifier you used in the ios configuration

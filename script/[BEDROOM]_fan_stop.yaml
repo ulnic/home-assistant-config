@@ -1,0 +1,11 @@
+bedroom_ceilingfan_off:
+  alias: bedroom ceilingfan off
+  sequence:
+    - service: broadlink.send 
+      data:
+        host: !secret climate_broadlink_smartir_controller_data_host
+        packet:
+          - "sQ4cAAsNFQ0VGAoYCg0VGAoYChgKGAoYCg0VGAoAAYMAAAAAAAAAAAAAAAA"
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.fan_state_bedroom

@@ -1,0 +1,12 @@
+fan_increase_speed:
+  alias: Fan increase speed
+  sequence:
+    - service: fan.set_speed
+      data_template:
+        entity_id: "{{ 'fan.'+ room + '_ceiling_fan' }}"
+        speed: >-
+          {% if states('input_select.fan_speed_'+ room ) == '6' %}
+            1
+          {% else %}
+             {{ states('input_select.fan_speed_'+ room )|int +1 }}
+          {% endif %}

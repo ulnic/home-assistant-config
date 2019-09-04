@@ -1,0 +1,11 @@
+nursery_ceilingfan_off:
+  alias: nursery ceilingfan off
+  sequence:
+    - service: broadlink.send 
+      data:
+        host: !secret climate_broadlink_smartir_controller_data_host
+        packet:
+          - "sgscAAsMFgwWDRYMFhcLGAsXCxcKGAsXCwwWFwsAAYAAAAAAAAAAAAAAAAA"
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.fan_state_nursery

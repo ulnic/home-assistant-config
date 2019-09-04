@@ -1,0 +1,6 @@
+default: error
+logs:
+  homeassistant.components.automation: warning
+  homeassistant.components.script: info
+  homeassistant.components.remote: info
+  homeassistant.components.media_player: fatal

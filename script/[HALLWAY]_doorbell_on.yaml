@@ -1,0 +1,26 @@
+doorbell_on:
+  alias: Doorbell on
+  sequence:
+    - service: xiaomi_aqara.play_ringtone
+      data:
+        gw_mac: !secret xiaomi_aqara_mac
+        ringtone_id: 11
+        ringtone_vol: 20
+    - condition: state
+      entity_id: light.lifx_hallway_1
+      state: 'off'
+    - service: light.turn_on
+      data:
+        entity_id: light.lifx_hallway_1
+        white_value: 255
+        brightness: 100
+    - service: notify.all_ios
+      data:
+        message: 'Someone is ringing the doorbell {{now().strftime("%H:%M:%S")}}'
+    # Delay highlights how long the lamp should be turned on when doorbell pressed.
+    - delay:
+        minutes: 4
+    - service: light.turn_off
+      data:
+        entity_id: light.lifx_hallway_1
+        transition: 2

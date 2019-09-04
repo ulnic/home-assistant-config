@@ -1,0 +1,38 @@
+on_holiday:
+  name: On Holidays
+  icon: mdi:airplane-takeoff
+
+winefridge_off_night:
+  name: Winefridge Off at Night
+  icon: mdi:bottle-wine
+
+tv_movie_lights:
+  name: Movie Lighting
+  icon: mdi:television
+
+nursery_sleeping_override:
+  name: More
+
+fan_state_livingroom:
+  name: Ceiling Fan Livingroom
+  icon: mdi:fan
+
+fan_state_nursery:
+  name: Ceiling Fan Nursery
+  icon: mdi:fan
+
+fan_state_bedroom:
+  name: Ceiling Fan Bedroom
+  icon: mdi:fan
+
+kitchen_dim:
+  name: Kitchen Dimmer
+  initial: off
+
+kitchen_light_override:
+  name: Kitchen Light Override
+  initial: off
+
+guest_mode:
+  name: Guest Mode
+  initial: off

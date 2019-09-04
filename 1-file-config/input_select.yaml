@@ -1,0 +1,32 @@
+fan_speed_livingroom:
+    name: Ceiling Fan Livingroom
+    options:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+      - '6'
+    icon: mdi:speedometer
+
+fan_speed_nursery:
+    name: Ceiling Fan Nursery
+    options:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+      - '6'
+    icon: mdi:speedometer
+
+fan_speed_bedroom:
+    name: Ceiling Fan Bedroom
+    options:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+      - '6'
+    icon: mdi:speedometer

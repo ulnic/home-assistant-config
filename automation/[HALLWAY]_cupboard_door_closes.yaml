@@ -1,0 +1,8 @@
+alias: '[HALLWAY] Cupboard door CLOSE'
+trigger:
+  platform: state
+  entity_id: binary_sensor.door_sensor_158_hallway_cupboard
+  to: 'off'
+action:
+  - service: light.turn_off
+    entity_id: light.lifx_hallway_1

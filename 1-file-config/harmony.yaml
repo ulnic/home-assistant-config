@@ -1,0 +1,4 @@
+platform: harmony
+name: Harmony
+host: !secret harmony_ip
+activity: Watch Apple TV

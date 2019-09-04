@@ -1,0 +1,6 @@
+platform: group
+name: Kitchen Ceiling
+entities:
+  - light.lifx_kitchen1
+  - light.lifx_kitchen2
+  - light.led

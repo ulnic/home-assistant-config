@@ -1,0 +1,11 @@
+alias: '[NURSERY] reset light override light menu'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: input_boolean.nursery_sleeping_override
+  to: 'on'
+  for:
+    seconds: 5
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.nursery_sleeping_override

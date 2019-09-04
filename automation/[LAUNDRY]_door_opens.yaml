@@ -1,0 +1,14 @@
+alias: '[LAUNDRY] door opens'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.door_sensor_158_laundry
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.motion_sensor_158_laundry
+    to: 'on'
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.lifx_laundry
+      brightness: 250
+      transition: 1

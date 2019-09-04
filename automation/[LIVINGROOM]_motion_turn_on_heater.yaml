@@ -1,0 +1,24 @@
+alias: '[LIVINGROOM] motion - turn ON Heater'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.motion_sensor_158_livingroom
+  to: 'on'
+condition:
+  - condition: state
+    entity_id: binary_sensor.door_sensor_158_balconydoor
+    state: 'off'
+  - condition: state
+    entity_id: climate.livingroom_ac
+    state: 'off'
+  - condition: numeric_state
+    entity_id: sensor.temperature_158_livingroom
+    below: 21
+  - condition: time
+    after: '06:00:00'
+    before: '22:00:00'
+action:
+  - service: climate.set_hvac_mode
+    data:
+      entity_id: climate.livingroom_ac
+      hvac_mode: "heat"

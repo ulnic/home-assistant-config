@@ -1,0 +1,10 @@
+alias: '[NURSERY] aarlo snapshot'
+trigger:
+  platform: time_pattern
+  minutes: '/2'
+condition:
+  - condition: state
+    entity_id: input_boolean.guest_mode
+    state: 'on'
+action:
+  - service: camera.aarlo_request_snapshot

@@ -1,0 +1,8 @@
+platform: group
+name: master switch
+entities:
+  - light.living_ceiling_lights
+  - light.dining_lights
+  - light.kitchen_ceiling
+  - light.led
+  - light.tv

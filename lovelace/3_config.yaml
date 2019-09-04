@@ -1,0 +1,126 @@
+id: config_3  # Automatically created id
+icon: mdi:settings
+title: Config
+cards:
+  #Settings
+
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: glance
+            title: Settings
+            column_width: 33%
+            entities:
+              - entity: input_boolean.on_holiday
+                name: Holiday
+              - entity: input_boolean.guest_mode
+                name: Guests?
+              - entity: input_boolean.tv_movie_lights
+                name: Movie lights
+          - type: glance
+            title: Misc
+            column_width: 50%
+            entities:
+              - entity: binary_sensor.workday_sensor
+                name: Workday
+              - entity: light.gateway_light
+                name: Alarm light
+
+  #Wine Fridge
+  - id: 23987927924khjh343494937493749  # Automatically created id
+    type: glance
+    title: Wine Fridge
+    column_width: 20%
+    entities:
+      - entity: input_boolean.winefridge_off_night
+        name: Auto Off?
+      - entity: switch.plug_158_winefridge
+        name: WineFridge
+      - entity: sensor.temperature_158_winefridge
+        name: Temperature
+      - entity: sensor.humidity_158_winefridge
+        name: Humidity
+      - entity: sensor.winefridge_current_power
+        name: watt
+
+
+  #DNS
+  - id: 1bd4ca45036648d5a224aed814e4ad72  # Automatically created id
+    type: entities
+    title: DNS & IP Address
+    show_header_toggle: false
+    entities:
+      - sensor.lindholm_family
+      - sensor.myip
+
+  #Internet
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            title: Internet
+            show_header_toggle: false
+            entities:
+              - sensor.speedtest_download
+              - sensor.speedtest_upload
+              - sensor.speedtest_ping
+      - type: history-graph
+        #title: Internet Speed
+        hours_to_show: 240
+        refresh_interval: 240
+        entities:
+          - sensor.speedtest_download
+          - sensor.speedtest_upload
+
+  #Proximity
+  - id: cb32c2a37a334ebcab2000c212014f11  # Automatically created id
+    type: entities
+    title: Proximity
+    show_header_toggle: false
+    entities:
+      - device_tracker.nicsiphone7
+      - device_tracker.ullisiphone
+      - group.all_devices
+      - proximity.home_ulli
+      - proximity.home_nic
+
+  #Fuel
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: history-graph
+        title: Fuel Prices
+        hours_to_show: 360
+        entities:
+          - sensor.united_petroleum_dee_why_e10
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            #title: Fuel Prices
+            hours_to_show: 360
+            refresh_interval: 300
+            show_header_toggle: false
+            entities:
+              - sensor.united_petroleum_dee_why_e10
+              - sensor.united_petroleum_dee_why_u91
+
+  #Smart Plugs History Graph
+  - id: a6e12ced5ef748a3990af1dd31d164ee  # Automatically created id
+    type: history-graph
+    title: Smart Plugs
+    hours_to_show: 4
+    refresh_interval: 5
+    entities:
+      - sensor.espresso_current_power
+      - sensor.winefridge_current_power
+
+  - type: custom:xiaomi-vacuum-map-card
+    entity: vacuum.xiaomi_vacuum
+    map_image: '/local/vacuum_map.jpeg'
+    base_position:
+      x: 1889
+      y: 1600
+    reference_point:
+      x: 1625
+      y: 1336

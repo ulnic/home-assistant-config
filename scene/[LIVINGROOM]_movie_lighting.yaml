@@ -1,0 +1,16 @@
+name: Movie Lighting  #TODO check this one
+entities:
+  light.dining_lights:
+    state: on
+    transition: 3
+    brightness: 10
+    color_temp: 360
+  light.living_ceiling_lights:
+    state: on
+    transition: 3
+    brightness: 10
+    color_temp: 360
+  light.tv:
+    state: on
+    brightness: 30
+    color_temp: 482

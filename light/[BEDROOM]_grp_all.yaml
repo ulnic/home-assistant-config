@@ -1,0 +1,7 @@
+platform: group
+name: Bedroom lights Grp
+entities:
+  - light.lifx_bedroom1
+  - light.lifx_bedroom2
+  - light.bedroom   #Nic's nightstand
+  - light.desk

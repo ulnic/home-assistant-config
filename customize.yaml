@@ -1,0 +1,178 @@
+group.all_automations:
+  hidden: false
+group.all_scripts:
+  hidden: false
+input_select.aircon_mode:
+  friendly_name: Aircon mode
+  icon: mdi:weather-snowy
+zone.home:
+  track_ios: true
+light.bedroom:
+  friendly_name: Nic's nightstand
+  icon: mdi:lamp
+light.balcony_ceiling:
+  icon: mdi:ceiling-light
+light.livingroom:
+  friendly_name: Floor Lamp
+  icon: mdi:floor-lamp
+media_player.roku_5x464d035949:
+  hidden: true
+sensor.livingroom_humidity:
+  icon: mdi:water-percent
+sensor.outdoor_humidity:
+  icon: mdi:water-percent
+sensor.bedroom_humidity:
+  icon: mdi:water-percent
+sensor.livingroom_light:
+  icon: mdi:spotlight
+sensor.livingroom_temperature:
+  icon: mdi:oil-temperature
+sensor.outdoor_temperature:
+  icon: mdi:oil-temperature
+sensor.bedroom_temperature:
+  icon: mdi:oil-temperature
+sensor.livingroom_cpu:
+  icon: mdi:power-socket
+sensor.outdoor_cpu:
+  icon: mdi:power-socket
+sensor.bedroom_cpu:
+  icon: mdi:power-socket
+sensor.livingroom_ip:
+  icon: mdi:lan-connect
+sensor.outdoor_ip:
+  icon: mdi:lan-connect
+sensor.bedroom_ip:
+  icon: mdi:lan-connect
+sensor.bom_sydney_air_temp_c:
+  friendly_name: Observatory Hill - Temperature
+  icon: mdi:oil-temperature
+sensor.bom_sydney_relative_humidity:
+  friendly_name: Observatory Hill - Humidity
+  icon: mdi:water-percent
+sensor.bom_sydney_wind_speed_kmh:
+  friendly_name: Observatory Hill - Wind
+  icon: mdi:weather-windy
+switch.espresso:
+  friendly_name: Espresso
+  icon: mdi:coffee
+switch.media_unit:
+  friendly_name: Media Unit
+  icon: mdi:television
+switch.fan:
+  friendly_name: Tornado Fan
+  icon: mdi:fan
+light.desk:
+  icon: mdi:lamp
+light.led:
+  icon: mdi:track-light
+binary_sensor.water_leak_sensor_158_kitchen:
+  device_class: moisture
+  friendly_name: Water Leak Sensor
+binary_sensor.motion_sensor_158_livingroom:
+  device_class: motion
+  friendly_name: Motion Sensor livingroom
+binary_sensor.motion_sensor_158_kitchen:
+  device_class: motion
+  friendly_name: Motion Sensor Kitchen
+binary_sensor.switch_158d0002132dc7:
+  device_class: opening
+  friendly_name: Button Ulli
+binary_sensor.switch_158_button_nursery:
+  device_class: opening
+switch.plug_158_winefridge:
+  friendly_name: Wine Fridge
+  icon: mdi:fridge-outline
+sensor.illumination_158_livingroom:
+  friendly_name: Illumination Livingroom
+binary_sensor.door_sensor_158_entrance:
+  friendly_name: Main door
+  device_class: door
+binary_sensor.door_sensor_158_balconydoor:
+  friendly_name: Balcony door
+  device_class: door
+sensor.united_petroleum_dee_why_e10:
+  icon: mdi:fuel
+sensor.united_petroleum_dee_why_u91:
+  icon: mdi:fuel
+binary_sensor.door_window_sensor_158d0001c1e72c:
+  device_class: door
+sensor.temperature_158_livingroom_temp:
+  friendly_name: Livingroom Temp
+automation.winefridge_off_at_night:
+  icon: mdi:wine
+light.lifx_livingroom1:
+  icon: mdi:ceiling-light
+light.lifx_livingroom2:
+  icon: mdi:ceiling-light
+light.lifx_dining1:
+  icon: mdi:ceiling-light
+light.lifx_dining2:
+  icon: mdi:ceiling-light
+light.living_room:
+  icon: mdi:floor-lamp
+light.lifx_hallway_1:
+  icon: mdi:ceiling-light
+light.lifx_kitchen1:
+  friendly_name: Kitchen 1
+  icon: mdi:ceiling-light
+light.lifx_kitchen2:
+  friendly_name: Kitchen 2
+  icon: mdi:ceiling-light
+light.kitchen_ceiling:
+  icon: mdi:ceiling-light
+light.dinning_lights:
+  icon: mdi:ceiling-light
+light.living_ceiling_lights:
+  friendly_name: L'room Ceiling
+  icon: mdi:ceiling-light
+climate.heater:
+  icon: mdi:radiator
+light.lifx_nursery_1:
+  icon: mdi:ceiling-light
+light.lifx_nursery_2:
+  icon: mdi:ceiling-light
+light.lifx_bedroom1:
+  icon: mdi:ceiling-light
+light.lifx_bedroom2:
+  icon: mdi:ceiling-light
+light.bedroom_ceiling:
+  icon: mdi:ceiling-light
+light.nursery_ceiling:
+  icon: mdi:ceiling-light
+binary_sensor.door_sensor_158_laundry:
+  device_class: door
+light.lifx_laundry:
+  icon: mdi:ceiling-light
+switch.xmas:
+  icon: mdi:pine-tree
+input_boolean.winefridge_off_night:
+  icon: mdi:fridge
+binary_sensor.door_sensor_158_nursery_balcony:
+  device_class: door
+binary_sensor.door_sensor_158_hallway_cupboard:
+  device_class: door
+binary_sensor.door_sensor_158_nursery:
+  device_class: door
+light.master_switch:
+  icon: mdi:light-switch
+scene.nursery_all_off:
+  icon: mdi:flashlight-off
+scene.nursery_full_on:
+  icon: mdi:lightbulb-on
+scene.nursery_night_read:
+  icon: mdi:book-open-page-variant
+input_boolean.nursery_sleeping_override:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:sleep-off''; return ''mdi:add-circle'';
+
+      '
+    icon_color: 'if (state === ''on'') return ''rgb(251, 210, 41)''; return ''rgb(54,
+      95, 140)'';
+
+      '
+switch.dishwasher:
+  icon: mdi:dishwasher
+input_boolean.guest_mode:
+  icon: mdi:human-greeting
+light.tv:
+  icon: mdi:filmstrip

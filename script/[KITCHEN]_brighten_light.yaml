@@ -1,0 +1,14 @@
+brighten_light_kitchen:
+  alias: Brighten Light Kitchen
+  sequence:
+    - condition: state
+      entity_id: input_boolean.kitchen_dim
+      state: 'off'
+    - service: light.turn_on
+      entity_id: light.kitchen_ceiling
+      data_template:
+        brightness: '{{states.light.kitchen_ceiling.attributes.brightness + 10}}'
+    - service: script.turn_off
+      entity_id: script.brighten_light_kitchen
+    - service: script.turn_on
+      entity_id: script.brighten_light_kitchen

@@ -1,0 +1,10 @@
+# Action an iOS action to cancel turn off home timer
+alias: '[IOS] cancel turn home off timer'
+trigger:
+  platform: event
+  event_type: ios.notification_action_fired
+  event_data:
+    actionName: home_turnoff_cancel
+action:
+  service: script.turn_off
+  entity_id: script.turn_home_off_timer

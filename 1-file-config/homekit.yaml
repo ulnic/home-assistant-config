@@ -1,0 +1,9 @@
+pincode: !secret homekit_pincode
+filter:
+  include_domains:
+    - lights
+    - sensor
+    - switch
+    - binary_sensor
+    - climate
+    - alarm_control_panel

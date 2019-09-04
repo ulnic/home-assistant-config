@@ -1,0 +1,17 @@
+alias: '[KITCHEN] Espresso Weekend auto off'
+trigger:
+  platform: state
+  entity_id: switch.espresso
+  to: 'on'
+  for:
+    minutes: 120
+condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'off'
+  - condition: state
+    entity_id: input_boolean.on_holiday
+    state: 'off'
+action:
+  service: switch.turn_off
+  entity_id: switch.espresso

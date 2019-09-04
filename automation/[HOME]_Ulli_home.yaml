@@ -1,0 +1,10 @@
+alias: "[HOME] Ulli is Home"
+trigger:
+  platform: state
+  entity_id: device_tracker.ullisiphone
+  from: "not_home"
+  to: "home"
+action:
+  service: notify.ios_nicsiphone7
+  data:
+    message: "Ulli is home!"

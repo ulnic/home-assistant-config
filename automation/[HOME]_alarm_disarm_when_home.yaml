@@ -1,0 +1,11 @@
+alias: '[HOME] Disarm When Home'
+trigger:
+  - platform: state
+    entity_id: person.nic
+    to: 'home'
+  - platform: state
+    entity_id: person.ulli
+    to: 'home'
+action:
+  service: alarm_control_panel.alarm_disarm
+  entity_id: alarm_control_panel.ha_alarm

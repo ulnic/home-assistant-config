@@ -1,0 +1,25 @@
+turn_home_off_timer:
+  alias: "Turn home off timer"
+  sequence:
+    - service: notify.ios_nicsiphone7
+      data:
+        message: "I'm turning off the house in 10 min, care to cancel? !"
+        data:
+          push:
+            badge: 1
+            category: "ios_home_turnoff_cancel"
+    - delay:
+        minutes: 10
+    - service: homeassistant.turn_off
+      entity_id: group.kitchen
+    - service: homeassistant.turn_off
+      entity_id: group.livingroom
+    - service: climate.turn_off
+      entity_id: climate.livingroom_ac
+    - service: homeassistant.turn_off
+      entity_id: group.all_lights
+    - service: light.turn_off
+      entity_id: group.all_lights
+    - service: notify.ios_nicsiphone7
+      data:
+        message: "Nobody home, so turned it off!"

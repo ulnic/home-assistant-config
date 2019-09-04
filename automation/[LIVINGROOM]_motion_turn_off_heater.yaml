@@ -1,0 +1,14 @@
+alias: '[LIVINGROOM] motion - turn OFF if nobody around'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: binary_sensor.motion_sensor_158_livingroom
+  to: 'off'
+  for:
+    minutes: 20
+condition:
+  - condition: template
+    value_template: "{{ not is_state('climate.livingroom_ac', 'off') }}"
+action:
+  - service: climate.turn_off
+    entity_id: climate.livingroom_ac

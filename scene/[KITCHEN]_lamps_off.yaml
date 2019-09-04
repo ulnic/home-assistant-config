@@ -1,0 +1,8 @@
+name: kitchen_lamps_off
+entities:
+  light.kitchen_ceiling:
+    state: off
+    transition: 1
+  light.led:
+    state: off
+    transition: 1

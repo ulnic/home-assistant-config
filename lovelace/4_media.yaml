@@ -1,0 +1,244 @@
+id: media_4  # Automatically created id
+icon: mdi:television
+title: Media
+cards:
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:apple
+            label: 'Apple TV'
+            show_label: true
+            show_last_changed: true
+            tap_action:
+              action: call-service
+              service: media_player.select_source
+              service_data:
+                entity_id: media_player.denon_amp
+                source: "Apple TV"
+            state:
+              - operator: template
+                value: >
+                  return states['media_player.denon_amp'].attributes.source == 'Apple TV'
+                color: '#ff9800'
+                styles:
+                  card:
+                    - font-weight: bold
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:google-chrome
+            label: 'ChromeCast'
+            show_label: true
+            show_last_changed: true
+            tap_action:
+              action: call-service
+              service: media_player.select_source
+              service_data:
+                entity_id: media_player.denon_amp
+                source: "ChromeCast"
+            state:
+              - operator: template
+                value: >
+                  return states['media_player.denon_amp'].attributes.source == 'ChromeCast'
+                color: '#ff9800'
+                styles:
+                  card:
+                    - font-weight: bold
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:playstation
+            label: 'PS4'
+            show_label: true
+            show_last_changed: true
+            tap_action:
+              action: call-service
+              service: media_player.select_source
+              service_data:
+                entity_id: media_player.denon_amp
+                source: "PS4"
+            state:
+              - operator: template
+                value: >
+                  return states['media_player.denon_amp'].attributes.source == 'PS4'
+                color: '#ff9800'
+                styles:
+                  card:
+                    - font-weight: bold
+
+  #Apple TV
+  - id: fc25c733e9be4249ab1ff393823ec3c9  # Automatically created id
+    type: custom:mini-media-player
+    entity: media_player.apple_tv_livingroom
+    name: Apple TV
+    artwork: full-cover
+    icon: mdi:apple
+    #sound_mode: full
+    info: short
+    hide:
+      power: true
+      volume: true
+      source: false
+    more_info: false
+    tts: false
+
+  #Spotify
+  - id: bc893715f3e2407081dae8bd0ecd0097  # Automatically created id
+    type: custom:mini-media-player
+    entity: media_player.spotify
+    name: Spotify Player
+    artwork: cover
+    tts: false
+    hide:
+      power: true
+      volume: true
+    show_source: true
+    idle_view: true
+
+  #Denon
+  - id: 8956d573583744de8f48c96d71b18a36  # Automatically created id
+    type: custom:mini-media-player
+    entity: media_player.denon_amp
+    name: Denon Amp
+    artwork: cover
+    icon: mdi:movie
+    volume_stateless: false
+    min_volume: 10
+    max_volume: 35
+    hide:
+      source: true
+      power: true
+      controls: true
+      sound_mode: false
+
+  - type: custom:vertical-stack-in-card
+    cards:
+      #Livingroom home
+      - id: f09e7038e714483d8337a16cc8565be8  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.living_room_home
+        name: Google Home Livingroom
+        artwork: cover
+        icon: mdi:cast-connected
+        hide:
+          volume: false
+          show_tts: true
+          power: true
+          hide_controls: false
+          source: true
+          scroll_info: true
+
+      #Livingroom Google cast TV
+      - id: efdf53ef717a465ebd36fd136d68b789  # Automatically created id
+        type: custom:mini-media-player
+        entity: media_player.living_room
+        name: Google TV Cast
+        artwork: cover
+        icon: mdi:cast-connected
+        tts: false
+        hide:
+          power: true
+          hide_controls: false
+          show_source: true
+        scroll_info: true
+
+      - type: custom:mini-media-player
+        entity: media_player.entryway_speaker
+        name: Google Bedroom
+        artwork: cover
+        icon: mdi:cast-connected
+        hide:
+          volume: false
+          show_tts: true
+          power: true
+          hide_controls: false
+          source: true
+          scroll_info: true
+
+      - type: custom:mini-media-player
+        entity: media_player.googlehome9051
+        name: Google Kitchen
+        artwork: cover
+        icon: mdi:cast-connected
+        hide:
+          volume: false
+          show_tts: true
+          power: true
+          hide_controls: false
+          source: true
+          scroll_info: true
+
+      - type: custom:mini-media-player
+        entity: media_player.googlehome5332
+        name: Google Nursery
+        artwork: cover
+        icon: mdi:cast-connected
+        hide:
+          volume: false
+          show_tts: true
+          power: true
+          hide_controls: false
+          source: true
+          scroll_info: true
+
+
+  - type: conditional
+    conditions:
+      - entity: media_player.house,media_player.center_wing,media_player.right_wing,media_player.left_wing
+        state_not: 'Off'
+    card:
+      type: custom:vertical-stack-in-card
+      cards:
+
+        - type: custom:mini-media-player
+          entity: media_player.house
+          name: Google Speaker HOUSE
+          artwork: cover
+          icon: mdi:cast-connected
+          hide:
+            volume: false
+            show_tts: true
+            power: true
+            hide_controls: false
+            source: true
+            scroll_info: true
+
+        - type: custom:mini-media-player
+          entity: media_player.center_wing
+          name: Google Speaker CENTER / MIDDLE
+          artwork: cover
+          icon: mdi:cast-connected
+          hide:
+            volume: false
+            show_tts: true
+            power: true
+            hide_controls: false
+            source: true
+            scroll_info: true
+
+        - type: custom:mini-media-player
+          entity: media_player.right_wing
+          name: Google Speaker RIGHT WING
+          artwork: cover
+          icon: mdi:cast-connected
+          hide:
+            volume: false
+            show_tts: true
+            power: true
+            hide_controls: false
+            source: true
+            scroll_info: true
+
+        - type: custom:mini-media-player
+          entity: media_player.left_wing
+          name: Google Speaker LEFT WING
+          artwork: cover
+          icon: mdi:cast-connected
+          hide:
+            volume: false
+            show_tts: true
+            power: true
+            hide_controls: false
+            source: true
+            scroll_info: true

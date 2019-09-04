@@ -1,0 +1,4 @@
+platform: denonavr
+host: !secret media_player_denon_host
+name: DENON AMP
+show_all_sources: False

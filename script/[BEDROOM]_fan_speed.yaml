@@ -1,0 +1,24 @@
+bedroom_ceilingfan_speed:
+  alias: bedroom ceilingfan speed
+  sequence:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.fan_speed_bedroom
+        option: '{{ speed }}'
+    - service: broadlink.send 
+      data_template:
+        host: !secret climate_broadlink_smartir_controller_data_host
+        packet: >-
+          {% if speed == '1' %}
+            'sgscAAsMFgwWFwsXCwwWFwsXCxcLDBYXCxcLFwsAAYIAAAAAAAAAAAAAAAA'
+          {% elif speed == '2' %}
+            'shIcAAsMFgwWFwsXCwwWFwsXCxcLDBYYCg0WFwsAAYIAAAAAAAAAAAAAAAA'
+          {% elif speed == '3' %}
+            'shIcAAsMFgwWFwsXCwwWFwsXCwwWGAsYCxcLFwsAAYIAAAAAAAAAAAAAAAA'
+          {% elif speed == '4' %}
+            'sgscAAsMFgwWFwsXCwwWFwsXCwwWDBYXCxcLFwsAAYMAAAAAAAAAAAAAAAA'
+          {% elif speed == '5' %}
+            'shIcAAsMFgwWFwsXCwwWGAsMFhcLFwsXCwwWFwsAAYMAAAAAAAAAAAAAAAA'
+          {% elif speed == '6' %}
+            'shYcAAsMFgwWFwsXCwwWFwsMFhcLFwsXCxcLFwsAAYIAAAAAAAAAAAAAAAA'
+          {% endif %}

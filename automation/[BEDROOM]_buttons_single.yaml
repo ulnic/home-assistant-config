@@ -1,0 +1,17 @@
+alias: "[BEDROOM] Button SINGLE press"
+trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158_button_ulli
+      click_type: single
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158_button_nic
+      click_type: single
+action:
+  service: light.toggle
+  data:
+    entity_id: light.bedroom
+    transition: 1

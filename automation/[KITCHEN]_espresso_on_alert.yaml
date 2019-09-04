@@ -1,0 +1,16 @@
+alias: '[KITCHEN] Espresso On Alert'
+trigger:
+  platform: state
+  entity_id: switch.espresso
+  to: 'on'
+  for:
+    hours: 1
+    minutes: 30
+action:
+  service: notify.ios_nicsiphone7
+  data:
+    message: "Espresso Machine has been on for more than 90 min. !"
+    data:
+      push:
+        badge: 1
+        category: "turn_espresso_off" # Needs to match the top level identifier you used in the ios configuration

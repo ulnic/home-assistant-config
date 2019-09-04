@@ -1,0 +1,27 @@
+alias: '[HOME] Turn on Bibop (Mon Fri)'
+trigger:
+  platform: time
+  at: "10:00:00"
+condition:
+  condition: and
+  conditions:
+    - condition: time
+      weekday:
+        - mon
+        - fri
+    - condition: state
+      entity_id: device_tracker.nicsiphone7
+      state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.ullisiphone
+      state: 'not_home'
+action:
+  - service: vacuum.turn_on
+    entity_id: vacuum.bibop
+  - service: notify.ios_nicsiphone7
+    data:
+      message: "BiBop was put to action"
+      data:
+        push:
+          badge: 0
+          category: "bibop_started" # Needs to match the top level identifier you used in the ios configuration

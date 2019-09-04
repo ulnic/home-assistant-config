@@ -1,0 +1,19 @@
+alias: '[KITCHEN] Espresso on for 30m notification'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: switch.espresso
+  to: 'on'
+  for:
+    minutes: 30
+action:
+  - service: light.lifx_effect_pulse #TODO: Update this to LED now
+    data:
+      entity_id: light.lifx_kitchen1
+      color_name: green
+      mode: blink
+      cycles: 3
+      brightness: 60
+  - service: notify.all_ios
+    data:
+      message: 'Espresso is ready {{now().strftime("%H:%M:%S")}}'

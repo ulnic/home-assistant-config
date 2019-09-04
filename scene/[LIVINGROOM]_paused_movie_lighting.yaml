@@ -1,0 +1,13 @@
+#A few custom made scenes
+name: Normal Lighting
+entities:
+  light.dining_lights:
+    state: on
+    transition: 1
+    brightness: 150
+    xy_color: [ 0.4448, 0.4066 ]
+  #light.livingroom:
+  #  state: on
+  #  transition: 3
+  #  brightness: 150
+  #  xy_color: [ 0.4448, 0.4066 ]

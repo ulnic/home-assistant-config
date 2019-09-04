@@ -1,0 +1,19 @@
+alias: '[KITCHEN] light dim'
+initial_state: 'on'
+trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.wall_switch_right_158_kitchen
+      click_type: single
+condition:
+  - condition: state
+    entity_id: light.kitchen_ceiling
+    state: 'on'
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.kitchen_light_override
+  - service: light.turn_on
+    entity_id: light.kitchen_ceiling, light.led
+    data_template:
+      brightness: '{{states.light.kitchen_ceiling.attributes.brightness - 25}}'

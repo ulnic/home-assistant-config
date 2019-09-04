@@ -1,0 +1,9 @@
+alarm_light_loop:
+  alias: Light flash loop
+  sequence:
+    - delay:
+        # time for flash light off
+        seconds: 2
+    - service: script.turn_on
+      data:
+        entity_id: script.alarm_light_flash

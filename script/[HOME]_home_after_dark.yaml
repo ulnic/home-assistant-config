@@ -1,0 +1,13 @@
+home_after_dark:
+  alias: "Home After Dark"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.normal_lighting
+    - delay:
+        seconds: 1
+    - service: scene.turn_on
+      entity_id: scene.bedroom_coming_home_turn_on
+    - delay:
+        seconds: 1
+    - service: scene.turn_on
+      entity_id: scene.bedroom_coming_home_turn_off

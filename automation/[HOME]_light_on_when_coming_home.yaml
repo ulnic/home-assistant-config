@@ -1,0 +1,23 @@
+alias: '[HOME] Turn ON Light when first person comes home after sunset'
+trigger:
+  - platform: state
+    entity_id: device_tracker.nicsiphone7
+    from: 'not_home'
+    to: 'home'
+  - platform: state
+    entity_id: device_tracker.ullisiphone
+    from: 'not_home'
+    to: 'home'
+condition:
+  condition: and
+  conditions:
+    - condition: sun
+      after: sunset
+    - condition: time
+      after: '16:00:00'
+      before: '22:00:00'
+    - condition: template
+      value_template: "{% if not is_state('media_player.apple_tv_livingroom', 'playing') %}true{% endif %}"
+action:
+  service: script.turn_on
+  entity_id: script.home_after_dark

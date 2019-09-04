@@ -1,0 +1,15 @@
+alias: "[HALLWAY] Doorbell press"
+trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_doorbell
+      click_type: single
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_doorbell
+      click_type: double
+action:
+  - service: script.turn_on
+    entity_id: script.doorbell_on
