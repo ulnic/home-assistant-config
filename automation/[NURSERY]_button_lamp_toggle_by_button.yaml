@@ -1,4 +1,4 @@
-alias: "Desk lamp toggle" #TODO: check if this one still needed
+alias: "[NURSERY] Desk lamp toggle" #TODO: check if this one still needed
 trigger:
   - platform: event
     event_type: xiaomi_aqara.click

@@ -47,7 +47,7 @@ notify:
 ## Test
 ################################################
 
-
+plex: !include 1-file-config/plex.yaml
 ################################################
 ## Add integrations
 ################################################
@@ -107,7 +107,7 @@ yeelight: !include 1-file-config/light_yee.yaml
 ################################################
 automation: !include_dir_list automation
 binary_sensor: !include_dir_list binary_sensor
-device_tracker: !include_dir_list device_trackers
+#device_tracker: !include_dir_list device_trackers
 light: !include_dir_list light
 media_player: !include_dir_list media_players
 scene: !include_dir_list scene

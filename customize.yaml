@@ -62,7 +62,7 @@ switch.fan:
   friendly_name: Tornado Fan
   icon: mdi:fan
 light.desk:
-  icon: mdi:lamp
+  icon: mdi:desk-lamp
 light.led:
   icon: mdi:track-light
 binary_sensor.water_leak_sensor_158_kitchen:

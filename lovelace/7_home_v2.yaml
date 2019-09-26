@@ -1,105 +1,156 @@
 title: tmp
+icon: mdi:cellphone-iphone
 # Optional background (overwrites the global background).
 background: "right/auto linear-gradient(23deg, rgba(211,211,211,1) 0%, rgba(223,223,223,1) 34%, rgba(255,255,255,1) 100%)"
-# Each view can have a different theme applied. Theme should be defined in the frontend.
 panel: true
 cards:
   - type: custom:layout-card
     column_num: 1
-    max_columns: 3
+    max_columns: 1
     cards:
-      - id: 23i4uy23r34iy43sdfnbsd23423
-        type: horizontal-stack
+      - type: horizontal-stack
         cards:
-          - type: picture-entity
-            image: /local/nic_ha.jpg
-            show_name: false
-            tap_action:
-              action: more-info
-            entity: device_tracker.nicsiphone7
-            style: |
-              ha-card {
-              border-radius: 30px;
-              width: 89%;
-              padding-top: 10px;
-              }
-          - type: picture-entity
-            image: /local/ulli_ha_sq.png
-            show_name: false
-            tap_action:
-              action: more-info
-            entity: device_tracker.ullisiphone
+          - type: custom:decluttering-card
+            template: nest_picture_button
+            variables:
+              - entity: person.nic
+              - entity_picture: /local/nic_ha.jpg
+          - type: custom:decluttering-card
+            template: nest_picture_button
+            variables:
+              - entity: person.ulli
+              - entity_picture: /local/ulli_ha_sq.png
+          - type: custom:decluttering-card
+            template: nest_button
+            variables:
+              - entity: alarm_control_panel.ha_alarm
+              - state:
+                  - value: 'armed_away'
+                    icon: mdi:shield-lock
+                    color: rgb(152,251,152)
+                  - value: 'armed_home'
+                    icon: mdi:shield-home
+                    color: rgb(251, 210, 41)
+                  - value: 'triggered'
+                    icon: mdi:shield-alert
+                    color: rgb(255, 0, 0)
+                    styles:
+                      icon:
+                        - animation: blink 2s ease infinite
+                  - value: 'disarmed'
+                    icon: mdi:shield-off
+                    color: rgb(169,169,169)
+                  - value: 'pending'
+                    icon: mdi:shield-half-full
+                    color: rgb(169,169,169)
+                    styles:
+                      icon:
+                        - animation: blink 2s ease infinite
+      
+      
+      - type: vertical-stack
+        cards:
+          - type: custom:vertical-stack-in-card
+            cards:
+              - type: horizontal-stack
+                style: |
+                  ha-card {
+                    border-radius: 30px;
+                    margin-top: 10px;
+                    padding-top: 10px;
+                    margin-bottom: 10px;
+                  }
+                cards:
+                  - type: "custom:button-card"
+                    name:  Fan
+                    #layout: icon_state_name2nd
+                    color_type: icon
+                    size: 25%
+                    entity: fan.livingroom_ceiling_fan
+                    show_label: true
+                    label_template: >
+                      return (states['input_boolean.fan_state_livingroom'].state === 'on'
+                        ? 'Speed ' + states['input_select.fan_speed_livingroom'].state
+                        : '');
+                    tap_action:
+                      action: toggle
+                    dbltap_action:
+                      action: call-service
+                      service: script.turn_on
+                      service_data:
+                        entity_id: script.fan_increase_speed
+                        variables:
+                          room: 'livingroom'
+                    hold_action:
+                      action: more-info
+                    styles:
+                      card:
+                        - height: 90px
+                      label:
+                        - font-size: 11px
+                        - padding: 0px 5px
 
-      #Livingroom & main card
+                  - type: "custom:button-card"
+                    color_type: icon
+                    entity: switch.espresso
+                    show_label: true
+                    show_last_changed: true
+                    styles:
+                      card:
+                        - height: 90px
+                      label:
+                        - font-size: 11px
+                        - padding: 0px 5px
+                    state:
+                      - value: 'on'
+                        styles:
+                          state:
+                            - color: green
+
+                  - type: "custom:button-card"
+                    color_type: card
+                    entity: switch.dishwasher
+                    show_label: true
+                    show_last_changed: true
+                    tap_action:
+                      action: ''
+                    dbltap_action:
+                      action: toggle
+                    hold_action:
+                      action: more-info
+                    styles:
+                      card:
+                        - height: 90px
+                      label:
+                        - font-size: 11px
+                        - padding: 0px 5px
+                    state:
+                      - value: 'on'
+                        styles:
+                          state:
+                            - color: red
+
+
       - type: custom:vertical-stack-in-card
         cards:
           - type: horizontal-stack
+            style: |
+              ha-card {
+                border-radius: 30px;
+                margin-top: 10px;
+                padding-top: 10px;
+                margin-bottom: 10px;
+              }
             cards:
-              - type: "custom:button-card"
-                name:  Fan
-                #layout: icon_state_name2nd
-                color_type: icon
-                entity: fan.livingroom_ceiling_fan
-                show_label: true
-                label_template: >
-                  return (states['input_boolean.fan_state_livingroom'].state === 'on'
-                    ? 'Speed ' + states['input_select.fan_speed_livingroom'].state
-                    : '');
-                tap_action:
-                  action: toggle
-                dbltap_action:
-                  action: call-service
-                  service: script.turn_on
-                  service_data:
-                    entity_id: script.fan_increase_speed
-                    variables:
-                      room: 'livingroom'
-                hold_action:
-                  action: more-info
-                styles:
-                  card:
-                    - height: 90px
-                  label:
-                    - font-size: 12px
-                    - padding: 0px 5px
 
               - type: "custom:button-card"
                 color_type: icon
                 entity: switch.media_unit
                 name: TV
+                size: 25%
                 show_label: true
                 show_last_changed: false
-                styles:
-                  card:
-                    - height: 90px
-                  label:
-                    - font-size: 11px
-                    - padding: 0px 5px
-
-              - type: "custom:button-card"
-                color_type: icon
-                entity: switch.espresso
-                show_label: true
-                show_last_changed: true
-                styles:
-                  card:
-                    - height: 90px
-                  label:
-                    - font-size: 11px
-                    - padding: 0px 5px
-                state:
-                  - value: 'on'
-                    styles:
-                      state:
-                        - color: green
-              - type: "custom:button-card"
-                color_type: card
-                entity: switch.dishwasher
-                show_label: true
-                show_last_changed: true
                 tap_action:
-                  action: ''
-                dbltap_action:
                   action: toggle
                 hold_action:
                   action: more-info
@@ -109,12 +160,6 @@ cards:
                   label:
                     - font-size: 11px
                     - padding: 0px 5px
-                state:
-                  - value: 'on'
-                    styles:
-                      state:
-                        - color: red
-
               - type: "custom:button-card"
                 color_type: icon
                 name: All Lights
@@ -128,84 +173,196 @@ cards:
                     - font-size: 11px
                     - padding: 0px 5px
 
-          - type: custom:fold-entity-row
-            head:
-              type: custom:slider-entity-row
-              entity: light.living_ceiling_lights
-              toggle: true
-              name: Living
-            group_config:
-              type: custom:slider-entity-row
-            items:
-              - entity: light.lifx_livingroom1
-                name: Living TV
-              - entity: light.lifx_livingroom2
-                name: Living
+              - type: "custom:button-card"
+                color_type: icon
+                name: TV mood
+                entity: light.tv
+                size: 25%
+                show_label: true
+                show_last_changed: false
+                tap_action:
+                  action: toggle
+                dbltap_action:  
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.movie_lighting
+                hold_action:
+                  action: more-info
+                styles:
+                  card:
+                    - height: 90px
+                  label:
+                    - font-size: 11px
+                    - padding: 0px 5px
 
-          - type: custom:fold-entity-row
-            head:
-              type: custom:slider-entity-row
-              entity:  light.dining_lights
-              toggle: true
-              name: Dining
-              #full_row: true
-            group_config:
-              type: custom:slider-entity-row
-            items:
-              - entity: light.lifx_dining1
-                name: Dining
-              - entity: light.lifx_dining2
-                name: Dining Sofa
+          - type: custom:vertical-stack-in-card
+            cards:
+              - type: markdown
+                content: >
+                  #### Living & Dining room
+              #- type: horizontal-stack
+                cards:
+              - type: custom:fold-entity-row
+                head:
+                  type: custom:slider-entity-row
+                  entity: light.living_ceiling_lights
+                  toggle: true
+                  name: Living
+                group_config:
+                  type: custom:slider-entity-row
+                items:
+                  - entity: light.lifx_livingroom1
+                    name: Living TV
+                  - entity: light.lifx_livingroom2
+                    name: Living
+
+              - type: custom:fold-entity-row
+                head:
+                  type: custom:slider-entity-row
+                  entity:  light.dining_lights
+                  toggle: true
+                  name: Dining
+                  #full_row: true
+                group_config:
+                  type: custom:slider-entity-row
+                items:
+                  - entity: light.lifx_dining1
+                    name: Dining
+                  - entity: light.lifx_dining2
+                    name: Dining Sofa
+
+
+
+
+
+              - type: horizontal-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: nest_icon_button
+                    variables:
+                      - entity: light.lifx_livingroom1
+                      - name: Living TV
+                  - type: custom:decluttering-card
+                    template: nest_icon_button
+                    variables:
+                      - entity: light.lifx_livingroom2
+                      - name: Living
+                  - type: custom:decluttering-card
+                    template: nest_icon_button
+                    variables:
+                      - entity: light.lifx_dining1
+                      - name: Dining TV
+                  - type: custom:decluttering-card
+                    template: nest_icon_button
+                    variables:
+                      - entity: light.lifx_dining2
+                      - name: Dining
+
+
+
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: markdown
+            content: >
+              #### Kitchen
           - type: horizontal-stack
             cards:
-              - type: entity-button
-                entity: light.lifx_livingroom1
-                name: Living TV
-              - type: entity-button
-                entity: light.lifx_livingroom2
-                name: Living
-              - type: entity-button
-                entity: light.lifx_dining1
-                name: Dining
-              - type: entity-button
-                entity: light.lifx_dining2
-                name: Dining Sofa
-          - type: custom:vertical-stack-in-card
-            #title: Livingroom
+              - type: custom:decluttering-card
+                template: nest_icon_button
+                variables:
+                  - entity: light.led
+                  - name: LED
+              - type: custom:decluttering-card
+                template: nest_icon_button
+                variables:
+                  - entity: light.lifx_kitchen1
+                  - name: Stove
+              - type: custom:decluttering-card
+                template: nest_icon_button
+                variables:
+                  - entity: light.lifx_kitchen2
+                  - name: Fridge
+
+
+      #Bedroom
+      - type: custom:vertical-stack-in-card
+        id: a14854230982034802834nlsdnf324
+        cards:
+          - type: markdown
+            content: >
+              #### Bedroom
+
+          - type: custom:slider-entity-row
+            entity: light.bedroom_ceiling
+            toggle: false
+            full_row: true
+            name: Bedroom Ceiling
+          - type: horizontal-stack
             cards:
-              - type: custom:swipe-card
-                parameters:
-                  effect: coverflow
-                cards:
-                  - type: custom:mini-graph-card
-                    entities:
-                      - sensor.temperature_158_livingroom
-                    name: Livingroom Temp
-                    points_per_hour: 1
-                    animate: true
-                    color_thresholds:
-                      - color: '#00a1ff'
-                        value: 0
-                      - color: '#abe673'
-                        value: 21
-                      - color: '#fe9c67'
-                        value: 23.5
-                      - color: '#e0614c'
-                        value: 24.5
-                    show:
-                      fill: false
-                  - type: custom:mini-graph-card
-                    entities:
-                      - sensor.humidity_158_livingroom
-                    name: Livingroom Humidity
-                    line_color: blue
-                    points_per_hour: 1
-                  - type: custom:mini-graph-card
-                    entities:
-                      - sensor.illumination_158_livingroom
-                    name: Livingroom Light
-                    line_color: yellow
-                    points_per_hour: 1
+              
+              - type: "custom:button-card"
+                name: Fan
+                #layout: icon_state_name2nd
+                color_type: icon
+                entity: fan.bedroom_ceiling_fan
+                show_label: true
+                label_template: >
+                  return (states['input_boolean.fan_state_bedroom'].state === 'on'
+                    ? 'Speed ' + states['input_select.fan_speed_bedroom'].state
+                    : '');
+                tap_action:
+                  action: toggle
+                dbltap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data:
+                    entity_id: script.fan_increase_speed
+                    variables:
+                      room: 'bedroom'
+                hold_action:
+                  action: more-info
+                styles:
+                  card:
+                    - height: 70px
+                  label:
+                    - font-size: 12px
+                    - padding: 0px 5px
+
+
+
+              - type: entity-button
+                entity: light.bedroom
+                name: Nightstand
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: entity-button
+                entity: light.desk
+                name: Desk
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: entity-button
+                entity: light.lifx_bedroom1
+                name: Desk ceiling
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: entity-button
+                entity: light.lifx_bedroom2
+                name: Nics ceiling
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+
+
+
+
 
       - type: thermostat
         entity: climate.livingroom_ac
