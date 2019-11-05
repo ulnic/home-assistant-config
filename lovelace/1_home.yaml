@@ -145,11 +145,10 @@ cards:
             entity: switch.dishwasher
             show_label: true
             show_last_changed: true
-            #lock: true
             size: 25%
             tap_action:
               action: ''
-            dbltap_action:
+            double_tap_action:
               action: toggle
             hold_action:
               action: more-info
@@ -220,7 +219,7 @@ cards:
             : '');
         tap_action:
           action: toggle
-        dbltap_action:
+        double_tap_action:
           action: call-service
           service: script.turn_on
           service_data:

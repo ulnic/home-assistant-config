@@ -1,0 +1,5 @@
+platform: samsungtv_custom
+host: !secret samsung_tv_host
+mac: !secret samsung_tv_mac
+timeout: 30
+sourcelist: '{"Denon AMP": "KEY_HDMI2"}'

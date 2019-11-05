@@ -40,8 +40,9 @@ nursery_light_store:
       data:
         entity_id: media_player.denon_amp
         source: "DVD"
-    - condition: state
-      entity_id: media_player.apple_tv_livingroom
-      state: 'playing'
-    - service: media_player.media_pause
-      entity_id: media_player.apple_tv_livingroom
+    # TODO Add below back in when apple TV integration works again. 
+    # - condition: state
+    #   entity_id: media_player.apple_tv_livingroom
+    #   state: 'playing'
+    # - service: media_player.media_pause
+    #   entity_id: media_player.apple_tv_livingroom

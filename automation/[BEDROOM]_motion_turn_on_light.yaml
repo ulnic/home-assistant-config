@@ -7,15 +7,12 @@ trigger:
 condition:
   condition: and
   conditions:
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
+    - condition: sun
+      after: sunset
+      after_offset: "-01:00:00"
     - condition: time
       after: '17:00:00'
       before: '21:00:00'
-    #- condition: state
-    #  entity_id: binary_sensor.workday_sensor
-    #  state: 'on'
     - condition: state
       entity_id: light.bedroom_lights_grp
       state: 'off'

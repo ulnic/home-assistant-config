@@ -51,7 +51,7 @@ cards:
     title: DNS & IP Address
     show_header_toggle: false
     entities:
-      - sensor.lindholm_family
+      - sensor.dns_domain_resolver
       - sensor.myip
 
   #Internet
@@ -118,9 +118,23 @@ cards:
   - type: custom:xiaomi-vacuum-map-card
     entity: vacuum.xiaomi_vacuum
     map_image: '/local/vacuum_map.jpeg'
-    base_position:
-      x: 1889
-      y: 1600
-    reference_point:
-      x: 1625
-      y: 1336
+    debug: true
+    calibration_points:
+      - vacuum:
+          x: 25500
+          y: 25500
+        map:
+          x: 1600
+          y: 1889
+      - vacuum:
+          x: 26500
+          y: 26500
+        map:
+          x: 1625
+          y: 1336
+      - vacuum:
+          x: 25500
+          y: 26500
+        map:
+          x: 1625
+          y: 1600

@@ -2,8 +2,37 @@ id: media_4  # Automatically created id
 icon: mdi:television
 title: Media
 cards:
+  # Remote TV card          
   - type: custom:vertical-stack-in-card
     cards:
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: blank-card
+          - type: "custom:button-card"
+            color_type: icon
+            entity: light.tv
+            show_label: false
+            show_name: false
+            show_last_changed: false
+            tap_action:
+              action: toggle
+            double_tap_action:  
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.movie_lighting
+
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:power-standby
+            entity: switch.media_unit
+            show_label: false
+            show_name: false
+            show_last_changed: false
+            tap_action:
+              action: toggle
+      
       - type: horizontal-stack
         cards:
           - type: "custom:button-card"
@@ -11,7 +40,7 @@ cards:
             icon: mdi:apple
             label: 'Apple TV'
             show_label: true
-            show_last_changed: true
+            show_last_changed: false
             tap_action:
               action: call-service
               service: media_player.select_source
@@ -21,11 +50,10 @@ cards:
             state:
               - operator: template
                 value: >
+                  [[[ 
                   return states['media_player.denon_amp'].attributes.source == 'Apple TV'
+                  ]]]
                 color: '#ff9800'
-                styles:
-                  card:
-                    - font-weight: bold
           - type: "custom:button-card"
             color_type: icon
             icon: mdi:google-chrome
@@ -41,11 +69,10 @@ cards:
             state:
               - operator: template
                 value: >
-                  return states['media_player.denon_amp'].attributes.source == 'ChromeCast'
+                  [[[
+                    return states['media_player.denon_amp'].attributes.source == 'ChromeCast'
+                  ]]]
                 color: '#ff9800'
-                styles:
-                  card:
-                    - font-weight: bold
           - type: "custom:button-card"
             color_type: icon
             icon: mdi:playstation
@@ -61,27 +88,203 @@ cards:
             state:
               - operator: template
                 value: >
-                  return states['media_player.denon_amp'].attributes.source == 'PS4'
+                  [[[
+                    return states['media_player.denon_amp'].attributes.source == 'PS4'
+                  ]]]
                 color: '#ff9800'
-                styles:
-                  card:
-                    - font-weight: bold
 
-  #Apple TV
-  - id: fc25c733e9be4249ab1ff393823ec3c9  # Automatically created id
-    type: custom:mini-media-player
-    entity: media_player.apple_tv_livingroom
-    name: Apple TV
-    artwork: full-cover
-    icon: mdi:apple
-    #sound_mode: full
-    info: short
-    hide:
-      power: true
-      volume: true
-      source: false
-    more_info: false
-    tts: false
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:lightbulb-on-outline
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.change_tv_brightness
+                variables:
+                  DIRECTION: 'RIGHT'
+          - type: "custom:button-card"
+            color_type: blank-card  
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:volume-plus
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: media_player.volume_up
+              service_data:
+                entity_id: media_player.denon_amp
+            hold_action:
+              action: call-service
+              repeat: 400
+              service: media_player.volume_up
+              service_data:
+                entity_id: media_player.denon_amp
+          
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:lightbulb-off-outline
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.change_tv_brightness
+                variables:
+                  DIRECTION: 'LEFT'
+          - type: "custom:button-card"
+            color_type: blank-card  
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:volume-minus
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: media_player.volume_down
+              service_data:
+                entity_id: media_player.denon_amp
+            hold_action:
+              action: call-service
+              repeat: 400
+              service: media_player.volume_down
+              service_data:
+                entity_id: media_player.denon_amp
+          
+          
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: blank-card
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:chevron-up
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: remote.send_command
+              service_data:
+                entity_id: remote.harmony
+                command: DirectionUp
+                device: Apple TV Gen 4
+          - type: "custom:button-card"
+            color_type: blank-card  
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:chevron-left
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: remote.send_command
+              service_data:
+                entity_id: remote.harmony
+                command: DirectionLeft
+                device: Apple TV Gen 4
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:checkbox-blank-circle
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: remote.send_command
+              service_data:
+                entity_id: remote.harmony
+                command: Select
+                device: Apple TV Gen 4
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:chevron-right
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: remote.send_command
+              service_data:
+                entity_id: remote.harmony
+                command: DirectionRight
+                device: Apple TV Gen 4
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: blank-card
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:chevron-down
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: remote.send_command
+              service_data:
+                entity_id: remote.harmony
+                command: DirectionDown
+                device: Apple TV Gen 4
+          - type: "custom:button-card"
+            color_type: blank-card  
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            color_type: blank-card  
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:play-pause
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: remote.send_command
+              service_data:
+                entity_id: remote.harmony
+                command: Play
+                device: Apple TV Gen 4
+          
+          - type: "custom:button-card"
+            color_type: icon
+            icon: mdi:keyboard-return
+            show_label: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: remote.send_command
+              service_data:
+                entity_id: remote.harmony
+                command: Menu
+                device: Apple TV Gen 4
+      
+      
+      
+
+
+    #Apple TV
+  # - id: fc25c733e9be4249ab1ff393823ec3c9  # Automatically created id
+  #   type: custom:mini-media-player
+  #   entity: media_player.apple_tv_livingroom
+  #   name: Apple TV
+  #   artwork: full-cover
+  #   icon: mdi:apple
+  #   #sound_mode: full
+  #   info: short
+  #   hide:
+  #     power: true
+  #     volume: true
+  #     source: false
+  #   more_info: false
+  #   tts: false
 
   #Spotify
   - id: bc893715f3e2407081dae8bd0ecd0097  # Automatically created id
@@ -104,13 +307,16 @@ cards:
     artwork: cover
     icon: mdi:movie
     volume_stateless: false
-    min_volume: 10
+    min_volume: 15
     max_volume: 35
     hide:
       source: true
       power: true
       controls: true
       sound_mode: false
+      name: false
+      icon: false
+      info: false
 
   - type: custom:vertical-stack-in-card
     cards:
@@ -186,7 +392,7 @@ cards:
   - type: conditional
     conditions:
       - entity: media_player.house,media_player.center_wing,media_player.right_wing,media_player.left_wing
-        state_not: 'Off'
+        state_not: 'off'
     card:
       type: custom:vertical-stack-in-card
       cards:

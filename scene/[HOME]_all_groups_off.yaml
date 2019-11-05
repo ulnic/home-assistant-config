@@ -1,6 +1,6 @@
 name: All OFF
 entities:
-  group.Livingroom:
+  group.livingroom:
     state: off
-  group.Kitchen:
+  group.kitchen:
     state: off

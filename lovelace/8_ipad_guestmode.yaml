@@ -223,7 +223,7 @@ cards:
                             : '');
                         tap_action:
                           action: toggle
-                        dbltap_action:
+                        double_tap_action:
                           action: call-service
                           service: script.turn_on
                           service_data:
@@ -266,7 +266,7 @@ cards:
                         show_last_changed: false
                         tap_action:
                           action: toggle
-                        dbltap_action:  #TODO fix this 
+                        double_tap_action:  #TODO fix this 
                           action: call-service
                           service: scene.turn_on
                           service_data:

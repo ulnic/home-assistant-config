@@ -51,7 +51,11 @@ resources:
 cch:
   options: clock
   voice: hide
-  # exceptions:
+  exceptions:
+    - conditions:
+        user_agent: Macintosh
+      config:
+        hide_tabs: 0
   #   - conditions:
   #       user: Nicolai
   #       user_agent: iPad
@@ -165,6 +169,41 @@ decluttering_templates:
           font-size: 70%;
         }
 
+button_card_templates:
+  sensor:
+    color_type: icon
+    show_label: true
+    show_last_changed: true
+    tap_action:
+      action: more-info
+    styles:
+      name:
+        - font-size: 13px
+      label:
+        - font-size: 10px
+        - padding: 0px 5px
+  
+  door:
+    template: sensor
+    state:
+      - value: 'on'
+        icon: mdi:door-open
+      - operator: 'default'
+        icon: mdi:door
+        styles:
+          icon:
+            - filter: opacity(50%)
+
+  motion:
+    template: sensor
+    state:
+      - value: 'on'
+        icon: mdi:motion-sensor
+      - operator: 'default'
+        icon: mdi:account-search-outline
+        styles:
+          icon:
+            - filter: opacity(50%)
 
 
 
@@ -172,11 +211,12 @@ decluttering_templates:
 background: center / cover no-repeat url("/background.png") fixed
 views:
 
-  - !include lovelace/1_home.yaml
+  - !include lovelace/7_mobile_view.yaml
   - !include lovelace/2_nursery.yaml
-  - !include lovelace/3_config.yaml
   - !include lovelace/4_media.yaml
+  - !include lovelace/3_config.yaml
+  - !include lovelace/8_ipad_guestmode.yaml
+  - !include lovelace/1_home.yaml
   - !include lovelace/5_floorplan.yaml
   - !include lovelace/6_nest.yaml
-  - !include lovelace/7_home_v2.yaml
-  - !include lovelace/8_ipad_guestmode.yaml
+  

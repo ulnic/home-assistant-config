@@ -63,18 +63,19 @@ cards:
                 cards:
                   - type: "custom:button-card"
                     name:  Fan
-                    #layout: icon_state_name2nd
                     color_type: icon
                     size: 25%
                     entity: fan.livingroom_ceiling_fan
                     show_label: true
-                    label_template: >
+                    label: >
+                      [[[
                       return (states['input_boolean.fan_state_livingroom'].state === 'on'
                         ? 'Speed ' + states['input_select.fan_speed_livingroom'].state
                         : '');
+                      ]]]
                     tap_action:
                       action: toggle
-                    dbltap_action:
+                    double_tap_action:
                       action: call-service
                       service: script.turn_on
                       service_data:
@@ -113,8 +114,8 @@ cards:
                     show_label: true
                     show_last_changed: true
                     tap_action:
-                      action: ''
-                    dbltap_action:
+                      action: none
+                    double_tap_action:
                       action: toggle
                     hold_action:
                       action: more-info
@@ -162,19 +163,6 @@ cards:
                     - padding: 0px 5px
               - type: "custom:button-card"
                 color_type: icon
-                name: All Lights
-                entity: light.master_switch
-                show_label: true
-                show_last_changed: false
-                styles:
-                  card:
-                    - height: 90px
-                  label:
-                    - font-size: 11px
-                    - padding: 0px 5px
-
-              - type: "custom:button-card"
-                color_type: icon
                 name: TV mood
                 entity: light.tv
                 size: 25%
@@ -182,7 +170,7 @@ cards:
                 show_last_changed: false
                 tap_action:
                   action: toggle
-                dbltap_action:  
+                double_tap_action:  
                   action: call-service
                   service: scene.turn_on
                   service_data:
@@ -195,13 +183,26 @@ cards:
                   label:
                     - font-size: 11px
                     - padding: 0px 5px
+              - type: "custom:button-card"
+                color_type: icon
+                name: All Lights
+                entity: light.master_switch
+                show_label: true
+                show_last_changed: false
+                styles:
+                  card:
+                    - height: 90px
+                  label:
+                    - font-size: 11px
+                    - padding: 0px 5px
+
+              
 
           - type: custom:vertical-stack-in-card
             cards:
               - type: markdown
                 content: >
                   #### Living & Dining room
-              #- type: horizontal-stack
                 cards:
               - type: custom:fold-entity-row
                 head:
@@ -307,13 +308,15 @@ cards:
                 color_type: icon
                 entity: fan.bedroom_ceiling_fan
                 show_label: true
-                label_template: >
+                label: >
+                  [[[
                   return (states['input_boolean.fan_state_bedroom'].state === 'on'
                     ? 'Speed ' + states['input_select.fan_speed_bedroom'].state
                     : '');
+                  ]]]
                 tap_action:
                   action: toggle
-                dbltap_action:
+                double_tap_action:
                   action: call-service
                   service: script.turn_on
                   service_data:
@@ -328,9 +331,6 @@ cards:
                   label:
                     - font-size: 12px
                     - padding: 0px 5px
-
-
-
               - type: entity-button
                 entity: light.bedroom
                 name: Nightstand
@@ -360,223 +360,183 @@ cards:
                 hold_action:
                   action: more-info
 
-
-
-
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: markdown
+            content: >
+              #### Other
+          - type: horizontal-stack
+            cards:
+              - type: custom:decluttering-card
+                template: nest_icon_button
+                variables:
+                  - entity: light.lifx_hallway_1
+                  - name: Hallway
+              - type: custom:decluttering-card
+                template: nest_icon_button
+                variables:
+                  - entity: light.lifx_laundry
+                  - name: Laundry
+              - type: custom:decluttering-card
+                template: nest_icon_button
+                variables:
+                  - entity: light.balcony_ceiling
+                  - name: Balcony
 
       - type: thermostat
         entity: climate.livingroom_ac
 
-      #Kitchen
-      - type: custom:vertical-stack-in-card
+      - type: horizontal-stack
         cards:
-          - type: custom:fold-entity-row
-            head:
-              type: custom:slider-entity-row
-              entity:  light.kitchen_ceiling
-              toggle: true
-              name: Kitchen
-            group_config:
-              type: custom:slider-entity-row
-              toggle: true
-            items:
-              - entity: light.led
-                name: LED
-              - entity: light.lifx_kitchen1
-                name: Stove
-              - entity: light.lifx_kitchen2
-                name: Fridge
-          - type: custom:swipe-card
-            parameters:
-              effect: coverflow
+          - type: vertical-stack
             cards:
-              - type: custom:mini-graph-card
-                entities:
-                  - sensor.temperature_158_kitchen
-                name: Kitchen Temp
-                height: 35
-                points_per_hour: 1
-                animate: true
-                color_thresholds:
-                  - color: '#00a1ff'
-                    value: 0
-                  - color: '#abe673'
-                    value: 21
-                  - color: '#fe9c67'
-                    value: 23.5
-                  - color: '#e0614c'
-                    value: 24.5
-                show:
-                  fill: false
-              - type: custom:mini-graph-card
-                entities:
-                  - sensor.humidity_158_kitchen
-                name: Kitchen Humidity
-                line_color: blue
-                points_per_hour: 1
-              - type: custom:mini-graph-card
-                entities:
-                  - sensor.illumination_158_kitchen
-                name: Kitchen Light
-                line_color: yellow
-                points_per_hour: 1
-
-      #Bedroom
-      - type: custom:vertical-stack-in-card
-        id: a14854230982034802834nlsdnf324
-        title: Bedroom
-        cards:
-          - type: "custom:button-card"
-            name: Bedroom Fan
-            layout: icon_state_name2nd
-            color_type: icon
-            entity: fan.bedroom_ceiling_fan
-            show_label: true
-            label_template: >
-              return (states['input_boolean.fan_state_bedroom'].state === 'on'
-                ? 'Speed ' + states['input_select.fan_speed_bedroom'].state
-                : '');
-            tap_action:
-              action: toggle
-            dbltap_action:
-              action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.fan_increase_speed
-                variables:
-                  room: 'bedroom'
-            hold_action:
-              action: more-info
-            styles:
-              card:
-                - height: 70px
-              label:
-                - font-size: 12px
-                - padding: 0px 5px
-
-          - type: custom:slider-entity-row
-            entity: light.bedroom_ceiling
-            toggle: false
-            full_row: true
-            name: Bedroom Ceiling
-          - type: horizontal-stack
-            cards:
-              - type: entity-button
-                entity: light.bedroom
-                name: Nightstand
-                tap_action:
-                  action: toggle
-                hold_action:
-                  action: more-info
-              - type: entity-button
-                entity: light.desk
-                name: Desk
-                tap_action:
-                  action: toggle
-                hold_action:
-                  action: more-info
-              - type: entity-button
-                entity: light.lifx_bedroom1
-                name: Desk ceiling
-                tap_action:
-                  action: toggle
-                hold_action:
-                  action: more-info
-              - type: entity-button
-                entity: light.lifx_bedroom2
-                name: Nics ceiling
-                tap_action:
-                  action: toggle
-                hold_action:
-                  action: more-info
-
-          - type: custom:swipe-card
-            parameters:
-              effect: coverflow
-            cards:
-              - type: custom:mini-graph-card
-                entities:
-                  - sensor.temperature_158_bedroom
-                name: Bedroom Temp
-                points_per_hour: 1
-                animate: true
-                color_thresholds:
-                  - color: '#00a1ff'
-                    value: 0
-                  - color: '#abe673'
-                    value: 21
-                  - color: '#fe9c67'
-                    value: 23.5
-                  - color: '#e0614c'
-                    value: 24.5
-                show:
-                  fill: false
-              - type: custom:mini-graph-card
-                entities:
-                  - sensor.humidity_158_bedroom
-                name: Humidity
-                line_color: blue
-                points_per_hour: 1
-              - type: custom:mini-graph-card
-                entities:
-                  - sensor.illumination_158_bedroom
-                name: Light
-                line_color: yellow
-                points_per_hour: 1
-
-      # Hallway and Laundry
-      - id: adfasdfasdf876134861873468714  # Automatically created id
-        type: custom:vertical-stack-in-card
-        cards:
-          - type: horizontal-stack
-            cards:
-              - type: entity-button
-                entity: light.lifx_hallway_1
-              - type: entity-button
-                entity: light.lifx_laundry
-
-      #Balcony
-      - type: custom:vertical-stack-in-card
-        title: Balcony
-        cards:
-          - type: horizontal-stack
-            cards:
-              - type: custom:swipe-card
-                parameters:
-                  effect: coverflow
+              - type: horizontal-stack
                 cards:
-                  - type: custom:mini-graph-card
-                    entities:
-                      - sensor.temperature_158_balcony
-                    name: Temp
-                    points_per_hour: 1
-                    animate: true
-                    color_thresholds:
-                      - color: '#00a1ff'
-                        value: 0
-                      - color: '#abe673'
-                        value: 21
-                      - color: '#fe9c67'
-                        value: 23.5
-                      - color: '#e0614c'
-                        value: 24.5
-                    show:
-                      fill: false
-                  - type: custom:mini-graph-card
-                    entities:
-                      - sensor.humidity_158_balcony
-                    name: Humidity
-                    line_color: blue
-                    points_per_hour: 1
-                  - type: custom:mini-graph-card
-                    entities:
-                      - sensor.pressure_158_balcony
-                    name: Pressure
-                    line_color: yellow
-                    points_per_hour: 1
-
-              - type: entity-button
-                entity: light.balcony_ceiling
+                - type: custom:swipe-card
+                  parameters:
+                    effect: coverflow
+                  cards:
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.temperature_158_kitchen
+                      name: Kitchen
+                      height: 35
+                      points_per_hour: 1
+                      animate: true
+                      color_thresholds:
+                        - color: '#00a1ff'
+                          value: 0
+                        - color: '#abe673'
+                          value: 21
+                        - color: '#fe9c67'
+                          value: 23.5
+                        - color: '#e0614c'
+                          value: 24.5
+                      show:
+                        fill: false
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.humidity_158_kitchen
+                      name: Kitchen Humidity
+                      line_color: blue
+                      points_per_hour: 1
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.illumination_158_kitchen
+                      name: Kitchen Light
+                      line_color: yellow
+                      points_per_hour: 1
+                - type: custom:swipe-card
+                  parameters:
+                    effect: coverflow
+                  cards:
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.temperature_158_bedroom
+                      name: Bedroom
+                      height: 35
+                      points_per_hour: 1
+                      animate: true
+                      color_thresholds:
+                        - color: '#00a1ff'
+                          value: 0
+                        - color: '#abe673'
+                          value: 21
+                        - color: '#fe9c67'
+                          value: 23.5
+                        - color: '#e0614c'
+                          value: 24.5
+                      show:
+                        fill: false
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.humidity_158_bedroom
+                      name: Humidity
+                      line_color: blue
+                      points_per_hour: 1
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.illumination_158_bedroom
+                      name: Light
+                      line_color: yellow
+                      points_per_hour: 1
+              - type: horizontal-stack
+                cards:
+                - type: custom:swipe-card
+                  parameters:
+                    effect: coverflow
+                  cards:
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.temperature_158_balcony
+                      name: Balcony
+                      height: 35
+                      points_per_hour: 1
+                      animate: true
+                      color_thresholds:
+                        - color: '#00a1ff'
+                          value: 0
+                        - color: '#abe673'
+                          value: 21
+                        - color: '#fe9c67'
+                          value: 23.5
+                        - color: '#e0614c'
+                          value: 24.5
+                      show:
+                        fill: false
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.humidity_158_balcony
+                      name: Humidity
+                      line_color: blue
+                      points_per_hour: 1
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.pressure_158_balcony
+                      name: Pressure
+                      line_color: yellow
+                      points_per_hour: 1
+                - type: custom:swipe-card
+                  parameters:
+                    effect: coverflow
+                  cards:
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.temperature_158_nursery
+                      name: Nursery
+                      height: 35
+                      points_per_hour: 1
+                      color_thresholds:
+                        - value: 0
+                          color: "#CCE5FF"
+                        - value: 10
+                          color: "#66B2FF"
+                        - value: 15
+                          color: "#0080FF"
+                        - value: 18
+                          color: "#87c087"
+                        - value: 21
+                          color: "#389638"
+                        - value: 24
+                          color: "#FF9932"
+                        - value: 25
+                          color: "#FF8000"
+                        - value: 26
+                          color: "#ff0000"
+                      show:
+                        fill: false
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.humidity_158_nursery
+                      name: Humidity
+                      points_per_hour: 1
+                      line_color: blue
+                    - type: custom:mini-graph-card
+                      entities:
+                        - sensor.illumination_158_nursery
+                      name: Light
+                      points_per_hour: 1
+                      line_color: yellow
 
       # Sensors
       - type: custom:vertical-stack-in-card
@@ -586,42 +546,50 @@ cards:
               - type: entity-button
                 entity: vacuum.bibop
                 secondary_info: last_changed
-              - type: entity-button
-                entity: alarm_control_panel.ha_alarm
           - type: divider
           - type: horizontal-stack
             cards:
-              - type: entity-button
+              - type: "custom:button-card"
+                template: motion
                 entity: binary_sensor.motion_sensor_158_livingroom
                 name: Livingroom
-              - type: entity-button
+              - type: "custom:button-card"
+                template: motion
                 entity: binary_sensor.motion_sensor_158_kitchen
                 name: Kitchen
-              - type: entity-button
+              - type: "custom:button-card"
+                template: motion
                 entity: binary_sensor.motion_sensor_158_bedroom
                 name: Bedroom
-              - type: entity-button
+              - type: "custom:button-card"
+                template: motion
                 entity: binary_sensor.motion_sensor_158_nursery
                 name: Nursery
-              - type: entity-button
+              - type: "custom:button-card"
+                template: motion
                 entity: binary_sensor.motion_sensor_158_laundry
                 name: Laundry
           - type: divider
             name: Doors
           - type: horizontal-stack
             cards:
-              - type: entity-button
+              - type: "custom:button-card"
+                template: door
+                name: Nursery
                 entity: binary_sensor.door_sensor_158_nursery
-                name: Nursery Door
-              - type: entity-button
+              - type: "custom:button-card"
+                template: door
                 entity: binary_sensor.door_sensor_158_nursery_balcony
-                name: Balcony Nursery
-              - type: entity-button
+                name: Balcony N'sery
+              - type: "custom:button-card"
+                template: door
                 entity: binary_sensor.door_sensor_158_balconydoor
                 name: Balcony L'room
-              - type: entity-button
+              - type: "custom:button-card"
+                template: door
                 entity: binary_sensor.door_sensor_158_entrance
                 name: Entrance
-              - type: entity-button
+              - type: "custom:button-card"
+                template: door
                 entity: binary_sensor.door_sensor_158_laundry
                 name: Laundry
