@@ -1,7 +1,7 @@
 title: GuestMode
 icon: mdi:account-group
 panel: true
-background: "right/auto linear-gradient(23deg, rgba(211,211,211,1) 0%, rgba(223,223,223,1) 34%, rgba(255,255,255,1) 100%)"
+background: "right/auto linear-gradient(23deg, rgba(211,211,211,1) 0%, rgba(151,177,177,1) 34%, rgba(255,255,255,1) 100%)"
 path: kiosk
 cards:
   - type: vertical-stack
@@ -72,12 +72,10 @@ cards:
                     cards:
                       - type: 'custom:aarlo-glance'
                         entity: camera.aarlo_mr_rabbit
-                        name: Baby Cam
+                        name: Mr Rabbit
                         show:
                           - snapshot
-                          #- battery_level
-                          #- signal_strength
-                          - captured_today
+                          #- captured_today
                           - image_date
                         top_title: false
                         top_status: false
@@ -89,138 +87,240 @@ cards:
                             margin-top: 10px;
                             margin-bottom: 10px;
                           }
-                      - type: horizontal-stack
-                        cards:
-                          - type: vertical-stack
-                            cards:
-                              - type: horizontal-stack
-                                cards:
-                                - type: thermostat
-                                  entity: climate.livingroom_ac
-                                  style: |
-                                    ha-card {
-                                      margin-right: 5px;
-                                      margin-bottom: 5px;
-                                    }
-                                - type: custom:mini-graph-card
-                                  entities:
-                                    - sensor.temperature_158_nursery
-                                  name: Nursery
-                                  show:
-                                    icon: false
-                                    fill: false
-                                  #height: 35
-                                  color_thresholds:
-                                    - value: 0
-                                      color: "#CCE5FF"
-                                    - value: 10
-                                      color: "#66B2FF"
-                                    - value: 15
-                                      color: "#0080FF"
-                                    - value: 18
-                                      color: "#87c087"
-                                    - value: 21
-                                      color: "#389638"
-                                    - value: 24
-                                      color: "#FF9932"
-                                    - value: 25
-                                      color: "#FF8000"
-                                    - value: 26
-                                      color: "#ff0000"
-                                  style: |
-                                    ha-card {
-                                      margin-right: 5px;
-                                      margin-bottom: 5px;
-                                    }
+                      ## EXPERIMENT START 
+                      #TODO
 
-                              - type: horizontal-stack
-                                cards:
-                                  - type: custom:mini-graph-card
-                                    entities:
-                                      - sensor.temperature_158_livingroom
-                                    name: Livingroom
-                                    height: 25
-                                    show:
-                                      fill: false
-                                      icon: false
-                                    color_thresholds:
-                                      - value: 0
-                                        color: "#CCE5FF"
-                                      - value: 10
-                                        color: "#66B2FF"
-                                      - value: 18
-                                        color: "#0080FF"
-                                      - value: 20
-                                        color: "#87c087"
-                                      - value: 21
-                                        color: "#389638"
-                                      - value: 24
-                                        color: "#FF9932"
-                                      - value: 25
-                                        color: "#FF8000"
-                                      - value: 26
-                                        color: "#ff0000"
-                                    style: |
-                                      ha-card {
-                                        margin-right: 5px;
-                                        margin-bottom: 5px;
-                                      }
+                      - type: custom:simple-thermostat
+                        entity: climate.livingroom_ac
+                        step_size: 1
+                        sensors:
+                          - entity: sensor.temperature_158_livingroom
+                            name: Tempdf
+                        control:
+                          hvac:
+                            some_mode: false
+                            another_mode: false
+                            icon: false
+                            'on':
+                              name: false
+                              icon: mdi:whitewalker
+                      - type: custom:mini-graph-card
+                        entities:
+                          - sensor.temperature_158_nursery
+                        name: Nursery
+                        show:
+                          icon: false
+                          fill: false
+                        #height: 35
+                        color_thresholds:
+                          - value: 0
+                            color: "#CCE5FF"
+                          - value: 10
+                            color: "#66B2FF"
+                          - value: 15
+                            color: "#0080FF"
+                          - value: 18
+                            color: "#87c087"
+                          - value: 21
+                            color: "#389638"
+                          - value: 24
+                            color: "#FF9932"
+                          - value: 25
+                            color: "#FF8000"
+                          - value: 26
+                            color: "#ff0000"
+                        style: |
+                          ha-card {
+                            margin-right: 5px;
+                            margin-bottom: 5px;
+                          }
+                      
+                      - type: custom:mini-graph-card
+                        entities:
+                          - sensor.temperature_158_nursery
+                        name: Nursery
+                        show:
+                          icon: false
+                          fill: false
+                        #height: 35
+                        color_thresholds:
+                          - value: 0
+                            color: "#CCE5FF"
+                          - value: 10
+                            color: "#66B2FF"
+                          - value: 15
+                            color: "#0080FF"
+                          - value: 18
+                            color: "#87c087"
+                          - value: 21
+                            color: "#389638"
+                          - value: 24
+                            color: "#FF9932"
+                          - value: 25
+                            color: "#FF8000"
+                          - value: 26
+                            color: "#ff0000"
+                        style: |
+                          ha-card {
+                            margin-right: 5px;
+                            margin-bottom: 5px;
+                          }
 
-                                  - type: custom:mini-graph-card
-                                    show:
-                                      fill: false
-                                      icon: false
-                                    height: 25
-                                    entities:
-                                      - sensor.temperature_158_balcony
-                                    name: Balcony
-                                    color_thresholds:
-                                      - value: 0
-                                        color: "#CCE5FF"
-                                      - value: 10
-                                        color: "#66B2FF"
-                                      - value: 18
-                                        color: "#0080FF"
-                                      - value: 20
-                                        color: "#87c087"
-                                      - value: 21
-                                        color: "#389638"
-                                      - value: 24
-                                        color: "#FF9932"
-                                      - value: 25
-                                        color: "#FF8000"
-                                      - value: 26
-                                        color: "#ff0000"
-                                    style: |
-                                      ha-card {
-                                        margin-right: 5px;
-                                        margin-bottom: 5px;
-                                      }
+
+                      ## EXPERIMENT END 
+
+
+
+                      # - type: horizontal-stack
+                      #   cards:
+                      #     - type: vertical-stack
+                      #       cards:
+                      #         - type: horizontal-stack
+                      #           cards:
+                      #           #TODO
+                      #           - type: custom:simple-thermostat
+                      #             entity: climate.livingroom_ac
+                      #             step_size: 1
+                      #             sensors:
+                      #               - entity: sensor.temperature_158_livingroom
+                      #                 name: Tempdf
+                      #             control:
+                      #               hvac:
+                      #                 some_mode: false
+                      #                 another_mode: false
+                      #                 icon: false
+                      #                 'on':
+                      #                   name: false
+                      #                   icon: mdi:whitewalker
+
+                      #           # - type: thermostat
+                      #           #   entity: climate.livingroom_ac
+                      #           #   style: |
+                      #           #     ha-card {
+                      #           #       margin-right: 5px;
+                      #           #       margin-bottom: 5px;
+                      #           #     }
+                      #           - type: custom:mini-graph-card
+                      #             entities:
+                      #               - sensor.temperature_158_nursery
+                      #             name: Nursery
+                      #             show:
+                      #               icon: false
+                      #               fill: false
+                      #             #height: 35
+                      #             color_thresholds:
+                      #               - value: 0
+                      #                 color: "#CCE5FF"
+                      #               - value: 10
+                      #                 color: "#66B2FF"
+                      #               - value: 15
+                      #                 color: "#0080FF"
+                      #               - value: 18
+                      #                 color: "#87c087"
+                      #               - value: 21
+                      #                 color: "#389638"
+                      #               - value: 24
+                      #                 color: "#FF9932"
+                      #               - value: 25
+                      #                 color: "#FF8000"
+                      #               - value: 26
+                      #                 color: "#ff0000"
+                      #             style: |
+                      #               ha-card {
+                      #                 margin-right: 5px;
+                      #                 margin-bottom: 5px;
+                      #               }
+
+                      #         - type: horizontal-stack
+                      #           cards:
+                      #             - type: custom:mini-graph-card
+                      #               entities:
+                      #                 - sensor.temperature_158_livingroom
+                      #               name: Livingroom
+                      #               height: 25
+                      #               show:
+                      #                 fill: false
+                      #                 icon: false
+                      #               color_thresholds:
+                      #                 - value: 0
+                      #                   color: "#CCE5FF"
+                      #                 - value: 10
+                      #                   color: "#66B2FF"
+                      #                 - value: 18
+                      #                   color: "#0080FF"
+                      #                 - value: 20
+                      #                   color: "#87c087"
+                      #                 - value: 21
+                      #                   color: "#389638"
+                      #                 - value: 24
+                      #                   color: "#FF9932"
+                      #                 - value: 25
+                      #                   color: "#FF8000"
+                      #                 - value: 26
+                      #                   color: "#ff0000"
+                      #               style: |
+                      #                 ha-card {
+                      #                   margin-right: 5px;
+                      #                   margin-bottom: 5px;
+                      #                 }
+
+                      #             - type: custom:mini-graph-card
+                      #               show:
+                      #                 fill: false
+                      #                 icon: false
+                      #               height: 25
+                      #               entities:
+                      #                 - sensor.temperature_158_balcony
+                      #               name: Balcony
+                      #               color_thresholds:
+                      #                 - value: 0
+                      #                   color: "#CCE5FF"
+                      #                 - value: 10
+                      #                   color: "#66B2FF"
+                      #                 - value: 18
+                      #                   color: "#0080FF"
+                      #                 - value: 20
+                      #                   color: "#87c087"
+                      #                 - value: 21
+                      #                   color: "#389638"
+                      #                 - value: 24
+                      #                   color: "#FF9932"
+                      #                 - value: 25
+                      #                   color: "#FF8000"
+                      #                 - value: 26
+                      #                   color: "#ff0000"
+                      #               style: |
+                      #                 ha-card {
+                      #                   margin-right: 5px;
+                      #                   margin-bottom: 5px;
+                      #                 }
 
           - type: vertical-stack
+            style: |
+              ha-card {
+                border-radius: 30px;
+                margin-top: 10px;
+                padding-top: 10px;
+                margin-bottom: 0px;
+              }
             cards:
               - type: custom:vertical-stack-in-card
                 cards:
                   - type: horizontal-stack
-                    style: |
-                      ha-card {
-                        border-radius: 30px;
-                        margin-top: 10px;
-                        padding-top: 10px;
-                        margin-bottom: 10px;
-                      }
+
                     cards:
                       - type: "custom:button-card"
                         name:  Fan
-                        #layout: icon_state_name2nd
                         color_type: icon
                         size: 25%
                         entity: fan.livingroom_ceiling_fan
                         show_label: true
-                        label_template: >
+                        label: >
+                          [[[
                           return (states['input_boolean.fan_state_livingroom'].state === 'on'
                             ? 'Speed ' + states['input_select.fan_speed_livingroom'].state
                             : '');
+                          ]]]
                         tap_action:
                           action: toggle
                         double_tap_action:
@@ -266,7 +366,7 @@ cards:
                         show_last_changed: false
                         tap_action:
                           action: toggle
-                        double_tap_action:  #TODO fix this 
+                        double_tap_action:  
                           action: call-service
                           service: scene.turn_on
                           service_data:
@@ -323,6 +423,11 @@ cards:
                   - type: markdown
                     content: >
                       #### Kitchen
+                  - type: custom:slider-entity-row
+                    entity: light.kitchen_ceiling
+                    toggle: true
+                    full_row: true
+                    name: Kitchen
                   - type: horizontal-stack
                     cards:
                       - type: custom:decluttering-card
@@ -333,6 +438,11 @@ cards:
                       - type: custom:decluttering-card
                         template: nest_icon_button
                         variables:
+                          - entity: light.led_shelf
+                          - name: Shelf
+                      - type: custom:decluttering-card
+                        template: nest_icon_button
+                        variables:
                           - entity: light.lifx_kitchen1
                           - name: Stove
                       - type: custom:decluttering-card
@@ -340,3 +450,4 @@ cards:
                         variables:
                           - entity: light.lifx_kitchen2
                           - name: Fridge
+

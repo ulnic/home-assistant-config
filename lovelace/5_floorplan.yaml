@@ -12,7 +12,7 @@ cards:
         title: Latitude 33
         image: /local/floorplan4.png
         elements:
-         #Kitchen
+        #Kitchen
           - type: state-label
             entity: sensor.temperature_158_kitchen
             style:

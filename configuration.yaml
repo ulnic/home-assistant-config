@@ -95,7 +95,7 @@ ifttt: !include 1-file-config/ifttt.yaml
 input_boolean: !include 1-file-config/input_boolean.yaml
 input_select: !include 1-file-config/input_select.yaml
 wemo: !include 1-file-config/wemo.yaml
-switch: !include 1-file-config/switch.yaml
+#switch: !include 1-file-config/switch.yaml
 camera: !include 1-file-config/aarlo_camera.yaml
 aarlo: !include 1-file-config/aarlo.yaml
 #apple_tv: !include 1-file-config/apple_tv_media_player.yaml
@@ -107,6 +107,8 @@ yeelight: !include 1-file-config/light_yee.yaml
 ################################################
 ## Component Includes (DIR LIST)
 ################################################
+
+switch: !include_dir_list switch
 automation: !include_dir_list automation
 binary_sensor: !include_dir_list binary_sensor
 #device_tracker: !include_dir_list device_trackers

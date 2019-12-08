@@ -7,21 +7,21 @@ change_tv_brightness:
         media_content_id: KEY_MENU
         media_content_type: "send_key"
     - delay:
-        milliseconds: 100
+        milliseconds: 150
     - service: media_player.play_media
       data:
         entity_id: media_player.samsung_tv_remote
         media_content_id: KEY_RIGHT
         media_content_type: "send_key"
     - delay:
-        milliseconds: 100
+        milliseconds: 150
     - service: media_player.play_media
       data:
         entity_id: media_player.samsung_tv_remote
         media_content_id: KEY_DOWN
         media_content_type: "send_key"
     - delay:
-        milliseconds: 100
+        milliseconds: 150
     - service: media_player.play_media
       data:
         entity_id: media_player.samsung_tv_remote
@@ -39,14 +39,28 @@ change_tv_brightness:
         media_content_id: "{{ 'KEY_'+ DIRECTION  }}"
         media_content_type: "send_key"
     - delay:
-        milliseconds: 100
+        milliseconds: 120
     - service: media_player.play_media
       data_template:
         entity_id: media_player.samsung_tv_remote
         media_content_id: "{{ 'KEY_'+ DIRECTION  }}"
         media_content_type: "send_key"
     - delay:
-        milliseconds: 100
+        milliseconds: 120
+    - service: media_player.play_media
+      data_template:
+        entity_id: media_player.samsung_tv_remote
+        media_content_id: "{{ 'KEY_'+ DIRECTION  }}"
+        media_content_type: "send_key"
+    - delay:
+        milliseconds: 120
+    - service: media_player.play_media
+      data_template:
+        entity_id: media_player.samsung_tv_remote
+        media_content_id: "{{ 'KEY_'+ DIRECTION  }}"
+        media_content_type: "send_key"
+    - delay:
+        milliseconds: 120
     - service: media_player.play_media
       data_template:
         entity_id: media_player.samsung_tv_remote

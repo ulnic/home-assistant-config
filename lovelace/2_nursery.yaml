@@ -1,4 +1,5 @@
 id: baby_2  # Automatically created id
+background: "right/auto linear-gradient(23deg, rgba(151,177,177,1) 0%, rgba(151,177,177,1) 34%, rgba(255,255,255,1) 100%)"
 icon: mdi:baby
 title: Nursery
 cards:
@@ -9,9 +10,9 @@ cards:
       - type: custom:mini-graph-card
         entities:
           - sensor.temperature_158_nursery
-        name: Temp
+        name: Current Temp
         points_per_hour: 1
-        #height: 35
+        height: 40
         color_thresholds:
           - value: 0
             color: "#CCE5FF"
@@ -34,13 +35,54 @@ cards:
           - sensor.humidity_158_nursery
         name: Humidity
         points_per_hour: 1
+        height: 40
         line_color: blue
       - type: custom:mini-graph-card
         entities:
           - sensor.illumination_158_nursery
         name: Light
         points_per_hour: 1
+        height: 40
         line_color: yellow
+  - type: custom:mini-graph-card
+    entities:
+      - sensor.temperature_158_nursery
+    name: 2wk Temp trend
+    points_per_hour: .75
+    hours_to_show: 240
+    height: 40
+    show:
+      icon: true
+      fill: true
+    color_thresholds:
+      - value: 0
+        color: "#CCE5FF"
+      - value: 10
+        color: "#66B2FF"
+      - value: 15
+        color: "#0080FF"
+      - value: 18
+        color: "#87c087"
+      - value: 21
+        color: "#389638"
+      - value: 24
+        color: "#FF9932"
+      - value: 25
+        color: "#FF8000"
+      - value: 26
+        color: "#ff0000"
+
+  - type: custom:weather-card
+    entity: weather.dark_sky
+    details: false
+    forecast: true
+    style: |
+      ha-card {
+        background-color: rgba(0, 0, 0, 0);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
 
   - type: custom:vertical-stack-in-card
     cards:
@@ -79,6 +121,7 @@ cards:
                       entity_id: scene.nursery_full_on
                 - type: entity-button
                   entity: fan.nursery_ceiling_fan
+                  name: Fan
                   tap_action:
                     action: more-info
                   hold_action:
@@ -133,47 +176,25 @@ cards:
                 service_data:
                   entity_id: input_boolean.nursery_sleeping_override
 
-  - type: custom:mini-graph-card
-    entities:
-      - sensor.temperature_158_nursery
-    name: 2wk Temp trend
-    points_per_hour: .75
-    hours_to_show: 240
-    show:
-      icon: true
-      fill: true
-    color_thresholds:
-      - value: 0
-        color: "#CCE5FF"
-      - value: 10
-        color: "#66B2FF"
-      - value: 15
-        color: "#0080FF"
-      - value: 18
-        color: "#87c087"
-      - value: 21
-        color: "#389638"
-      - value: 24
-        color: "#FF9932"
-      - value: 25
-        color: "#FF8000"
-      - value: 26
-        color: "#ff0000"
-
-
-  - id: 2342343424j234j234242423bfgfg  # Automatically created id
-    type: entities
-    title: Doors & Motion
-    show_header_toggle: false
-    entities:
-      - entity: binary_sensor.door_sensor_158_nursery
-        name: Nursery Door
-        secondary_info: last-changed
-      - entity: binary_sensor.door_sensor_158_nursery_balcony
-        name: Nursery Balcony
-        secondary_info: last-changed
-      - entity: binary_sensor.motion_sensor_158_nursery
-        secondary_info: last-changed
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: markdown
+        content: >
+          #### Doors & Motion
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: door
+            entity: binary_sensor.door_sensor_158_nursery
+            name: Nursery Door
+          - type: "custom:button-card"
+            template: door
+            entity: binary_sensor.door_sensor_158_nursery_balcony
+            name: Nursery Balcony
+          - type: "custom:button-card"
+            template: motion
+            entity: binary_sensor.motion_sensor_158_nursery
+            name: Nursery Motion
 
   - type: picture
     image: /local/ergopouch-temperature-guide.jpg

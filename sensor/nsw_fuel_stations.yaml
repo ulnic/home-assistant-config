@@ -1,2 +1,2 @@
 platform: nsw_fuel_station
-station_id: 439
+station_id: !secret nsw_fuel_station_id

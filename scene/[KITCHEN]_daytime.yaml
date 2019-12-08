@@ -4,9 +4,13 @@ entities:
     state: on
     brightness: 55
     color_temp: 295
-    transition: 1
+    #transition: 1
   light.led:
     state: on
     brightness: 255
     color_temp: 347
-    transition: 1
+    #transition: 1
+  light.led_shelf:
+    state: on
+    brightness: 255
+    color_temp: 347

@@ -176,3 +176,5 @@ input_boolean.guest_mode:
   icon: mdi:human-greeting
 light.tv:
   icon: mdi:filmstrip
+light.led_shelf:
+  icon: mdi:track-light

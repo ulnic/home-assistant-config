@@ -8,4 +8,8 @@ entities:
     state: on
     xy_color: [0.397,0.441]
     brightness: 153
-    transition: 1
+    #transition: 1
+  light.led_shelf:
+    state: on
+    xy_color: [0.397,0.441]
+    brightness: 153

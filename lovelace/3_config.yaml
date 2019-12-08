@@ -2,8 +2,6 @@ id: config_3  # Automatically created id
 icon: mdi:settings
 title: Config
 cards:
-  #Settings
-
   - type: custom:vertical-stack-in-card
     cards:
       - type: horizontal-stack
@@ -43,6 +41,13 @@ cards:
         name: Humidity
       - entity: sensor.winefridge_current_power
         name: watt
+    style: |
+      ha-card {
+        background: url(http://www.hotelsienaborgogrondaie.com/sienahotelstuscany-2016/wp-content/uploads/2014/03/1937_vino_03-e1496502091807.jpg);
+        --primary-text-color: rgb(255,255,255);
+        --paper-listbox-background-color: black;
+        text-shadow: 1px 1px 0 #000;
+      }
 
 
   #DNS
@@ -89,21 +94,35 @@ cards:
   #Fuel
   - type: custom:vertical-stack-in-card
     cards:
-      - type: history-graph
-        title: Fuel Prices
-        hours_to_show: 360
-        entities:
-          - sensor.united_petroleum_dee_why_e10
       - type: horizontal-stack
         cards:
-          - type: entities
-            #title: Fuel Prices
-            hours_to_show: 360
-            refresh_interval: 300
-            show_header_toggle: false
-            entities:
-              - sensor.united_petroleum_dee_why_e10
-              - sensor.united_petroleum_dee_why_u91
+          - type: "custom:button-card"
+            template: fuel
+            entity: sensor.united_petroleum_dee_why_e10
+            name: E10
+            show_state: true
+          - type: "custom:button-card"
+            template: fuel
+            entity: sensor.united_petroleum_dee_why_u91
+            name: U 91
+            show_state: true
+      - type: custom:mini-graph-card
+        entities:
+          - entity: sensor.united_petroleum_dee_why_e10
+            name: E10
+          - entity: sensor.united_petroleum_dee_why_u91
+            name: U91
+        points_per_hour: .20
+        hours_to_show: 240
+        animate: true
+        show:
+          name: false
+          icon: false
+          points: false
+          legend: true
+          extrema: false
+          labels: true
+
 
   #Smart Plugs History Graph
   - id: a6e12ced5ef748a3990af1dd31d164ee  # Automatically created id
@@ -116,25 +135,34 @@ cards:
       - sensor.winefridge_current_power
 
   - type: custom:xiaomi-vacuum-map-card
-    entity: vacuum.xiaomi_vacuum
+    entity: vacuum.bibop
     map_image: '/local/vacuum_map.jpeg'
-    debug: true
+    debug: false
     calibration_points:
-      - vacuum:
-          x: 25500
+      - vacuum:    #bedroom door point
+          x: 22330
           y: 25500
         map:
-          x: 1600
-          y: 1889
-      - vacuum:
-          x: 26500
-          y: 26500
+          x: 405    
+          y: 295    
+      - vacuum:    #hallway point
+          x: 19600
+          y: 25500
         map:
-          x: 1625
-          y: 1336
-      - vacuum:
-          x: 25500
-          y: 26500
+          x: 270
+          y: 295    
+      - vacuum:   #dining point
+          x: 19600
+          y: 30300
         map:
-          x: 1625
-          y: 1600
+          x: 270
+          y: 40    
+    zones:
+      - [[20625, 24717, 21650, 22800]] 
+      - [[14340, 25054, 17926, 27791]]
+      - [[22316, 30491, 18691, 28129]]
+      - [[18691, 28129, 22236, 24904]]
+      - [[22357, 25879, 26465, 22167]]
+      - [[18933, 22955, 17080, 24679], [19014, 24604, 18087, 25804]]
+      - [[15147, 24717, 16919, 22955]]
+      - [[26707, 22505, 28560, 23817]]

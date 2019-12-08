@@ -4,12 +4,27 @@ trigger:
   platform: state
   entity_id: binary_sensor.door_sensor_158_balconydoor
   to: 'on'
+  for:
+    seconds: 20
 condition:
-  - condition: state
-    entity_id: climate.livingroom_ac
-    state: 'on'
-    for:
-      minutes: 1
+  - condition: template
+    value_template: "{% if not is_state('climate.livingroom_ac', 'off') %}true{% endif %}"
+  #- condition: state
+  #  entity_id: climate.livingroom_ac
+  #  state: 'on'
+    #for:
+    #  minutes: 1
 action:
   - service: climate.turn_off
     entity_id: climate.livingroom_ac
+  - service_template: >-
+      {% if is_state("person.nic", "home") and
+            is_state("person.ulli", "home") %}
+      notify.all_ios
+      {% elif is_state("person.ulli", "home") %}
+      notify.ullisiphone
+      {% else %}
+      notify.ios_nicsiphone7
+      {% endif %}
+    data:
+      message: "Balcony door opened, so I turned off the AC :) (Go Nature!) "
