@@ -16,7 +16,7 @@ condition:
       entity_id: device_tracker.ullisiphone
       state: 'not_home'
 action:
-  - service: vacuum.turn_on
+  - service: vacuum.start
     entity_id: vacuum.bibop
   - service: notify.ios_nicsiphone7
     data:

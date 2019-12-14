@@ -48,9 +48,17 @@ notify:
 ################################################
 
 
+
 ################################################
 ## Add integrations
 ################################################
+zwave:
+  usb_path: /zwaveusbstick
+  network_key: !secret device_zwave_network_key
+zha:
+  usb_path: /zigbeestick
+  database_path: /config/zigbee.db
+  
 weather:
   # - platform: bom
   #   station: !secret bom_station

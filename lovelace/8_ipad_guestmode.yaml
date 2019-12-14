@@ -93,6 +93,11 @@ cards:
                       - type: custom:simple-thermostat
                         entity: climate.livingroom_ac
                         step_size: 1
+                        style: |
+                          --st-font-size-title: 10px
+                          ha-card {
+                            height: 270px;
+                          }
                         sensors:
                           - entity: sensor.temperature_158_livingroom
                             name: Tempdf
