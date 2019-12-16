@@ -2,10 +2,10 @@ alias: '[HOME] Trigger Alarm'
 hide_entity: True
 trigger:
   - platform: state
-    entity_id: binary_sensor.door_sensor_158_entrance
+    entity_id: binary_sensor.lumi_door_entrance
     to: 'on'
   - platform: state
-    entity_id:  binary_sensor.door_sensor_158_balconydoor
+    entity_id:  binary_sensor.lumi_door_livingroom_balcony
     to: 'on'
   - platform: state
     entity_id: group.motion_sensors

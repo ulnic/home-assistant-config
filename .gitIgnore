@@ -43,3 +43,4 @@ zigbee.db
 pyozw.sqlite*
 OZW_Log.txt
 options.xml
+zw*.xml

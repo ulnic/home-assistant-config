@@ -3,6 +3,6 @@ name: AC
 unique_id: livingroom_ac
 device_code: 1101
 controller_data: !secret climate_broadlink_smartir_controller_data_host
-temperature_sensor: sensor.temperature_158_livingroom
-humidity_sensor: sensor.humidity_158_livingroom
-power_sensor: binary_sensor.door_sensor_158_aircon
+temperature_sensor: sensor.lumi_temperature_livingroom
+humidity_sensor: sensor.lumi_humidity_livingroom
+power_sensor: binary_sensor.lumi_door_aircon

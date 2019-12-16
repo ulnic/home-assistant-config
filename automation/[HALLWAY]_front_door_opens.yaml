@@ -1,7 +1,7 @@
 alias: '[HALLWAY] Front Door Opens'
 trigger:
   - platform: state
-    entity_id: binary_sensor.door_sensor_158_entrance
+    entity_id: binary_sensor.lumi_door_entrance
     to: 'on'
 condition:
   - condition: state

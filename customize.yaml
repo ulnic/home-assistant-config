@@ -68,26 +68,24 @@ light.led:
 binary_sensor.water_leak_sensor_158_kitchen:
   device_class: moisture
   friendly_name: Water Leak Sensor
-binary_sensor.motion_sensor_158_livingroom:
+binary_sensor.lumi_motion_livingroom:
   device_class: motion
   friendly_name: Motion Sensor livingroom
-binary_sensor.motion_sensor_158_kitchen:
+binary_sensor.lumi_motion_kitchen:
   device_class: motion
   friendly_name: Motion Sensor Kitchen
 binary_sensor.switch_158d0002132dc7:
   device_class: opening
   friendly_name: Button Ulli
-binary_sensor.switch_158_button_nursery:
-  device_class: opening
-switch.plug_158_winefridge:
+switch.lumi_winefridge:
   friendly_name: Wine Fridge
   icon: mdi:fridge-outline
-sensor.illumination_158_livingroom:
+sensor.lumi_illumination_livingroom:
   friendly_name: Illumination Livingroom
-binary_sensor.door_sensor_158_entrance:
+binary_sensor.lumi_door_entrance:
   friendly_name: Main door
   device_class: door
-binary_sensor.door_sensor_158_balconydoor:
+binary_sensor.lumi_door_livingroom_balcony:
   friendly_name: Balcony door
   device_class: door
 sensor.united_petroleum_dee_why_e10:
@@ -96,7 +94,7 @@ sensor.united_petroleum_dee_why_u91:
   icon: mdi:fuel
 binary_sensor.door_window_sensor_158d0001c1e72c:
   device_class: door
-sensor.temperature_158_livingroom_temp:
+sensor.lumi_temperature_livingroom:
   friendly_name: Livingroom Temp
 automation.winefridge_off_at_night:
   icon: mdi:wine
@@ -139,7 +137,7 @@ light.bedroom_ceiling:
   icon: mdi:ceiling-light
 light.nursery_ceiling:
   icon: mdi:ceiling-light
-binary_sensor.door_sensor_158_laundry:
+binary_sensor.lumi_door_laundry:
   device_class: door
 light.lifx_laundry:
   icon: mdi:ceiling-light
@@ -147,11 +145,11 @@ switch.xmas:
   icon: mdi:pine-tree
 input_boolean.winefridge_off_night:
   icon: mdi:fridge
-binary_sensor.door_sensor_158_nursery_balcony:
+binary_sensor.lumi_door_nursery_balcony:
   device_class: door
-binary_sensor.door_sensor_158_hallway_cupboard:
+binary_sensor.lumi_door_hallway_cupboard:
   device_class: door
-binary_sensor.door_sensor_158_nursery:
+binary_sensor.lumi_door_nursery:
   device_class: door
 light.master_switch:
   icon: mdi:light-switch

@@ -117,9 +117,9 @@ cards:
                         entity: climate.livingroom_ac
                         step_size: 1
                         sensors:
-                          - entity: sensor.temperature_158_livingroom
+                          - entity: sensor.lumi_temperature_livingroom
                             name: Temp
-                          #- entity: sensor.humidity_158_livingroom
+                          #- entity: sensor.lumi_humidity_livingroom
                           #  name: humidity
                           #- attribute: min_temp
                           #  name: Min temp
@@ -136,34 +136,18 @@ cards:
 
                       - type: horizontal-stack
                         cards:
-                          # - type: vertical-stack
-                          #   cards:
-                          #     - type: thermostat
-                          #       entity: climate.livingroom_ac
-                          #       style: |
-                          #         ha-card {
-                          #           margin-right: 10px;
-                          #           font-family: 'Open Sans', sans-serif;
-                          #         }
-                          #         .secondary {
-                          #           font-size: 85%;
-                          #         }
-                          #         mwc-button {
-                          #           display: none;
-                          #         }
-
                           - type: vertical-stack
                             cards:
                               - type: horizontal-stack
                                 cards:
                                 - type: custom:mini-graph-card
                                   entities:
-                                    - sensor.temperature_158_livingroom
+                                    - sensor.lumi_temperature_livingroom
                                   name: Livingroom
                                   show:
                                     icon: false
                                     fill: false
-                                  #height: 35
+                                  height: 35
                                   color_thresholds:
                                     - value: 0
                                       color: "#CCE5FF"
@@ -188,9 +172,9 @@ cards:
                                     }
                                 - type: custom:mini-graph-card
                                   entities:
-                                    - sensor.temperature_158_kitchen
+                                    - sensor.lumi_temperature_kitchen
                                   name: Kitchen
-                                  #height: 35
+                                  height: 35
                                   show:
                                     fill: false
                                     icon: false
@@ -224,7 +208,7 @@ cards:
                                       icon: false
                                     height: 35
                                     entities:
-                                      - sensor.temperature_158_bedroom
+                                      - sensor.lumi_temperature_bedroom
                                     name: Bedroom
                                     color_thresholds:
                                       - value: 0
@@ -252,9 +236,9 @@ cards:
                                     show:
                                       fill: false
                                       icon: false
-                                    #height: 35
+                                    height: 35
                                     entities:
-                                      - sensor.temperature_158_balcony
+                                      - sensor.lumi_temperature_balcony
                                     name: Balcony
                                     color_thresholds:
                                       - value: 0
@@ -542,17 +526,17 @@ cards:
                     entities:
                       - switch.espresso
                       - switch.dishwasher
-                      - binary_sensor.motion_sensor_158_nursery
-                      - binary_sensor.motion_sensor_158_livingroom
-                      - binary_sensor.motion_sensor_158_laundry
-                      - binary_sensor.motion_sensor_158_kitchen
-                      - binary_sensor.motion_sensor_158_bedroom
-                      - binary_sensor.door_sensor_158_nursery_balcony
-                      - binary_sensor.door_sensor_158_nursery
-                      - binary_sensor.door_sensor_158_laundry
-                      - binary_sensor.door_sensor_158_hallway_cupboard
-                      - binary_sensor.door_sensor_158_entrance
-                      - binary_sensor.door_sensor_158_balconydoor
+                      - binary_sensor.lumi_motion_nursery
+                      - binary_sensor.lumi_motion_livingroom
+                      - binary_sensor.lumi_motion_laundry
+                      - binary_sensor.lumi_motion_kitchen
+                      - binary_sensor.lumi_motion_bedroom
+                      - binary_sensor.lumi_door_nursery_balcony
+                      - binary_sensor.lumi_door_nursery
+                      - binary_sensor.lumi_door_laundry
+                      - binary_sensor.lumi_door_hallway_cupboard
+                      - binary_sensor.lumi_door_entrance
+                      - binary_sensor.lumi_door_livingroom_balcony
                       - climate.livingroom_ac
                       # - entity: sensor.living_room_axis_movement_2
                       #   name: Living Room 2
@@ -564,3 +548,4 @@ cards:
                         overflow: hidden;
                         font-family: 'Open Sans', sans-serif;
                       }
+              

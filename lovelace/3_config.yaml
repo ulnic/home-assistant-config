@@ -33,13 +33,13 @@ cards:
     entities:
       - entity: input_boolean.winefridge_off_night
         name: Auto Off?
-      - entity: switch.plug_158_winefridge
+      - entity: switch.lumi_winefridge
         name: WineFridge
-      - entity: sensor.temperature_158_winefridge
+      - entity: sensor.lumi_temperature_winefridge
         name: Temperature
-      - entity: sensor.humidity_158_winefridge
+      - entity: sensor.lumi_humidity_winefridge
         name: Humidity
-      - entity: sensor.winefridge_current_power
+      - entity: sensor.lumi_winefridge_current_power
         name: watt
     style: |
       ha-card {
@@ -132,7 +132,7 @@ cards:
     refresh_interval: 5
     entities:
       - sensor.espresso_current_power
-      - sensor.winefridge_current_power
+      - sensor.lumi_winefridge_current_power
 
   - type: custom:xiaomi-vacuum-map-card
     entity: vacuum.bibop

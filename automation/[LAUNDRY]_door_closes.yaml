@@ -1,7 +1,7 @@
 alias: '[LAUNDRY] door closes'
 trigger:
   platform: state
-  entity_id: binary_sensor.door_sensor_158_laundry
+  entity_id: binary_sensor.lumi_door_laundry
   to: 'off'
 action:
   - service: light.turn_off

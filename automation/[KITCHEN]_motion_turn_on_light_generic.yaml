@@ -2,7 +2,7 @@ alias: '[KITCHEN] motion - turn ON light'
 initial_state: True
 trigger:
   platform: state
-  entity_id: binary_sensor.motion_sensor_158_kitchen
+  entity_id: binary_sensor.lumi_motion_kitchen
   to: 'on'
 condition:
   condition: and
@@ -20,9 +20,9 @@ action:
   service: scene.turn_on
   data_template: #TODO: Update below sometime
     entity_id: >
-      {% if   states('sensor.illumination_158_kitchen') | int > 800 %}
+      {% if   states('sensor.lumi_illumination_kitchen') | int > 800 %}
         scene.kitchen_daytime_light
-      {% elif states('sensor.illumination_158_kitchen') | int > 20  %}
+      {% elif states('sensor.lumi_illumination_kitchen') | int > 20  %}
         scene.kitchen_led_morning_light
       {% else %}
         scene.kitchen_led_night_light

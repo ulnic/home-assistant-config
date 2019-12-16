@@ -9,7 +9,7 @@ gr3:
   name: Smart Plugs
   entities:
     - sensor.espresso_current_power
-    - sensor.winefridge_current_power
+    - sensor.lumi_winefridge_current_power
   hours_to_show: 24
   refresh: 5
 gr4:

@@ -1,10 +1,10 @@
 alias: '[LAUNDRY] door opens'
 trigger:
   - platform: state
-    entity_id: binary_sensor.door_sensor_158_laundry
+    entity_id: binary_sensor.lumi_door_laundry
     to: 'on'
   - platform: state
-    entity_id: binary_sensor.motion_sensor_158_laundry
+    entity_id: binary_sensor.lumi_motion_laundry
     to: 'on'
 action:
   - service: light.turn_on

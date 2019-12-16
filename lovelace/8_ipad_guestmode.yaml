@@ -99,7 +99,7 @@ cards:
                             height: 270px;
                           }
                         sensors:
-                          - entity: sensor.temperature_158_livingroom
+                          - entity: sensor.lumi_temperature_livingroom
                             name: Tempdf
                         control:
                           hvac:
@@ -111,7 +111,7 @@ cards:
                               icon: mdi:whitewalker
                       - type: custom:mini-graph-card
                         entities:
-                          - sensor.temperature_158_nursery
+                          - sensor.lumi_temperature_nursery
                         name: Nursery
                         show:
                           icon: false
@@ -142,7 +142,7 @@ cards:
                       
                       - type: custom:mini-graph-card
                         entities:
-                          - sensor.temperature_158_nursery
+                          - sensor.lumi_temperature_nursery
                         name: Nursery
                         show:
                           icon: false
@@ -187,7 +187,7 @@ cards:
                       #             entity: climate.livingroom_ac
                       #             step_size: 1
                       #             sensors:
-                      #               - entity: sensor.temperature_158_livingroom
+                      #               - entity: sensor.lumi_temperature_livingroom
                       #                 name: Tempdf
                       #             control:
                       #               hvac:
@@ -207,7 +207,7 @@ cards:
                       #           #     }
                       #           - type: custom:mini-graph-card
                       #             entities:
-                      #               - sensor.temperature_158_nursery
+                      #               - sensor.lumi_temperature_nursery
                       #             name: Nursery
                       #             show:
                       #               icon: false
@@ -240,7 +240,7 @@ cards:
                       #           cards:
                       #             - type: custom:mini-graph-card
                       #               entities:
-                      #                 - sensor.temperature_158_livingroom
+                      #                 - sensor.lumi_temperature_livingroom
                       #               name: Livingroom
                       #               height: 25
                       #               show:
@@ -275,7 +275,7 @@ cards:
                       #                 icon: false
                       #               height: 25
                       #               entities:
-                      #                 - sensor.temperature_158_balcony
+                      #                 - sensor.lumi_temperature_balcony
                       #               name: Balcony
                       #               color_thresholds:
                       #                 - value: 0

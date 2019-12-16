@@ -14,21 +14,21 @@ cards:
         elements:
         #Kitchen
           - type: state-label
-            entity: sensor.temperature_158_kitchen
+            entity: sensor.lumi_temperature_kitchen
             style:
               top: 70%
               left: 52.5%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.humidity_158_kitchen
+            entity: sensor.lumi_humidity_kitchen
             style:
               top: 73%
               left: 52.5%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.illumination_158_kitchen
+            entity: sensor.lumi_illumination_kitchen
             style:
               top: 76%
               left: 52.5%
@@ -84,7 +84,7 @@ cards:
               left: 37%
           - type: state-icon
             tap_action: toggle
-            entity: binary_sensor.door_sensor_158_balconydoor
+            entity: binary_sensor.lumi_door_livingroom_balcony
             style:
               top: 10%
               left: 31%
@@ -94,28 +94,28 @@ cards:
               top: 38%
               left: 42.5%
           - type: state-label
-            entity: sensor.temperature_158_livingroom
+            entity: sensor.lumi_temperature_livingroom
             style:
               top: 7%
               left: 44%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.humidity_158_livingroom
+            entity: sensor.lumi_humidity_livingroom
             style:
               top: 10%
               left: 44%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.illumination_158_livingroom
+            entity: sensor.lumi_illumination_livingroom
             style:
               top: 13%
               left: 44%
               color: black
               font-weight: normal
 
-         #Bedroom
+          #Bedroom
           - type: state-icon
             tap_action: toggle
             entity: light.bedroom
@@ -146,21 +146,21 @@ cards:
               top: 54%
               left: 78%
           - type: state-label
-            entity: sensor.temperature_158_bedroom
+            entity: sensor.lumi_temperature_bedroom
             style:
               top: 60%
               left: 71%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.humidity_158_bedroom
+            entity: sensor.lumi_humidity_bedroom
             style:
               top: 63%
               left: 71%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.illumination_158_bedroom
+            entity: sensor.lumi_illumination_bedroom
             style:
               top: 66%
               left: 71%
@@ -172,36 +172,36 @@ cards:
               top: 75%
               left: 71%
 
-         # Nursery
+          # Nursery
           - type: state-icon
             tap_action: toggle
-            entity: binary_sensor.door_sensor_158_nursery_balcony
+            entity: binary_sensor.lumi_door_nursery_balcony
             style:
               top: 37%
               left: 22%
           - type: state-label
-            entity: sensor.temperature_158_nursery
+            entity: sensor.lumi_temperature_nursery
             style:
               top: 40%
               left: 15%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.humidity_158_nursery
+            entity: sensor.lumi_humidity_nursery
             style:
               top: 43%
               left: 15%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.illumination_158_nursery
+            entity: sensor.lumi_illumination_nursery
             style:
               top: 46%
               left: 15%
               color: black
               font-weight: normal
           - type: state-icon
-            entity: binary_sensor.door_sensor_158_nursery
+            entity: binary_sensor.lumi_door_nursery
             style:
               top: 63%
               left: 25%
@@ -227,13 +227,13 @@ cards:
          # Hallway
           - type: state-icon
             tap_action: toggle
-            entity: binary_sensor.door_sensor_158_entrance
+            entity: binary_sensor.lumi_door_entrance
             style:
               top: 88%
               left: 28.5%
           - type: state-icon
             tap_action: toggle
-            entity: binary_sensor.door_sensor_158_hallway_cupboard
+            entity: binary_sensor.lumi_door_hallway_cupboard
             style:
               top: 86%
               left: 24%
@@ -247,21 +247,21 @@ cards:
 
          #Balcony
           - type: state-label
-            entity: sensor.temperature_158_balcony
+            entity: sensor.lumi_temperature_balcony
             style:
               top: 8%
               left: 6%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.humidity_158_balcony
+            entity: sensor.lumi_humidity_balcony
             style:
               top: 11%
               left: 6%
               color: black
               font-weight: normal
           - type: state-label
-            entity: sensor.pressure_158_balcony
+            entity: sensor.lumi_pressure_balcony
             style:
               top: 14%
               left: 6%
@@ -275,19 +275,19 @@ cards:
 
           # Laundry
           - type: state-icon
-            entity: binary_sensor.motion_sensor_158_laundry
+            entity: binary_sensor.lumi_motion_laundry
             style:
               top: 72%
               left: 36%
           - type: state-label
-            entity: sensor.illumination_158_laundry
+            entity: sensor.lumi_illumination_laundry
             style:
               top: 76%
               left: 36%
               color: black
               font-weight: normal
           - type: state-icon
-            entity: binary_sensor.door_sensor_158_laundry
+            entity: binary_sensor.lumi_door_laundry
             style:
               top: 80%
               left: 34%

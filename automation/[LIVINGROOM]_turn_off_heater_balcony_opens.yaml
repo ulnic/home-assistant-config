@@ -2,7 +2,7 @@ alias: '[LIVINGROOM] turn off heater if balcony open'
 initial_state: True
 trigger:
   platform: state
-  entity_id: binary_sensor.door_sensor_158_balconydoor
+  entity_id: binary_sensor.lumi_door_livingroom_balcony
   to: 'on'
   for:
     seconds: 20

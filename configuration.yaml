@@ -109,7 +109,7 @@ aarlo: !include 1-file-config/aarlo.yaml
 #apple_tv: !include 1-file-config/apple_tv_media_player.yaml
 proximity: !include 1-file-config/proximity.yaml
 vacuum: !include 1-file-config/vacuum.yaml
-hue: !include 1-file-config/light_hue.yaml
+#hue: !include 1-file-config/light_hue.yaml
 yeelight: !include 1-file-config/light_yee.yaml
 
 ################################################

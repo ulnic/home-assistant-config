@@ -97,18 +97,18 @@ cards:
             cards:
               - type: custom:mini-graph-card
                 entities:
-                  - sensor.temperature_158_livingroom
+                  - sensor.lumi_temperature_livingroom
                 name: Livingroom Temp
                 points_per_hour: 1
               - type: custom:mini-graph-card
                 entities:
-                  - sensor.humidity_158_livingroom
+                  - sensor.lumi_humidity_livingroom
                 name: Livingroom Humidity
                 line_color: blue
                 points_per_hour: 1
               - type: custom:mini-graph-card
                 entities:
-                  - sensor.illumination_158_livingroom
+                  - sensor.lumi_illumination_livingroom
                 name: Livingroom Light
                 line_color: yellow
                 points_per_hour: 1
@@ -186,18 +186,18 @@ cards:
         cards:
           - type: custom:mini-graph-card
             entities:
-              - sensor.temperature_158_kitchen
+              - sensor.lumi_temperature_kitchen
             name: Kitchen Temp
             points_per_hour: 1
           - type: custom:mini-graph-card
             entities:
-              - sensor.humidity_158_kitchen
+              - sensor.lumi_humidity_kitchen
             name: Kitchen Humidity
             line_color: blue
             points_per_hour: 1
           - type: custom:mini-graph-card
             entities:
-              - sensor.illumination_158_kitchen
+              - sensor.lumi_illumination_kitchen
             name: Kitchen Light
             line_color: yellow
             points_per_hour: 1
@@ -275,18 +275,18 @@ cards:
         cards:
           - type: custom:mini-graph-card
             entities:
-              - sensor.temperature_158_bedroom
+              - sensor.lumi_temperature_bedroom
             name: Bedroom Temp
             points_per_hour: 1
           - type: custom:mini-graph-card
             entities:
-              - sensor.humidity_158_bedroom
+              - sensor.lumi_humidity_bedroom
             name: Humidity
             line_color: blue
             points_per_hour: 1
           - type: custom:mini-graph-card
             entities:
-              - sensor.illumination_158_bedroom
+              - sensor.lumi_illumination_bedroom
             name: Light
             line_color: yellow
             points_per_hour: 1
@@ -314,18 +314,18 @@ cards:
             cards:
               - type: custom:mini-graph-card
                 entities:
-                  - sensor.temperature_158_balcony
+                  - sensor.lumi_temperature_balcony
                 name: Temp
                 points_per_hour: 1
               - type: custom:mini-graph-card
                 entities:
-                  - sensor.humidity_158_balcony
+                  - sensor.lumi_humidity_balcony
                 name: Humidity
                 line_color: blue
                 points_per_hour: 1
               - type: custom:mini-graph-card
                 entities:
-                  - sensor.pressure_158_balcony
+                  - sensor.lumi_pressure_balcony
                 name: Pressure
                 line_color: yellow
                 points_per_hour: 1
@@ -347,36 +347,36 @@ cards:
       - type: horizontal-stack
         cards:
           - type: entity-button
-            entity: binary_sensor.motion_sensor_158_livingroom
+            entity: binary_sensor.lumi_motion_livingroom
             name: Livingroom
           - type: entity-button
-            entity: binary_sensor.motion_sensor_158_kitchen
+            entity: binary_sensor.lumi_motion_kitchen
             name: Kitchen
           - type: entity-button
-            entity: binary_sensor.motion_sensor_158_bedroom
+            entity: binary_sensor.lumi_motion_bedroom
             name: Bedroom
           - type: entity-button
-            entity: binary_sensor.motion_sensor_158_nursery
+            entity: binary_sensor.lumi_motion_nursery
             name: Nursery
           - type: entity-button
-            entity: binary_sensor.motion_sensor_158_laundry
+            entity: binary_sensor.lumi_motion_laundry
             name: Laundry
       - type: divider
         name: Doors
       - type: horizontal-stack
         cards:
           - type: entity-button
-            entity: binary_sensor.door_sensor_158_nursery
+            entity: binary_sensor.lumi_door_nursery
             name: Nursery Door
           - type: entity-button
-            entity: binary_sensor.door_sensor_158_nursery_balcony
+            entity: binary_sensor.lumi_door_nursery_balcony
             name: Nursery Balcony
           - type: entity-button
-            entity: binary_sensor.door_sensor_158_balconydoor
+            entity: binary_sensor.lumi_door_livingroom_balcony
             name: Balcony L'room
           - type: entity-button
-            entity: binary_sensor.door_sensor_158_entrance
+            entity: binary_sensor.lumi_door_entrance
             name: Entrance
           - type: entity-button
-            entity: binary_sensor.door_sensor_158_laundry
+            entity: binary_sensor.lumi_door_laundry
             name: Laundry

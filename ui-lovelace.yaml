@@ -220,6 +220,18 @@ button_card_templates:
         styles:
           icon:
             - filter: opacity(50%)
+  
+  occupancy:
+    template: sensor
+    state:
+      - value: 'on'
+        icon: mdi:home-map-marker
+      - operator: 'default'
+        icon: mdi:home-outline
+        styles:
+          icon:
+            - filter: opacity(50%) 
+
   fuel:
     template: sensor
     show_state: true
