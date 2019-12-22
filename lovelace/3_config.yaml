@@ -8,7 +8,7 @@ cards:
         cards:
           - type: glance
             title: Settings
-            column_width: 33%
+            columns: 3
             entities:
               - entity: input_boolean.on_holiday
                 name: Holiday
@@ -16,9 +16,11 @@ cards:
                 name: Guests?
               - entity: input_boolean.tv_movie_lights
                 name: Movie lights
+      - type: horizontal-stack
+        cards:
           - type: glance
             title: Misc
-            column_width: 50%
+            columns: 2
             entities:
               - entity: binary_sensor.workday_sensor
                 name: Workday
@@ -29,7 +31,7 @@ cards:
   - id: 23987927924khjh343494937493749  # Automatically created id
     type: glance
     title: Wine Fridge
-    column_width: 20%
+    columns: 5
     entities:
       - entity: input_boolean.winefridge_off_night
         name: Auto Off?
