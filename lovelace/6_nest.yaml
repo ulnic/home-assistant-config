@@ -63,8 +63,9 @@ cards:
                       - entity: person.ulli
                       - entity_picture: /local/ulli_ha_sq.png
               - type: markdown
-                content: >
-                    # [[ sensor.time.state ]]
+                content: |
+                    # {{now() }}
+                    # [[ sensor.time ]]
 
                     ### [[ sensor.date.state ]]
                 style: |
@@ -330,29 +331,29 @@ cards:
                             styles:
                               state:
                                 - color: green
-                      - type: "custom:button-card"
-                        color_type: card
-                        entity: switch.dishwasher
-                        show_label: true
-                        size: 25%
-                        show_last_changed: true
-                        tap_action:
-                          action: ''
-                        double_tap_action:
-                          action: toggle
-                        hold_action:
-                          action: more-info
-                        styles:
-                          card:
-                            - height: 90px
-                          label:
-                            - font-size: 11px
-                            - padding: 0px 5px
-                        state:
-                          - value: 'on'
-                            styles:
-                              state:
-                                - color: red
+                      # - type: "custom:button-card"
+                      #   color_type: card
+                      #   entity: switch.dishwasher
+                      #   show_label: true
+                      #   size: 25%
+                      #   show_last_changed: true
+                      #   tap_action:
+                      #     action: ''
+                      #   double_tap_action:
+                      #     action: toggle
+                      #   hold_action:
+                      #     action: more-info
+                      #   styles:
+                      #     card:
+                      #       - height: 90px
+                      #     label:
+                      #       - font-size: 11px
+                      #       - padding: 0px 5px
+                      #   state:
+                      #     - value: 'on'
+                      #       styles:
+                      #         state:
+                      #           - color: red
 
                       - type: "custom:button-card"
                         color_type: icon
@@ -525,11 +526,10 @@ cards:
                       - calendar.family
                     entities:
                       - switch.espresso
-                      - switch.dishwasher
                       - binary_sensor.lumi_motion_nursery
                       - binary_sensor.lumi_motion_livingroom
                       - binary_sensor.lumi_motion_laundry
-                      - binary_sensor.lumi_motion_kitchen
+                      - binary_sensor.motion_sensor_158_kitchen
                       - binary_sensor.lumi_motion_bedroom
                       - binary_sensor.lumi_door_nursery_balcony
                       - binary_sensor.lumi_door_nursery

@@ -42,43 +42,35 @@ resources:
     type: module
   - url: /community_plugin/lovelace-xiaomi-vacuum-map-card/xiaomi-vacuum-map-card.js
     type: module
-  - url: /community_plugin/compact-custom-header/compact-custom-header.js
+  #- url: /community_plugin/compact-custom-header/compact-custom-header.js
+  #  type: module
+  - url: /community_plugin/custom-header/custom-header.js
     type: module
   - url: /community_plugin/lovelace-hass-aarlo/hass-aarlo.js
     type: module
 
 
-cch:
-  options: clock
-  voice: hide
-  hide_help: true
+custom_header:
+  compact_mode: true
   hide_config: true
+  hide_raw: true
+  hide_help: true
+  voice_hide: true
+  menu_hide: true
+  button_text:
+    options: '{{ time }}'
   exceptions:
-    - conditions:
-        user_agent: iPhone
-      config:
-        #hide_tabs: 0
-        menu: hide
-    - conditions:
-        user: Nicolai
-        user_agent: iPad
-      config:
-        #hide_tabs: 0
-        menu: hide
-        kiosk_mode: true
-        hide_unused: true
-        hide_tabs: 0,1,2,3,4,5
-    - conditions:
-        user_agent: Macintosh[DELETETHISPART]
-      config:
-        hide_tabs: 0
-  #   - conditions:
-  #       user: Nicolai
-  #       user_agent: iPad
-  #     config:
-  #       kiosk_mode: true
-  #       hide_unused: true
-  #       hide_tabs: 0,1,2,3,4,5,6
+  - conditions:
+      user: Nicolai
+      user_agent: iPad
+    config:
+      kiosk_mode: true
+      hide_unused: true
+      hide_tabs: 0,1,2,3,4,5
+  - conditions:
+      user_agent: Macintosh[DELETETHISPART]
+    config:
+      hide_tabs: 0
 
 
 decluttering_templates:
@@ -236,6 +228,19 @@ button_card_templates:
     template: sensor
     show_state: true
     show_last_changed: false
+
+  nzb:
+    template: sensor
+    show_state: false
+    show_last_changed: false
+    state:
+      - value: 'True'
+        icon: mdi:download-off
+      - operator: 'default'
+        icon: mdi:download
+        styles:
+          icon:
+            - filter: opacity(50%) 
 
 
 

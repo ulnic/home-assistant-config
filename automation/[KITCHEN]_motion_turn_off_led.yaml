@@ -2,7 +2,7 @@ alias: '[KITCHEN] motion - turn OFF if nobody around'
 initial_state: True
 trigger:
   platform: state
-  entity_id: binary_sensor.lumi_motion_kitchen
+  entity_id: binary_sensor.motion_sensor_158_kitchen
   to: 'off'
   for:
     minutes: 2

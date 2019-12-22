@@ -71,7 +71,7 @@ binary_sensor.water_leak_sensor_158_kitchen:
 binary_sensor.lumi_motion_livingroom:
   device_class: motion
   friendly_name: Motion Sensor livingroom
-binary_sensor.lumi_motion_kitchen:
+binary_sensor.motion_sensor_158_kitchen:
   device_class: motion
   friendly_name: Motion Sensor Kitchen
 binary_sensor.switch_158d0002132dc7:
@@ -168,8 +168,6 @@ input_boolean.nursery_sleeping_override:
       95, 140)'';
 
       '
-switch.dishwasher:
-  icon: mdi:dishwasher
 input_boolean.guest_mode:
   icon: mdi:human-greeting
 light.tv:

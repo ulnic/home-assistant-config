@@ -140,29 +140,29 @@ cards:
                   state:
                     - color: green
 
-          - type: "custom:button-card"
-            color_type: card
-            entity: switch.dishwasher
-            show_label: true
-            show_last_changed: true
-            size: 25%
-            tap_action:
-              action: ''
-            double_tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-            styles:
-              card:
-                - height: 90px
-              label:
-                - font-size: 12px
-                - padding: 0px 5px
-            state:
-              - value: 'on'
-                styles:
-                  state:
-                    - color: red
+          # - type: "custom:button-card"
+          #   color_type: card
+          #   entity: switch.dishwasher
+          #   show_label: true
+          #   show_last_changed: true
+          #   size: 25%
+          #   tap_action:
+          #     action: ''
+          #   double_tap_action:
+          #     action: toggle
+          #   hold_action:
+          #     action: more-info
+          #   styles:
+          #     card:
+          #       - height: 90px
+          #     label:
+          #       - font-size: 12px
+          #       - padding: 0px 5px
+          #   state:
+          #     - value: 'on'
+          #       styles:
+          #         state:
+          #           - color: red
 
       - type: custom:fold-entity-row
         head:
@@ -350,7 +350,7 @@ cards:
             entity: binary_sensor.lumi_motion_livingroom
             name: Livingroom
           - type: entity-button
-            entity: binary_sensor.lumi_motion_kitchen
+            entity: binary_sensor.motion_sensor_158_kitchen
             name: Kitchen
           - type: entity-button
             entity: binary_sensor.lumi_motion_bedroom

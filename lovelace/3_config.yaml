@@ -72,12 +72,49 @@ cards:
               - sensor.speedtest_upload
               - sensor.speedtest_ping
       - type: history-graph
-        #title: Internet Speed
         hours_to_show: 240
         refresh_interval: 240
         entities:
           - sensor.speedtest_download
           - sensor.speedtest_upload
+
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: markdown
+        content: >
+          #### NZB
+      - type: horizontal-stack
+        cards:
+          - type: glance
+            column_width: 33%
+            entities:
+              - entity: sensor.nzbget_speed
+                name: Current Speed
+              - entity: sensor.nzbget_queue_size
+                name: Queue
+          - type: "custom:button-card"
+            template: sensor
+            entity: sensor.nzbget_download_paused
+            name: Toggle 
+            show_state: false
+            show_last_changed: false
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.nzb_toggle
+            state:
+              - value: 'True'
+                icon: mdi:download-off
+                label: 'Paused'
+              - operator: 'default'
+                icon: mdi:download
+                label: 'Downloading'
+                styles:
+                  icon:
+                    - filter: opacity(50%) 
+
+          
 
   #Proximity
   - id: cb32c2a37a334ebcab2000c212014f11  # Automatically created id
@@ -100,12 +137,10 @@ cards:
             template: fuel
             entity: sensor.united_petroleum_dee_why_e10
             name: E10
-            show_state: true
           - type: "custom:button-card"
             template: fuel
             entity: sensor.united_petroleum_dee_why_u91
             name: U 91
-            show_state: true
       - type: custom:mini-graph-card
         entities:
           - entity: sensor.united_petroleum_dee_why_e10

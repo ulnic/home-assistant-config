@@ -10,6 +10,10 @@ trigger:
     event_data:
       entity_id: binary_sensor.switch_158_button_nic
       click_type: single
+condition:
+  - condition: time
+    after: '23:30:00'
+    before: '05:00:00'
 action:
   service: light.toggle
   data:

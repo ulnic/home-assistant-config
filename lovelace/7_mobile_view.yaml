@@ -109,29 +109,6 @@ cards:
                           state:
                             - color: green
 
-                  - type: "custom:button-card"
-                    color_type: card
-                    entity: switch.dishwasher
-                    show_label: true
-                    show_last_changed: true
-                    tap_action:
-                      action: none
-                    double_tap_action:
-                      action: toggle
-                    hold_action:
-                      action: more-info
-                    styles:
-                      card:
-                        - height: 90px
-                      label:
-                        - font-size: 11px
-                        - padding: 0px 5px
-                    state:
-                      - value: 'on'
-                        styles:
-                          state:
-                            - color: red
-
 
       - type: custom:vertical-stack-in-card
         cards:
@@ -144,7 +121,6 @@ cards:
                 margin-bottom: 10px;
               }
             cards:
-
               - type: "custom:button-card"
                 color_type: icon
                 entity: switch.media_unit
@@ -204,7 +180,7 @@ cards:
               - type: markdown
                 content: >
                   #### Living & Dining room
-                cards:
+                #cards:
               - type: custom:fold-entity-row
                 head:
                   type: custom:slider-entity-row
@@ -574,7 +550,7 @@ cards:
                 name: Livingroom
               - type: "custom:button-card"
                 template: motion
-                entity: binary_sensor.lumi_motion_kitchen
+                entity: binary_sensor.motion_sensor_158_kitchen
                 name: Kitchen
               - type: "custom:button-card"
                 template: motion

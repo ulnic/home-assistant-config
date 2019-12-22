@@ -8,5 +8,5 @@ fan_increase_speed:
           {% if states('input_select.fan_speed_'+ room ) == '6' %}
             1
           {% else %}
-             {{ states('input_select.fan_speed_'+ room )|int +1 }}
+            {{ states('input_select.fan_speed_'+ room )|int +1 }}
           {% endif %}
