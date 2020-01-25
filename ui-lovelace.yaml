@@ -48,6 +48,8 @@ resources:
     type: module
   - url: /community_plugin/lovelace-hass-aarlo/hass-aarlo.js
     type: module
+  - url: /community_plugin/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
+    type: module
 
 
 custom_header:

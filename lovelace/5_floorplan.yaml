@@ -224,7 +224,7 @@ cards:
             style:
               top: 52%
               left: 14%
-         # Hallway
+          # Hallway
           - type: state-icon
             tap_action: toggle
             entity: binary_sensor.lumi_door_entrance
@@ -233,7 +233,7 @@ cards:
               left: 28.5%
           - type: state-icon
             tap_action: toggle
-            entity: binary_sensor.lumi_door_hallway_cupboard
+            entity: binary_sensor.door_sensor_158_hallway_cupboard
             style:
               top: 86%
               left: 24%
@@ -245,7 +245,7 @@ cards:
               left: 29%
 
 
-         #Balcony
+          #Balcony
           - type: state-label
             entity: sensor.lumi_temperature_balcony
             style:
@@ -296,16 +296,16 @@ cards:
             style:
               top: 80%
               left: 37%
-         #General for HOME
+          #General for HOME
           - type: service-button
             title: Lights Off
             style:
               top: 10%
               left: 80%
               padding: 0px
-            service: homeassistant.turn_off
+            service: light.turn_off
             service_data:
-              entity_id: group.all_lights
+              entity_id: all
           - type: icon
             icon: mdi:home
             tap_action: navigate

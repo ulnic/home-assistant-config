@@ -1,0 +1,4 @@
+platform: tod
+name: Morning
+after: '06:00'
+before: '10:00'

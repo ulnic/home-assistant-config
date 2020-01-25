@@ -20,10 +20,10 @@ action:
   service: scene.turn_on
   data_template: #TODO: Update below sometime
     entity_id: >
-      {% if   states('sensor.lumi_illumination_kitchen') | int > 800 %}
-        scene.kitchen_daytime_light
-      {% elif states('sensor.lumi_illumination_kitchen') | int > 20  %}
+      {% if is_state('binary_sensor.morning', 'on') %}
         scene.kitchen_led_morning_light
+      {% elif is_state('binary_sensor.evening', 'on') %}   
+        scene.kitchen_daytime_light
       {% else %}
         scene.kitchen_led_night_light
       {% endif %}

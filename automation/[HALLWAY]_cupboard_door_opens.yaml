@@ -1,7 +1,7 @@
 alias: '[HALLWAY] Cupboard door OPEN'
 trigger:
   - platform: state
-    entity_id: binary_sensor.lumi_door_hallway_cupboard
+    entity_id: binary_sensor.door_sensor_158_hallway_cupboard
     to: 'on'
 action:
   - service: light.turn_on

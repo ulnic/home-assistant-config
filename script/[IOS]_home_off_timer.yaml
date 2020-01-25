@@ -16,10 +16,8 @@ turn_home_off_timer:
       entity_id: group.livingroom
     - service: climate.turn_off
       entity_id: climate.livingroom_ac
-    - service: homeassistant.turn_off
-      entity_id: group.all_lights
     - service: light.turn_off
-      entity_id: group.all_lights
+      entity_id: all
     - service: notify.ios_nicsiphone7
       data:
         message: "Nobody home, so turned it off!"

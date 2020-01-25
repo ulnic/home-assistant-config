@@ -7,8 +7,13 @@ trigger:
   for:
     minutes: 20
 condition:
-  - condition: template
-    value_template: "{{ not is_state('climate.livingroom_ac', 'off') }}"
+  condition: and
+  conditions:
+    - condition: time
+      after: '05:00:00'
+      before: '21:00:00'
+    - condition: template
+      value_template: "{{ not is_state('climate.livingroom_ac', 'off') }}"
 action:
   - service: climate.turn_off
     entity_id: climate.livingroom_ac

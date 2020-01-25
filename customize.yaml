@@ -147,7 +147,7 @@ input_boolean.winefridge_off_night:
   icon: mdi:fridge
 binary_sensor.lumi_door_nursery_balcony:
   device_class: door
-binary_sensor.lumi_door_hallway_cupboard:
+binary_sensor.door_sensor_158_hallway_cupboard:
   device_class: door
 binary_sensor.lumi_door_nursery:
   device_class: door

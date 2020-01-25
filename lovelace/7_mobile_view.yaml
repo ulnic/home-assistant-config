@@ -536,11 +536,17 @@ cards:
       # Sensors
       - type: custom:vertical-stack-in-card
         cards:
-          - type: horizontal-stack
-            cards:
-              - type: entity-button
-                entity: vacuum.bibop
-                secondary_info: last_changed
+          # - type: horizontal-stack
+          #   cards:
+          #     - type: entity-button
+          #       entity: vacuum.bibop
+          #       secondary_info: last_changed
+          # - type: divider
+          - type: custom:xiaomi-vacuum-card
+            buttons: true
+            entity: vacuum.bibop
+            image: /local/img/vacuum.png
+            name: BiBop
           - type: divider
           - type: horizontal-stack
             cards:
@@ -596,10 +602,10 @@ cards:
                 template: occupancy
                 name: Livingroom
                 entity: binary_sensor.lumi_occupancy_livingroom
-              - type: "custom:button-card"
-                template: occupancy
-                entity: binary_sensor.lumi_occupancy_kitchen
-                name: Kitchen
+              # - type: "custom:button-card"
+              #   template: occupancy
+              #   entity: binary_sensor.lumi_occupancy_kitchen
+              #   name: Kitchen
               - type: "custom:button-card"
                 template: occupancy
                 entity: binary_sensor.lumi_occupancy_bedroom

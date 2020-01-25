@@ -534,7 +534,7 @@ cards:
                       - binary_sensor.lumi_door_nursery_balcony
                       - binary_sensor.lumi_door_nursery
                       - binary_sensor.lumi_door_laundry
-                      - binary_sensor.lumi_door_hallway_cupboard
+                      - binary_sensor.door_sensor_158_hallway_cupboard
                       - binary_sensor.lumi_door_entrance
                       - binary_sensor.lumi_door_livingroom_balcony
                       - climate.livingroom_ac
