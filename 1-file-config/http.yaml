@@ -2,9 +2,9 @@ base_url: !secret http_base_url
 server_port: !secret http_server_port
 ssl_certificate: !secret http_ssl_certificate
 ssl_key: !secret http_ssl_key
-use_x_forwarded_for: True
-ip_ban_enabled: True
-login_attempts_threshold: 5
-trusted_proxies:
-  - !secret http_trusted_proxies_1
-  - !secret http_trusted_proxies_2
+#use_x_forwarded_for: True
+#ip_ban_enabled: True
+#login_attempts_threshold: 5
+#trusted_proxies:
+#  - !secret http_trusted_proxies_1
+#  - !secret http_trusted_proxies_2

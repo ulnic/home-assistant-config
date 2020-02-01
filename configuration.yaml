@@ -9,6 +9,12 @@ homeassistant:
   customize: !include customize.yaml
   whitelist_external_dirs:
     - /tmp
+  auth_mfa_modules:
+    - type: totp
+      name: Authenticator app
+    - type: notify
+      message: 'I almost forget, to get into my clubhouse, you need to say {}'
+
 http: !include 1-file-config/http.yaml
 sun:
 # Enables support for tracking state changes over time.
@@ -48,16 +54,16 @@ notify:
 ################################################
 
 
-
 ################################################
 ## Add integrations
 ################################################
-zwave:
-  usb_path: /zwaveusbstick
-  network_key: !secret device_zwave_network_key
-zha:
-  usb_path: /zigbeestick
-  database_path: /config/zigbee.db
+#zwave:
+#  usb_path: /zwaveusbstick
+#  network_key: !secret device_zwave_network_key
+
+#zha:
+#  usb_path: /zigbeestick
+#  database_path: /config/zigbee.db
   
 weather:
   # - platform: bom
@@ -86,7 +92,7 @@ influxdb: !include 1-file-config/influxdb.yaml
 climate: !include 1-file-config/climate_broadlink.yaml
 speedtestdotnet: !include 1-file-config/speedtestdotnet.yaml
 cloud:
-  google_actions: !include 1-file-config/cloud.yaml
+#  google_actions: !include 1-file-config/cloud.yaml
 tts: !include 1-file-config/tts.yaml
 dialogflow:
 #intent_script: !include 1-file-config/intent_script.yaml
@@ -106,7 +112,7 @@ wemo: !include 1-file-config/wemo.yaml
 #switch: !include 1-file-config/switch.yaml
 camera: !include 1-file-config/aarlo_camera.yaml
 aarlo: !include 1-file-config/aarlo.yaml
-#apple_tv: !include 1-file-config/apple_tv_media_player.yaml
+apple_tv: !include 1-file-config/apple_tv_media_player.yaml
 proximity: !include 1-file-config/proximity.yaml
 vacuum: !include 1-file-config/vacuum.yaml
 #hue: !include 1-file-config/light_hue.yaml

@@ -356,17 +356,17 @@ cards:
             entity: binary_sensor.lumi_motion_bedroom
             name: Bedroom
           - type: entity-button
-            entity: binary_sensor.lumi_motion_nursery
+            entity: binary_sensor.158_motion_nursery
             name: Nursery
           - type: entity-button
-            entity: binary_sensor.lumi_motion_laundry
+            entity: binary_sensor.158_door_laundry
             name: Laundry
       - type: divider
         name: Doors
       - type: horizontal-stack
         cards:
           - type: entity-button
-            entity: binary_sensor.lumi_door_nursery
+            entity: binary_sensor.door_sensor_158_nursery
             name: Nursery Door
           - type: entity-button
             entity: binary_sensor.lumi_door_nursery_balcony

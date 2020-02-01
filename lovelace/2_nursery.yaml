@@ -39,7 +39,7 @@ cards:
         line_color: blue
       - type: custom:mini-graph-card
         entities:
-          - sensor.lumi_illumination_nursery
+          - sensor.158_illumination_nursery
         name: Light
         points_per_hour: 1
         height: 40
@@ -119,16 +119,38 @@ cards:
                     service: scene.turn_on
                     service_data:
                       entity_id: scene.nursery_full_on
-                - type: entity-button
+
+
+                - type: "custom:button-card"
+                  name:  Fan
+                  color_type: icon
+                  size: 25%
                   entity: fan.nursery_ceiling_fan
-                  name: Fan
+                  show_label: true
+                  label: >
+                    [[[
+                    return (states['input_boolean.fan_state_nursery'].state === 'on'
+                      ? 'Speed ' + states['input_select.fan_speed_nursery'].state
+                      : '');
+                    ]]]
                   tap_action:
-                    action: more-info
-                  hold_action:
+                    action: toggle
+                  double_tap_action:
                     action: call-service
-                    service: fan.toggle
+                    service: script.turn_on
                     service_data:
-                      entity_id: fan.nursery_ceiling_fan
+                      entity_id: script.fan_increase_speed
+                      variables:
+                        room: 'nursery'
+                  hold_action:
+                    action: more-info
+                  styles:
+                    card:
+                      - height: 90px
+                    label:
+                      - font-size: 11px
+                      - padding: 0px 5px
+
             - type: entities
               entities:
                 - type: custom:slider-entity-row
@@ -185,7 +207,7 @@ cards:
         cards:
           - type: "custom:button-card"
             template: door
-            entity: binary_sensor.lumi_door_nursery
+            entity: binary_sensor.door_sensor_158_nursery
             name: Nursery Door
           - type: "custom:button-card"
             template: door
@@ -193,7 +215,7 @@ cards:
             name: Nursery Balcony
           - type: "custom:button-card"
             template: motion
-            entity: binary_sensor.lumi_motion_nursery
+            entity: binary_sensor.158_motion_nursery
             name: Nursery Motion
 
   - type: picture

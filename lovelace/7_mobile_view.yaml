@@ -527,7 +527,7 @@ cards:
                       line_color: blue
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_illumination_nursery
+                        - sensor.158_illumination_nursery
                       name: Light
                       height: 35
                       points_per_hour: 1
@@ -545,7 +545,7 @@ cards:
           - type: custom:xiaomi-vacuum-card
             buttons: true
             entity: vacuum.bibop
-            image: /local/img/vacuum.png
+            image: /local/guest.png
             name: BiBop
           - type: divider
           - type: horizontal-stack
@@ -564,11 +564,11 @@ cards:
                 name: Bedroom
               - type: "custom:button-card"
                 template: motion
-                entity: binary_sensor.lumi_motion_nursery
+                entity: binary_sensor.158_motion_nursery
                 name: Nursery
               - type: "custom:button-card"
                 template: motion
-                entity: binary_sensor.lumi_motion_laundry
+                entity: binary_sensor.158_door_laundry
                 name: Laundry
           - type: divider
             name: Doors
@@ -589,7 +589,7 @@ cards:
               - type: "custom:button-card"
                 template: door
                 name: Nursery
-                entity: binary_sensor.lumi_door_nursery
+                entity: binary_sensor.door_sensor_158_nursery
               - type: "custom:button-card"
                 template: door
                 entity: binary_sensor.lumi_door_laundry

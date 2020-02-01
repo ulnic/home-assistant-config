@@ -2,7 +2,7 @@ alias: '[NURSERY] door CLOSE at night'
 initial_state: True
 trigger:
   platform: state
-  entity_id: binary_sensor.lumi_door_nursery
+  entity_id: binary_sensor.door_sensor_158_nursery
   to: 'off'
 condition:
   condition: and

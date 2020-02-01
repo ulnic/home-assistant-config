@@ -2,10 +2,10 @@ platform: template
 sensors:
   nursery_show_all_lights:
     friendly_name: 'Nursery Sleeping'
-    entity_id: binary_sensor.lumi_door_nursery, binary_sensor.lumi_motion_nursery, input_boolean.nursery_sleeping_override, light.nursery_ceiling
+    entity_id: binary_sensor.door_sensor_158_nursery, binary_sensor.158_motion_nursery, input_boolean.nursery_sleeping_override, light.nursery_ceiling
     value_template: >-
-          {{  is_state('binary_sensor.lumi_door_nursery', 'on')
-              or is_state('binary_sensor.lumi_motion_nursery', 'on')
+          {{  is_state('binary_sensor.door_sensor_158_nursery', 'on')
+              or is_state('binary_sensor.158_motion_nursery', 'on')
               or is_state('light.nursery_ceiling', 'on')
               or is_state('input_boolean.nursery_sleeping_override', 'on') }}
     icon_template: >-

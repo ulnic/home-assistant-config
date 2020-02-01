@@ -17,13 +17,15 @@ condition:
       entity_id: input_boolean.kitchen_light_override
       state: 'off'
 action:
-  service: scene.turn_on
-  data_template: #TODO: Update below sometime
+  service: script.turn_on
+  data_template: 
     entity_id: >
       {% if is_state('binary_sensor.morning', 'on') %}
-        scene.kitchen_led_morning_light
+        script.kitchen_morning_light
       {% elif is_state('binary_sensor.evening', 'on') %}   
-        scene.kitchen_daytime_light
+        script.kitchen_evening_light
+      {% elif is_state('binary_sensor.night', 'on') %}   
+        script.kitchen_night_light
       {% else %}
-        scene.kitchen_led_night_light
+        script.kitchen_daytime_light
       {% endif %}

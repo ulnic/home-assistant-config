@@ -1,0 +1,21 @@
+kitchen_evening_light:
+  alias: Kitchen evening light
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.led_shelf
+          - light.led
+        xy_color: [0.397,0.441]
+        brightness: 150
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: light.lifx_kitchen1
+        xy_color: [0.421,0.409]
+        brightness: 10
+        transition: 2
+    - service: light.turn_off
+      data:
+        entity_id: light.lifx_kitchen2
+        transition: 2

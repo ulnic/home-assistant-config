@@ -1,0 +1,18 @@
+kitchen_daytime_light:
+  alias: Kitchen daytime light
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.led_shelf
+          - light.led
+        color_temp: 347
+        brightness: 255
+        transition: 2
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_ceiling
+        brightness: 55
+        color_temp: 295
+        transition: 2
+

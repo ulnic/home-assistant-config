@@ -526,13 +526,13 @@ cards:
                       - calendar.family
                     entities:
                       - switch.espresso
-                      - binary_sensor.lumi_motion_nursery
+                      - binary_sensor.158_motion_nursery
                       - binary_sensor.lumi_motion_livingroom
-                      - binary_sensor.lumi_motion_laundry
+                      - binary_sensor.158_door_laundry
                       - binary_sensor.motion_sensor_158_kitchen
                       - binary_sensor.lumi_motion_bedroom
                       - binary_sensor.lumi_door_nursery_balcony
-                      - binary_sensor.lumi_door_nursery
+                      - binary_sensor.door_sensor_158_nursery
                       - binary_sensor.lumi_door_laundry
                       - binary_sensor.door_sensor_158_hallway_cupboard
                       - binary_sensor.lumi_door_entrance

@@ -149,7 +149,7 @@ binary_sensor.lumi_door_nursery_balcony:
   device_class: door
 binary_sensor.door_sensor_158_hallway_cupboard:
   device_class: door
-binary_sensor.lumi_door_nursery:
+binary_sensor.door_sensor_158_nursery:
   device_class: door
 light.master_switch:
   icon: mdi:light-switch

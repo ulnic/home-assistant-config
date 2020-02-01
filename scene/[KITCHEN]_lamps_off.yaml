@@ -8,4 +8,4 @@ entities:
     transition: 1
   light.led_shelf:
     state: off
-    #transition: 1
+    transition: 1

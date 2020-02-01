@@ -1,0 +1,4 @@
+platform: tod
+name: night
+after: '22:00'
+before: '06:00'
