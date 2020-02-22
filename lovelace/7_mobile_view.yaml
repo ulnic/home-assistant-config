@@ -280,7 +280,6 @@ cards:
           - type: markdown
             content: >
               #### Bedroom
-
           - type: custom:slider-entity-row
             entity: light.bedroom_ceiling
             toggle: true
@@ -288,10 +287,8 @@ cards:
             name: Bedroom Ceiling
           - type: horizontal-stack
             cards:
-              
               - type: "custom:button-card"
                 name: Fan
-                #layout: icon_state_name2nd
                 color_type: icon
                 entity: fan.bedroom_ceiling_fan
                 show_label: true
@@ -399,8 +396,6 @@ cards:
                           value: 23.5
                         - color: '#e0614c'
                           value: 24.5
-                      show:
-                        fill: false
                     - type: custom:mini-graph-card
                       entities:
                         - sensor.lumi_humidity_kitchen
@@ -423,7 +418,7 @@ cards:
                       entities:
                         - sensor.lumi_temperature_bedroom
                       name: Bedroom
-                      height: 35
+                      height: 30
                       points_per_hour: 1
                       animate: true
                       color_thresholds:
@@ -435,8 +430,6 @@ cards:
                           value: 23.5
                         - color: '#e0614c'
                           value: 24.5
-                      show:
-                        fill: false
                     - type: custom:mini-graph-card
                       entities:
                         - sensor.lumi_humidity_bedroom
@@ -473,8 +466,6 @@ cards:
                           value: 23.5
                         - color: '#e0614c'
                           value: 24.5
-                      show:
-                        fill: false
                     - type: custom:mini-graph-card
                       entities:
                         - sensor.lumi_humidity_balcony
@@ -516,8 +507,6 @@ cards:
                           color: "#FF8000"
                         - value: 26
                           color: "#ff0000"
-                      show:
-                        fill: false
                     - type: custom:mini-graph-card
                       entities:
                         - sensor.lumi_humidity_nursery
@@ -545,7 +534,7 @@ cards:
           - type: custom:xiaomi-vacuum-card
             buttons: true
             entity: vacuum.bibop
-            image: /local/guest.png
+            image: /local/img/vacuum1.jpeg
             name: BiBop
           - type: divider
           - type: horizontal-stack
@@ -610,11 +599,11 @@ cards:
                 template: occupancy
                 entity: binary_sensor.lumi_occupancy_bedroom
                 name: Bedroom
-              - type: "custom:button-card"
-                template: occupancy
-                entity: binary_sensor.lumi_occupancy_nursery
-                name: Nursery
-              - type: "custom:button-card"
-                template: occupancy
-                entity: binary_sensor.lumi_occupancy_laundry
-                name: Laundry
+              # - type: "custom:button-card"
+              #   template: occupancy
+              #   entity: binary_sensor.lumi_occupancy_nursery
+              #   name: Nursery
+              # - type: "custom:button-card"
+              #   template: occupancy
+              #   entity: binary_sensor.lumi_occupancy_laundry
+              #   name: Laundry

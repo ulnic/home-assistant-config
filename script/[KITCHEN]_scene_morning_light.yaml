@@ -1,5 +1,5 @@
 kitchen_morning_light:
-  alias: Kitchen morning light
+  alias: '[KITCHEN] Morning Light'
   sequence:
     - service: light.turn_on
       data:

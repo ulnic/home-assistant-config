@@ -1,5 +1,5 @@
 nursery_ceilingfan_off:
-  alias: nursery ceilingfan off
+  alias: '[NURSERY] CeilingFan Off'
   sequence:
     - service: broadlink.send 
       data:

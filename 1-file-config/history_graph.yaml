@@ -1,3 +1,4 @@
+#TODO Remove all history_graph before 0.107 release
 gr2:
   name: Internet Speed
   entities:

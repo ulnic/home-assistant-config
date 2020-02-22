@@ -1,5 +1,5 @@
 dim_light_kitchen:
-  alias: Dim Light Kitchen
+  alias: '[KITCHEN] Dim Light Kitchen'
   sequence:
     - condition: state
       entity_id: input_boolean.kitchen_dim

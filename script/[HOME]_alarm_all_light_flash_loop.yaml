@@ -1,5 +1,5 @@
 alarm_light_loop:
-  alias: Light flash loop
+  alias: '[HOME] Light Flash Loop'
   sequence:
     - delay:
         # time for flash light off

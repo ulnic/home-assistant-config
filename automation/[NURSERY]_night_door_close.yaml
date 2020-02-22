@@ -17,5 +17,7 @@ condition:
       entity_id: light.nursery_ceiling
       state: 'off'
 action:
-  - service: script.turn_on
-    entity_id: script.nursery_light_restore
+  - delay: 00:00:01
+  - service: scene.turn_on
+    data:
+      entity_id: scene.nursery_door

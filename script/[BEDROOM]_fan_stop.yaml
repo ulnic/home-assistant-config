@@ -1,5 +1,5 @@
 bedroom_ceilingfan_off:
-  alias: bedroom ceilingfan off
+  alias: '[BEDROOM] CeilingFan Off'
   sequence:
     - service: broadlink.send 
       data:

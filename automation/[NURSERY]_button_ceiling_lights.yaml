@@ -1,14 +1,10 @@
 alias: "[NURSERY] Ceiling Light toggle"
 trigger:
   - platform: event
-    event_type: zha_event
+    event_type: xiaomi_aqara.click
     event_data:
-      unique_id: 00:15:8d:00:02:55:6c:9c:1:0x0006
-      command: click
-      args:
-        click_type: single
-      #entity_id: binary_sensor.switch_158_button_nursery
-      #click_type: long_click_press
+      entity_id: binary_sensor.switch_158_button_nursery
+      click_type: long_click_press
 action:
   - service: lifx.set_state
     data:

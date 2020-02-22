@@ -1,5 +1,5 @@
 livingroom_ceilingfan_speed:
-  alias: livingroom ceilingfan speed
+  alias: '[LIVINGROOM] CeilingFan Speed'
   sequence:
     - service: input_select.select_option
       data_template:

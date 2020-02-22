@@ -1,6 +1,6 @@
 home_ulli:
   devices:
-    - device_tracker.ullisiphone
+    - device_tracker.ullis_iphone
   tolerance: 25
   unit_of_measurement: km
 

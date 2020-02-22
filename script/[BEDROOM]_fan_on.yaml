@@ -1,5 +1,5 @@
 bedroom_ceilingfan_on:
-  alias: bedroom ceiling fan on
+  alias: '[BEDROOM] Ceiling Fan On'
   sequence:
     - service: input_boolean.turn_on
       data:

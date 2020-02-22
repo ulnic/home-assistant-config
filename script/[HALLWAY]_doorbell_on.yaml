@@ -1,5 +1,5 @@
 doorbell_on:
-  alias: Doorbell on
+  alias: '[HALLWAY] Doorbell On'
   sequence:
     - service: xiaomi_aqara.play_ringtone
       data:

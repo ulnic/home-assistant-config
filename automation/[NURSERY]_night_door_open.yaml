@@ -17,5 +17,43 @@ condition:
       entity_id: light.nursery_ceiling
       state: 'off'
 action:
-  - service: script.turn_on
-    entity_id: script.nursery_light_store
+    - service: scene.create
+      data:
+        scene_id: nursery_door
+        snapshot_entities: 
+          - light.lifx_dining1
+          - light.lifx_livingroom1
+          - light.lifx_dining2
+          - light.lifx_livingroom2
+          - light.lifx_kitchen2
+          - light.lifx_kitchen1
+          - light.lifx_hallway_1
+          - light.lifx_laundry
+          - light.led
+          - light.tv
+          - light.lifx_bedroom1
+          - light.lifx_bedroom2
+          - light.desk
+          - media_player.denon_amp
+    - service: light.turn_off
+      entity_id:
+        - light.lifx_dining1
+        - light.lifx_livingroom1
+        - light.lifx_dining2
+        - light.lifx_livingroom2
+        - light.lifx_kitchen2
+        - light.lifx_kitchen1
+        - light.lifx_hallway_1
+        - light.lifx_laundry
+        - light.led
+        - light.tv
+        - light.lifx_bedroom1
+        - light.lifx_bedroom2
+        - light.desk
+    - condition: state
+      entity_id: switch.media_unit
+      state: 'on'
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.denon_amp
+        source: "DVD"

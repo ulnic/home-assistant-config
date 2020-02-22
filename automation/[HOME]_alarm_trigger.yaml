@@ -1,5 +1,4 @@
 alias: '[HOME] Trigger Alarm'
-hide_entity: True
 trigger:
   - platform: state
     entity_id: binary_sensor.lumi_door_entrance

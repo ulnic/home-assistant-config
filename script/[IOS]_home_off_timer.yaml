@@ -1,5 +1,5 @@
 turn_home_off_timer:
-  alias: "Turn home off timer"
+  alias: '[iOS] Turn home off timer'
   sequence:
     - service: notify.ios_nicsiphone7
       data:

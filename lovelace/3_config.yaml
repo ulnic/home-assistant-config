@@ -126,7 +126,6 @@ cards:
     entities:
       - device_tracker.nicsiphone7
       - device_tracker.ullisiphone
-      - group.all_devices
       - proximity.home_ulli
       - proximity.home_nic
 

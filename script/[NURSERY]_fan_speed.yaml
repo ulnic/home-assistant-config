@@ -1,5 +1,5 @@
 nursery_ceilingfan_speed:
-  alias: nursery ceilingfan speed
+  alias: '[NURSERY] CeilingFan Speed'
   sequence:
     - service: input_select.select_option
       data_template:

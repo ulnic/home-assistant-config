@@ -1,5 +1,5 @@
 family_location_update:
-  alias: "Update Locations"
+  alias: '[HOME] Update Locations'
   sequence:
     - service: notify.ios_nicsiphone7
       data:
