@@ -73,12 +73,24 @@ cards:
               - sensor.speedtest_download
               - sensor.speedtest_upload
               - sensor.speedtest_ping
-      - type: history-graph
-        hours_to_show: 240
-        refresh_interval: 240
+      - type: custom:mini-graph-card
         entities:
-          - sensor.speedtest_download
-          - sensor.speedtest_upload
+          - entity: sensor.speedtest_download
+            name: Download
+          - entity: sensor.speedtest_upload
+            name: upload
+        points_per_hour: 1
+        height: 200
+        hours_to_show: 240
+        animate: true
+        name: Internet
+        show:
+          name: true
+          icon: false
+          points: false
+          legend: true
+          extrema: false
+          labels: true
 
   - type: custom:vertical-stack-in-card
     cards:
@@ -159,16 +171,28 @@ cards:
           extrema: false
           labels: true
 
-
-  #Smart Plugs History Graph
-  - id: a6e12ced5ef748a3990af1dd31d164ee  # Automatically created id
-    type: history-graph
-    title: Smart Plugs
-    hours_to_show: 4
-    refresh_interval: 5
+  
+  - type: custom:mini-graph-card
     entities:
-      - sensor.espresso_current_power
-      - sensor.lumi_winefridge_current_power
+      - entity: sensor.espresso_current_power
+        name: Espresso
+      - entity: sensor.mediaunit_current_power
+        name: Media Unit
+      - entity: sensor.lumi_winefridge_current_power
+        name: Winefridge
+    points_per_hour: 1
+    height: 200
+    hours_to_show: 240
+    animate: true
+    name: Smart Plugs
+    show:
+      name: true
+      icon: false
+      points: false
+      legend: true
+      extrema: false
+      labels: true
+  
 
   - type: custom:xiaomi-vacuum-map-card
     entity: vacuum.bibop

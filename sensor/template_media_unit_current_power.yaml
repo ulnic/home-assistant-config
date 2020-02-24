@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  mediaunit_current_power:
+    value_template: >
+      {{ state_attr('switch.media_unit', 'current_power_w') }}
+    friendly_name: 'Media Unit Current Power'
+    unit_of_measurement: 'w'

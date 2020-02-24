@@ -32,7 +32,7 @@ updater:
   reporting: yes
 # Set recorder options
 recorder: !include 1-file-config/recorder.yaml
-history_graph: !include 1-file-config/history_graph.yaml
+#history_graph: !include 1-file-config/history_graph.yaml
 map:
 config:
 system_health:
@@ -52,36 +52,29 @@ notify:
 ################################################
 ## Test
 ################################################
-spotify:
-  client_id: !secret media_player_spotify_client_id
-  client_secret: !secret media_player_spotify_client_secret
 
 ################################################
 ## Add integrations
 ################################################
-#zwave:
-#  usb_path: /zwaveusbstick
-#  network_key: !secret device_zwave_network_key
+zwave:
+  usb_path: /zwaveusbstick
+  network_key: !secret device_zwave_network_key
 
-#zha:
-#  usb_path: /zigbeestick
-#  database_path: /config/zigbee.db
+zha:
+  usb_path: /zigbeestick
+  database_path: /config/zigbee.db
   
 weather:
-  # - platform: bom
-  #   station: !secret bom_station
   - platform: darksky
     api_key: !secret dark_sky_api_key
     mode: daily
 
+spotify: !include 1-file-config/spotify.yaml
+withings: !include 1-file-config/withings.yaml
 nzbget: !include 1-file-config/nzbget.yaml
 plex: !include 1-file-config/plex.yaml
 python_script:
-hacs:
-  token: !secret HACS_token
-  theme: true
-  appdaemon: true
-  python_script: true
+hacs: !include 1-file-config/hacs.yaml
 geo_location:
   - platform: nsw_rural_fire_service_feed
     radius: 50

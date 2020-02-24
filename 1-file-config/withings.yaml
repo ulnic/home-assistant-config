@@ -1,0 +1,5 @@
+client_id: !secret withings_client_id
+client_secret: !secret withings_consumer_secret
+profiles:
+  - !secret withings_profile_one
+  - !secret withings_profile_two

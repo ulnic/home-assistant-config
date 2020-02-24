@@ -2,6 +2,6 @@ platform: template
 sensors:
   espresso_current_power:
     value_template: >
-      {{ states.switch.espresso.attributes.current_power_w }}
+      {{ state_attr('switch.espresso', 'current_power_w') }}
     friendly_name: 'Espresso Current Power'
     unit_of_measurement: 'w'
