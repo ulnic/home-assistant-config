@@ -2,17 +2,17 @@ alias: '[LIVINGROOM] motion - turn ON Heater'
 initial_state: True
 trigger:
   platform: state
-  entity_id: binary_sensor.lumi_motion_livingroom
+  entity_id: binary_sensor.158_motion_livingroom
   to: 'on'
 condition:
   - condition: state
-    entity_id: binary_sensor.lumi_door_livingroom_balcony
+    entity_id: binary_sensor.158_door_balcony
     state: 'off'
   - condition: state
     entity_id: climate.livingroom_ac
     state: 'off'
   - condition: numeric_state
-    entity_id: sensor.lumi_temperature_livingroom
+    entity_id: sensor.158_temperature_livingroom
     below: 21
   - condition: time
     after: '06:00:00'

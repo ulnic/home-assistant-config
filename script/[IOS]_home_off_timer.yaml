@@ -1,7 +1,7 @@
 turn_home_off_timer:
   alias: '[iOS] Turn home off timer'
   sequence:
-    - service: notify.ios_nicsiphone7
+    - service: notify.mobile_app_nicsiphone
       data:
         message: "I'm turning off the house in 10 min, care to cancel? !"
         data:
@@ -18,6 +18,6 @@ turn_home_off_timer:
       entity_id: climate.livingroom_ac
     - service: light.turn_off
       entity_id: all
-    - service: notify.ios_nicsiphone7
+    - service: notify.mobile_app_nicsiphone
       data:
         message: "Nobody home, so turned it off!"

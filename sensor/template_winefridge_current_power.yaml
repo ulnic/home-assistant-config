@@ -1,7 +1,7 @@
 platform: template
 sensors:
-  lumi_winefridge_current_power:
+  plug_158_winefridge_current_power:
     value_template: >
-      {{ states.switch.lumi_winefridge.attributes.load_power }}
+      {{ states.switch.plug_158_winefridge.attributes.load_power }}
     friendly_name: 'Winefridge Current Power'
     unit_of_measurement: 'w'

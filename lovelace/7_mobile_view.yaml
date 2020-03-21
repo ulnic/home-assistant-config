@@ -245,7 +245,7 @@ cards:
             content: >
               #### Kitchen
           - type: custom:slider-entity-row
-            entity: light.kitchen_ceiling
+            entity: light.kitchen_lights
             toggle: true
             full_row: true
             name: Kitchen
@@ -382,7 +382,7 @@ cards:
                   cards:
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_temperature_kitchen
+                        - sensor.temperature_158_kitchen
                       name: Kitchen
                       height: 35
                       points_per_hour: 1
@@ -398,14 +398,14 @@ cards:
                           value: 24.5
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_humidity_kitchen
+                        - sensor.humidity_158_kitchen
                       name: Kitchen Humidity
                       height: 35
                       line_color: blue
                       points_per_hour: 1
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_illumination_kitchen
+                        - sensor.illumination_158_kitchen
                       name: Kitchen Light
                       height: 35
                       line_color: yellow
@@ -416,7 +416,7 @@ cards:
                   cards:
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_temperature_bedroom
+                        - sensor.158_temperature_bedroom
                       name: Bedroom
                       height: 30
                       points_per_hour: 1
@@ -432,14 +432,14 @@ cards:
                           value: 24.5
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_humidity_bedroom
+                        - sensor.158_humidity_bedroom
                       name: Humidity
                       height: 35
                       line_color: blue
                       points_per_hour: 1
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_illumination_bedroom
+                        - sensor.158_illumination_bedroom
                       name: Light
                       height: 35
                       line_color: yellow
@@ -452,7 +452,7 @@ cards:
                   cards:
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_temperature_balcony
+                        - sensor.158_temperature_balcony
                       name: Balcony
                       height: 35
                       points_per_hour: 1
@@ -468,14 +468,14 @@ cards:
                           value: 24.5
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_humidity_balcony
+                        - sensor.158_humidity_balcony
                       name: Humidity
                       height: 35
                       line_color: blue
                       points_per_hour: 1
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_pressure_balcony
+                        - sensor.158_pressure_balcony
                       name: Pressure
                       height: 35
                       line_color: yellow
@@ -486,7 +486,7 @@ cards:
                   cards:
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_temperature_nursery
+                        - sensor.temperature_158_nursery
                       name: Nursery
                       height: 35
                       points_per_hour: 1
@@ -509,7 +509,7 @@ cards:
                           color: "#ff0000"
                     - type: custom:mini-graph-card
                       entities:
-                        - sensor.lumi_humidity_nursery
+                        - sensor.humidity_158_nursery
                       name: Humidity
                       height: 35
                       points_per_hour: 1
@@ -525,12 +525,6 @@ cards:
       # Sensors
       - type: custom:vertical-stack-in-card
         cards:
-          # - type: horizontal-stack
-          #   cards:
-          #     - type: entity-button
-          #       entity: vacuum.bibop
-          #       secondary_info: last_changed
-          # - type: divider
           - type: custom:xiaomi-vacuum-card
             buttons: true
             entity: vacuum.bibop
@@ -541,7 +535,7 @@ cards:
             cards:
               - type: "custom:button-card"
                 template: motion
-                entity: binary_sensor.lumi_motion_livingroom
+                entity: binary_sensor.158_motion_livingroom
                 name: Livingroom
               - type: "custom:button-card"
                 template: motion
@@ -549,7 +543,7 @@ cards:
                 name: Kitchen
               - type: "custom:button-card"
                 template: motion
-                entity: binary_sensor.lumi_motion_bedroom
+                entity: binary_sensor.158_motion_bedroom
                 name: Bedroom
               - type: "custom:button-card"
                 template: motion
@@ -565,15 +559,15 @@ cards:
             cards:
               - type: "custom:button-card"
                 template: door
-                entity: binary_sensor.lumi_door_livingroom_balcony
+                entity: binary_sensor.158_door_balcony
                 name: Balcony L'room
               - type: "custom:button-card"
                 template: door
-                entity: binary_sensor.lumi_door_nursery_balcony
+                entity: binary_sensor.door_sensor_158_nursery_balcony
                 name: Balcony N'sery
               - type: "custom:button-card"
                 template: door
-                entity: binary_sensor.lumi_door_entrance
+                entity: binary_sensor.xi_door_entrance
                 name: Entrance
               - type: "custom:button-card"
                 template: door
@@ -581,29 +575,8 @@ cards:
                 entity: binary_sensor.door_sensor_158_nursery
               - type: "custom:button-card"
                 template: door
-                entity: binary_sensor.lumi_door_laundry
+                entity: binary_sensor.158_door_laundry
                 name: Laundry
           - type: divider
             name: Occupancy
-          - type: horizontal-stack
-            cards:
-              - type: "custom:button-card"
-                template: occupancy
-                name: Livingroom
-                entity: binary_sensor.lumi_occupancy_livingroom
-              # - type: "custom:button-card"
-              #   template: occupancy
-              #   entity: binary_sensor.lumi_occupancy_kitchen
-              #   name: Kitchen
-              - type: "custom:button-card"
-                template: occupancy
-                entity: binary_sensor.lumi_occupancy_bedroom
-                name: Bedroom
-              # - type: "custom:button-card"
-              #   template: occupancy
-              #   entity: binary_sensor.lumi_occupancy_nursery
-              #   name: Nursery
-              # - type: "custom:button-card"
-              #   template: occupancy
-              #   entity: binary_sensor.lumi_occupancy_laundry
-              #   name: Laundry
+          

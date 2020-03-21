@@ -16,20 +16,19 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: device_tracker.nicsiphone7
+      entity_id: person.nic
       state: 'not_home'
     - condition: state
-      entity_id: device_tracker.ullisiphone
+      entity_id: person.ulli
       state: 'not_home'
     - condition: state
       entity_id: input_boolean.guest_mode
       state: 'off'
     - condition: template
-      value_template: "{{ (as_timestamp(now())-as_timestamp(states. binary_sensor.lumi_door_entrance.last_changed)) < 600 }}"
-
+      value_template: "{{ (as_timestamp(now())-as_timestamp(states.binary_sensor.xi_door_entrance.last_changed)) < 600 }}"
 action:
   - service: alarm_control_panel.alarm_arm_away
     entity_id: alarm_control_panel.ha_alarm
-  - service: notify.ios_nicsiphone7
+  - service: notify.mobile_app_nicsiphone
     data:
       message: 'Home Alarm ARMED {{now().strftime("%d/%m/%Y - %H:%M")}}'

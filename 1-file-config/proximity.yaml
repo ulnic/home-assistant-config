@@ -1,11 +1,11 @@
 home_ulli:
   devices:
-    - device_tracker.ullis_iphone
+    - person.ulli
   tolerance: 25
   unit_of_measurement: km
 
 home_nic:
   devices:
-    - device_tracker.nicsiphone7
+    - person.nic
   tolerance: 25
   unit_of_measurement: km

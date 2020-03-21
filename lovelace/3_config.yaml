@@ -35,13 +35,13 @@ cards:
     entities:
       - entity: input_boolean.winefridge_off_night
         name: Auto Off?
-      - entity: switch.lumi_winefridge
+      - entity: switch.plug_158_winefridge
         name: WineFridge
-      - entity: sensor.lumi_temperature_winefridge
+      - entity: sensor.158_temperature_winefridge
         name: Temperature
-      - entity: sensor.lumi_humidity_winefridge
+      - entity: sensor.158_humidity_winefridge
         name: Humidity
-      - entity: sensor.lumi_winefridge_current_power
+      - entity: sensor.plug_158_winefridge_current_power   #TODO: Check if this one still works after moving back to 158
         name: watt
     style: |
       ha-card {
@@ -106,7 +106,7 @@ cards:
                 name: Current Speed
               - entity: sensor.nzbget_queue_size
                 name: Queue
-          - type: "custom:button-card"
+          - type: custom:button-card
             template: sensor
             entity: sensor.nzbget_download_paused
             name: Toggle 
@@ -136,8 +136,8 @@ cards:
     title: Proximity
     show_header_toggle: false
     entities:
-      - device_tracker.nicsiphone7
-      - device_tracker.ullisiphone
+      - person.nic
+      - person.ulli
       - proximity.home_ulli
       - proximity.home_nic
 
@@ -178,7 +178,7 @@ cards:
         name: Espresso
       - entity: sensor.mediaunit_current_power
         name: Media Unit
-      - entity: sensor.lumi_winefridge_current_power
+      - entity: sensor.plug_158_winefridge_current_power
         name: Winefridge
     points_per_hour: 1
     height: 200
@@ -226,3 +226,23 @@ cards:
       - [[18933, 22955, 17080, 24679], [19014, 24604, 18087, 25804]]
       - [[15147, 24717, 16919, 22955]]
       - [[26707, 22505, 28560, 23817]]
+
+  - type: custom:mini-graph-card
+    entities:
+      - entity: sensor.withings_weight_kg_nic
+        name: Weight kg
+      - entity: sensor.withings_fat_ratio_pct_nic
+        name: Fat %
+        y_axis: secondary
+    points_per_hour: 1
+    height: 200
+    hours_to_show: 240
+    animate: true
+    name: Weight
+    show:
+      name: true
+      icon: true
+      points: false
+      legend: true
+      extrema: false
+      labels: true

@@ -3,7 +3,7 @@ alarm_light_flash:
   sequence:
     - service: homeassistant.turn_on
       data:
-        entity_id: light.kitchen_ceiling, light.lifx_hallway_1
+        entity_id: light.kitchen_lights, light.lifx_hallway_1
     - delay:
         seconds: 1
     - service: script.turn_on

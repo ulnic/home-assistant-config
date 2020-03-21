@@ -8,6 +8,6 @@ action:
     entity_id: script.alarm_light_loop
   - service: script.turn_off
     entity_id: script.alarm_light_flash
-  - service: notify.ios_nicsiphone7
+  - service: notify.mobile_app_nicsiphone
     data:
       message: 'Home Alarm Disarmed {{now().strftime("%d/%m/%Y - %H:%M")}}'

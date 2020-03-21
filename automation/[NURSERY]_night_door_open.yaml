@@ -30,11 +30,13 @@ action:
           - light.lifx_hallway_1
           - light.lifx_laundry
           - light.led
+          - light.led_shelf
           - light.tv
           - light.lifx_bedroom1
           - light.lifx_bedroom2
           - light.desk
           - media_player.denon_amp
+          - media_player.apple_tv
     - service: light.turn_off
       entity_id:
         - light.lifx_dining1
@@ -46,6 +48,7 @@ action:
         - light.lifx_hallway_1
         - light.lifx_laundry
         - light.led
+        - light.led_shelf
         - light.tv
         - light.lifx_bedroom1
         - light.lifx_bedroom2
@@ -57,3 +60,8 @@ action:
       data:
         entity_id: media_player.denon_amp
         source: "DVD"
+    - condition: state
+      entity_id: media_player.apple_tv
+      state: 'playing'
+    - service: media_player.media_pause
+      entity_id: media_player.apple_tv

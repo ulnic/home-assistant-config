@@ -7,7 +7,7 @@ trigger:
     hours: 1
     minutes: 30
 action:
-  service: notify.ios_nicsiphone7
+  service: notify.mobile_app_nicsiphone
   data:
     message: "Espresso Machine has been on for more than 90 min. !"
     data:

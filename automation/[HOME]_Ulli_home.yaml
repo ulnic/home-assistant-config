@@ -5,6 +5,6 @@ trigger:
   from: "not_home"
   to: "home"
 action:
-  service: notify.ios_nicsiphone7
+  service: notify.mobile_app_nicsiphone
   data:
     message: "Ulli is home!"

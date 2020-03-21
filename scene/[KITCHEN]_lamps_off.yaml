@@ -1,6 +1,6 @@
 name: kitchen_lamps_off
 entities:
-  light.kitchen_ceiling:
+  light.kitchen_lights:
     state: off
     transition: 1
   light.led:

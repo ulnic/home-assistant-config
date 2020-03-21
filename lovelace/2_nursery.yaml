@@ -9,7 +9,7 @@ cards:
     cards:
       - type: custom:mini-graph-card
         entities:
-          - sensor.lumi_temperature_nursery
+          - sensor.temperature_158_nursery
         name: Current Temp
         points_per_hour: 1
         height: 40
@@ -32,7 +32,7 @@ cards:
             color: "#ff0000"
       - type: custom:mini-graph-card
         entities:
-          - sensor.lumi_humidity_nursery
+          - sensor.humidity_158_nursery
         name: Humidity
         points_per_hour: 1
         height: 40
@@ -46,7 +46,7 @@ cards:
         line_color: yellow
   - type: custom:mini-graph-card
     entities:
-      - sensor.lumi_temperature_nursery
+      - sensor.temperature_158_nursery
     name: 2wk Temp trend
     points_per_hour: .75
     hours_to_show: 240
@@ -211,7 +211,7 @@ cards:
             name: Nursery Door
           - type: "custom:button-card"
             template: door
-            entity: binary_sensor.lumi_door_nursery_balcony
+            entity: binary_sensor.door_sensor_158_nursery_balcony
             name: Nursery Balcony
           - type: "custom:button-card"
             template: motion

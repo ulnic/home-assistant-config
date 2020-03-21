@@ -3,6 +3,6 @@ name: master switch
 entities:
   - light.living_ceiling_lights
   - light.dining_lights
-  - light.kitchen_ceiling
+  - light.kitchen_lights
   - light.led
   - light.tv

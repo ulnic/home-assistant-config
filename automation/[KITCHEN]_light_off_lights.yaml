@@ -2,7 +2,7 @@ alias: '[KITCHEN] disable kitchen override boolean when lights off'
 initial_state: 'on'
 trigger:
   platform: state
-  entity_id: light.kitchen_ceiling
+  entity_id: light.kitchen_lights
   to: 'off'
   for:
     minutes: 1

@@ -21,7 +21,7 @@ action:
   - service: light.turn_on
     entity_id:
       - light.dining_lights
-      - light.kitchen_ceiling
+      - light.kitchen_lights
       - light.gateway_light
       - light.livingroom
     data:

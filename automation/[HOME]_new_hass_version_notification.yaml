@@ -1,8 +1,0 @@
-### Send notification when a new version is ready to be downloaded
-alias: "[HOME] Update notifications"
-trigger:
-  platform: state
-  entity_id: updater.updater
-action:
-  service: ifttt.trigger
-  data: {"event":"ha_notification_update", "value1":"NEW Home Assistant VERSION Ready to download!!! "}

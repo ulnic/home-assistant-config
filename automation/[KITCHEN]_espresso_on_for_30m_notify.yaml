@@ -7,13 +7,29 @@ trigger:
   for:
     minutes: 30
 action:
-  - service: light.lifx_effect_pulse #TODO: Update this to LED now
-    data:
-      entity_id: light.lifx_kitchen1
-      color_name: green
-      mode: blink
-      cycles: 3
-      brightness: 60
   - service: notify.all_ios
     data:
       message: 'Espresso is ready {{now().strftime("%H:%M:%S")}}'
+  - service: scene.create
+    data:
+      scene_id: espresso_30min
+      snapshot_entities: 
+        - light.led_shelf
+  - service: lifx.set_state
+    data:
+      entity_id: light.led_shelf
+      color_name: green
+      power: false
+      brightness: 60
+  - service: lifx.effect_pulse #TODO: Update this to LED now
+    data:
+      entity_id: light.led_shelf
+      color_name: green
+      mode: blink
+      cycles: 5
+      brightness: 60
+  - service: scene.turn_on
+    data:
+      entity_id: scene.espresso_30min
+  
+ 

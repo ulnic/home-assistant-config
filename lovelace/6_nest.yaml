@@ -86,7 +86,6 @@ cards:
                           - entity: calendar.family
                         dateSize: 110
                         titleSize: 120
-                        #height: 436px;
                         style: |
                           ha-card {
                             font-family: 'Open Sans', sans-serif;
@@ -94,15 +93,18 @@ cards:
                             margin-right: 5px;
                             margin-top: 10px;
                           }
-
                       - type: custom:simple-thermostat
                         entity: climate.livingroom_ac
                         name: 'Aircon'
                         step_size: 1
                         step_layout: row
                         sensors:
-                          - entity: sensor.lumi_humidity_livingroom
+                          - entity: sensor.158_humidity_livingroom
                             name: 'Humidity'
+                          - entity: climate.livingroom_ac
+                            name: 'State'
+                          - entity: sensor.158_temperature_balcony
+                            name: 'Outside'
                         control:
                           _names: false
                           hvac: true
@@ -142,7 +144,7 @@ cards:
                                   cards:
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_temperature_kitchen
+                                        - sensor.temperature_158_kitchen
                                       name: Kitchen
                                       height: 35
                                       points_per_hour: 1
@@ -163,7 +165,7 @@ cards:
                                         }
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_humidity_kitchen
+                                        - sensor.humidity_158_kitchen
                                       name: Kitchen Humidity
                                       height: 35
                                       line_color: blue
@@ -175,7 +177,7 @@ cards:
                                         }
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_illumination_kitchen
+                                        - sensor.illumination_158_kitchen
                                       name: Kitchen Light
                                       height: 35
                                       line_color: yellow
@@ -191,7 +193,7 @@ cards:
                                   cards:
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_temperature_bedroom
+                                        - sensor.158_temperature_bedroom
                                       name: Bedroom
                                       height: 30
                                       points_per_hour: 1
@@ -212,7 +214,7 @@ cards:
                                         }
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_humidity_bedroom
+                                        - sensor.158_humidity_bedroom
                                       name: Humidity
                                       height: 35
                                       line_color: blue
@@ -224,7 +226,7 @@ cards:
                                         }
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_illumination_bedroom
+                                        - sensor.158_illumination_bedroom
                                       name: Light
                                       height: 35
                                       line_color: yellow
@@ -242,7 +244,7 @@ cards:
                                   cards:
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_temperature_balcony
+                                        - sensor.158_temperature_balcony
                                       name: Balcony
                                       height: 35
                                       points_per_hour: 1
@@ -263,7 +265,7 @@ cards:
                                         }
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_humidity_balcony
+                                        - sensor.158_humidity_balcony
                                       name: Humidity
                                       height: 35
                                       line_color: blue
@@ -275,7 +277,7 @@ cards:
                                         }
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_pressure_balcony
+                                        - sensor.158_pressure_balcony
                                       name: Pressure
                                       height: 35
                                       line_color: yellow
@@ -291,7 +293,7 @@ cards:
                                   cards:
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_temperature_nursery
+                                        - sensor.temperature_158_nursery
                                       name: Nursery
                                       height: 35
                                       points_per_hour: 1
@@ -319,7 +321,7 @@ cards:
                                         }
                                     - type: custom:mini-graph-card
                                       entities:
-                                        - sensor.lumi_humidity_nursery
+                                        - sensor.humidity_158_nursery
                                       name: Humidity
                                       height: 35
                                       points_per_hour: 1
@@ -606,16 +608,15 @@ cards:
                     entities:
                       - switch.espresso
                       - binary_sensor.158_motion_nursery
-                      - binary_sensor.lumi_motion_livingroom
+                      - binary_sensor.158_motion_livingroom
                       - binary_sensor.158_door_laundry
                       - binary_sensor.motion_sensor_158_kitchen
-                      - binary_sensor.lumi_motion_bedroom
-                      - binary_sensor.lumi_door_nursery_balcony
+                      - binary_sensor.158_motion_bedroom
+                      - binary_sensor.door_sensor_158_nursery_balcony
                       - binary_sensor.door_sensor_158_nursery
-                      - binary_sensor.lumi_door_laundry
-                      - binary_sensor.door_sensor_158_hallway_cupboard
-                      - binary_sensor.lumi_door_entrance
-                      - binary_sensor.lumi_door_livingroom_balcony
+                      - binary_sensor.158_door_hallway_cupboard
+                      - binary_sensor.xi_door_entrance
+                      - binary_sensor.158_door_balcony
                       - climate.livingroom_ac
                       - light.balcony_ceiling
                       - light.bedroom
@@ -623,7 +624,7 @@ cards:
                       - light.desk
                       - light.dining_lights
                       - light.gateway_light
-                      - light.kitchen_ceiling
+                      - light.kitchen_lights
                       - light.led
                       - light.led_shelf
                       - light.lifx_hallway_1

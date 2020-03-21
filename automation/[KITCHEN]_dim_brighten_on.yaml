@@ -18,7 +18,7 @@ condition:
     entity_id: input_boolean.kitchen_dim
     state: 'off'
   - condition: state
-    entity_id: light.kitchen_ceiling
+    entity_id: light.kitchen_lights
     state: 'on'
 action:
   - service: script.turn_on

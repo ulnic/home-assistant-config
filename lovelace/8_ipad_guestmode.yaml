@@ -99,7 +99,7 @@ cards:
                             height: 270px;
                           }
                         sensors:
-                          - entity: sensor.lumi_temperature_livingroom
+                          - entity: sensor.158_temperature_livingroom
                             name: Tempdf
                         control:
                           hvac:
@@ -111,7 +111,7 @@ cards:
                               icon: mdi:whitewalker
                       - type: custom:mini-graph-card
                         entities:
-                          - sensor.lumi_temperature_nursery
+                          - sensor.temperature_158_nursery
                         name: Nursery
                         show:
                           icon: false
@@ -142,7 +142,7 @@ cards:
                       
                       - type: custom:mini-graph-card
                         entities:
-                          - sensor.lumi_temperature_nursery
+                          - sensor.temperature_158_nursery
                         name: Nursery
                         show:
                           icon: false
@@ -170,135 +170,6 @@ cards:
                             margin-right: 5px;
                             margin-bottom: 5px;
                           }
-
-
-                      ## EXPERIMENT END 
-
-
-
-                      # - type: horizontal-stack
-                      #   cards:
-                      #     - type: vertical-stack
-                      #       cards:
-                      #         - type: horizontal-stack
-                      #           cards:
-                      #           #TODO
-                      #           - type: custom:simple-thermostat
-                      #             entity: climate.livingroom_ac
-                      #             step_size: 1
-                      #             sensors:
-                      #               - entity: sensor.lumi_temperature_livingroom
-                      #                 name: Tempdf
-                      #             control:
-                      #               hvac:
-                      #                 some_mode: false
-                      #                 another_mode: false
-                      #                 icon: false
-                      #                 'on':
-                      #                   name: false
-                      #                   icon: mdi:whitewalker
-
-                      #           # - type: thermostat
-                      #           #   entity: climate.livingroom_ac
-                      #           #   style: |
-                      #           #     ha-card {
-                      #           #       margin-right: 5px;
-                      #           #       margin-bottom: 5px;
-                      #           #     }
-                      #           - type: custom:mini-graph-card
-                      #             entities:
-                      #               - sensor.lumi_temperature_nursery
-                      #             name: Nursery
-                      #             show:
-                      #               icon: false
-                      #               fill: false
-                      #             #height: 35
-                      #             color_thresholds:
-                      #               - value: 0
-                      #                 color: "#CCE5FF"
-                      #               - value: 10
-                      #                 color: "#66B2FF"
-                      #               - value: 15
-                      #                 color: "#0080FF"
-                      #               - value: 18
-                      #                 color: "#87c087"
-                      #               - value: 21
-                      #                 color: "#389638"
-                      #               - value: 24
-                      #                 color: "#FF9932"
-                      #               - value: 25
-                      #                 color: "#FF8000"
-                      #               - value: 26
-                      #                 color: "#ff0000"
-                      #             style: |
-                      #               ha-card {
-                      #                 margin-right: 5px;
-                      #                 margin-bottom: 5px;
-                      #               }
-
-                      #         - type: horizontal-stack
-                      #           cards:
-                      #             - type: custom:mini-graph-card
-                      #               entities:
-                      #                 - sensor.lumi_temperature_livingroom
-                      #               name: Livingroom
-                      #               height: 25
-                      #               show:
-                      #                 fill: false
-                      #                 icon: false
-                      #               color_thresholds:
-                      #                 - value: 0
-                      #                   color: "#CCE5FF"
-                      #                 - value: 10
-                      #                   color: "#66B2FF"
-                      #                 - value: 18
-                      #                   color: "#0080FF"
-                      #                 - value: 20
-                      #                   color: "#87c087"
-                      #                 - value: 21
-                      #                   color: "#389638"
-                      #                 - value: 24
-                      #                   color: "#FF9932"
-                      #                 - value: 25
-                      #                   color: "#FF8000"
-                      #                 - value: 26
-                      #                   color: "#ff0000"
-                      #               style: |
-                      #                 ha-card {
-                      #                   margin-right: 5px;
-                      #                   margin-bottom: 5px;
-                      #                 }
-
-                      #             - type: custom:mini-graph-card
-                      #               show:
-                      #                 fill: false
-                      #                 icon: false
-                      #               height: 25
-                      #               entities:
-                      #                 - sensor.lumi_temperature_balcony
-                      #               name: Balcony
-                      #               color_thresholds:
-                      #                 - value: 0
-                      #                   color: "#CCE5FF"
-                      #                 - value: 10
-                      #                   color: "#66B2FF"
-                      #                 - value: 18
-                      #                   color: "#0080FF"
-                      #                 - value: 20
-                      #                   color: "#87c087"
-                      #                 - value: 21
-                      #                   color: "#389638"
-                      #                 - value: 24
-                      #                   color: "#FF9932"
-                      #                 - value: 25
-                      #                   color: "#FF8000"
-                      #                 - value: 26
-                      #                   color: "#ff0000"
-                      #               style: |
-                      #                 ha-card {
-                      #                   margin-right: 5px;
-                      #                   margin-bottom: 5px;
-                      #                 }
 
           - type: vertical-stack
             style: |
@@ -429,7 +300,7 @@ cards:
                     content: >
                       #### Kitchen
                   - type: custom:slider-entity-row
-                    entity: light.kitchen_ceiling
+                    entity: light.kitchen_lights
                     toggle: true
                     full_row: true
                     name: Kitchen

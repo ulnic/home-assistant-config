@@ -1,13 +1,13 @@
 alias: '[HALLWAY] Front Door Opens'
 trigger:
   - platform: state
-    entity_id: binary_sensor.lumi_door_entrance
+    entity_id: binary_sensor.xi_door_entrance
     to: 'on'
 condition:
   - condition: state
     entity_id: person.nic
     state: 'home'
 action:
-  - service: notify.ios_nicsiphone7
+  - service: notify.mobile_app_nicsiphone
     data:
       message: "Front Door Opened"

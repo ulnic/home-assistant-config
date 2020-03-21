@@ -1,10 +1,6 @@
 alias: "[LIVINGROOM] Paused/Stopped Movie"
 trigger:
   - platform: state
-    entity_id: media_player.apple_tv_livingroom
-    from: 'playing'
-    to: 'paused'
-  - platform: state
     entity_id: media_player.apple_tv
     from: 'playing'
     to: 'paused'

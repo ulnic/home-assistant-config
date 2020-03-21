@@ -4,3 +4,5 @@ logs:
   homeassistant.components.script: info
   homeassistant.components.remote: info
   homeassistant.components.media_player: fatal
+  pyatv: error
+  #custom_components.apple_tv: debug

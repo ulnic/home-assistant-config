@@ -4,7 +4,6 @@ homeassistant:
   longitude: !secret zone_home_longitude
   elevation: !secret elevation
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret time_zone
   customize: !include customize.yaml
   whitelist_external_dirs:
@@ -32,12 +31,12 @@ updater:
   reporting: yes
 # Set recorder options
 recorder: !include 1-file-config/recorder.yaml
-#history_graph: !include 1-file-config/history_graph.yaml
 map:
 config:
 system_health:
 lovelace:
   mode: yaml
+  resources: !include lovelace/resources.yaml
 person:
 mobile_app:
 ssdp:
@@ -46,8 +45,8 @@ notify:
   - name: all_ios
     platform: group
     services:
-      - service: ios_nicsiphone7
-      - service: ios_ullisiphone
+      - service: mobile_app_nicsiphone
+      - service: mobile_app_ulli_s_iphone
 
 ################################################
 ## Test
@@ -56,13 +55,13 @@ notify:
 ################################################
 ## Add integrations
 ################################################
-zwave:
-  usb_path: /zwaveusbstick
-  network_key: !secret device_zwave_network_key
+# zwave:
+#   usb_path: /zwaveusbstick
+#   network_key: !secret device_zwave_network_key
 
-zha:
-  usb_path: /zigbeestick
-  database_path: /config/zigbee.db
+# zha:
+#   usb_path: /zigbeestick
+#   database_path: /config/zigbee.db
   
 weather:
   - platform: darksky
@@ -99,16 +98,17 @@ alarm_control_panel: !include 1-file-config/alarm.yaml
 fan: !include 1-file-config/fan.yaml
 remote: !include 1-file-config/harmony.yaml
 logger: !include 1-file-config/logger.yaml
-ifttt: !include 1-file-config/ifttt.yaml
+#ifttt: !include 1-file-config/ifttt.yaml
 #mqtt: !include 1-file-config/mqtt.yaml
 #ring: !include 1-file-config/ring.yaml 
 input_boolean: !include 1-file-config/input_boolean.yaml
 input_select: !include 1-file-config/input_select.yaml
+input_number: !include 1-file-config/input_number.yaml
 wemo: !include 1-file-config/wemo.yaml
 #switch: !include 1-file-config/switch.yaml
 camera: !include 1-file-config/aarlo_camera.yaml
 aarlo: !include 1-file-config/aarlo.yaml
-apple_tv: !include 1-file-config/apple_tv_media_player.yaml
+#apple_tv: !include 1-file-config/apple_tv_media_player.yaml
 proximity: !include 1-file-config/proximity.yaml
 vacuum: !include 1-file-config/vacuum.yaml
 #hue: !include 1-file-config/light_hue.yaml

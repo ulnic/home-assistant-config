@@ -18,7 +18,7 @@ condition:
 action:
   - service: vacuum.start
     entity_id: vacuum.bibop
-  - service: notify.ios_nicsiphone7
+  - service: notify.mobile_app_nicsiphone
     data:
       message: "BiBop was put to action"
       data:

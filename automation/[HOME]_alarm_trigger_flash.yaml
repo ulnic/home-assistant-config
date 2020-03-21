@@ -6,6 +6,6 @@ trigger:
 action:
   - service: script.turn_on
     entity_id: script.alarm_light_flash
-  - service: notify.ios_nicsiphone7
+  - service: notify.mobile_app_nicsiphone
     data:
       message: 'Home Alarm Triggered {{now().strftime("%d/%m/%Y - %H:%M")}}'

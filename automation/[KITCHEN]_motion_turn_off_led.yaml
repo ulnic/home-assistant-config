@@ -11,5 +11,7 @@ condition:
     entity_id: input_boolean.kitchen_light_override
     state: 'off'
 action:
-  service: scene.turn_on
-  entity_id: scene.kitchen_lamps_off
+  service: light.turn_off
+  data:
+    entity_id: light.kitchen_lights
+    transition: 1

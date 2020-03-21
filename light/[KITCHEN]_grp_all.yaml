@@ -1,5 +1,5 @@
 platform: group
-name: Kitchen Ceiling
+name: Kitchen lights
 entities:
   - light.lifx_kitchen1
   - light.lifx_kitchen2

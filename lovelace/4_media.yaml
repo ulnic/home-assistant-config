@@ -291,25 +291,21 @@ cards:
                 command: Menu
                 device: Apple TV Gen 4
       
-      
-      
-
 
     #Apple TV
-  # - id: fc25c733e9be4249ab1ff393823ec3c9  # Automatically created id
-  #   type: custom:mini-media-player
-  #   entity: media_player.apple_tv_livingroom
-  #   name: Apple TV
-  #   artwork: full-cover
-  #   icon: mdi:apple
-  #   #sound_mode: full
-  #   info: short
-  #   hide:
-  #     power: true
-  #     volume: true
-  #     source: false
-  #   more_info: false
-  #   tts: false
+  - id: fc25c733e9be4249ab1ff393823ec3c9  # Automatically created id
+    type: custom:mini-media-player
+    entity: media_player.apple_tv
+    name: Apple TV
+    artwork: full-cover
+    icon: mdi:apple
+    info: short
+    hide:
+      power: true
+      volume: true
+      source: true
+    more_info: false
+    tts: false
 
   #Spotify
   - id: bc893715f3e2407081dae8bd0ecd0097  # Automatically created id
@@ -342,85 +338,92 @@ cards:
       name: false
       icon: false
       info: false
+  
 
   - type: custom:vertical-stack-in-card
     cards:
-      #Livingroom home
-      - id: f09e7038e714483d8337a16cc8565be8  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.living_room_home
-        name: Google Home Livingroom
-        artwork: cover
-        icon: mdi:cast-connected
-        hide:
-          volume: false
-          show_tts: true
-          power: true
-          hide_controls: false
-          source: true
-          scroll_info: true
+      - type: custom:fold-entity-row
+        head:
+          type: section
+          label: Google Players
+        padding: 10
+        entities:
+          #Livingroom home
+          - id: f09e7038e714483d8337a16cc8565be8  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.living_room_home
+            name: Google Home Livingroom
+            artwork: cover
+            icon: mdi:cast-connected
+            hide:
+              volume: false
+              show_tts: true
+              power: true
+              hide_controls: false
+              source: true
+              scroll_info: true
 
-      #Livingroom Google cast TV
-      - id: efdf53ef717a465ebd36fd136d68b789  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.living_room
-        name: Google TV Cast
-        artwork: cover
-        icon: mdi:cast-connected
-        tts: false
-        hide:
-          power: true
-          hide_controls: false
-          show_source: true
-        scroll_info: true
+          #Livingroom Google cast TV
+          - id: efdf53ef717a465ebd36fd136d68b789  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.living_room
+            name: Google TV Cast
+            artwork: cover
+            icon: mdi:cast-connected
+            tts: false
+            hide:
+              power: true
+              hide_controls: false
+              show_source: true
+            scroll_info: true
 
-      - type: custom:mini-media-player
-        entity: media_player.entryway_speaker
-        name: Google Bedroom
-        artwork: cover
-        icon: mdi:cast-connected
-        hide:
-          volume: false
-          show_tts: true
-          power: true
-          hide_controls: false
-          source: true
-          scroll_info: true
+          - type: custom:mini-media-player
+            entity: media_player.entryway_speaker
+            name: Google Bedroom
+            artwork: cover
+            icon: mdi:cast-connected
+            hide:
+              volume: false
+              show_tts: true
+              power: true
+              hide_controls: false
+              source: true
+              scroll_info: true
 
-      - type: custom:mini-media-player
-        entity: media_player.googlehome9051
-        name: Google Kitchen
-        artwork: cover
-        icon: mdi:cast-connected
-        hide:
-          volume: false
-          show_tts: true
-          power: true
-          hide_controls: false
-          source: true
-          scroll_info: true
+          - type: custom:mini-media-player
+            entity: media_player.googlehome9051
+            name: Google Kitchen
+            artwork: cover
+            icon: mdi:cast-connected
+            hide:
+              volume: false
+              show_tts: true
+              power: true
+              hide_controls: false
+              source: true
+              scroll_info: true
 
-      - type: custom:mini-media-player
-        entity: media_player.googlehome5332
-        name: Google Nursery
-        artwork: cover
-        icon: mdi:cast-connected
-        hide:
-          volume: false
-          show_tts: true
-          power: true
-          hide_controls: false
-          source: true
-          scroll_info: true
+          - type: custom:mini-media-player
+            entity: media_player.googlehome5332
+            name: Google Nursery
+            artwork: cover
+            icon: mdi:cast-connected
+            hide:
+              volume: false
+              show_tts: true
+              power: true
+              hide_controls: false
+              source: true
+              scroll_info: true
 
-
-  - type: conditional
-    conditions:
-      - entity: media_player.house,media_player.center_wing,media_player.right_wing,media_player.left_wing
-        state_not: 'off'
-    card:
-      type: custom:vertical-stack-in-card
-      cards:
+  - type: custom:vertical-stack-in-card
+    cards:
+    - type: custom:fold-entity-row
+      head:
+        type: section
+        label: Google Group Players
+      padding: 10
+      entities:
 
         - type: custom:mini-media-player
           entity: media_player.house
