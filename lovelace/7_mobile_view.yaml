@@ -528,7 +528,7 @@ cards:
           - type: custom:xiaomi-vacuum-card
             buttons: true
             entity: vacuum.bibop
-            image: /local/img/vacuum1.jpeg
+            image: /local/img/vacuum.png
             name: BiBop
           - type: divider
           - type: horizontal-stack
