@@ -3,7 +3,7 @@ themes:
   day:
     ha-card-border-radius: "20px"
     ha-card-box-shadow: 'inset 0px 0px 0px 1px var(--border-color)'
-  darkorange:
+  darkorange: 
     primary-color: "#ff9800"
     ha-card-border-radius: "20px"
     light-primary-color: "#ffc947"

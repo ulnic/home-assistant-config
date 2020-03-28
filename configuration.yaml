@@ -21,7 +21,9 @@ history:
 # View all events in a logbook
 logbook:
 # Enables the frontend
-frontend: !include 1-file-config/themes.yaml
+frontend: 
+  javascript_version: latest
+  themes: !include_dir_merge_named themes
 # Discover some devices automatically
 discovery:
 # Allows you to issue voice commands from the frontend
