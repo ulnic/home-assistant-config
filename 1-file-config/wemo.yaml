@@ -1,5 +1,4 @@
 discovery: true
 static:
-  #- !secret wemo_dishwasher
   - !secret wemo_media_unit
   - !secret wemo_espresso
