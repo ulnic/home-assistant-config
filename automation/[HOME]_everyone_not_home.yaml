@@ -1,13 +1,13 @@
-alias: '[HOME] Turn off home when nobody home'
+alias: '[HOME] Turn off home when nobody home' 
 trigger:
   - platform: state
-    entity_id: device_tracker.nicsiphone7
+    entity_id: person.nic
     from: 'home'
     to: 'not_home'
     for:
       minutes: 2
   - platform: state
-    entity_id: device_tracker.ullisiphone
+    entity_id: person.ulli
     from: 'home'
     to: 'not_home'
     for:

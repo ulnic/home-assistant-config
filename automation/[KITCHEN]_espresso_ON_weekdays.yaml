@@ -2,7 +2,7 @@ alias: "[KITCHEN] Espresso Machine ON Weekdays"
 initial_state: True
 trigger:
   platform: time
-  at: "06:20:00"
+  at: "06:45:00"
 condition:
   condition: and
   conditions:
