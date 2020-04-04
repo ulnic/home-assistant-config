@@ -1,3 +1,3 @@
 day:
   ha-card-border-radius: "20px"
-  ha-card-box-shadow: 'inset 0px 0px 0px 1px var(--border-color)'
+  #ha-card-box-shadow: 'inset 0px 0px 0px 1px var(--border-color)'

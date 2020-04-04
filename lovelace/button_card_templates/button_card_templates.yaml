@@ -1,0 +1,280 @@
+profile:
+  !include profile.yaml
+
+profile_nic:
+  template: profile
+  entity: person.nic
+  entity_picture: /local/nic_ha.jpg
+
+profile_ulli:
+  template: profile
+  entity: person.ulli
+  entity_picture: /local/ulli_ha_sq.png
+
+profile_button_guest:
+  template: profile
+  entity: input_boolean.guest_mode
+  entity_picture: /local/guest.png
+
+
+alarm:
+  !include alarm.yaml
+
+base:
+  style: |
+    ha-card {
+      font-family: 'Open Sans', sans-serif;
+      padding-top: 1px !important;
+      background-color: rgba(0, 0, 0, 0);
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+    ha-icon {
+      width: 30% !important;
+    }
+    #state {
+      padding-top: 5px;
+    }
+    #label {
+      font-size: 70%;
+    }
+
+icon_button:
+  template: base
+
+
+base_button:
+  template: base
+  color_type: icon
+  show_label: true
+  show_last_changed: false
+  tap_action:
+    action: toggle
+    haptic: success
+  hold_action:
+    action: more-info
+  styles:
+    card:
+      - height: 90px
+    label:
+      - font-size: 11px
+      - padding: 0px 5px
+  state:
+    - value: 'on'
+      styles:
+        icon:
+          - color: '#ff9800'
+
+button_fan:
+  !include fan.yaml
+
+
+button_switch:
+  template: base_button
+  show_last_changed: true
+
+
+button_scene:
+  template: base_button
+  variables:
+      scene_entity: "scene.movie_lighting"
+  double_tap_action:  
+    haptic: selection
+    action: call-service
+    service: scene.turn_on
+    service_data:
+      entity_id: '[[[ return variables.scene_entity ]]]'
+  
+
+button_scene_only_on:
+  template: base_button
+  variables:
+      scene_entity: "scene.movie_lighting"
+  tap_action:
+    action: call-service
+    service: scene.turn_on
+    service_data:
+      entity_id: '[[[ return variables.scene_entity ]]]'
+
+base_button_remote:
+  #template: base_button
+  color_type: icon
+  size: 60%
+  show_last_changed: false
+  show_name: false
+  show_label: false
+  styles: 
+    card:
+      - height: 90px
+    icon:
+      - height: 80%
+      - width: 80%
+  style: |
+    ha-card {
+      font-family: 'Open Sans', sans-serif;
+      padding-top: 1px !important;
+      background-color: rgba(0, 0, 0, 0);
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+
+button_scene_remote:
+  template: button_scene
+  show_label: false
+  show_name: false
+
+remote_button_toggle:
+  template: base_button_remote
+  show_label: false
+  show_name: false
+  
+
+
+remote_button_set_source:
+  template: base_button_remote
+  variables:
+      source: "Apple TV"
+  tap_action:
+    action: call-service
+    service: media_player.select_source
+    service_data:
+      entity_id: media_player.denon_amp
+      source: '[[[ return variables.source ]]]'
+  state:
+    - operator: template
+      value: >
+        [[[ 
+        return states['media_player.denon_amp'].attributes.source == variables.source
+        ]]]
+      color: '#ff9800'
+
+remote_media_player:
+  template: base_button_remote
+  variables:
+      direction: "up"
+  tap_action:
+    haptic: medium
+    action: call-service
+    service: '[[[ return "media_player.volume_" + variables.direction ]]]'
+    service_data:
+      entity_id: media_player.denon_amp
+  hold_action:
+    haptic: medium
+    action: call-service
+    repeat: 350
+    service: '[[[ return "media_player.volume_" + variables.direction ]]]'
+    service_data:
+      entity_id: media_player.denon_amp
+
+
+remote_button_tv:
+  template: base_button_remote
+  variables:
+      direction: 'RIGHT'
+  tap_action:
+    haptic: medium
+    action: call-service
+    service: script.turn_on
+    service_data:
+      entity_id: script.change_tv_brightness
+      variables:
+        DIRECTION: '[[[ return variables.direction ]]]'
+  #size: 130%
+  styles:
+    icon:
+      - margin: -10px
+    card:
+      - height: 100%
+
+remote_apple_tv:
+    template: base_button_remote
+    variables:
+      command: 'DirectionUp'
+    tap_action:
+      haptic: light
+      action: call-service
+      service: remote.send_command
+      service_data:
+        entity_id: remote.harmony
+        command: '[[[ return variables.command ]]]'
+        device: Apple TV Gen 4
+
+sensor:
+  color_type: icon
+  show_label: true
+  show_last_changed: true
+  tap_action:
+    action: more-info
+  styles:
+    name:
+      - font-size: 13px
+    label:
+      - font-size: 10px
+      - padding: 0px 5px
+  style: |
+      ha-card {
+        background-color: rgba(0, 0, 0, 0);
+      }
+  
+door:
+  template: sensor
+  state:
+    - value: 'on'
+      icon: mdi:door-open
+    - operator: 'default'
+      icon: mdi:door
+      styles:
+        icon:
+          - filter: opacity(50%)
+
+motion:
+  template: sensor
+  state:
+    - value: 'on'
+      icon: mdi:motion-sensor
+    - operator: 'default'
+      icon: mdi:account-search-outline
+      styles:
+        icon:
+          - filter: opacity(50%)
+
+occupancy:
+  template: sensor
+  state:
+    - value: 'on'
+      icon: mdi:home-map-marker
+    - operator: 'default'
+      icon: mdi:home-outline
+      styles:
+        icon:
+          - filter: opacity(50%) 
+
+fuel:
+  template: sensor
+  show_state: true
+  show_last_changed: false
+
+nzb:
+  template: sensor
+  show_state: false
+  show_last_changed: false
+  tap_action:
+    haptic: medium
+    action: call-service
+    service: script.turn_on
+    service_data:
+      entity_id: script.nzb_toggle
+  state:
+    - value: 'True'
+      icon: mdi:download-off
+      label: 'Paused'
+    - operator: 'default'
+      icon: mdi:download
+      label: 'Downloading'
+      styles:
+        icon:
+          - filter: opacity(50%) 
+          - color: '#ff9800'

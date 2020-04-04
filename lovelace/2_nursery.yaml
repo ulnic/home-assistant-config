@@ -3,6 +3,119 @@ background: "right/auto linear-gradient(23deg, rgba(151,177,177,1) 0%, rgba(151,
 icon: mdi:baby
 title: Nursery
 cards:
+
+  - type: custom:simple-weather-card
+    entity: weather.dark_sky
+    name: at home
+
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.nursery_show_all_lights
+            state: 'on'
+        card:
+          type: vertical-stack
+          cards:
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  template: button_scene_only_on
+                  name: All OFF
+                  icon: mdi:flashlight-off
+                  variables:
+                    scene_entity: "scene.nursery_all_off"
+                - type: custom:button-card
+                  template: button_scene_only_on
+                  entity: scene.nursery_night_read
+                  name: Night Reading
+                  icon: mdi:book-open-page-variant
+                  variables:
+                    scene_entity: "scene.nursery_night_read"
+                - type: custom:button-card
+                  template: button_scene_only_on
+                  entity: scene.nursery_full_on
+                  name: All ON
+                  variables:
+                    scene_entity: scene.nursery_full_on
+
+                - type: "custom:button-card"
+                  template: button_fan
+                  entity: fan.nursery_ceiling_fan
+                  variables:
+                    room: 'nursery'
+
+            - type: entities
+              show_header_toggle: false
+              entities:
+                - type: custom:slider-entity-row
+                  entity:  light.nursery_ceiling
+                  toggle: true
+                  full_row: true
+                  name: Nursery
+                - type: custom:slider-entity-row
+                  entity:  light.lifx_nursery_1
+                  toggle: true
+                  name: Balcony
+                - type: custom:slider-entity-row
+                  entity:  light.lifx_nursery_2
+                  toggle: true
+                  name: Cot
+              style: |
+                ha-card {
+                  background-color: rgba(0, 0, 0, 0);
+                  -webkit-box-shadow: none;
+                  -moz-box-shadow: none;
+                  box-shadow: none;
+                }
+      - type: conditional
+        conditions:
+          - entity: binary_sensor.nursery_show_all_lights
+            state: 'off'
+        card:
+          type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: button_scene_only_on
+              name: All OFF
+              icon: mdi:flashlight-off
+              variables:
+                scene_entity: "scene.nursery_all_off"
+            - type: custom:button-card
+              template: button_fan
+              entity: fan.nursery_ceiling_fan
+              variables:
+                room: 'nursery'
+            - type: custom:button-card
+              template: base_button
+              entity: input_boolean.nursery_sleeping_override
+
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: markdown
+        content: >
+          #### Doors & Motion
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0);
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+          }
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: door
+            entity: binary_sensor.door_sensor_158_nursery
+            name: Nursery Door
+          - type: custom:button-card
+            template: door
+            entity: binary_sensor.door_sensor_158_nursery_balcony
+            name: Nursery Balcony
+          - type: custom:button-card
+            template: motion
+            entity: binary_sensor.158_motion_nursery
+            name: Nursery Motion
   - type: custom:swipe-card
     parameters:
       effect: coverflow
@@ -71,152 +184,5 @@ cards:
         color: "#FF8000"
       - value: 26
         color: "#ff0000"
-
-  - type: custom:weather-card
-    entity: weather.dark_sky
-    details: false
-    forecast: true
-    style: |
-      ha-card {
-        background-color: rgba(0, 0, 0, 0);
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-      }
-
-  - type: custom:vertical-stack-in-card
-    cards:
-      - type: conditional
-        conditions:
-          - entity: binary_sensor.nursery_show_all_lights
-            state: 'on'
-        card:
-          type: custom:vertical-stack-in-card
-          cards:
-            - type: horizontal-stack
-              cards:
-                - type: entity-button
-                  entity: scene.nursery_all_off
-                  name: All OFF
-                  tap_action:
-                    action: call-service
-                    service: scene.turn_on
-                    service_data:
-                      entity_id: scene.nursery_all_off
-                - type: entity-button
-                  entity: scene.nursery_night_read
-                  name: Night Reading
-                  tap_action:
-                    action: call-service
-                    service: scene.turn_on
-                    service_data:
-                      entity_id: scene.nursery_night_read
-                - type: entity-button
-                  entity: scene.nursery_full_on
-                  name: All ON
-                  tap_action:
-                    action: call-service
-                    service: scene.turn_on
-                    service_data:
-                      entity_id: scene.nursery_full_on
-
-
-                - type: "custom:button-card"
-                  name:  Fan
-                  color_type: icon
-                  size: 25%
-                  entity: fan.nursery_ceiling_fan
-                  show_label: true
-                  label: >
-                    [[[
-                    return (states['input_boolean.fan_state_nursery'].state === 'on'
-                      ? 'Speed ' + states['input_select.fan_speed_nursery'].state
-                      : '');
-                    ]]]
-                  tap_action:
-                    action: toggle
-                  double_tap_action:
-                    action: call-service
-                    service: script.turn_on
-                    service_data:
-                      entity_id: script.fan_increase_speed
-                      variables:
-                        room: 'nursery'
-                  hold_action:
-                    action: more-info
-                  styles:
-                    card:
-                      - height: 90px
-                    label:
-                      - font-size: 11px
-                      - padding: 0px 5px
-
-            - type: entities
-              entities:
-                - type: custom:slider-entity-row
-                  entity:  light.nursery_ceiling
-                  toggle: true
-                  full_row: true
-                  name: Nursery
-                - type: custom:slider-entity-row
-                  entity:  light.lifx_nursery_1
-                  toggle: true
-                  name: Balcony
-                - type: custom:slider-entity-row
-                  entity:  light.lifx_nursery_2
-                  toggle: true
-                  name: Cot
-      - type: conditional
-        conditions:
-          - entity: binary_sensor.nursery_show_all_lights
-            state: 'off'
-        card:
-          type: horizontal-stack
-          cards:
-            - type: entity-button
-              entity: scene.nursery_all_off
-              name: All OFF
-              tap_action:
-                action: call-service
-                service: scene.turn_on
-                service_data:
-                  entity_id: scene.nursery_all_off
-            - type: entity-button
-              entity: fan.nursery_ceiling_fan
-              tap_action:
-                action: more-info
-              hold_action:
-                action: call-service
-                service: fan.toggle
-                service_data:
-                  entity_id: fan.nursery_ceiling_fan
-            - type: entity-button
-              entity: input_boolean.nursery_sleeping_override
-              tap_action:
-                action: call-service
-                service: input_boolean.toggle
-                service_data:
-                  entity_id: input_boolean.nursery_sleeping_override
-
-  - type: custom:vertical-stack-in-card
-    cards:
-      - type: markdown
-        content: >
-          #### Doors & Motion
-      - type: horizontal-stack
-        cards:
-          - type: "custom:button-card"
-            template: door
-            entity: binary_sensor.door_sensor_158_nursery
-            name: Nursery Door
-          - type: "custom:button-card"
-            template: door
-            entity: binary_sensor.door_sensor_158_nursery_balcony
-            name: Nursery Balcony
-          - type: "custom:button-card"
-            template: motion
-            entity: binary_sensor.158_motion_nursery
-            name: Nursery Motion
-
   - type: picture
     image: /local/ergopouch-temperature-guide.jpg

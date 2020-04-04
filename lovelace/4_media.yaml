@@ -11,252 +11,108 @@ cards:
           - type: "custom:button-card"
             color_type: blank-card
           - type: "custom:button-card"
-            color_type: icon
+            template: button_scene_remote
             entity: light.tv
-            show_label: false
-            show_name: false
-            show_last_changed: false
-            tap_action:
-              action: toggle
-              haptic: success
-            double_tap_action:  
-              action: call-service
-              service: scene.turn_on
-              service_data:
-                entity_id: scene.movie_lighting
-              haptic: selection
+            variables:
+              scene_entity: "scene.movie_lighting"
 
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_button_toggle
             icon: mdi:power-standby
             entity: switch.media_unit
-            show_label: false
-            show_name: false
-            show_last_changed: false
-            tap_action:
-              action: toggle
-              haptic: heavy
       
       - type: horizontal-stack
         cards:
-          - type: "custom:button-card"
-            color_type: icon
+          - type: custom:button-card
+            template: remote_button_set_source
             icon: mdi:apple
-            label: 'Apple TV'
-            show_label: false
-            show_last_changed: false
-            #styles:
-            #  card:
-            #    - height: 60px
-            tap_action:
-              action: call-service
-              service: media_player.select_source
-              service_data:
-                entity_id: media_player.denon_amp
-                source: "Apple TV"
-            state:
-              - operator: template
-                value: >
-                  [[[ 
-                  return states['media_player.denon_amp'].attributes.source == 'Apple TV'
-                  ]]]
-                color: '#ff9800'
-          - type: "custom:button-card"
-            color_type: icon
+            variables:
+              source: 'Apple TV'
+
+          - type: custom:button-card
+            template: remote_button_set_source
             icon: mdi:google-chrome
-            label: 'ChromeCast'
-            show_label: false
-            show_last_changed: true
-            tap_action:
-              action: call-service
-              service: media_player.select_source
-              service_data:
-                entity_id: media_player.denon_amp
-                source: "ChromeCast"
-            state:
-              - operator: template
-                value: >
-                  [[[
-                    return states['media_player.denon_amp'].attributes.source == 'ChromeCast'
-                  ]]]
-                color: '#ff9800'
-          - type: "custom:button-card"
-            color_type: icon
+            variables:
+              source: 'Chromecast'
+          
+          - type: custom:button-card
+            template: remote_button_set_source
             icon: mdi:playstation
-            label: 'PS4'
-            show_label: false
-            show_last_changed: true
-            tap_action:
-              action: call-service
-              service: media_player.select_source
-              service_data:
-                entity_id: media_player.denon_amp
-                source: "PS4"
-            state:
-              - operator: template
-                value: >
-                  [[[
-                    return states['media_player.denon_amp'].attributes.source == 'PS4'
-                  ]]]
-                color: '#ff9800'
+            variables:
+              source: 'PS4'
 
       - type: horizontal-stack
         cards:
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_button_tv
             icon: mdi:lightbulb-on-outline
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: medium
-              action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.change_tv_brightness
-                variables:
-                  DIRECTION: 'RIGHT'
+            variables:
+              direction: 'RIGHT'
+
           - type: "custom:button-card"
-            color_type: blank-card  
+            color_type: blank-card 
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_media_player
             icon: mdi:volume-plus
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: medium
-              action: call-service
-              service: media_player.volume_up
-              service_data:
-                entity_id: media_player.denon_amp
-            hold_action:
-              haptic: light
-              action: call-service
-              repeat: 400
-              service: media_player.volume_up
-              service_data:
-                entity_id: media_player.denon_amp
-          
+            variables:
+              direction: "up"
 
       - type: horizontal-stack
         cards:
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_button_tv
             icon: mdi:lightbulb-off-outline
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.change_tv_brightness
-                variables:
-                  DIRECTION: 'LEFT'
+            variables:
+              direction: 'LEFT'
+
           - type: "custom:button-card"
             color_type: blank-card  
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_media_player
             icon: mdi:volume-minus
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: medium
-              action: call-service
-              service: media_player.volume_down
-              service_data:
-                entity_id: media_player.denon_amp
-            hold_action:
-              haptic: light
-              action: call-service
-              repeat: 400
-              service: media_player.volume_down
-              service_data:
-                entity_id: media_player.denon_amp
-          
-          
+            variables:
+              direction: "down"
 
       - type: horizontal-stack
         cards:
           - type: "custom:button-card"
             color_type: blank-card
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_apple_tv
             icon: mdi:chevron-up
-            show_label: false
-            show_last_changed: false
-            styles:
-              card:
-                - height: 90px
-            tap_action:
-              haptic: light
-              action: call-service
-              service: remote.send_command
-              service_data:
-                entity_id: remote.harmony
-                command: DirectionUp
-                device: Apple TV Gen 4
+            variables:
+              command: 'DirectionUp'
           - type: "custom:button-card"
             color_type: blank-card  
       - type: horizontal-stack
         cards:
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_apple_tv
             icon: mdi:chevron-left
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: light
-              action: call-service
-              service: remote.send_command
-              service_data:
-                entity_id: remote.harmony
-                command: DirectionLeft
-                device: Apple TV Gen 4
+            variables:
+              command: 'DirectionLeft'
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_apple_tv
             icon: mdi:checkbox-blank-circle
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: success
-              action: call-service
-              service: remote.send_command
-              service_data:
-                entity_id: remote.harmony
-                command: Select
-                device: Apple TV Gen 4
+            variables:
+              command: 'Select'
+
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_apple_tv
             icon: mdi:chevron-right
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: light
-              action: call-service
-              service: remote.send_command
-              service_data:
-                entity_id: remote.harmony
-                command: DirectionRight
-                device: Apple TV Gen 4
+            variables:
+              command: 'DirectionRight'
+
       - type: horizontal-stack
         cards:
           - type: "custom:button-card"
             color_type: blank-card
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_apple_tv
             icon: mdi:chevron-down
-            show_label: false
-            show_last_changed: false
-            styles:
-              card:
-                - height: 90px
-            tap_action:
-              haptic: light
-              action: call-service
-              service: remote.send_command
-              service_data:
-                entity_id: remote.harmony
-                command: DirectionDown
-                device: Apple TV Gen 4
+            variables:
+              command: 'DirectionDown'
+
           - type: "custom:button-card"
             color_type: blank-card  
       - type: horizontal-stack
@@ -264,32 +120,16 @@ cards:
           - type: "custom:button-card"
             color_type: blank-card  
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_apple_tv
             icon: mdi:play-pause
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: success
-              action: call-service
-              service: remote.send_command
-              service_data:
-                entity_id: remote.harmony
-                command: Play
-                device: Apple TV Gen 4
+            variables:
+              command: 'Play'
           
           - type: "custom:button-card"
-            color_type: icon
+            template: remote_apple_tv
             icon: mdi:keyboard-return
-            show_label: false
-            show_last_changed: false
-            tap_action:
-              haptic: warning
-              action: call-service
-              service: remote.send_command
-              service_data:
-                entity_id: remote.harmony
-                command: Menu
-                device: Apple TV Gen 4
+            variables:
+              command: 'Menu'
       
 
     #Apple TV
@@ -349,19 +189,40 @@ cards:
         padding: 10
         entities:
           #Livingroom home
-          - id: f09e7038e714483d8337a16cc8565be8  # Automatically created id
-            type: custom:mini-media-player
+          - type: custom:mini-media-player
             entity: media_player.living_room_home
             name: Google Home Livingroom
             artwork: cover
             icon: mdi:cast-connected
+            mini-media-player-overlay-color: rgba(0, 0, 0, 0); 
             hide:
               volume: false
-              show_tts: true
-              power: true
+              show_tts: false
+              power: false
               hide_controls: false
               source: true
               scroll_info: true
+              #TODO: Fix style below
+              style: |
+                :host {
+                  --mini-media-player-overlay-color: rgba(0, 0, 0, 0);
+                }
+                ha-card {
+                  background: none;
+                  background-color: rgba(0, 0, 0, 0);
+                  ha-card-background: rgba(0, 0, 0, 0);
+                  -webkit-box-shadow: none;
+                  -moz-box-shadow: none;
+                  box-shadow: none;
+                }
+                ha-card::before {
+                  content: '';
+                  position: absolute;
+                  height: 100%;
+                  width: 100%;
+                  top: 0;
+                  background: rgba(0,0,0,0);
+                }
 
           #Livingroom Google cast TV
           - id: efdf53ef717a465ebd36fd136d68b789  # Automatically created id

@@ -16,52 +16,20 @@ cards:
             cards:
               - type: horizontal-stack
                 cards:
-                  - type: custom:decluttering-card
-                    template: nest_picture_button
-                    variables:
-                      - entity: person.nic
-                      - entity_picture: /local/nic_ha.jpg
-                  - type: custom:decluttering-card
-                    template: nest_button
-                    variables:
-                      - entity: alarm_control_panel.ha_alarm
-                      - state:
-                          - value: 'armed_away'
-                            icon: mdi:shield-lock
-                            color: rgb(152,251,152)
-                          - value: 'armed_home'
-                            icon: mdi:shield-home
-                            color: rgb(251, 210, 41)
-                          - value: 'triggered'
-                            icon: mdi:shield-alert
-                            color: rgb(255, 0, 0)
-                            styles:
-                              icon:
-                                - animation: blink 2s ease infinite
-                          - value: 'disarmed'
-                            icon: mdi:shield-off
-                            color: rgb(169,169,169)
-                          - value: 'pending'
-                            icon: mdi:shield-half-full
-                            color: rgb(169,169,169)
-                            styles:
-                              icon:
-                                - animation: blink 2s ease infinite
+                  - type: "custom:button-card"
+                    template: profile_nic
+                  - type: "custom:button-card"
+                    template: alarm
+
                   - type: conditional
                     conditions:
                       - entity: input_boolean.guest_mode
                         state: "on"
                     card:
-                      type: custom:decluttering-card
-                      template: nest_picture_button
-                      variables:
-                        - entity: input_boolean.guest_mode
-                        - entity_picture: /local/guest.png
-                  - type: custom:decluttering-card
-                    template: nest_picture_button
-                    variables:
-                      - entity: person.ulli
-                      - entity_picture: /local/ulli_ha_sq.png
+                      type: "custom:button-card"
+                      template: profile_button_guest
+                  - type: "custom:button-card"
+                    template: profile_ulli
               - type: custom:weather-card
                 entity: weather.dark_sky
                 current: true
@@ -464,26 +432,22 @@ cards:
                         full_row: true
                   - type: horizontal-stack
                     cards:
-                      - type: custom:decluttering-card
-                        template: nest_icon_button
-                        variables:
-                          - entity: light.lifx_livingroom1
-                          - name: Living TV
-                      - type: custom:decluttering-card
-                        template: nest_icon_button
-                        variables:
-                          - entity: light.lifx_livingroom2
-                          - name: Living
-                      - type: custom:decluttering-card
-                        template: nest_icon_button
-                        variables:
-                          - entity: light.lifx_dining1
-                          - name: Dining TV
-                      - type: custom:decluttering-card
-                        template: nest_icon_button
-                        variables:
-                          - entity: light.lifx_dining2
-                          - name: Dining
+                      - type: custom:button-card
+                        template: icon_button
+                        entity: light.lifx_livingroom1
+                        name: Living TV
+                      - type: custom:button-card
+                        template: icon_button
+                        entity: light.lifx_livingroom2
+                        name: Living
+                      - type: custom:button-card
+                        template: icon_button
+                        entity: light.lifx_dining1
+                        name: Dining TV
+                      - type: custom:button-card
+                        template: icon_button
+                        entity: light.lifx_dining2
+                        name: Dining
 
               - type: custom:vertical-stack-in-card
                 #title: Bedroom
@@ -562,40 +526,34 @@ cards:
                     cards:
                       - type: horizontal-stack
                         cards:
-                          - type: custom:decluttering-card
-                            template: nest_icon_button
-                            variables:
-                              - entity: light.lifx_hallway_1
-                              - name: Hallway
-                          - type: custom:decluttering-card
-                            template: nest_icon_button
-                            variables:
-                              - entity: light.lifx_laundry
-                              - name: Laundry
-                          - type: custom:decluttering-card
-                            template: nest_icon_button
-                            variables:
-                              - entity: light.balcony_ceiling
-                              - name: Balcony
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_hallway_1
+                            name: Hallway
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_laundry
+                            name: Laundry
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.balcony_ceiling
+                            name: Balcony
                   - type: custom:vertical-stack-in-card
                     cards:
                       - type: horizontal-stack
                         cards:
-                          - type: custom:decluttering-card
-                            template: nest_icon_button
-                            variables:
-                              - entity: light.led
-                              - name: LED
-                          - type: custom:decluttering-card
-                            template: nest_icon_button
-                            variables:
-                              - entity: light.lifx_kitchen1
-                              - name: Stove
-                          - type: custom:decluttering-card
-                            template: nest_icon_button
-                            variables:
-                              - entity: light.lifx_kitchen2
-                              - name: Fridge
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.led
+                            name: LED
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_kitchen1
+                            name: Stove
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_kitchen2
+                            name: Fridge
 
               - type: horizontal-stack
                 cards:
@@ -618,10 +576,10 @@ cards:
                       - binary_sensor.xi_door_entrance
                       - binary_sensor.158_door_balcony
                       - climate.livingroom_ac
-                      - light.balcony_ceiling
+                      #- light.balcony_ceiling
                       - light.bedroom
                       - light.bedroom_ceiling
-                      - light.desk
+                      #- light.desk
                       - light.dining_lights
                       - light.gateway_light
                       - light.kitchen_lights

@@ -1,0 +1,133 @@
+card:
+  type: custom:vertical-stack-in-card
+  cards:
+    - type: custom:simple-thermostat
+      entity: climate.livingroom_ac
+      name: 'Aircon'
+      step_size: 1
+      step_layout: row
+      sensors:
+        - entity: sensor.158_humidity_livingroom
+          name: 'Humidity'
+        - entity: climate.livingroom_ac
+          name: 'State'
+        - entity: sensor.158_temperature_balcony
+          name: 'Outside'
+      control:
+        _names: false
+        hvac: true
+        fan:
+          auto: false
+          night:
+            icon: mdi:sleep
+          low:
+            icon: mdi:numeric-1-box-outline
+          lowMedium: 
+            icon: mdi:numeric-2-box-outline
+          medium:
+            icon: mdi:numeric-3-box-outline
+          mediumHigh:
+            icon: mdi:numeric-4-box-outline
+          high:
+            icon: mdi:numeric-5-box-outline
+          powerful:
+            icon: mdi:file-powerpoint-box-outline
+      style: |
+        ha-card {
+          --st-font-size-xl: 24px;
+          --st-font-size-m: 22px;
+          --st-font-size-title: 20px;
+          --st-spacing: 2px;
+          --st-mode-background: rgba(255, 255, 240, 0.2);
+          background-color: rgba(0, 0, 0, 0);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+
+    - type: vertical-stack
+      cards:
+        - type: custom:swipe-card
+          parameters:
+            effect: coverflow
+          cards:
+            - type: custom:mini-graph-card
+              entities:
+                - entity: sensor.158_temperature_livingroom
+                  name: Livingroom
+                - entity: sensor.temperature_158_kitchen
+                  name: Kitchen
+                - entity: sensor.158_temperature_bedroom
+                  name: Bedroom
+                - entity: sensor.temperature_158_nursery
+                  name: Nursery
+              show:
+                name: false
+                icon: false
+                fill: true
+                state: true
+              points_per_hour: 1
+              animate: true
+              style: |
+                ha-card {
+                  margin-right: 5px;
+                  margin-bottom: 5px;
+                  background-color: rgba(0, 0, 0, 0);
+                  -webkit-box-shadow: none;
+                  -moz-box-shadow: none;
+                  box-shadow: none;
+                }
+            - type: custom:mini-graph-card
+              entities:
+                - entity: sensor.158_humidity_livingroom
+                  name: Livingroom
+                - entity: sensor.humidity_158_kitchen
+                  name: Kitchen
+                - entity: sensor.158_humidity_bedroom
+                  name: Bedroom
+                - entity: sensor.humidity_158_nursery
+                  name: Nursery
+              line_color: blue
+              show:
+                name: false
+                icon: false
+                fill: true
+                state: true
+              points_per_hour: 1
+              animate: true
+              style: |
+                ha-card {
+                  margin-right: 5px;
+                  margin-bottom: 5px;
+                  background-color: rgba(0, 0, 0, 0);
+                  -webkit-box-shadow: none;
+                  -moz-box-shadow: none;
+                  box-shadow: none;
+                }
+            - type: custom:mini-graph-card
+              entities:
+                - entity: sensor.158_illumination_livingroom
+                  name: Livingroom
+                - entity: sensor.illumination_158_kitchen
+                  name: Kitchen
+                - entity: sensor.158_illumination_bedroom
+                  name: Bedroom
+                - entity: sensor.158_illumination_nursery
+                  name: Nursery
+              name: Kitchen Light
+              line_color: yellow
+              show:
+                name: false
+                icon: false
+                fill: true
+                state: true
+              points_per_hour: 1
+              style: |
+                ha-card {
+                  margin-right: 5px;
+                  margin-bottom: 5px;
+                  background-color: rgba(0, 0, 0, 0);
+                  -webkit-box-shadow: none;
+                  -moz-box-shadow: none;
+                  box-shadow: none;
+                }

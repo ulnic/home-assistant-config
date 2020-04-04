@@ -1,0 +1,17 @@
+template: base_button
+variables:
+    room: "livingroom"
+name:  Fan
+label: >
+  [[[
+  return (states['input_boolean.fan_state_' + variables.room ].state === 'on'
+    ? 'Speed ' + states['input_select.fan_speed_' + variables.room ].state
+    : '');
+  ]]]
+double_tap_action:
+  action: call-service
+  service: script.turn_on
+  service_data:
+    entity_id: script.fan_increase_speed
+    variables:
+      room: '[[[ return variables.room ]]]'

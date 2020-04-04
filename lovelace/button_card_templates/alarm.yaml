@@ -1,0 +1,57 @@
+entity: alarm_control_panel.ha_alarm
+show_last_changed: true
+show_state: true
+show_name: false
+show_icon: true
+state:
+  - value: 'armed_away'
+    icon: mdi:shield-lock
+    color: rgb(152,251,152)
+  - value: 'armed_home'
+    icon: mdi:shield-home
+    color: rgb(251, 210, 41)
+  - value: 'triggered'
+    icon: mdi:shield-alert
+    color: rgb(255, 0, 0)
+    styles:
+      icon:
+        - animation: blink 2s ease infinite
+  - value: 'disarmed'
+    icon: mdi:shield-off
+    color: rgb(169,169,169)
+  - value: 'pending'
+    icon: mdi:shield-half-full
+    color: rgb(169,169,169)
+    styles:
+      icon:
+        - animation: blink 2s ease infinite
+tap_action:
+  action: more-info
+style: |
+  ha-card {
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 15px !important;
+    background-color: rgba(0, 0, 0, 0);
+    --primary-text-color: black;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  ha-icon {
+    width: 60% !important;
+  }
+  img {
+    width: 100%;
+  }
+  #img-cell {
+    background-color: #F5F5F5;
+    border-radius: 50px;
+    height: 50px !important;
+    width: 50px !important;
+  }   
+  #state {
+    padding-top: 5px;
+  }
+  #label {
+    font-size: 70%;
+  }      

@@ -1,0 +1,20 @@
+compact_mode: true
+hide_config: true
+hide_raw: true
+hide_help: true
+voice_hide: true
+menu_hide: true
+button_text:
+  options: '{{ time }}'
+exceptions:
+- conditions:
+    user: Nicolai
+    user_agent: iPad
+  config:
+    kiosk_mode: true
+    hide_unused: true
+    hide_tabs: 0,1,2,3,4,5
+- conditions:
+    user_agent: Macintosh[DELETETHISPART]
+  config:
+    hide_tabs: 0

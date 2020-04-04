@@ -97,6 +97,10 @@ cards:
       - type: markdown
         content: >
           #### NZB
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0);
+          }
       - type: horizontal-stack
         cards:
           - type: glance
@@ -107,32 +111,13 @@ cards:
               - entity: sensor.nzbget_queue_size
                 name: Queue
           - type: custom:button-card
-            template: sensor
+            template: nzb
             entity: sensor.nzbget_download_paused
             name: Toggle 
-            show_state: false
-            show_last_changed: false
-            tap_action:
-              action: call-service
-              service: script.turn_on
-              service_data:
-                entity_id: script.nzb_toggle
-            state:
-              - value: 'True'
-                icon: mdi:download-off
-                label: 'Paused'
-              - operator: 'default'
-                icon: mdi:download
-                label: 'Downloading'
-                styles:
-                  icon:
-                    - filter: opacity(50%) 
 
-          
 
   #Proximity
-  - id: cb32c2a37a334ebcab2000c212014f11  # Automatically created id
-    type: entities
+  - type: entities
     title: Proximity
     show_header_toggle: false
     entities:
