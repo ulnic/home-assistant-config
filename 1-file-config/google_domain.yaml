@@ -1,0 +1,4 @@
+domain: !secret google_domain
+username: !secret google_domain_username
+password: !secret google_domain_password
+timeout: 40

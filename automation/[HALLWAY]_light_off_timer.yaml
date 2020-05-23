@@ -1,0 +1,13 @@
+alias: '[HALLWAY] light off timer'
+initial_state: True
+trigger:
+  platform: state
+  entity_id: light.lifx_hallway_1
+  to: 'on'
+  for:
+    minutes: 10
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.lifx_hallway_1
+      transition: 2

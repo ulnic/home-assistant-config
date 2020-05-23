@@ -6,7 +6,6 @@ turn_home_off_timer:
         message: "I'm turning off the house in 10 min, care to cancel? !"
         data:
           push:
-            badge: 1
             category: "ios_home_turnoff_cancel"
     - delay:
         minutes: 10

@@ -19,10 +19,10 @@ condition:
       before: '19:00:00'
       after: '07:00:00'
     - condition: state
-      entity_id: device_tracker.nicsiphone7
+      entity_id: person.nic
       state: 'not_home'
     - condition: state
-      entity_id: device_tracker.ullisiphone
+      entity_id: person.ulli
       state: 'not_home'
     - condition: state
       entity_id: input_boolean.guest_mode

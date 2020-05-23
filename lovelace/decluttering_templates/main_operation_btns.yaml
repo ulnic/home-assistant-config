@@ -1,0 +1,190 @@
+card:
+  type: vertical-stack
+  cards:
+    - type: vertical-stack
+      cards:
+        - type: custom:vertical-stack-in-card
+          cards:
+            - type: horizontal-stack
+              style: |
+                ha-card {
+                  border-radius: 30px;
+                  margin-top: 10px;
+                  padding-top: 10px;
+                  margin-bottom: 10px;
+                  background-color: rgba(0, 0, 0, 0);
+                }
+              cards:
+                - type: "custom:button-card"
+                  template: button_fan
+                  entity: fan.livingroom_ceiling_fan
+                  variables:
+                    room: 'livingroom'
+
+                - type: "custom:button-card"
+                  template: button_switch
+                  entity: switch.espresso
+
+    - type: custom:vertical-stack-in-card
+      cards:
+        - type: horizontal-stack
+          style: |
+            ha-card {
+              border-radius: 30px;
+              margin-top: 10px;
+              padding-top: 10px;
+              margin-bottom: 10px;
+            }
+          cards:
+            - type: "custom:button-card"
+              template: base_button
+              entity: switch.media_unit
+              name: TV
+
+            - type: "custom:button-card"
+              template: button_scene
+              name: TV mood
+              entity: light.tv
+              variables:
+                scene_entity: "scene.movie_lighting"
+
+            - type: "custom:button-card"
+              template: base_button
+              name: All Lights
+              entity: light.master_switch     
+
+
+        - type: vertical-stack
+          cards:
+            - type: custom:decluttering-card
+              template: markdown_card
+              variables:
+                - entity_1: '#### Living & Dining room'
+            - type: custom:fold-entity-row
+              head:
+                type: custom:slider-entity-row
+                entity: light.living_ceiling_lights
+                toggle: true
+                name: Living
+              group_config:
+                type: custom:slider-entity-row
+              items:
+                - entity: light.lifx_livingroom1
+                  name: Living TV
+                - entity: light.lifx_livingroom2
+                  name: Living
+
+            - type: custom:fold-entity-row
+              head:
+                type: custom:slider-entity-row
+                entity:  light.dining_lights
+                toggle: true
+                name: Dining
+              group_config:
+                type: custom:slider-entity-row
+              items:
+                - entity: light.lifx_dining1
+                  name: Dining
+                - entity: light.lifx_dining2
+                  name: Dining Sofa
+
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  template: icon_button
+                  entity: light.lifx_livingroom1
+                  name: Living TV
+                - type: custom:button-card
+                  template: icon_button
+                  entity: light.lifx_livingroom2
+                  name: Living
+                - type: custom:button-card
+                  template: icon_button
+                  entity: light.lifx_dining1
+                  name: Dining TV
+                - type: custom:button-card
+                  template: icon_button
+                  entity: light.lifx_dining2
+                  name: Dining
+
+
+    - type: custom:vertical-stack-in-card
+      cards:
+        - type: custom:decluttering-card
+          template: markdown_card
+          variables:
+            - entity_1: '#### Kitchen'
+        - type: custom:slider-entity-row
+          entity: light.kitchen_lights
+          toggle: true
+          full_row: true
+          name: Kitchen
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: icon_button
+              entity: light.led
+              name: LED
+            - type: custom:button-card
+              template: icon_button
+              entity: light.led_shelf
+              name: Shelf
+            - type: custom:button-card
+              template: icon_button
+              entity: light.lifx_kitchen1
+              name: Stove
+            - type: custom:button-card
+              template: icon_button
+              entity: light.lifx_kitchen2
+              name: Fridge
+
+
+      #Bedroom
+    - type: custom:vertical-stack-in-card
+      cards:
+        - type: custom:decluttering-card
+          template: markdown_card
+          variables:
+            - entity_1: '#### Bedroom'
+        - type: custom:slider-entity-row
+          entity: light.bedroom_ceiling
+          toggle: true
+          full_row: true
+          name: Bedroom Ceiling
+        - type: horizontal-stack
+          cards:
+            - type: "custom:button-card"
+              template: button_fan
+              entity: fan.bedroom_ceiling_fan
+              variables:
+                room: 'bedroom'
+            - type: custom:button-card
+              template: base_button
+              entity: light.bedroom
+              name: Nightstand
+
+            - type: custom:button-card
+              template: base_button
+              entity: light.lifx_bedroom1
+              name: Desk ceiling
+            - type: custom:button-card
+              template: base_button
+              entity: light.lifx_bedroom2
+              name: Nics ceiling
+
+    - type: custom:vertical-stack-in-card
+      cards:
+        - type: custom:decluttering-card
+          template: markdown_card
+          variables:
+            - entity_1: '#### Other'
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              template: icon_button
+              entity: light.lifx_hallway_1
+              name: Hallway
+            - type: custom:button-card
+              template: icon_button
+              entity: light.lifx_laundry
+              name: Laundry

@@ -23,8 +23,6 @@ cards:
               - type: "custom:button-card"
                 template: profile_button_guest
 
-
-
           - type: vertical-stack
             cards:
               - type: horizontal-stack

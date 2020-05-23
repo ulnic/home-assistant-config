@@ -6,42 +6,46 @@ cards:
     cards:
       - type: horizontal-stack
         cards:
-          - type: glance
-            title: Settings
-            columns: 3
-            entities:
-              - entity: input_boolean.on_holiday
-                name: Holiday
-              - entity: input_boolean.guest_mode
-                name: Guests?
-              - entity: input_boolean.tv_movie_lights
-                name: Movie lights
-      - type: horizontal-stack
-        cards:
-          - type: glance
-            title: Misc
-            columns: 2
-            entities:
-              - entity: binary_sensor.workday_sensor
-                name: Workday
-              - entity: light.gateway_light
-                name: Alarm light
+          - type: custom:button-card
+            template: fuel_and_download
+            entity: input_boolean.on_holiday
+            name: Holiday 
+          - type: custom:button-card
+            template: fuel_and_download
+            entity: input_boolean.guest_mode
+            name: Guests? 
+          - type: custom:button-card
+            template: fuel_and_download
+            entity: light.gateway_light
+            name: Alarm light
+          - type: custom:button-card
+            template: fuel_and_download
+            entity: binary_sensor.workday_sensor
+            name: Work day?
+            show_state: false
+            state:
+              - value: "on"
+                icon: mdi:briefcase-outline
+                label: 'Yupp'
+              - value: "off"
+                icon: mdi:palm-tree
+                label: 'Nope!'
+
+
 
   #Wine Fridge
   - id: 23987927924khjh343494937493749  # Automatically created id
     type: glance
     title: Wine Fridge
-    columns: 5
+    columns: 4
     entities:
-      - entity: input_boolean.winefridge_off_night
-        name: Auto Off?
       - entity: switch.plug_158_winefridge
-        name: WineFridge
+        name: Fridge
       - entity: sensor.158_temperature_winefridge
-        name: Temperature
+        name: Temp
       - entity: sensor.158_humidity_winefridge
         name: Humidity
-      - entity: sensor.plug_158_winefridge_current_power   #TODO: Check if this one still works after moving back to 158
+      - entity: sensor.plug_158_winefridge_current_power 
         name: watt
     style: |
       ha-card {
@@ -49,6 +53,7 @@ cards:
         --primary-text-color: rgb(255,255,255);
         --paper-listbox-background-color: black;
         text-shadow: 1px 1px 0 #000;
+        background-color: rgba(0, 0, 0, 0);
       }
 
 
@@ -58,8 +63,11 @@ cards:
     title: DNS & IP Address
     show_header_toggle: false
     entities:
-      - sensor.dns_domain_resolver
-      - sensor.myip
+      - entity: sensor.myip
+        name: external IP
+      - entity: sensor.dns_domain_resolver
+        name: family
+      - sensor.ulnic
 
   #Internet
   - type: custom:vertical-stack-in-card
@@ -73,6 +81,15 @@ cards:
               - sensor.speedtest_download
               - sensor.speedtest_upload
               - sensor.speedtest_ping
+            style: |
+              ha-card {
+                margin-right: 5px;
+                margin-bottom: 5px;
+                background-color: rgba(0, 0, 0, 0);
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+              }
       - type: custom:mini-graph-card
         entities:
           - entity: sensor.speedtest_download
@@ -83,14 +100,24 @@ cards:
         height: 200
         hours_to_show: 240
         animate: true
-        name: Internet
+        line_width: 2
         show:
-          name: true
+          name: false
           icon: false
           points: false
           legend: true
           extrema: false
           labels: true
+          state: false
+        style: |
+          ha-card {
+            margin-right: 5px;
+            margin-bottom: 5px;
+            background-color: rgba(0, 0, 0, 0);
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+          }
 
   - type: custom:vertical-stack-in-card
     cards:
@@ -103,13 +130,16 @@ cards:
           }
       - type: horizontal-stack
         cards:
-          - type: glance
-            column_width: 33%
-            entities:
-              - entity: sensor.nzbget_speed
-                name: Current Speed
-              - entity: sensor.nzbget_queue_size
-                name: Queue
+          - type: custom:button-card
+            template: fuel_and_download
+            entity: sensor.nzbget_speed
+            icon: mdi:cloud-download-outline
+            name: DL Speed 
+          - type: custom:button-card
+            template: fuel_and_download
+            entity: sensor.nzbget_queue_size
+            icon: mdi:tray-full
+            name: Queue 
           - type: custom:button-card
             template: nzb
             entity: sensor.nzbget_download_paused
@@ -132,11 +162,11 @@ cards:
       - type: horizontal-stack
         cards:
           - type: "custom:button-card"
-            template: fuel
+            template: fuel_and_download
             entity: sensor.united_petroleum_dee_why_e10
             name: E10
           - type: "custom:button-card"
-            template: fuel
+            template: fuel_and_download
             entity: sensor.united_petroleum_dee_why_u91
             name: U 91
       - type: custom:mini-graph-card
@@ -148,6 +178,7 @@ cards:
         points_per_hour: .20
         hours_to_show: 240
         animate: true
+        line_width: 2
         show:
           name: false
           icon: false
@@ -155,6 +186,16 @@ cards:
           legend: true
           extrema: false
           labels: true
+          state: false
+        style: |
+          ha-card {
+            margin-right: 5px;
+            margin-bottom: 5px;
+            background-color: rgba(0, 0, 0, 0);
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+          }
 
   
   - type: custom:mini-graph-card
@@ -170,6 +211,7 @@ cards:
     hours_to_show: 240
     animate: true
     name: Smart Plugs
+    line_width: 2
     show:
       name: true
       icon: false
@@ -177,6 +219,15 @@ cards:
       legend: true
       extrema: false
       labels: true
+    style: |
+      ha-card {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
   
 
   - type: custom:xiaomi-vacuum-map-card
@@ -221,8 +272,9 @@ cards:
         y_axis: secondary
     points_per_hour: 1
     height: 200
-    hours_to_show: 240
+    hours_to_show: 720
     animate: true
+    line_width: 2
     name: Weight
     show:
       name: true

@@ -170,6 +170,7 @@ cards:
     volume_stateless: false
     min_volume: 15
     max_volume: 35
+    sound_mode: full
     hide:
       source: true
       power: true

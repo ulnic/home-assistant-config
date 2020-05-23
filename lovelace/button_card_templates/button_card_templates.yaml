@@ -106,7 +106,7 @@ base_button_remote:
   show_label: false
   styles: 
     card:
-      - height: 90px
+      - height: 70px
     icon:
       - height: 80%
       - width: 80%
@@ -123,13 +123,13 @@ base_button_remote:
 
 button_scene_remote:
   template: button_scene
-  show_label: false
+  #show_label: false
   show_name: false
 
 remote_button_toggle:
   template: base_button_remote
-  show_label: false
-  show_name: false
+  #show_label: false
+  #show_name: false
   
 
 
@@ -150,6 +150,8 @@ remote_button_set_source:
         return states['media_player.denon_amp'].attributes.source == variables.source
         ]]]
       color: '#ff9800'
+  triggers_update:
+    - media_player.denon_amp
 
 remote_media_player:
   template: base_button_remote
@@ -168,6 +170,8 @@ remote_media_player:
     service: '[[[ return "media_player.volume_" + variables.direction ]]]'
     service_data:
       entity_id: media_player.denon_amp
+    triggers_update:
+      - media_player.denon_amp
 
 
 remote_button_tv:
@@ -252,7 +256,7 @@ occupancy:
         icon:
           - filter: opacity(50%) 
 
-fuel:
+fuel_and_download:
   template: sensor
   show_state: true
   show_last_changed: false

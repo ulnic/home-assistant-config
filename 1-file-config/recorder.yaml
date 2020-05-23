@@ -1,4 +1,3 @@
-purge_interval: 2
 purge_keep_days: 14
 db_url: !secret mysql_recorder
 exclude:

@@ -2,10 +2,6 @@ on_holiday:
   name: On Holidays
   icon: mdi:airplane-takeoff
 
-winefridge_off_night:
-  name: Winefridge Off at Night
-  icon: mdi:bottle-wine
-
 tv_movie_lights:
   name: Movie Lighting
   icon: mdi:television

@@ -1,0 +1,4 @@
+platform: dnsip
+hostname: !secret dns_name_resolver2
+name: ulnic
+resolver: 8.8.8.8

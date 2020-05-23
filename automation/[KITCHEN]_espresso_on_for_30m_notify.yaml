@@ -9,7 +9,7 @@ trigger:
 action:
   - service: notify.all_ios
     data:
-      message: 'Espresso is ready {{now().strftime("%H:%M:%S")}}'
+      message: 'Espresso is ready {{now().strftime("%H:%M")}}'
   - service: scene.create
     data:
       scene_id: espresso_30min

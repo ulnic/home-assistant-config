@@ -39,6 +39,15 @@ system_health:
 lovelace:
   mode: yaml
   resources: !include lovelace/resources.yaml
+  dashboards:
+    lovelace-floorplan-yaml: # Needs to contain a hyphen (-)
+      mode: yaml
+      filename: lovelace-floorplan.yaml
+      title: Floorplan
+      icon: mdi:floor-plan
+      show_in_sidebar: true
+      require_admin: true
+
 person:
 mobile_app:
 ssdp:
@@ -53,6 +62,7 @@ notify:
 ################################################
 ## Test
 ################################################
+#google_domains: !include 1-file-config/google_domain.yaml
 
 ################################################
 ## Add integrations
@@ -100,9 +110,6 @@ alarm_control_panel: !include 1-file-config/alarm.yaml
 fan: !include 1-file-config/fan.yaml
 remote: !include 1-file-config/harmony.yaml
 logger: !include 1-file-config/logger.yaml
-#ifttt: !include 1-file-config/ifttt.yaml
-#mqtt: !include 1-file-config/mqtt.yaml
-#ring: !include 1-file-config/ring.yaml 
 input_boolean: !include 1-file-config/input_boolean.yaml
 input_select: !include 1-file-config/input_select.yaml
 input_number: !include 1-file-config/input_number.yaml
@@ -110,7 +117,6 @@ wemo: !include 1-file-config/wemo.yaml
 #switch: !include 1-file-config/switch.yaml
 camera: !include 1-file-config/aarlo_camera.yaml
 aarlo: !include 1-file-config/aarlo.yaml
-#apple_tv: !include 1-file-config/apple_tv_media_player.yaml
 proximity: !include 1-file-config/proximity.yaml
 vacuum: !include 1-file-config/vacuum.yaml
 #hue: !include 1-file-config/light_hue.yaml
@@ -123,7 +129,6 @@ yeelight: !include 1-file-config/light_yee.yaml
 switch: !include_dir_list switch
 automation: !include_dir_list automation
 binary_sensor: !include_dir_list binary_sensor
-#device_tracker: !include_dir_list device_trackers
 light: !include_dir_list light
 media_player: !include_dir_list media_players
 scene: !include_dir_list scene

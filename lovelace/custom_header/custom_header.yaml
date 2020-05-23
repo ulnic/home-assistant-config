@@ -11,10 +11,9 @@ exceptions:
     user: Nicolai
     user_agent: iPad
   config:
-    kiosk_mode: true
-    hide_unused: true
-    hide_tabs: 0,1,2,3,4,5
-- conditions:
-    user_agent: Macintosh[DELETETHISPART]
-  config:
-    hide_tabs: 0
+    #compact_mode: true
+    kiosk_mode: '{{ states.input_boolean.guest_mode.state  == "on" }}'
+    # show_tabs: >
+    #   {% if is_state('input_boolean.guest_mode','on') %}4
+    #   {% else %}0
+    #   {% endif %}

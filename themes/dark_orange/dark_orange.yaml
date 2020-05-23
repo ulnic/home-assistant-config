@@ -4,7 +4,6 @@
 #
 dark_orange:
   card-background-color: "#263137"
-  ha-card-border-radius: "20px"   #Nic added
   dark-primary-color: "#c66900"
   label-badge-background-color: "var(--sidebar-text_-_background)"
   label-badge-blue: "var(--light-primary-color)"
@@ -38,6 +37,7 @@ dark_orange:
   primary-text-color: "var(--text-primary-color)"
   secondary-background-color: "var(--primary-background-color)"
   secondary-text-color: "var(--primary-color)"
+  sidebar-background-color: "var(--sidebar-text_-_background)"
   sidebar-text_-_background: "#62717b"
   table-row-alternative-background-color: "var(--sidebar-text_-_background)"
   table-row-background-color: "var(--paper-card-background-color)"

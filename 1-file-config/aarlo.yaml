@@ -1,11 +1,13 @@
 username: !secret arlo_username
 password: !secret arlo_password
-packet_dump: True
-recent_time: 10
+refresh_devices_every: 2
+stream_timeout: 120
+#are below needed?
+#packet_dump: True
+#recent_time: 10
 last_format: '%d-%m %H:%M'
 conf_dir: /config/.aarlo
-no_media_upload: False # Was TRue
-mode_api: auto
-refresh_devices_every: 0
-http_connections: 5
-http_max_size: 10
+#no_media_upload: False # Was True
+#mode_api: auto
+#http_connections: 5
+#http_max_size: 10

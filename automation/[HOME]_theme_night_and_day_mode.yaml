@@ -13,7 +13,7 @@ action:
     data_template:
       name: >
         {% if states.sun.sun.state == "above_horizon" %}
-          day
+          ios-light-mode
         {% else %}
-          darkorange
+          ios-dark-mode
         {% endif %}

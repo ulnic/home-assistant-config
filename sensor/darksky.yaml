@@ -7,11 +7,15 @@ forecast:
   - 3
   - 4
   - 5
+hourly_forecast:
+  - 0
+  - 1
 monitored_conditions:
   - icon
   - summary
   - nearest_storm_distance
   - nearest_storm_bearing
+  - pressure
   - humidity
   - temperature
   - temperature_high
@@ -21,14 +25,23 @@ monitored_conditions:
   - apparent_temperature_low
   - wind_speed
   - wind_bearing
-  #- precip_typeS
+  - wind_gust
+  - precip_type
   - precip_probability
   - precip_accumulation
   - precip_intensity
   - precip_intensity_max
   - uv_index
+  - ozone
   - daily_summary
-  - pressure
+  - minutely_summary
+  - hourly_summary
   - visibility
+  - dew_point
+  - cloud_cover
+  - moon_phase
+  - sunrise_time
+  - sunset_time
+  - alerts
 scan_interval:
   minutes: 5

@@ -4,32 +4,33 @@ card:
     - type: custom:simple-thermostat
       entity: climate.livingroom_ac
       name: 'Aircon'
-      step_size: 1
-      step_layout: row
+      step_size: 0.5
+      step_layout: column
       sensors:
         - entity: sensor.158_humidity_livingroom
           name: 'Humidity'
+        - entity: sensor.158_temperature_balcony
+          name: 'Balcony'
         - entity: climate.livingroom_ac
           name: 'State'
-        - entity: sensor.158_temperature_balcony
-          name: 'Outside'
       control:
         _names: false
-        hvac: true
+        hvac:
+          auto: false
         fan:
           auto: false
           night:
-            icon: mdi:sleep
+            icon: mdi:music-note-off-outline #sleep
           low:
-            icon: mdi:numeric-1-box-outline
+            icon: mdi:numeric-1  #circle-slice-1
           lowMedium: 
-            icon: mdi:numeric-2-box-outline
+            icon: mdi:numeric-2
           medium:
-            icon: mdi:numeric-3-box-outline
+            icon: mdi:numeric-3
           mediumHigh:
-            icon: mdi:numeric-4-box-outline
+            icon: mdi:numeric-4
           high:
-            icon: mdi:numeric-5-box-outline
+            icon: mdi:numeric-5
           powerful:
             icon: mdi:file-powerpoint-box-outline
       style: |
@@ -55,18 +56,27 @@ card:
               entities:
                 - entity: sensor.158_temperature_livingroom
                   name: Livingroom
+                  show_legend: true
                 - entity: sensor.temperature_158_kitchen
                   name: Kitchen
+                  show_legend: true
                 - entity: sensor.158_temperature_bedroom
                   name: Bedroom
+                  show_legend: true
                 - entity: sensor.temperature_158_nursery
                   name: Nursery
+                  show_legend: true
               show:
                 name: false
                 icon: false
                 fill: true
-                state: true
-              points_per_hour: 1
+                state: false
+                labels: true
+              #group_by: hour
+              hours_to_show: 24
+              points_per_hour: 10
+              line_width: 2
+              smoothing: true
               animate: true
               style: |
                 ha-card {
@@ -77,6 +87,8 @@ card:
                   -moz-box-shadow: none;
                   box-shadow: none;
                 }
+
+
             - type: custom:mini-graph-card
               entities:
                 - entity: sensor.158_humidity_livingroom
@@ -92,8 +104,9 @@ card:
                 name: false
                 icon: false
                 fill: true
-                state: true
+                state: false
               points_per_hour: 1
+              line_width: 2
               animate: true
               style: |
                 ha-card {
@@ -120,8 +133,9 @@ card:
                 name: false
                 icon: false
                 fill: true
-                state: true
+                state: false
               points_per_hour: 1
+              line_width: 2
               style: |
                 ha-card {
                   margin-right: 5px;

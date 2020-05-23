@@ -11,3 +11,6 @@ action:
   - service: notify.mobile_app_nicsiphone
     data:
       message: "Front Door Opened"
+      data:
+        apns_headers:
+          'apns-collapse-id': 'front-door-opened'

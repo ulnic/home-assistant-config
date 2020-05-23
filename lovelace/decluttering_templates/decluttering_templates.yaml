@@ -1,8 +1,12 @@
 markdown_card:
   !include markdown_card.yaml
 
+main_operation_btns:
+  !include main_operation_btns.yaml
+
 aircon:
   !include aircon.yaml
 
 home_feed:
   !include home_feed.yaml
+

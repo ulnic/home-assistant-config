@@ -18,6 +18,11 @@ cards:
           - type: "custom:button-card"
             template: alarm
       
+      # TODO: Main buttons
+      # Declutter card now working as not always showing all items
+      #- type: custom:decluttering-card
+      #  template: main_operation_btns
+
       - type: vertical-stack
         cards:
           - type: custom:vertical-stack-in-card
@@ -68,7 +73,7 @@ cards:
               - type: "custom:button-card"
                 template: base_button
                 name: All Lights
-                entity: light.master_switch
+                entity: light.master_switch     
 
 
           - type: vertical-stack
@@ -125,7 +130,6 @@ cards:
                     name: Dining
 
 
-
       - type: custom:vertical-stack-in-card
         cards:
           - type: custom:decluttering-card
@@ -157,7 +161,7 @@ cards:
                 name: Fridge
 
 
-      #Bedroom
+        #Bedroom
       - type: custom:vertical-stack-in-card
         cards:
           - type: custom:decluttering-card
@@ -206,10 +210,12 @@ cards:
                 template: icon_button
                 entity: light.lifx_laundry
                 name: Laundry
-              # - type: custom:button-card
-              #   template: icon_button
-              #   entity: light.balcony_ceiling
-              #   name: Balcony
+
+
+      # END Main button operations
+
+
+
 
       - type: custom:decluttering-card
         template: aircon

@@ -10,14 +10,7 @@ decluttering_templates:
 
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 #background: center / cover no-repeat url("/background.png") fixed
-title: My Awesome Home
+title: floorplan
 background: var(--background)
 views:
-  - !include lovelace/7_mobile_view.yaml
-  - !include lovelace/2_nursery.yaml
-  - !include lovelace/4_media.yaml
-  - !include lovelace/3_config.yaml
-  - !include lovelace/8_ipad_guestmode.yaml
-  #- !include lovelace/5_floorplan.yaml
-  #- !include lovelace/6_nest.yaml
-  - !include lovelace/9_home_dash.yaml
+  - !include lovelace/5_floorplan.yaml
