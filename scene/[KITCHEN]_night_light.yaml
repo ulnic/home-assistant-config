@@ -1,0 +1,13 @@
+name: Kitchen night light
+entities:
+  light.lifx_kitchen1:
+    state: off
+  light.lifx_kitchen2:
+    state: off
+  light.led:
+    state: off
+  light.led_shelf:
+    state: on
+    xy_color: [0.397,0.441]
+    brightness: 3
+    transition: 2

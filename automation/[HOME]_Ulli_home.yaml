@@ -1,7 +1,7 @@
 alias: "[HOME] Ulli is Home"
 trigger:
   platform: state
-  entity_id: device_tracker.ullisiphone
+  entity_id: person.ulli
   from: "not_home"
   to: "home"
 action:

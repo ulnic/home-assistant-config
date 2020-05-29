@@ -1,0 +1,8 @@
+bedroom_vacuum:
+  alias: '[BEDROOM] Vacuum'
+  sequence:
+    - service: vacuum.send_command
+      data:
+        entity_id: vacuum.bibop
+        command: app_zoned_clean
+        params: [[25281,22204,29131,26204,1]] 

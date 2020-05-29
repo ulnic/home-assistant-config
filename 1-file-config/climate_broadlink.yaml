@@ -1,8 +1,0 @@
-platform: smartir
-name: AC
-unique_id: livingroom_ac
-device_code: 1101
-controller_data: !secret climate_broadlink_smartir_controller_data_host
-temperature_sensor: sensor.158_temperature_livingroom
-humidity_sensor: sensor.158_humidity_livingroom
-power_sensor: binary_sensor.door_sensor_158_aircon

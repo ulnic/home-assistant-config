@@ -1,0 +1,17 @@
+name: Kitchen morning light
+entities:
+  light.kitchen_lights:
+    state: on
+    xy_color: [0.397,0.441]
+    brightness: 153
+    transition: 1
+  # light.led:
+  #   state: on
+  #   xy_color: [0.397,0.441]
+  #   brightness: 153
+  #   transition: 1
+  # light.led_shelf:
+  #   state: on
+  #   xy_color: [0.397,0.441]
+  #   brightness: 153
+  #   transition: 1

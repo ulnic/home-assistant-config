@@ -21,10 +21,3 @@ doorbell_on:
         data:
           push:
             thread-id: "doorbell"
-    # Delay highlights how long the lamp should be turned on when doorbell pressed.
-    # - delay:
-    #     minutes: 4
-    # - service: light.turn_off
-    #   data:
-    #     entity_id: light.lifx_hallway_1
-    #     transition: 2

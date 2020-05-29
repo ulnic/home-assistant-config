@@ -9,7 +9,7 @@ condition:
     entity_id: binary_sensor.158_door_balcony
     state: 'off'
   - condition: state
-    entity_id: climate.livingroom_ac
+    entity_id: climate.daikin
     state: 'off'
   - condition: numeric_state
     entity_id: sensor.158_temperature_livingroom
@@ -20,5 +20,5 @@ condition:
 action:
   - service: climate.set_hvac_mode
     data:
-      entity_id: climate.livingroom_ac
+      entity_id: climate.daikin
       hvac_mode: "heat"

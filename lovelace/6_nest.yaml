@@ -62,14 +62,14 @@ cards:
                             margin-top: 10px;
                           }
                       - type: custom:simple-thermostat
-                        entity: climate.livingroom_ac
+                        entity: climate.daikin
                         name: 'Aircon'
                         step_size: 1
                         step_layout: row
                         sensors:
                           - entity: sensor.158_humidity_livingroom
                             name: 'Humidity'
-                          - entity: climate.livingroom_ac
+                          - entity: climate.daikin
                             name: 'State'
                           - entity: sensor.158_temperature_balcony
                             name: 'Outside'
@@ -575,7 +575,7 @@ cards:
                       - binary_sensor.158_door_hallway_cupboard
                       - binary_sensor.xi_door_entrance
                       - binary_sensor.158_door_balcony
-                      - climate.livingroom_ac
+                      - climate.daikin
                       #- light.balcony_ceiling
                       - light.bedroom
                       - light.bedroom_ceiling

@@ -223,11 +223,49 @@ cards:
       # Sensors
       - type: custom:vertical-stack-in-card
         cards:
-          - type: custom:xiaomi-vacuum-card
-            buttons: true
+          # - type: custom:xiaomi-vacuum-card
+          #   buttons: true
+          #   entity: vacuum.bibop
+          #   image: /local/img/vacuum.png
+          #   name: BiBop
+          # - type: divider
+          - type: 'custom:vacuum-card'
             entity: vacuum.bibop
-            image: /local/img/vacuum.png
-            name: BiBop
+            stats:
+              default:
+                - attribute: filter_left
+                  unit: hours
+                  subtitle: Filter
+                - attribute: side_brush_left
+                  unit: hours
+                  subtitle: Side brush
+                - attribute: main_brush_left
+                  unit: hours
+                  subtitle: Main brush
+                - attribute: sensor_dirty_left
+                  unit: hours
+                  subtitle: Sensors
+              cleaning:
+                - attribute: cleaned_area
+                  unit: m2
+                  subtitle: Cleaning area
+                - attribute: cleaning_time
+                  unit: minutes
+                  subtitle: Cleaning time
+            actions:
+              - name: Clean kitchen
+                icon: mdi:stove
+                service: script.kitchen_vacuum
+              - name: Clean Dining Room
+                icon: mdi:silverware-fork-knife
+                service: script.dinningroom_vacuum
+              - name: Clean Bedroom
+                icon: mdi:bed-king
+                service: script.bedroom_vacuum
+              - name: Clean Viggos Room
+                icon: mdi:baby
+                service: script.nursery_vacuum
+                
           - type: divider
           - type: horizontal-stack
             cards:

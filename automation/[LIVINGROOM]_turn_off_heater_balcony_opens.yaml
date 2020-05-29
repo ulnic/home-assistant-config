@@ -8,15 +8,10 @@ trigger:
     seconds: 20
 condition:
   - condition: template
-    value_template: "{% if not is_state('climate.livingroom_ac', 'off') %}true{% endif %}"
-  #- condition: state
-  #  entity_id: climate.livingroom_ac
-  #  state: 'on'
-    #for:
-    #  minutes: 1
+    value_template: "{% if not is_state('climate.daikin', 'off') %}true{% endif %}"
 action:
   - service: climate.turn_off
-    entity_id: climate.livingroom_ac
+    entity_id: climate.daikin
   - service_template: >-
       {% if is_state("person.nic", "home") and
             is_state("person.ulli", "home") %}

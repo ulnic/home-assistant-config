@@ -123,8 +123,6 @@ light.dinning_lights:
 light.living_ceiling_lights:
   friendly_name: L'room Ceiling
   icon: mdi:ceiling-light
-climate.heater:
-  icon: mdi:radiator
 light.lifx_nursery_1:
   icon: mdi:ceiling-light
 light.lifx_nursery_2:

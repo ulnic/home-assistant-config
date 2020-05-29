@@ -1,11 +1,11 @@
 alias: '[HOME] Turn ON Light when first person comes home after sunset'
 trigger:
   - platform: state
-    entity_id: device_tracker.nicsiphone7
+    entity_id: person.nic
     from: 'not_home'
     to: 'home'
   - platform: state
-    entity_id: device_tracker.ullisiphone
+    entity_id: person.ulli
     from: 'not_home'
     to: 'home'
 condition:

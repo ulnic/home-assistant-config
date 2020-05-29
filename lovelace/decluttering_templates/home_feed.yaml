@@ -17,7 +17,7 @@ card:
     - binary_sensor.158_door_hallway_cupboard
     - binary_sensor.xi_door_entrance
     - binary_sensor.158_door_balcony
-    - climate.livingroom_ac
+    - climate.daikin
     - light.bedroom
     - light.bedroom_ceiling
     - light.dining_lights

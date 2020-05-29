@@ -1,10 +1,5 @@
 homeassistant:
-  name: Home
-  latitude: !secret zone_home_latitude
-  longitude: !secret zone_home_longitude
-  elevation: !secret elevation
-  unit_system: metric
-  time_zone: !secret time_zone
+
   customize: !include customize.yaml
   whitelist_external_dirs:
     - /tmp
@@ -92,11 +87,11 @@ geo_location:
 google: !include 1-file-config/calendar.yaml
 xiaomi_aqara: !include 1-file-config/xiaomi_aqara.yaml
 homekit: !include 1-file-config/homekit.yaml
-smartir:
-  update_branch: rc
+#smartir:
+#  update_branch: rc
 asuswrt: !include 1-file-config/asuswrt.yaml
 influxdb: !include 1-file-config/influxdb.yaml
-climate: !include 1-file-config/climate_broadlink.yaml
+#climate: !include 1-file-config/climate_broadlink.yaml
 speedtestdotnet: !include 1-file-config/speedtestdotnet.yaml
 cloud:
 #  google_actions: !include 1-file-config/cloud.yaml

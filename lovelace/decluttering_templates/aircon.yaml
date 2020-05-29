@@ -2,7 +2,7 @@ card:
   type: custom:vertical-stack-in-card
   cards:
     - type: custom:simple-thermostat
-      entity: climate.livingroom_ac
+      entity: climate.daikin #climate.livingroom_ac
       name: 'Aircon'
       step_size: 0.5
       step_layout: column
@@ -11,25 +11,26 @@ card:
           name: 'Humidity'
         - entity: sensor.158_temperature_balcony
           name: 'Balcony'
-        - entity: climate.livingroom_ac
+        - entity: climate.daikin
           name: 'State'
       control:
         _names: false
+        _headings: false
         hvac:
           auto: false
         fan:
-          auto: false
-          night:
-            icon: mdi:music-note-off-outline #sleep
-          low:
-            icon: mdi:numeric-1  #circle-slice-1
-          lowMedium: 
+          Auto: false
+          Silence:
+            icon: mdi:music-note-off-outline 
+          1:
+            icon: mdi:numeric-1 
+          2: 
             icon: mdi:numeric-2
-          medium:
+          3:
             icon: mdi:numeric-3
-          mediumHigh:
+          4:
             icon: mdi:numeric-4
-          high:
+          5:
             icon: mdi:numeric-5
           powerful:
             icon: mdi:file-powerpoint-box-outline

@@ -1,4 +1,3 @@
 platform: manual
-pending_time: 30
+arming_time: 30 #was pending_time
 trigger_time: 15
-disarm_after_trigger: false
