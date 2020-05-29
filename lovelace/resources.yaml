@@ -6,8 +6,6 @@
   type: module
 - url: /hacsfiles/lovelace-fold-entity-row/fold-entity-row.js
   type: module
-- url: /hacsfiles/lovelace-card-tools/card-tools.js
-  type: module
 - url: /hacsfiles/swipe-card/swipe-card.js
   type: module
 - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
@@ -22,25 +20,27 @@
   type: module
 - url: /hacsfiles/decluttering-card/decluttering-card.js
   type: module
-- url: /hacsfiles/lovelace-gap-card/gap-card.js
-  type: module
 - url: /hacsfiles/lovelace-layout-card/layout-card.js
   type: module
 - url: /hacsfiles/lovelace-card-mod/card-mod.js
   type: module
-- url: /hacsfiles/weather-card/weather-card.js
-  type: module
 - url: /hacsfiles/simple-thermostat/simple-thermostat.js
   type: module
-# - url: /hacsfiles/lovelace-xiaomi-vacuum-map-card/xiaomi-vacuum-map-card.js
-#   type: module
 - url: /hacsfiles/custom-header/custom-header.js
   type: module
 - url: /hacsfiles/lovelace-hass-aarlo/hass-aarlo.js
   type: module
-# - url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
-#   type: module
 - url: /hacsfiles/simple-weather-card/simple-weather-card-bundle.js
   type: module
 - url: /hacsfiles/vacuum-card/vacuum-card.js
   type: module
+# - url: /hacsfiles/lovelace-gap-card/gap-card.js
+#   type: module
+# - url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
+#   type: module
+# - url: /hacsfiles/lovelace-xiaomi-vacuum-map-card/xiaomi-vacuum-map-card.js
+#   type: module
+# - url: /hacsfiles/weather-card/weather-card.js
+#   type: module
+# - url: /hacsfiles/lovelace-card-tools/card-tools.js
+#   type: module

@@ -42,6 +42,13 @@ lovelace:
       icon: mdi:floor-plan
       show_in_sidebar: true
       require_admin: true
+    guestmode-yaml: # Needs to contain a hyphen (-)
+      mode: yaml
+      filename: lovelace-guestmode.yaml
+      title: GuestMode
+      icon: mdi:account-group
+      show_in_sidebar: true
+      require_admin: false
 
 person:
 mobile_app:

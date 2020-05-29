@@ -228,40 +228,6 @@ cards:
         -moz-box-shadow: none;
         box-shadow: none;
       }
-  
-
-  # - type: custom:xiaomi-vacuum-map-card
-  #   entity: vacuum.bibop
-  #   map_image: '/local/vacuum_map.jpeg'
-  #   debug: true
-  #   calibration_points:
-  #     - vacuum:    #bedroom door point
-  #         x: 22330
-  #         y: 25500
-  #       map:
-  #         x: 405    
-  #         y: 295    
-  #     - vacuum:    #hallway point
-  #         x: 19600
-  #         y: 25500
-  #       map:
-  #         x: 270
-  #         y: 295    
-  #     - vacuum:   #dining point
-  #         x: 19600
-  #         y: 30300
-  #       map:
-  #         x: 270
-  #         y: 40    
-  #   zones:
-  #     - [[20625, 24717, 21650, 22800]] 
-  #     - [[14340, 25054, 17926, 27791]]
-  #     - [[22316, 30491, 18691, 28129]]
-  #     - [[18691, 28129, 22236, 24904]]
-  #     - [[22357, 25879, 26465, 22167]]
-  #     - [[18933, 22955, 17080, 24679], [19014, 24604, 18087, 25804]]  #hallway
-  #     - [[15147, 24717, 16919, 22955]]
-  #     - [[26707, 22505, 28560, 23817]]
 
   - type: custom:mini-graph-card
     entities:
