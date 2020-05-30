@@ -9,9 +9,8 @@ button_text:
 exceptions:
 - conditions:
     user: Nicolai
-    user_agent: iPad
+    #user_agent: iPad
   config:
-    #compact_mode: true
     kiosk_mode: '{{ states.input_boolean.guest_mode.state  == "on" }}'
     # show_tabs: >
     #   {% if is_state('input_boolean.guest_mode','on') %}4

@@ -7,9 +7,6 @@ button_card_templates:
 decluttering_templates:
   !include lovelace/decluttering_templates/decluttering_templates.yaml
 
-
-# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
-#background: center / cover no-repeat url("/background.png") fixed
 title: Floorplan
 background: var(--background)
 views:
