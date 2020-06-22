@@ -1,0 +1,26 @@
+alias: '[HOME] Vacuum go home'
+trigger:
+  - platform: state 
+    entity_id: input_boolean.bibop_empty_bin
+    to: 'off'
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.wall_switch_left_158_kitchen
+      click_type: double
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: vacuum.bibop
+      state: cleaning
+    - condition: state
+      entity_id: vacuum.bibop
+      state: idle
+action:
+  - service: vacuum.return_to_base
+    data:
+      entity_id: vacuum.bibop
+  - delay: '00:02:00'
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.bibop_empty_bin

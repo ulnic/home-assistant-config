@@ -5,4 +5,4 @@ dinningroom_vacuum:
       data:
         entity_id: vacuum.bibop
         command: app_zoned_clean
-        params: [[20807,19389,23207,21539,1]]
+        params: [[22687,23035,24887,25235,1]]

@@ -5,4 +5,4 @@ bedroom_vacuum:
       data:
         entity_id: vacuum.bibop
         command: app_zoned_clean
-        params: [[25281,22204,29131,26204,1]] 
+        params: [[27063,26658,31013,30008,1]]

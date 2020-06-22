@@ -2,22 +2,27 @@ card:
   type: custom:vertical-stack-in-card
   cards:
     - type: custom:simple-thermostat
-      entity: climate.daikin #climate.livingroom_ac
+      entity: climate.daikin 
       name: 'Aircon'
       step_size: 0.5
       step_layout: column
+      hide:
+        state: true
+        temperature: true
       sensors:
+        - entity: sensor.158_temperature_livingroom
+          icon: mdi:home-thermometer-outline
         - entity: sensor.158_humidity_livingroom
           name: 'Humidity'
+          icon: mdi:water-percent
         - entity: sensor.158_temperature_balcony
           name: 'Balcony'
-        - entity: climate.daikin
-          name: 'State'
+          icon: mdi:weather-partly-cloudy
       control:
         _names: false
         _headings: false
         hvac:
-          auto: false
+          heat_cool: false
         fan:
           Auto: false
           Silence:
@@ -73,7 +78,7 @@ card:
                 fill: true
                 state: false
                 labels: true
-              #group_by: hour
+              lower_bound: 18
               hours_to_show: 24
               points_per_hour: 10
               line_width: 2

@@ -7,7 +7,7 @@ nursery_ceilingfan_speed:
         option: '{{ speed }}'
     - service: broadlink.send 
       data_template:
-        host: !secret climate_broadlink_smartir_controller_data_host
+        host: !secret switch_broadlink_host
         packet: >-
           {% if speed == '1' %}
             'shIcAAsMFgwWDRYMFhcKGAsXChcLDBYXCxcLFwsAAX8AAAAAAAAAAAAAAAA'

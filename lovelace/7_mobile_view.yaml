@@ -18,6 +18,23 @@ cards:
           - type: "custom:button-card"
             template: alarm
       
+
+      - type: custom:simple-weather-card
+        entity: weather.dark_sky
+        name: outside
+        #backdrop: 
+        #  fade: true
+        secondary_info:
+          - precipitation
+          - precipitation_probability
+        style: |
+          ha-card {
+            background-color: rgba(0, 0, 0, 0);
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            --primary-text-color: black;
+          }
       # TODO: Main buttons
       # Declutter card now working as not always showing all items
       #- type: custom:decluttering-card
@@ -78,56 +95,78 @@ cards:
 
           - type: vertical-stack
             cards:
-              - type: custom:decluttering-card
-                template: markdown_card
-                variables:
-                  - entity_1: '#### Living & Dining room'
               - type: custom:fold-entity-row
                 head:
-                  type: custom:slider-entity-row
-                  entity: light.living_ceiling_lights
-                  toggle: true
-                  name: Living
-                group_config:
-                  type: custom:slider-entity-row
-                items:
-                  - entity: light.lifx_livingroom1
-                    name: Living TV
-                  - entity: light.lifx_livingroom2
-                    name: Living
+                  type: custom:decluttering-card
+                  template: markdown_card
+                  variables:
+                    - entity_1: '#### Living & Dining room'
+                entities:
+                  - type: custom:vertical-stack-in-card
+                    style: |
+                      ha-card {
+                        background-color: rgba(0, 0, 0, 0);
+                        -webkit-box-shadow: none;
+                        -moz-box-shadow: none;
+                        box-shadow: none;
+                      }
+                    cards:
+                      - type: horizontal-stack
+                        cards: 
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_livingroom1
+                            name: Living TV
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_livingroom2
+                            name: Living
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_dining1
+                            name: Dining TV
+                          - type: custom:button-card
+                            template: icon_button
+                            entity: light.lifx_dining2
+                            name: Dining
 
-              - type: custom:fold-entity-row
-                head:
-                  type: custom:slider-entity-row
-                  entity:  light.dining_lights
-                  toggle: true
-                  name: Dining
-                group_config:
-                  type: custom:slider-entity-row
-                items:
-                  - entity: light.lifx_dining1
-                    name: Dining
-                  - entity: light.lifx_dining2
-                    name: Dining Sofa
+              - type: custom:slider-entity-row
+                entity: light.living_ceiling_lights
+                toggle: true
+                name: Living
 
-              - type: horizontal-stack
-                cards:
-                  - type: custom:button-card
-                    template: icon_button
-                    entity: light.lifx_livingroom1
-                    name: Living TV
-                  - type: custom:button-card
-                    template: icon_button
-                    entity: light.lifx_livingroom2
-                    name: Living
-                  - type: custom:button-card
-                    template: icon_button
-                    entity: light.lifx_dining1
-                    name: Dining TV
-                  - type: custom:button-card
-                    template: icon_button
-                    entity: light.lifx_dining2
-                    name: Dining
+              # - type: custom:fold-entity-row
+              #   head:
+              - type: custom:slider-entity-row
+                entity:  light.dining_lights
+                toggle: true
+                name: Dining
+              #   group_config:
+              #     type: custom:slider-entity-row
+              #   items:
+              #     - entity: light.lifx_dining1
+              #       name: Dining
+              #     - entity: light.lifx_dining2
+              #       name: Dining Sofa
+
+              # - type: horizontal-stack
+              #   cards:
+              #     - type: custom:button-card
+              #       template: icon_button
+              #       entity: light.lifx_livingroom1
+              #       name: Living TV
+              #     - type: custom:button-card
+              #       template: icon_button
+              #       entity: light.lifx_livingroom2
+              #       name: Living
+              #     - type: custom:button-card
+              #       template: icon_button
+              #       entity: light.lifx_dining1
+              #       name: Dining TV
+              #     - type: custom:button-card
+              #       template: icon_button
+              #       entity: light.lifx_dining2
+              #       name: Dining
 
 
       - type: custom:vertical-stack-in-card
@@ -223,12 +262,6 @@ cards:
       # Sensors
       - type: custom:vertical-stack-in-card
         cards:
-          # - type: custom:xiaomi-vacuum-card
-          #   buttons: true
-          #   entity: vacuum.bibop
-          #   image: /local/img/vacuum.png
-          #   name: BiBop
-          # - type: divider
           - type: 'custom:vacuum-card'
             entity: vacuum.bibop
             stats:
@@ -265,6 +298,11 @@ cards:
               - name: Clean Viggos Room
                 icon: mdi:baby
                 service: script.nursery_vacuum
+              - name: Empty Bin
+                icon: mdi:trash-can
+                service: input_boolean.toggle
+                service_data:
+                  entity_id: input_boolean.bibop_empty_bin
                 
           - type: divider
           - type: horizontal-stack

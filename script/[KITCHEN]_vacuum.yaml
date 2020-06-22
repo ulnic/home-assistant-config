@@ -5,4 +5,4 @@ kitchen_vacuum:
       data:
         entity_id: vacuum.bibop
         command: app_zoned_clean
-        params: [[26397,20628,28747,21828,1]]
+        params: [[28376,24484,30526,25434,1]]

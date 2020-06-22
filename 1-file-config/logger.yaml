@@ -1,9 +1,9 @@
 default: fatal
 logs:
   homeassistant.components.automation: warning
-  homeassistant.components.script: info
-  homeassistant.components.scene: info
-  homeassistant.components.remote: info
+  homeassistant.components.script: warning
+  homeassistant.components.scene: warning
+  homeassistant.components.remote: debug
   homeassistant.components.media_player: fatal
   homeassistant.components.google: debug
   pyatv: error

@@ -32,3 +32,7 @@ kitchen_light_override:
 guest_mode:
   name: Guest Mode
   initial: off
+
+bibop_empty_bin:
+  name: Empty Bibop
+  initial: off

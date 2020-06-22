@@ -7,4 +7,4 @@ condition:
     entity_id: input_boolean.guest_mode
     state: 'on'
 action:
-  - service: camera.aarlo_request_snapshot
+  - service: aarlo.camera_request_snapshot

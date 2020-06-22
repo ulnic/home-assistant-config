@@ -5,4 +5,4 @@ nursery_vacuum:
       data:
         entity_id: vacuum.bibop
         command: app_zoned_clean
-        params: [[23461,14705,26411,18005,1]]
+        params: [[25392,18534,28392,21934,1]]

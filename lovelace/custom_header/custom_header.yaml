@@ -4,6 +4,7 @@ hide_raw: true
 hide_help: true
 voice_hide: true
 menu_hide: true
+chevrons: false
 button_text:
   options: '{{ time }}'
 exceptions:

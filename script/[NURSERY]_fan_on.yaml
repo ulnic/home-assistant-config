@@ -6,7 +6,7 @@ nursery_ceilingfan_on:
         entity_id: input_boolean.fan_state_nursery
     - service: broadlink.send 
       data:
-        host: !secret climate_broadlink_smartir_controller_data_host
+        host: !secret switch_broadlink_host
         packet:
           - "shIcAAsMFgwWDRYMFhcKGAsXChcLDBYXCxcLFwsAAX8AAAAAAAAAAAAAAAA"
     - service: input_select.select_option

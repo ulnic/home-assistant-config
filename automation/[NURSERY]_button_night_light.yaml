@@ -1,0 +1,11 @@
+alias: "[NURSERY] Night Light on"
+trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158_button_nursery
+      click_type: single
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.nursery_night_read

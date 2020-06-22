@@ -3,7 +3,7 @@ nursery_ceilingfan_off:
   sequence:
     - service: broadlink.send 
       data:
-        host: !secret climate_broadlink_smartir_controller_data_host
+        host: !secret switch_broadlink_host
         packet:
           - "sgscAAsMFgwWDRYMFhcLGAsXCxcKGAsXCwwWFwsAAYAAAAAAAAAAAAAAAAA"
     - service: input_boolean.turn_off

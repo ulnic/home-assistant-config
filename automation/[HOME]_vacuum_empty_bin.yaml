@@ -1,0 +1,23 @@
+alias: '[HOME] Vacuum empty bin'
+trigger:
+  - platform: state
+    entity_id: input_boolean.bibop_empty_bin
+    to: 'on'
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.wall_switch_left_158_kitchen
+      click_type: double
+condition:
+  - condition: state
+    entity_id: vacuum.bibop
+    state: docked
+action:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.bibop
+      command: app_goto_target
+      params: [28200,25650]
+  - delay: '00:00:05'
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.bibop_empty_bin
