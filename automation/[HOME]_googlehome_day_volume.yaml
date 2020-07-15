@@ -10,7 +10,7 @@ action:
   - service: media_player.volume_set
     entity_id: media_player.entryway_speaker
     data:
-      volume_level: 0.35
+      volume_level: 0.2
   - service: media_player.volume_set
     entity_id: media_player.googlehome5332
     data:

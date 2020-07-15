@@ -80,7 +80,7 @@ card:
                 labels: true
               lower_bound: 18
               hours_to_show: 24
-              points_per_hour: 10
+              points_per_hour: 6
               line_width: 2
               smoothing: true
               animate: true
@@ -111,7 +111,7 @@ card:
                 icon: false
                 fill: true
                 state: false
-              points_per_hour: 1
+              points_per_hour: 2
               line_width: 2
               animate: true
               style: |
@@ -123,6 +123,7 @@ card:
                   -moz-box-shadow: none;
                   box-shadow: none;
                 }
+
             - type: custom:mini-graph-card
               entities:
                 - entity: sensor.158_illumination_livingroom
@@ -140,7 +141,7 @@ card:
                 icon: false
                 fill: true
                 state: false
-              points_per_hour: 1
+              points_per_hour: 2
               line_width: 2
               style: |
                 ha-card {

@@ -1,4 +1,4 @@
-alias: '[KITCHEN] Espresso on for 30m notification'
+alias: '[KITCHEN] Espresso on for 30m notification' 
 initial_state: True
 trigger:
   platform: state
@@ -7,29 +7,16 @@ trigger:
   for:
     minutes: 30
 action:
-  - service: notify.all_ios
+  - service_template: >-
+      {% if is_state("person.nic", "home") and
+            is_state("person.ulli", "home") %}
+      notify.all_ios
+      {% elif is_state("person.nic", "home") %}
+      mobile_app_nicsiphone
+      {% else %}
+      notify.mobile_app_ulli_s_iphonese
+      {% endif %}
     data:
-      message: 'Espresso is ready {{now().strftime("%H:%M")}}'
-  - service: scene.create
-    data:
-      scene_id: espresso_30min
-      snapshot_entities: 
-        - light.led_shelf
-  - service: lifx.set_state
-    data:
-      entity_id: light.led_shelf
-      color_name: green
-      power: false
-      brightness: 60
-  - service: lifx.effect_pulse #TODO: Update this to LED now
-    data:
-      entity_id: light.led_shelf
-      color_name: green
-      mode: blink
-      cycles: 5
-      brightness: 60
-  - service: scene.turn_on
-    data:
-      entity_id: scene.espresso_30min
+      message: 'Mr Espresso is ready for you here at {{now().strftime("%H:%M")}}'
   
  

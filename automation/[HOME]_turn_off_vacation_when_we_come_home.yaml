@@ -17,4 +17,4 @@ action:
     entity_id: input_boolean.on_holiday
   - service: notify.all_ios
     data:
-      message: 'Welcome Home! Hope you had a great vacation! Turning off holiday mode at {{now().strftime("%H:%M:%S")}}'
+      message: 'Welcome Home! Hope you had a great vacation! Turning off holiday mode at {{now().strftime("%H:%M")}}'

@@ -59,7 +59,7 @@ notify:
     platform: group
     services:
       - service: mobile_app_nicsiphone
-      - service: mobile_app_ulli_s_iphone
+      - service: mobile_app_ulli_s_iphonese
 
 ################################################
 ## Test
@@ -83,7 +83,7 @@ weather:
     mode: daily
 
 spotify: !include 1-file-config/spotify.yaml
-withings: !include 1-file-config/withings.yaml
+#withings: !include 1-file-config/withings.yaml
 nzbget: !include 1-file-config/nzbget.yaml
 plex: !include 1-file-config/plex.yaml
 python_script:
@@ -92,7 +92,7 @@ geo_location:
   - platform: nsw_rural_fire_service_feed
     radius: 50
 google: !include 1-file-config/calendar.yaml
-xiaomi_aqara: !include 1-file-config/xiaomi_aqara.yaml
+#xiaomi_aqara: !include 1-file-config/xiaomi_aqara.yaml
 homekit: !include 1-file-config/homekit.yaml
 #smartir:
 #  update_branch: rc
@@ -114,7 +114,7 @@ remote: !include 1-file-config/harmony.yaml
 logger: !include 1-file-config/logger.yaml
 input_boolean: !include 1-file-config/input_boolean.yaml
 input_select: !include 1-file-config/input_select.yaml
-input_number: !include 1-file-config/input_number.yaml
+#input_number: !include 1-file-config/input_number.yaml
 wemo: !include 1-file-config/wemo.yaml
 #switch: !include 1-file-config/switch.yaml
 camera: !include 1-file-config/aarlo_camera.yaml

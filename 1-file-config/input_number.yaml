@@ -1,8 +1,0 @@
-download_speed:
-  name: Download speed
-  initial: 0 
-  min: 0
-  max: 100
-  step: 25
-  unit_of_measurement: '%'
-  icon: mdi:water-percent

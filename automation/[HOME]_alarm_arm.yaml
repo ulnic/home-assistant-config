@@ -16,11 +16,10 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: person.nic
+      entity_id: group.family
       state: 'not_home'
-    - condition: state
-      entity_id: person.ulli
-      state: 'not_home'
+    - condition: time
+      before: '22:00:00'
     - condition: state
       entity_id: input_boolean.guest_mode
       state: 'off'

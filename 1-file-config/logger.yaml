@@ -1,10 +1,10 @@
-default: fatal
+default: warning
 logs:
-  homeassistant.components.automation: warning
-  homeassistant.components.script: warning
-  homeassistant.components.scene: warning
+  #homeassistant.components.automation: warning
+  #homeassistant.components.script: warning
+  #homeassistant.components.scene: warning
   homeassistant.components.remote: debug
-  homeassistant.components.media_player: fatal
+  #homeassistant.components.media_player: fatal
   homeassistant.components.google: debug
-  pyatv: error
+  #pyatv: error
   #custom_components.apple_tv: debug

@@ -98,7 +98,7 @@ cards:
             name: upload
         points_per_hour: 1
         height: 200
-        hours_to_show: 240
+        hours_to_show: 120
         animate: true
         line_width: 2
         show:
@@ -153,6 +153,7 @@ cards:
     entities:
       - person.nic
       - person.ulli
+      - group.family
       - proximity.home_ulli
       - proximity.home_nic
 
