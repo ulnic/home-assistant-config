@@ -94,8 +94,6 @@ geo_location:
 google: !include 1-file-config/calendar.yaml
 #xiaomi_aqara: !include 1-file-config/xiaomi_aqara.yaml
 homekit: !include 1-file-config/homekit.yaml
-#smartir:
-#  update_branch: rc
 asuswrt: !include 1-file-config/asuswrt.yaml
 influxdb: !include 1-file-config/influxdb.yaml
 #climate: !include 1-file-config/climate_broadlink.yaml
@@ -110,7 +108,6 @@ ios:
     categories:  !include 1-file-config/ios_push.yaml
 alarm_control_panel: !include 1-file-config/alarm.yaml
 fan: !include 1-file-config/fan.yaml
-remote: !include 1-file-config/harmony.yaml
 logger: !include 1-file-config/logger.yaml
 input_boolean: !include 1-file-config/input_boolean.yaml
 input_select: !include 1-file-config/input_select.yaml
@@ -127,7 +124,7 @@ yeelight: !include 1-file-config/light_yee.yaml
 ################################################
 ## Component Includes (DIR LIST)
 ################################################
-
+remote: !include_dir_list remote
 switch: !include_dir_list switch
 automation: !include_dir_list automation
 binary_sensor: !include_dir_list binary_sensor

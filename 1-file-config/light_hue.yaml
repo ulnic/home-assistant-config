@@ -1,3 +1,0 @@
-bridges:
-  - host: !secret light_hue_host_ip
-    allow_unreachable: true

@@ -1,5 +1,0 @@
-discovery_retry: 10
-gateways:
-  - mac: !secret xiaomi_aqara_mac
-    key: !secret xiaomi_aqara_key
-    host: !secret xiaomi_aqara_host
