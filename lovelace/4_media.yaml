@@ -47,7 +47,7 @@ cards:
             template: remote_button_tv
             icon: mdi:lightbulb-on-outline
             variables:
-              direction: 'RIGHT'
+              direction: 'Right'
 
           - type: "custom:button-card"
             color_type: blank-card 
@@ -63,7 +63,7 @@ cards:
             template: remote_button_tv
             icon: mdi:lightbulb-off-outline
             variables:
-              direction: 'LEFT'
+              direction: 'Left'
 
           - type: "custom:button-card"
             color_type: blank-card  

@@ -177,7 +177,7 @@ remote_media_player:
 remote_button_tv:
   template: base_button_remote
   variables:
-      direction: 'RIGHT'
+      direction: 'Right'
   tap_action:
     haptic: medium
     action: call-service
