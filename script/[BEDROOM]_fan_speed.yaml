@@ -1,5 +1,6 @@
 bedroom_ceilingfan_speed:
   alias: '[BEDROOM] CeilingFan Speed'
+  mode: queued
   sequence:
     - service: input_select.select_option
       data_template:

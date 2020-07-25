@@ -5,6 +5,7 @@ trigger:
   to: 'on'
   for:
     minutes: 120
+mode: single
 condition:
   - condition: state
     entity_id: binary_sensor.workday_sensor

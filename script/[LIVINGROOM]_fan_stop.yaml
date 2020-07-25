@@ -1,5 +1,6 @@
 livingroom_ceilingfan_off:
   alias: '[LIVINGROOM] CeilingFan Off'
+  mode: single
   sequence:
     - service: broadlink.send 
       data:

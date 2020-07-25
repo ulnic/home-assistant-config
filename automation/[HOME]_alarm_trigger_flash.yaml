@@ -3,6 +3,7 @@ trigger:
   platform: state
   entity_id: alarm_control_panel.ha_alarm
   to: 'triggered'
+mode: single
 action:
   - service: script.turn_on
     entity_id: script.alarm_light_flash

@@ -8,6 +8,7 @@ trigger:
   - platform: state
     entity_id: sun.sun
     to: below_horizon
+mode: single
 action:
   - service_template: frontend.set_theme
     data_template:

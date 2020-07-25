@@ -4,6 +4,7 @@ trigger:
     entity_id: media_player.apple_tv
     from: 'playing'
     to: 'paused'
+mode: single
 condition:
   condition: and
   conditions:

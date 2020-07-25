@@ -4,6 +4,7 @@ trigger:
   platform: state
   entity_id: binary_sensor.158_motion_livingroom
   to: 'on'
+mode: single
 condition:
   - condition: state
     entity_id: binary_sensor.158_door_balcony

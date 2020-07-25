@@ -1,5 +1,5 @@
 id: config_3  # Automatically created id
-icon: mdi:settings
+icon: mdi:cog
 title: Config
 cards:
   - type: custom:vertical-stack-in-card

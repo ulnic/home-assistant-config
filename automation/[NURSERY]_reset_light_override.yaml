@@ -6,6 +6,7 @@ trigger:
   to: 'on'
   for:
     seconds: 5
+mode: single
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.nursery_sleeping_override

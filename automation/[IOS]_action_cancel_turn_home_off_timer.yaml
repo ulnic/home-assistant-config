@@ -5,6 +5,7 @@ trigger:
   event_type: ios.notification_action_fired
   event_data:
     actionName: home_turnoff_cancel
+mode: single
 action:
   service: script.turn_off
   entity_id: script.turn_home_off_timer

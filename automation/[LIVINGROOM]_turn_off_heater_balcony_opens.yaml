@@ -6,6 +6,7 @@ trigger:
   to: 'on'
   for:
     seconds: 20
+mode: single
 condition:
   - condition: template
     value_template: "{% if not is_state('climate.daikin', 'off') %}true{% endif %}"

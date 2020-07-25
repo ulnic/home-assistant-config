@@ -5,6 +5,7 @@ trigger:
     to: 'on'
     for:
       minutes: 2
+mode: queued
 condition:
   - condition: state
     entity_id: binary_sensor.158_motion_laundry

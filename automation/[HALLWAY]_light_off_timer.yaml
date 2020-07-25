@@ -6,6 +6,7 @@ trigger:
   to: 'on'
   for:
     minutes: 10
+mode: single
 action:
   - service: light.turn_off
     data:

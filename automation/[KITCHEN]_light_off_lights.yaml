@@ -6,6 +6,7 @@ trigger:
   to: 'off'
   for:
     minutes: 1
+mode: single
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.kitchen_light_override

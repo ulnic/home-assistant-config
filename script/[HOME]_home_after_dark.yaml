@@ -1,5 +1,6 @@
 home_after_dark:
   alias: '[HOME] After Dark'
+  mode: single
   sequence:
     - service: scene.turn_on
       entity_id: scene.normal_lighting

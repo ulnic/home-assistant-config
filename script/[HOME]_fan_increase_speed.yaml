@@ -1,5 +1,6 @@
 fan_increase_speed:
   alias: '[HOME] Fan Increase Speed'
+  mode: queued
   sequence:
     - service: fan.set_speed
       data_template:

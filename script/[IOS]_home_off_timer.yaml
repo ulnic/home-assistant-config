@@ -1,5 +1,6 @@
 turn_home_off_timer:
   alias: '[iOS] Turn home off timer'
+  mode: single
   sequence:
     - service: notify.mobile_app_nicsiphone
       data:

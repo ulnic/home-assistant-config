@@ -3,6 +3,7 @@ initial_state: True
 trigger:
   platform: time
   at: '07:30:00'
+mode: single
 condition:
   - condition: state
     entity_id: binary_sensor.workday_sensor

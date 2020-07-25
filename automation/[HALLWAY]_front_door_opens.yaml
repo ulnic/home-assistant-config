@@ -3,6 +3,7 @@ trigger:
   - platform: state
     entity_id: binary_sensor.xi_door_entrance
     to: 'on'
+mode: single
 condition:
   - condition: state
     entity_id: person.nic

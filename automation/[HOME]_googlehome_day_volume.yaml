@@ -2,6 +2,7 @@ alias: '[HOME] Google Home DAY Volume'
 trigger:
   platform: time
   at: '07:00:00'
+mode: single
 action:
   - service: media_player.volume_set
     entity_id: media_player.living_room_home

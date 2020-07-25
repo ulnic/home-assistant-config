@@ -1,5 +1,6 @@
 bedroom_vacuum:
   alias: '[BEDROOM] Vacuum'
+  mode: single
   sequence:
     - service: vacuum.send_command
       data:

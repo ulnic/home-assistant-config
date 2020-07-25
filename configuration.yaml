@@ -1,7 +1,7 @@
 homeassistant:
 
   customize: !include customize.yaml
-  whitelist_external_dirs:
+  allowlist_external_dirs:
     - /tmp
   auth_mfa_modules:
     - type: totp

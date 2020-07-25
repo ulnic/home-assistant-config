@@ -5,8 +5,9 @@ trigger:
   to: 'on'
   for:
     minutes: 20
+mode: single
 action:
-  service: notify.mobile_app_nicsiphone #mobile_app_nicsiphone
+  service: notify.mobile_app_nicsiphone 
   data:
     message: "The bedroom light is ON, shall I turn it off?"
     data:

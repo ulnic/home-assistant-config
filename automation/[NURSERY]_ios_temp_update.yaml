@@ -6,7 +6,8 @@ trigger:
     event_data:
       actionName: 'NurseryTemp'
   - platform: time
-    at: '18:30:00'
+    at: '19:00:00'
+mode: single
 condition:
   condition: or
   conditions:

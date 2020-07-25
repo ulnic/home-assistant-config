@@ -1,5 +1,6 @@
 alarm_light_flash:
   alias: '[HOME] Light flash On'
+  mode: single
   sequence:
     - service: homeassistant.turn_on
       data:

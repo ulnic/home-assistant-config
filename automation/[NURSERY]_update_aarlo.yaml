@@ -2,6 +2,7 @@ alias: '[NURSERY] aarlo snapshot'
 trigger:
   platform: time_pattern
   minutes: '/2'
+mode: restart
 condition:
   - condition: state
     entity_id: input_boolean.guest_mode

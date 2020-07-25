@@ -3,6 +3,7 @@ initial_state: True
 trigger:
   platform: time
   at: "07:00:00"
+mode: single
 condition:
   condition: and
   conditions:

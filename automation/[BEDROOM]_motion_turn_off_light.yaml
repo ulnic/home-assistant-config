@@ -6,6 +6,7 @@ trigger:
   to: 'off'
   for:
     minutes: 5
+mode: single
 condition:
   condition: and
   conditions:

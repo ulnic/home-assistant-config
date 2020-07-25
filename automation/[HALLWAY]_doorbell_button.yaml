@@ -10,6 +10,7 @@ trigger:
     event_data:
       entity_id: binary_sensor.switch_doorbell
       click_type: double
+mode: single
 action:
   - service: script.turn_on
     entity_id: script.doorbell_on

@@ -4,6 +4,7 @@ trigger:
   platform: state
   entity_id: binary_sensor.motion_sensor_158_kitchen
   to: 'on'
+mode: queued
 condition:
   condition: and
   conditions:

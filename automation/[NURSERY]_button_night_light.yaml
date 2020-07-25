@@ -5,6 +5,7 @@ trigger:
     event_data:
       entity_id: binary_sensor.switch_158_button_nursery
       click_type: single
+mode: single
 action:
   - service: scene.turn_on
     data:

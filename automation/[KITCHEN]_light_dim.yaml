@@ -6,6 +6,7 @@ trigger:
     event_data:
       entity_id: binary_sensor.wall_switch_right_158_kitchen
       click_type: single
+mode: queued
 condition:
   - condition: state
     entity_id: light.kitchen_lights

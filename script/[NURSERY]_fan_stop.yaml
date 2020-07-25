@@ -1,5 +1,6 @@
 nursery_ceilingfan_off:
   alias: '[NURSERY] CeilingFan Off'
+  mode: single
   sequence:
     - service: broadlink.send 
       data:

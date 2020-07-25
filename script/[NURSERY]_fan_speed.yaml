@@ -1,5 +1,6 @@
 nursery_ceilingfan_speed:
   alias: '[NURSERY] CeilingFan Speed'
+  mode: queued
   sequence:
     - service: input_select.select_option
       data_template:

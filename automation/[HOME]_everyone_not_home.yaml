@@ -12,6 +12,7 @@ trigger:
     to: 'not_home'
     for:
       minutes: 2
+mode: single
 condition:
   condition: and
   conditions:

@@ -1,5 +1,6 @@
 change_tv_brightness:
   alias: '[LIVINGROOM] Change TV Brightness'
+  mode: queued
   sequence:
     - service: remote.send_command
       data:

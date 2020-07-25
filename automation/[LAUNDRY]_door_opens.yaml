@@ -6,6 +6,7 @@ trigger:
   - platform: state
     entity_id: binary_sensor.158_door_laundry
     to: 'on'
+mode: queued
 action:
   - service: light.turn_on
     data:

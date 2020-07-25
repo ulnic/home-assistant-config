@@ -4,6 +4,7 @@ trigger:
   platform: state
   entity_id: binary_sensor.door_sensor_158_nursery
   to: 'on'
+mode: queued
 condition:
   condition: and
   conditions:

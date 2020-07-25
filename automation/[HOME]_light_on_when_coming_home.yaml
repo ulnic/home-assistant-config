@@ -8,6 +8,7 @@ trigger:
     entity_id: person.ulli
     from: 'not_home'
     to: 'home'
+mode: single
 condition:
   condition: and
   conditions:

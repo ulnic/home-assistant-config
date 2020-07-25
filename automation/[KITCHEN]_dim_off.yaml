@@ -9,6 +9,7 @@ trigger:
     entity_id: binary_sensor.switch_158_button_nic
     from: 'on'
     to: 'off'
+mode: queued
 condition:
   condition: and
   conditions:

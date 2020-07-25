@@ -8,6 +8,7 @@ trigger:
     event_data:
       entity_id: binary_sensor.wall_switch_left_158_kitchen
       click_type: double
+mode: single
 condition:
   - condition: state
     entity_id: vacuum.bibop

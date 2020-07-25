@@ -5,6 +5,7 @@ trigger:
     to: 'off'
     for:
       minutes: 2
+mode: queued
 action:
   - service: light.turn_off
     entity_id: light.lifx_laundry

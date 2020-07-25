@@ -6,6 +6,7 @@ trigger:
   for:
     hours: 1
     minutes: 30
+mode: single
 action:
   service: notify.mobile_app_nicsiphone
   data:

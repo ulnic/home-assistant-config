@@ -1,5 +1,6 @@
 nursery_vacuum:
   alias: '[NURSERY] Vacuum'
+  mode: single
   sequence:
     - service: vacuum.send_command
       data:

@@ -9,6 +9,7 @@ trigger:
   - platform: state
     entity_id: group.motion_sensors
     to: 'on'
+mode: single
 condition:
   condition: state
   entity_id: alarm_control_panel.ha_alarm

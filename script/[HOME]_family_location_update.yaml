@@ -1,5 +1,6 @@
 family_location_update:
   alias: '[HOME] Update Locations'
+  mode: queued
   sequence:
     - service: notify.mobile_app_nicsiphone
       data:

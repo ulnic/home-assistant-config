@@ -2,6 +2,7 @@ alias: '[HOME] Turn on Bibop (Mon Fri)'
 trigger:
   platform: time
   at: "10:00:00"
+mode: single
 condition:
   condition: and
   conditions:

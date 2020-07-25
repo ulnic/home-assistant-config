@@ -4,6 +4,7 @@ trigger:
   platform: state
   entity_id: binary_sensor.158_motion_bedroom
   to: 'on'
+mode: single
 condition:
   condition: and
   conditions:

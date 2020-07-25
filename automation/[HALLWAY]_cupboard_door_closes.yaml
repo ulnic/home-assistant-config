@@ -3,6 +3,7 @@ trigger:
   platform: state
   entity_id: binary_sensor.158_door_hallway_cupboard
   to: 'off'
+mode: queued
 action:
   - service: light.turn_off
     entity_id: light.lifx_hallway_1

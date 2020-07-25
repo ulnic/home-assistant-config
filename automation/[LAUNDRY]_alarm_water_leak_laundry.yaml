@@ -3,6 +3,7 @@ trigger:
   platform: state
   entity_id: binary_sensor.water_leak_sensor_158_laundry
   to: 'on'
+mode: queued
 action:
   - service: notify.all_ios
     data:
