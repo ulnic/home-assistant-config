@@ -89,7 +89,7 @@ cards:
                 name: All Lights
                 entity: light.master_switch     
 
-
+ 
           - type: vertical-stack
             cards:
               - type: custom:fold-entity-row
