@@ -12,5 +12,7 @@ action:
   data:
     message: "Espresso Machine has been on for more than 90 min. !"
     data:
+      apns_headers:
+        'apns-collapse-id': 'espresso-off'
       push:
         category: "turn_espresso_off" # Needs to match the top level identifier you used in the ios configuration

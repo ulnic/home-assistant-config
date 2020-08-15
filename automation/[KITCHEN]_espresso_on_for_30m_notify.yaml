@@ -19,5 +19,8 @@ action:
       {% endif %}
     data:
       message: 'Mr Espresso is ready for you here at {{now().strftime("%H:%M")}}'
+      data:
+        apns_headers:
+          'apns-collapse-id': 'espresso-ready'
   
  

@@ -58,7 +58,7 @@ notify:
   - name: all_ios
     platform: group
     services:
-      - service: mobile_app_nicsiphone
+      - service: device_tracker.nicsiphone
       - service: mobile_app_ulli_s_iphonese
 
 ################################################

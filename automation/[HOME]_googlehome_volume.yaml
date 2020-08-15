@@ -1,0 +1,49 @@
+alias: '[HOME] Google Home Volume'
+description: "Sets google home volume for day and night use"
+trigger:
+  - platform: time
+    at: '07:15:00'
+  - platform: time
+    at: '19:35:00'
+mode: single
+action:
+  - choose:
+    #Increase volume during day
+    - conditions:
+      - condition: time
+        before: '10:00:00'
+      sequence:
+        - service: media_player.volume_set
+          entity_id: media_player.living_room_home
+          data:
+            volume_level: 0.25
+        - service: media_player.volume_set
+          entity_id: media_player.entryway_speaker
+          data:
+            volume_level: 0.2
+        - service: media_player.volume_set
+          entity_id: media_player.googlehome5332
+          data:
+            volume_level: 0.3
+        - service: media_player.volume_set
+          entity_id: media_player.googlehome9051
+          data:
+            volume_level: 0.3
+
+    #Reduce volume at night
+    - conditions:
+      - condition: time
+        after: '18:00:00'
+      sequence:
+        - service: media_player.volume_set
+          entity_id: media_player.living_room_home
+          data:
+            volume_level: 0.1
+        - service: media_player.volume_set
+          entity_id: media_player.entryway_speaker
+          data:
+            volume_level: 0.1
+        - service: media_player.volume_set
+          entity_id: media_player.googlehome5332
+          data:
+            volume_level: 0.1

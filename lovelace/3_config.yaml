@@ -119,31 +119,31 @@ cards:
             box-shadow: none;
           }
 
-  - type: custom:vertical-stack-in-card
-    cards:
-      - type: markdown
-        content: >
-          #### NZB
-        style: |
-          ha-card {
-            background-color: rgba(0, 0, 0, 0);
-          }
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            template: fuel_and_download
-            entity: sensor.nzbget_speed
-            icon: mdi:cloud-download-outline
-            name: DL Speed 
-          - type: custom:button-card
-            template: fuel_and_download
-            entity: sensor.nzbget_queue_size
-            icon: mdi:tray-full
-            name: Queue 
-          - type: custom:button-card
-            template: nzb
-            entity: sensor.nzbget_download_paused
-            name: Toggle 
+  # - type: custom:vertical-stack-in-card
+  #   cards:
+  #     - type: markdown
+  #       content: >
+  #         #### NZB
+  #       style: |
+  #         ha-card {
+  #           background-color: rgba(0, 0, 0, 0);
+  #         }
+  #     - type: horizontal-stack
+  #       cards:
+  #         - type: custom:button-card
+  #           template: fuel_and_download
+  #           entity: sensor.nzbget_speed
+  #           icon: mdi:cloud-download-outline
+  #           name: DL Speed 
+  #         - type: custom:button-card
+  #           template: fuel_and_download
+  #           entity: sensor.nzbget_queue_size
+  #           icon: mdi:tray-full
+  #           name: Queue 
+  #         - type: custom:button-card
+  #           template: nzb
+  #           entity: sensor.nzbget_download_paused
+  #           name: Toggle 
 
 
   #Proximity

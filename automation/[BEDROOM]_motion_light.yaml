@@ -1,0 +1,51 @@
+alias: '[BEDROOM] motion light'
+description: "Turns on the light when there's motion and off otherwise"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.158_motion_bedroom
+mode: single
+action:
+  - choose:
+    #No motion, turn off light
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.158_motion_bedroom
+        state: 'off'
+        for:
+          minutes: 5
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: time
+        after: '17:00:00'
+        before: '21:30:00'
+      sequence:
+        - service: light.turn_off
+          data:
+            entity_id: light.lifx_bedroom2
+            transition: 2
+            
+    #Motion, turn ON light
+    - conditions:
+      - condition: state
+        entity_id: binary_sensor.158_motion_bedroom
+        state: 'on'
+      - condition: sun
+        after: sunset
+        after_offset: "-01:00:00"
+      - condition: time
+        after: '17:00:00'
+        before: '21:00:00'
+      - condition: state
+        entity_id: light.bedroom_lights_grp
+        state: 'off'
+      - condition: state
+        entity_id: light.master_switch
+        state: 'on'
+      sequence:
+        - service: light.turn_on
+          data:
+            entity_id: light.lifx_bedroom2
+            brightness: 250
+            transition: 1
+            xy_color: [0.499,0.388]

@@ -6,7 +6,7 @@ change_tv_brightness:
       data:
         entity_id: remote.broadlink
         device: SamsungTV
-        delay_secs: 0.5
+        delay_secs: 0.6
         command: 
           - Menu
           - Right

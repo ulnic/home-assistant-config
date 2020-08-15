@@ -1,14 +1,13 @@
 alias: '[KITCHEN] dim brighten OFF'
-initial_state: 'on'
 trigger:
   - platform: state
     entity_id: binary_sensor.wall_switch_left_158_kitchen
     from: 'on'
     to: 'off'
-  - platform: state
-    entity_id: binary_sensor.switch_158_button_nic
-    from: 'on'
-    to: 'off'
+  # - platform: state
+  #   entity_id: binary_sensor.switch_158_button_nic
+  #   from: 'on'
+  #   to: 'off'
 mode: queued
 condition:
   condition: and

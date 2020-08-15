@@ -30,17 +30,3 @@ action:
       {% else %}
         scene.kitchen_daytime_light
       {% endif %}
-
-# action:
-#   service: script.turn_on
-#   data_template:
-#     entity_id: >
-#       {% if is_state('binary_sensor.morning', 'on') %}
-#         script.kitchen_morning_light
-#       {% elif is_state('binary_sensor.evening', 'on') %}
-#         script.kitchen_evening_light
-#       {% elif is_state('binary_sensor.night', 'on') %}
-#         script.kitchen_night_light
-#       {% else %}
-#         script.kitchen_daytime_light
-#       {% endif %}

@@ -1,0 +1,32 @@
+alias: '[HALLWAY] Cupboard door'
+description: "Hallway door opens or closes turns on or off the lamp"
+trigger:
+  platform: state
+  entity_id: binary_sensor.158_door_hallway_cupboard
+  #to: 'off'
+mode: queued
+action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: "{{ trigger.to_state.state == 'on' }}"
+      sequence:
+        - service: light.turn_on
+          data:
+            entity_id: light.lifx_hallway_1
+            brightness: 250
+            transition: 1
+
+    - conditions:
+      - condition: template
+        value_template: "{{ trigger.to_state.state == 'off' }}"
+      sequence:
+        - service: light.turn_off
+          entity_id: light.lifx_hallway_1
+    default:
+      - service: notify.mobile_app_nicsiphone
+        data_template:
+          message: "[{{ trigger.to_state }}] "
+# action:
+#   - service: light.turn_off
+#     entity_id: light.lifx_hallway_1
