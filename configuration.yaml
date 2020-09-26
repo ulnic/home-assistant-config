@@ -1,5 +1,4 @@
 homeassistant:
-
   customize: !include customize.yaml
   allowlist_external_dirs:
     - /tmp
@@ -7,7 +6,7 @@ homeassistant:
     - type: totp
       name: Authenticator app
     - type: notify
-      message: 'I almost forget, to get into my clubhouse, you need to say {}'
+      message: "I almost forget, to get into my clubhouse, you need to say {}"
 
 http: !include 1-file-config/http.yaml
 sun:
@@ -16,7 +15,7 @@ history:
 # View all events in a logbook
 logbook:
 # Enables the frontend
-frontend: 
+frontend:
   javascript_version: latest
   themes: !include_dir_merge_named themes
 # Discover some devices automatically
@@ -76,7 +75,7 @@ notify:
 # zha:
 #   usb_path: /zigbeestick
 #   database_path: /config/zigbee.db
-  
+
 weather:
   - platform: darksky
     api_key: !secret dark_sky_api_key
@@ -84,7 +83,7 @@ weather:
 
 spotify: !include 1-file-config/spotify.yaml
 #withings: !include 1-file-config/withings.yaml
-nzbget: !include 1-file-config/nzbget.yaml
+#nzbget: !include 1-file-config/nzbget.yaml
 plex: !include 1-file-config/plex.yaml
 python_script:
 hacs: !include 1-file-config/hacs.yaml
@@ -105,7 +104,7 @@ dialogflow:
 #intent_script: !include 1-file-config/intent_script.yaml
 ios:
   push:
-    categories:  !include 1-file-config/ios_push.yaml
+    categories: !include 1-file-config/ios_push.yaml
 alarm_control_panel: !include 1-file-config/alarm.yaml
 fan: !include 1-file-config/fan.yaml
 logger: !include 1-file-config/logger.yaml

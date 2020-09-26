@@ -1,25 +1,25 @@
 livingroom_ceilingfan_speed:
-  alias: '[LIVINGROOM] CeilingFan Speed'
+  alias: "[LIVINGROOM] CeilingFan Speed"
   mode: queued
   sequence:
     - service: input_select.select_option
-      data_template:
+      data:
         entity_id: input_select.fan_speed_livingroom
-        option: '{{ speed }}'
-    - service: broadlink.send 
-      data_template:
-        host: !secret switch_broadlink_host
-        packet: >-
+        option: "{{ speed }}"
+    - service: remote.send_command
+      data:
+        entity_id: remote.broadlink_remote
+        command: >-
           {% if speed == '1' %}
-            'shYcAAkOFA0VDRQNFA4UGAoYChgJDhQYChgKGAkAAXwAAAAAAAAAAAAAAAA'
+            b64:shYcAAkOFA0VDRQNFA4UGAoYChgJDhQYChgKGAkAAXwAAAAAAAAAAAAAAAA
           {% elif speed == '2' %}
-            'sh0cAAkOFA0UDRQOFA4UGAoYChkJDhQYCg4UGAkAAXwAAAAAAAAAAAAAAAA'
+            b64:sh0cAAkOFA0UDRQOFA4UGAoYChkJDhQYCg4UGAkAAXwAAAAAAAAAAAAAAAA
           {% elif speed == '3' %}
-            'shocAAoNFQ0VDRQNFQ0UGAoYCg0VGAoYChgKGAoAAXsAAAAAAAAAAAAAAAA'
+            b64:shocAAoNFQ0VDRQNFQ0UGAoYCg0VGAoYChgKGAoAAXsAAAAAAAAAAAAAAAA
           {% elif speed == '4' %}
-            'shocAAkOFA4UDhQOFA4TGQkYCQ4UDhQYCRkJGQkAAXwAAAAAAAAAAAAAAAA'
+            b64:shocAAkOFA4UDhQOFA4TGQkYCQ4UDhQYCRkJGQkAAXwAAAAAAAAAAAAAAAA
           {% elif speed == '5' %}
-            'sh0cAAkNFA4UDhQOFA0UGAkOFBgKGAkZCQ4UGAoAAXwAAAAAAAAAAAAAAAA'
+            b64:sh0cAAkNFA4UDhQOFA0UGAkOFBgKGAkZCQ4UGAoAAXwAAAAAAAAAAAAAAAA
           {% elif speed == '6' %}
-            'sigcAAoOFA4UDhQOFA4UGQkNFBgJGQkZCRgKGAkAAXwAAAAAAAAAAAAAAAA'
+            b64:sigcAAoOFA4UDhQOFA4UGQkNFBgJGQkZCRgKGAkAAXwAAAAAAAAAAAAAAAA
           {% endif %}

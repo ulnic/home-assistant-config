@@ -2,11 +2,10 @@ nursery_ceilingfan_off:
   alias: '[NURSERY] CeilingFan Off'
   mode: single
   sequence:
-    - service: broadlink.send 
+    - service: remote.send_command
       data:
-        host: !secret switch_broadlink_host
-        packet:
-          - "sgscAAsMFgwWDRYMFhcLGAsXCxcKGAsXCwwWFwsAAYAAAAAAAAAAAAAAAAA"
+        entity_id: remote.broadlink_remote
+        command: b64:sgscAAsMFgwWDRYMFhcLGAsXCxcKGAsXCwwWFwsAAYAAAAAAAAAAAAAAAAA
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.fan_state_nursery

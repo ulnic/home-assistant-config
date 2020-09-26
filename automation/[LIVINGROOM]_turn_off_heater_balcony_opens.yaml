@@ -1,9 +1,9 @@
-alias: '[LIVINGROOM] turn off heater if balcony open'
+alias: "[LIVINGROOM] turn off heater if balcony open"
 initial_state: True
 trigger:
   platform: state
   entity_id: binary_sensor.158_door_balcony
-  to: 'on'
+  to: "on"
   for:
     seconds: 20
 mode: single
@@ -13,7 +13,7 @@ condition:
 action:
   - service: climate.turn_off
     entity_id: climate.daikin
-  - service_template: >-
+  - service: >-
       {% if is_state("person.nic", "home") and
             is_state("person.ulli", "home") %}
       notify.all_ios

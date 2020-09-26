@@ -1,4 +1,4 @@
-alias: '[HOME] Automatic Theme Change'
+alias: "[HOME] Automatic Theme Change"
 trigger:
   - platform: homeassistant
     event: start
@@ -10,8 +10,8 @@ trigger:
     to: below_horizon
 mode: single
 action:
-  - service_template: frontend.set_theme
-    data_template:
+  - service: frontend.set_theme
+    data:
       name: >
         {% if states.sun.sun.state == "above_horizon" %}
           ios-light-mode

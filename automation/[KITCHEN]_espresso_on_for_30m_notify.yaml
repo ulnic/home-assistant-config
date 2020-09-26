@@ -8,7 +8,7 @@ trigger:
     minutes: 30
 mode: single
 action:
-  - service_template: >-
+  - service: >-
       {% if is_state("person.nic", "home") and
             is_state("person.ulli", "home") %}
       notify.all_ios

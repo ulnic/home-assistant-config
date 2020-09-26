@@ -40,8 +40,5 @@ action:
       - condition: template
         value_template: "{{ trigger.event.data.click_type == 'double' }}"
       sequence:
-        # - service: notify.mobile_app_nicsiphone
-        #   data_template:
-        #     message: "[{{ trigger.event.data }}] - {{ trigger.event.data.click_type == 'double'}}"
         - service: fan.toggle
           entity_id: fan.bedroom_ceiling_fan

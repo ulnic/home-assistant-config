@@ -4,23 +4,23 @@ trigger:
   - platform: event
     event_type: ios.action_fired
     event_data:
-      actionName: 'NurseryTemp'
+      actionName: "NurseryTemp"
   - platform: time
-    at: '19:00:00'
+    at: "19:00:00"
 mode: single
 condition:
   condition: or
   conditions:
     - condition: state
       entity_id: person.nic
-      state: 'home'
+      state: "home"
     - condition: state
       entity_id: person.ulli
-      state: 'home'
+      state: "home"
 action:
   service: notify.all_ios
-  data_template:
+  data:
     message: "Viggos room is {{states('sensor.temperature_158_nursery')}} °C.{{- '\n' -}}Outside it's {{states('sensor.dark_sky_summary')}} & {{states('weather.dark_sky')}}. Temp is {{states('sensor.158_temperature_balcony')}} °C with windspeed of {{(states('sensor.dark_sky_wind_speed') | float * 3.6) | round(0) }} km/h.  {{- '\n' -}}Tonight it will be down to {{states('sensor.dark_sky_overnight_low_temperature_0d')}} °C with {{states('sensor.dark_sky_precip_probability')}} % chance of {% if states('sensor.dark_sky_precip_intensity') | float > 0 %} {{states('sensor.dark_sky_precip_intensity') | round(0)}} mm {% endif %}rain."
     data:
       apns_headers:
-        'apns-collapse-id': 'viggo-room-temp'
+        "apns-collapse-id": "viggo-room-temp"

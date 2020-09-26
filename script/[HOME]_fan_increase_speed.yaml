@@ -1,9 +1,9 @@
 fan_increase_speed:
-  alias: '[HOME] Fan Increase Speed'
+  alias: "[HOME] Fan Increase Speed"
   mode: queued
   sequence:
     - service: fan.set_speed
-      data_template:
+      data:
         entity_id: "{{ 'fan.'+ room + '_ceiling_fan' }}"
         speed: >-
           {% if states('input_select.fan_speed_'+ room ) == '6' %}

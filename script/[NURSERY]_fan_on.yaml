@@ -1,16 +1,15 @@
 nursery_ceilingfan_on:
-  alias: '[NURSERY] Ceiling Fan On'
+  alias: "[NURSERY] Ceiling Fan On"
   mode: single
   sequence:
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.fan_state_nursery
-    - service: broadlink.send 
+    - service: remote.send_command
       data:
-        host: !secret switch_broadlink_host
-        packet:
-          - "shIcAAsMFgwWDRYMFhcKGAsXChcLDBYXCxcLFwsAAX8AAAAAAAAAAAAAAAA"
+        entity_id: remote.broadlink_remote
+        command: b64:shIcAAsMFgwWDRYMFhcKGAsXChcLDBYXCxcLFwsAAX8AAAAAAAAAAAAAAAA
     - service: input_select.select_option
-      data_template:
+      data:
         entity_id: input_select.fan_speed_nursery
-        option: '1'
+        option: "1"

@@ -10,15 +10,15 @@ fans:
       service: script.livingroom_ceilingfan_off
     set_speed:
       service: script.livingroom_ceilingfan_speed
-      data_template:
+      data:
         speed: "{{ speed }}"
     speeds:
-      - '1'
-      - '2'
-      - '3'
-      - '4'
-      - '5'
-      - '6'
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
   nursery_ceiling_fan:
     friendly_name: "Nursery Ceiling fan"
     value_template: "{{ states('input_boolean.fan_state_nursery') }}"
@@ -29,15 +29,15 @@ fans:
       service: script.nursery_ceilingfan_off
     set_speed:
       service: script.nursery_ceilingfan_speed
-      data_template:
+      data:
         speed: "{{ speed }}"
     speeds:
-      - '1'
-      - '2'
-      - '3'
-      - '4'
-      - '5'
-      - '6'
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"
   bedroom_ceiling_fan:
     friendly_name: "Bedroom Ceiling fan"
     value_template: "{{ states('input_boolean.fan_state_bedroom') }}"
@@ -48,12 +48,12 @@ fans:
       service: script.bedroom_ceilingfan_off
     set_speed:
       service: script.bedroom_ceilingfan_speed
-      data_template:
+      data:
         speed: "{{ speed }}"
     speeds:
-      - '1'
-      - '2'
-      - '3'
-      - '4'
-      - '5'
-      - '6'
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+      - "6"

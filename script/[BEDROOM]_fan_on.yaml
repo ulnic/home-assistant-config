@@ -1,16 +1,15 @@
 bedroom_ceilingfan_on:
-  alias: '[BEDROOM] Ceiling Fan On'
+  alias: "[BEDROOM] Ceiling Fan On"
   mode: single
   sequence:
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.fan_state_bedroom
-    - service: broadlink.send 
+    - service: remote.send_command
       data:
-        host: !secret switch_broadlink_host
-        packet:
-          - "sgscAAsMFgwWFwsXCwwWFwsXCxcLDBYXCxcLFwsAAYIAAAAAAAAAAAAAAAA"
+        entity_id: remote.broadlink_remote
+        command: b64:sgscAAsMFgwWFwsXCwwWFwsXCxcLDBYXCxcLFwsAAYIAAAAAAAAAAAAAAAA
     - service: input_select.select_option
-      data_template:
+      data:
         entity_id: input_select.fan_speed_bedroom
-        option: '1'
+        option: "1"

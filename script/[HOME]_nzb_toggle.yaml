@@ -1,8 +1,8 @@
 nzb_toggle:
-  alias: '[HOME] NZB Toggle'
+  alias: "[HOME] NZB Toggle"
   mode: restart
   sequence:
-    - service_template: >
+    - service: >
         {% if is_state('sensor.nzbget_download_paused' , 'True') %}
           nzbget.resume
         {% else %}
