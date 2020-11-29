@@ -4,10 +4,12 @@ initial_state: True
 trigger:
   #weekdays
   - platform: time
-    at: '07:00:00'
+    at: 
+      - '07:00:00'  #weekdays
+      - '07:30:00'  #Weekends
   #Weekends
-  - platform: time
-    at: '07:30:00'
+  # - platform: time
+  #   at: '07:30:00'
 mode: single
 action:
   - choose:

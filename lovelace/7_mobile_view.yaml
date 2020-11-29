@@ -195,7 +195,11 @@ cards:
                 template: base_button
                 entity: light.bedroom
                 name: Nightstand
-
+              
+              - type: custom:button-card
+                template: base_button
+                entity: light.lifx_bedroom_desk
+                name: Desk
               - type: custom:button-card
                 template: base_button
                 entity: light.lifx_bedroom1
@@ -204,6 +208,7 @@ cards:
                 template: base_button
                 entity: light.lifx_bedroom2
                 name: Nics ceiling
+              
 
       - type: custom:vertical-stack-in-card
         cards:

@@ -10,16 +10,16 @@ livingroom_ceilingfan_speed:
       data:
         entity_id: remote.broadlink_remote
         command: >-
-          {% if speed == '1' %}
+          {% if speed == 1 %}
             b64:shYcAAkOFA0VDRQNFA4UGAoYChgJDhQYChgKGAkAAXwAAAAAAAAAAAAAAAA
-          {% elif speed == '2' %}
+          {% elif speed == 2 %}
             b64:sh0cAAkOFA0UDRQOFA4UGAoYChkJDhQYCg4UGAkAAXwAAAAAAAAAAAAAAAA
-          {% elif speed == '3' %}
+          {% elif speed == 3 %}
             b64:shocAAoNFQ0VDRQNFQ0UGAoYCg0VGAoYChgKGAoAAXsAAAAAAAAAAAAAAAA
-          {% elif speed == '4' %}
+          {% elif speed == 4 %}
             b64:shocAAkOFA4UDhQOFA4TGQkYCQ4UDhQYCRkJGQkAAXwAAAAAAAAAAAAAAAA
-          {% elif speed == '5' %}
+          {% elif speed == 5 %}
             b64:sh0cAAkNFA4UDhQOFA0UGAkOFBgKGAkZCQ4UGAoAAXwAAAAAAAAAAAAAAAA
-          {% elif speed == '6' %}
+          {% elif speed == 6 %}
             b64:sigcAAoOFA4UDhQOFA4UGQkNFBgJGQkZCRgKGAkAAXwAAAAAAAAAAAAAAAA
           {% endif %}

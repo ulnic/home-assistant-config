@@ -33,7 +33,7 @@ cards:
             template: remote_button_set_source
             icon: mdi:google-chrome
             variables:
-              source: 'Chromecast'
+              source: 'ChromeCast'
           
           - type: custom:button-card
             template: remote_button_set_source

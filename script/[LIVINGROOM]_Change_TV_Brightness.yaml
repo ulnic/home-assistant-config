@@ -4,7 +4,7 @@ change_tv_brightness:
   sequence:
     - service: remote.send_command
       data:
-        entity_id: remote.broadlink
+        entity_id: remote.broadlink_remote
         device: SamsungTV
         delay_secs: 0.6
         command:
@@ -16,13 +16,13 @@ change_tv_brightness:
         milliseconds: 400
     - service: remote.send_command
       data:
-        entity_id: remote.broadlink
+        entity_id: remote.broadlink_remote
         device: SamsungTV
         delay_secs: 0.2
         num_repeats: 4
         command: "{{ DIRECTION }}"
     - service: remote.send_command
       data:
-        entity_id: remote.broadlink
+        entity_id: remote.broadlink_remote
         device: SamsungTV
         command: Exit

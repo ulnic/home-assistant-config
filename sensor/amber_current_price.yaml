@@ -1,0 +1,22 @@
+platform: rest
+resource: https://api.amberelectric.com.au/prices/listprices
+method: POST
+payload: '{ "postcode":"2099" }'
+scan_interval: 300
+force_update: true
+name: amber_Current_Price
+value_template: >
+  {{ (( value_json.data.staticPrices.E1.totalfixedKWHPrice | float ) 
+    + ( 
+    (value_json.data.staticPrices.E1.lossFactor | float) 
+    * (value_json.data.variablePricesAndRenewables.0.wholesaleKWHPrice | float ) 
+  )) | round(1) }}
+unit_of_measurement: cent
+json_attributes_path: "$.data"
+json_attributes:
+  - staticPrices
+  - variablePricesAndRenewables
+  - staticPrices['E1']['lossFactor']
+headers:
+  Content-Type: application/json
+  Accept-Encoding: gzip, deflate, br

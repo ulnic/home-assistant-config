@@ -9,5 +9,7 @@ mode: single
 action:
   - service: light.toggle
     data:
-      entity_id: light.lifx_nursery_1
+      entity_id: 
+        - light.lifx_nursery_1
+        - light.lifx_nursery_2
       transition: 3

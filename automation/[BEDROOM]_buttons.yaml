@@ -16,7 +16,7 @@ action:
       - condition: template
         value_template: "{{ trigger.event.data.click_type == 'single' }}"
       - condition: time
-        before: '23:30:00'
+        before: '23:59:00'
         after: '05:00:00'
       sequence:
         - service: light.toggle

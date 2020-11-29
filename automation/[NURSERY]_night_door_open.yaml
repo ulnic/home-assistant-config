@@ -35,6 +35,7 @@ action:
           - light.tv
           - light.lifx_bedroom1
           - light.lifx_bedroom2
+          - light.lifx_bedroom_desk
           - light.desk
           - media_player.denon_amp
           - media_player.apple_tv
@@ -53,6 +54,7 @@ action:
         - light.tv
         - light.lifx_bedroom1
         - light.lifx_bedroom2
+        - light.lifx_bedroom_desk
         - light.desk
     - condition: state
       entity_id: switch.media_unit

@@ -1,5 +1,5 @@
-custom_header:
-  !include lovelace/custom_header/custom_header.yaml
+#custom_header:
+#  !include lovelace/custom_header/custom_header.yaml
 
 button_card_templates:
   !include lovelace/button_card_templates/button_card_templates.yaml
@@ -10,7 +10,7 @@ decluttering_templates:
 
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 #background: center / cover no-repeat url("/background.png") fixed
-title: Our Awesome Home
+#title: Our Awesome Home
 background: var(--background)
 views:
   - !include lovelace/7_mobile_view.yaml
