@@ -1,9 +1,10 @@
-alias: '[HALLWAY] light off timer'
-initial_state: True
+alias: "[HALLWAY] light off timer"
+id: hallway_light_off_timer_id
+initial_state: true
 trigger:
   platform: state
   entity_id: light.lifx_hallway_1
-  to: 'on'
+  to: "on"
   for:
     minutes: 10
 mode: single

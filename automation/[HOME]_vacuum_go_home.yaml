@@ -1,4 +1,5 @@
 alias: '[HOME] Vacuum go home'
+id: home_vacuum_go_home
 trigger:
   - platform: state 
     entity_id: input_boolean.bibop_empty_bin

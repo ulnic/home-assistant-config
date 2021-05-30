@@ -1,18 +1,19 @@
-alias: '[KITCHEN] Espresso On Alert'
+alias: "[KITCHEN] Espresso On Alert"
+id: kitchen_espresso_on_alert_id
 trigger:
   platform: state
   entity_id: switch.espresso
-  to: 'on'
+  to: "on"
   for:
     hours: 1
     minutes: 30
 mode: single
 action:
-  service: notify.mobile_app_nicsiphone
+  service: notify.mobile_app_nics_iphone
   data:
     message: "Espresso Machine has been on for more than 90 min. !"
     data:
       apns_headers:
-        'apns-collapse-id': 'espresso-off'
+        "apns-collapse-id": "espresso-off"
       push:
         category: "turn_espresso_off" # Needs to match the top level identifier you used in the ios configuration

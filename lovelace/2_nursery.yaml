@@ -19,7 +19,7 @@ cards:
         content: >-
           #### Viggo's room is {{states('sensor.temperature_158_nursery')}} °C
           {{- '\n' -}}Outside it's {{states('sensor.dark_sky_summary')}} & {{states('weather.dark_sky')}}. Temp is
-          {{states('sensor.158_temperature_balcony')}} °C with windspeed of {{(states('sensor.dark_sky_wind_speed') | float * 3.6) | round(0) }} km/h. 
+          {{states('sensor.daikinap35779_outside_temperature')}} °C with windspeed of {{(states('sensor.dark_sky_wind_speed') | float * 3.6) | round(0) }} km/h. 
           {{- '\n' -}}Tonight it will be down to {{states('sensor.dark_sky_overnight_low_temperature_0d')}} °C with
           {{states('sensor.dark_sky_precip_probability') | round(0)}}% chance of {% if states('sensor.dark_sky_precip_intensity') | float > 0 %}
           {{states('sensor.dark_sky_precip_intensity') | round(0)}} mm {% endif %}rain.

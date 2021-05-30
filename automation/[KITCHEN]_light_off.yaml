@@ -1,5 +1,6 @@
-alias: '[KITCHEN] lights OFF'
-initial_state: 'on'
+alias: "[KITCHEN] lights OFF"
+id: kitchen_lights_off_id
+initial_state: true
 trigger:
   - platform: event
     event_type: xiaomi_aqara.click

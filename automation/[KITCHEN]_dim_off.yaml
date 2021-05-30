@@ -1,4 +1,5 @@
 alias: '[KITCHEN] dim OFF'
+id: kitchen_dim_off_id
 trigger:
   - platform: state
     entity_id: binary_sensor.wall_switch_left_158_kitchen

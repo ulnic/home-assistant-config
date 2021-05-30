@@ -1,4 +1,5 @@
 alias: '[IOS] bedroom_lamp_off'
+id: ios_bedroom_lamp_off_id
 trigger:
   platform: event
   event_type: ios.notification_action_fired

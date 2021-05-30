@@ -1,4 +1,5 @@
 alias: '[HOME] Turn ON Light when first person comes home after sunset'
+id: home_turn_on_light_when_first_person_home_id
 trigger:
   - platform: state
     entity_id: person.nic
@@ -18,7 +19,7 @@ condition:
       after: '16:00:00'
       before: '22:00:00'
     - condition: template
-      value_template: "{% if not is_state('media_player.apple_tv', 'playing') %}true{% endif %}"
+      value_template: "{% if not is_state('media_player.apple_tv_2', 'playing') %}true{% endif %}"
 action:
   service: script.turn_on
   entity_id: script.home_after_dark

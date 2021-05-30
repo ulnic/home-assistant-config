@@ -1,4 +1,5 @@
 alias: '[HOME] Vacuum empty bin'
+id: home_vacuum_empty_bin_id
 trigger:
   - platform: state
     entity_id: input_boolean.bibop_empty_bin

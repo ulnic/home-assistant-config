@@ -1,4 +1,5 @@
 alias: "[HOME] Alarm Arm"
+id: home_alarm_arm
 trigger:
   - platform: state
     entity_id: binary_sensor.xi_door_entrance
@@ -17,6 +18,6 @@ action:
     continue_on_timeout: false
   - service: alarm_control_panel.alarm_arm_away
     entity_id: alarm_control_panel.ha_alarm
-  - service: notify.mobile_app_nicsiphone
+  - service: notify.mobile_app_nics_iphone
     data:
       message: 'Home Alarm ARMED {{now().strftime("%d/%m/%Y - %H:%M")}}'

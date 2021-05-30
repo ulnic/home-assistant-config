@@ -1,4 +1,5 @@
 alias: '[HOME] Alarm Disarmed Off'
+id: home_alarm_disarmed_off_id
 trigger:
   platform: state
   entity_id: alarm_control_panel.ha_alarm
@@ -9,6 +10,6 @@ action:
     entity_id: script.alarm_light_loop
   - service: script.turn_off
     entity_id: script.alarm_light_flash
-  - service: notify.mobile_app_nicsiphone
+  - service: notify.mobile_app_nics_iphone
     data:
       message: 'Home Alarm Disarmed {{now().strftime("%d/%m/%Y - %H:%M")}}'

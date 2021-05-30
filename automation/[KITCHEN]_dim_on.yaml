@@ -1,4 +1,5 @@
 alias: '[KITCHEN] dim ON'
+id: kitchen_dim_on_id
 trigger:
   - platform: event
     event_type: xiaomi_aqara.click

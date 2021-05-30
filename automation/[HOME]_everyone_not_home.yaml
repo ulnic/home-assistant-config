@@ -1,4 +1,5 @@
-alias: '[HOME] Turn off home when nobody home' 
+alias: '[HOME] Turn off home when nobody home'
+id: home_turn_off_home_when_nobody_home_id
 trigger:
   - platform: state
     entity_id: person.nic

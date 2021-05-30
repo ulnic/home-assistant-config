@@ -1,5 +1,6 @@
 alias: '[KITCHEN] light brighten'
-initial_state: 'on'
+id: kitchen_light_brighten_id
+initial_state: true 
 trigger:
   - platform: event
     event_type: xiaomi_aqara.click

@@ -1,5 +1,6 @@
 alias: '[KITCHEN] Espresso on for 30m notification' 
-initial_state: True
+id: kitchen_espresso_on_for_30m_notification_id
+initial_state: true
 trigger:
   platform: state
   entity_id: switch.espresso
@@ -13,7 +14,7 @@ action:
             is_state("person.ulli", "home") %}
       notify.all_ios
       {% elif is_state("person.nic", "home") %}
-      mobile_app_nicsiphone
+      notify.mobile_app_nics_iphone
       {% else %}
       notify.mobile_app_ulli_s_iphonese
       {% endif %}

@@ -2,8 +2,8 @@ card:
   type: custom:home-feed-card
   title: Home Feed
   show_empty: false
-  calendars:
-    - calendar.family
+  # calendars:
+  #   - calendar.family
   more_info_on_tap: true
   entities:
     - switch.espresso
@@ -14,7 +14,7 @@ card:
     - binary_sensor.158_motion_bedroom
     - binary_sensor.door_sensor_158_nursery_balcony
     - binary_sensor.door_sensor_158_nursery
-    - binary_sensor.158_door_hallway_cupboard
+    - binary_sensor.158_door_hallway_cupboard_v2
     - binary_sensor.xi_door_entrance
     - binary_sensor.158_door_balcony
     - climate.daikin

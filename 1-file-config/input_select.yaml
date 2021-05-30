@@ -1,6 +1,7 @@
 fan_speed_livingroom:
     name: Ceiling Fan Livingroom
     options:
+      - '0'
       - '1'
       - '2'
       - '3'
@@ -12,6 +13,7 @@ fan_speed_livingroom:
 fan_speed_nursery:
     name: Ceiling Fan Nursery
     options:
+      - '0'
       - '1'
       - '2'
       - '3'
@@ -23,6 +25,7 @@ fan_speed_nursery:
 fan_speed_bedroom:
     name: Ceiling Fan Bedroom
     options:
+      - '0'
       - '1'
       - '2'
       - '3'

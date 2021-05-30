@@ -2,7 +2,7 @@ family_location_update:
   alias: '[HOME] Update Locations'
   mode: queued
   sequence:
-    - service: notify.mobile_app_nicsiphone
+    - service: notify.mobile_app_nics_iphone
       data:
         message: "request_location_update"
     - service: notify.mobile_app_ulli_s_iphone

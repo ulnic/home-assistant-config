@@ -135,7 +135,7 @@ cards:
     #Apple TV
   - id: fc25c733e9be4249ab1ff393823ec3c9  # Automatically created id
     type: custom:mini-media-player
-    entity: media_player.apple_tv
+    entity: media_player.apple_tv_2
     name: Apple TV
     artwork: full-cover
     icon: mdi:apple

@@ -61,6 +61,10 @@ cards:
                     template: button_switch
                     entity: switch.espresso
 
+                  # - type: "custom:button-card"
+                  #   template: button_switch
+                  #   entity: switch.xmas_tree
+
       - type: custom:vertical-stack-in-card
         cards:
           - type: horizontal-stack

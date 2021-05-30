@@ -1,5 +1,4 @@
-profile:
-  !include profile.yaml
+profile: !include profile.yaml
 
 profile_nic:
   template: profile
@@ -16,9 +15,7 @@ profile_button_guest:
   entity: input_boolean.guest_mode
   entity_picture: /local/guest.png
 
-
-alarm:
-  !include alarm.yaml
+alarm: !include alarm.yaml
 
 base:
   style: |
@@ -43,7 +40,6 @@ base:
 icon_button:
   template: base
 
-
 base_button:
   template: base
   color_type: icon
@@ -61,41 +57,37 @@ base_button:
       - font-size: 11px
       - padding: 0px 5px
   state:
-    - value: 'on'
+    - value: "on"
       styles:
         icon:
-          - color: '#ff9800'
+          - color: "#ff9800"
 
-button_fan:
-  !include fan.yaml
-
+button_fan: !include fan.yaml
 
 button_switch:
   template: base_button
   show_last_changed: true
 
-
 button_scene:
   template: base_button
   variables:
-      scene_entity: "scene.movie_lighting"
-  double_tap_action:  
+    scene_entity: "scene.movie_lighting"
+  double_tap_action:
     haptic: selection
     action: call-service
     service: scene.turn_on
     service_data:
-      entity_id: '[[[ return variables.scene_entity ]]]'
-  
+      entity_id: "[[[ return variables.scene_entity ]]]"
 
 button_scene_only_on:
   template: base_button
   variables:
-      scene_entity: "scene.movie_lighting"
+    scene_entity: "scene.movie_lighting"
   tap_action:
     action: call-service
     service: scene.turn_on
     service_data:
-      entity_id: '[[[ return variables.scene_entity ]]]'
+      entity_id: "[[[ return variables.scene_entity ]]]"
 
 base_button_remote:
   #template: base_button
@@ -104,7 +96,7 @@ base_button_remote:
   show_last_changed: false
   show_name: false
   show_label: false
-  styles: 
+  styles:
     card:
       - height: 70px
     icon:
@@ -120,7 +112,6 @@ base_button_remote:
       box-shadow: none;
     }
 
-
 button_scene_remote:
   template: button_scene
   #show_label: false
@@ -130,33 +121,31 @@ remote_button_toggle:
   template: base_button_remote
   #show_label: false
   #show_name: false
-  
-
 
 remote_button_set_source:
   template: base_button_remote
   variables:
-      source: "Apple TV"
+    source: "Apple TV"
   tap_action:
     action: call-service
     service: media_player.select_source
     service_data:
       entity_id: media_player.denon_amp
-      source: '[[[ return variables.source ]]]'
+      source: "[[[ return variables.source ]]]"
   state:
     - operator: template
       value: >
         [[[ 
         return states['media_player.denon_amp'].attributes.source == variables.source
         ]]]
-      color: '#ff9800'
+      color: "#ff9800"
   triggers_update:
     - media_player.denon_amp
 
 remote_media_player:
   template: base_button_remote
   variables:
-      direction: "up"
+    direction: "up"
   tap_action:
     haptic: medium
     action: call-service
@@ -173,11 +162,10 @@ remote_media_player:
     triggers_update:
       - media_player.denon_amp
 
-
 remote_button_tv:
   template: base_button_remote
   variables:
-      direction: 'Right'
+    direction: "Right"
   tap_action:
     haptic: medium
     action: call-service
@@ -185,7 +173,7 @@ remote_button_tv:
     service_data:
       entity_id: script.change_tv_brightness
       variables:
-        DIRECTION: '[[[ return variables.direction ]]]'
+        DIRECTION: "[[[ return variables.direction ]]]"
   #size: 130%
   styles:
     icon:
@@ -194,17 +182,17 @@ remote_button_tv:
       - height: 100%
 
 remote_apple_tv:
-    template: base_button_remote
-    variables:
-      command: 'DirectionUp'
-    tap_action:
-      haptic: light
-      action: call-service
-      service: remote.send_command
-      service_data:
-        entity_id: remote.harmony
-        command: '[[[ return variables.command ]]]'
-        device: Apple TV Gen 4
+  template: base_button_remote
+  variables:
+    command: "DirectionUp"
+  tap_action:
+    haptic: light
+    action: call-service
+    service: remote.send_command
+    service_data:
+      entity_id: remote.harmony
+      command: "[[[ return variables.command ]]]"
+      device: Apple TV Gen 4
 
 sensor:
   color_type: icon
@@ -219,16 +207,16 @@ sensor:
       - font-size: 10px
       - padding: 0px 5px
   style: |
-      ha-card {
-        background-color: rgba(0, 0, 0, 0);
-      }
-  
+    ha-card {
+      background-color: rgba(0, 0, 0, 0);
+    }
+
 door:
   template: sensor
   state:
-    - value: 'on'
+    - value: "on"
       icon: mdi:door-open
-    - operator: 'default'
+    - operator: "default"
       icon: mdi:door
       styles:
         icon:
@@ -237,9 +225,9 @@ door:
 motion:
   template: sensor
   state:
-    - value: 'on'
+    - value: "on"
       icon: mdi:motion-sensor
-    - operator: 'default'
+    - operator: "default"
       icon: mdi:account-search-outline
       styles:
         icon:
@@ -248,37 +236,36 @@ motion:
 occupancy:
   template: sensor
   state:
-    - value: 'on'
+    - value: "on"
       icon: mdi:home-map-marker
-    - operator: 'default'
+    - operator: "default"
       icon: mdi:home-outline
       styles:
         icon:
-          - filter: opacity(50%) 
+          - filter: opacity(50%)
 
 fuel_and_download:
   template: sensor
   show_state: true
   show_last_changed: false
-
-nzb:
-  template: sensor
-  show_state: false
-  show_last_changed: false
-  tap_action:
-    haptic: medium
-    action: call-service
-    service: script.turn_on
-    service_data:
-      entity_id: script.nzb_toggle
-  state:
-    - value: 'True'
-      icon: mdi:download-off
-      label: 'Paused'
-    - operator: 'default'
-      icon: mdi:download
-      label: 'Downloading'
-      styles:
-        icon:
-          - filter: opacity(50%) 
-          - color: '#ff9800'
+# nzb:
+#   template: sensor
+#   show_state: false
+#   show_last_changed: false
+#   tap_action:
+#     haptic: medium
+#     action: call-service
+#     service: script.turn_on
+#     service_data:
+#       entity_id: script.nzb_toggle
+#   state:
+#     - value: 'True'
+#       icon: mdi:download-off
+#       label: 'Paused'
+#     - operator: 'default'
+#       icon: mdi:download
+#       label: 'Downloading'
+#       styles:
+#         icon:
+#           - filter: opacity(50%)
+#           - color: '#ff9800'

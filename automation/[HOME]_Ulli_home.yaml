@@ -1,4 +1,5 @@
 alias: "[HOME] Ulli is Home"
+id: home_ulli_is_home_id
 trigger:
   platform: state
   entity_id: person.ulli
@@ -6,9 +7,9 @@ trigger:
   to: "home"
 mode: single
 action:
-  service: notify.mobile_app_nicsiphone
+  service: notify.mobile_app_nics_iphone
   data:
     message: "Ulli is home!"
     data:
       apns_headers:
-        'apns-collapse-id': 'ulli-home'
+        "apns-collapse-id": "ulli-home"

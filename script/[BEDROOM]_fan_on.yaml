@@ -5,11 +5,15 @@ bedroom_ceilingfan_on:
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.fan_state_bedroom
-    - service: remote.send_command
-      data:
-        entity_id: remote.broadlink_remote
-        command: b64:sgscAAsMFgwWFwsXCwwWFwsXCxcLDBYXCxcLFwsAAYIAAAAAAAAAAAAAAAA
+    # - service: remote.send_command
+    #   data:
+    #     entity_id: remote.broadlink_remote
+    #     command: b64:sgscAAsMFgwWFwsXCwwWFwsXCxcLDBYXCxcLFwsAAYIAAAAAAAAAAAAAAAA
     - service: input_select.select_option
       data:
         entity_id: input_select.fan_speed_bedroom
-        option: "1"
+        option: 1
+    - service: fan.set_preset_mode
+      data:
+        entity_id: fan.bedroom_ceiling_fan
+        preset_mode: 1

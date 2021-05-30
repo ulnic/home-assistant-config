@@ -1,4 +1,5 @@
 alias: '[LAUNDRY] door closes'
+id: laundry_door_closes_id
 trigger:
   platform: state
   entity_id: binary_sensor.158_door_laundry

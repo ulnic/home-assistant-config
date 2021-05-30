@@ -1,4 +1,5 @@
 alias: '[LAUNDRY] door light off timer'
+id: laundry_door_light_off_timer_id
 trigger:
   - platform: state
     entity_id: binary_sensor.158_door_laundry

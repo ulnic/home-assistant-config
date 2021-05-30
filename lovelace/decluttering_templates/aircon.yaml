@@ -15,7 +15,7 @@ card:
         - entity: sensor.158_humidity_livingroom
           name: 'Humidity'
           icon: mdi:water-percent
-        - entity: sensor.158_temperature_balcony
+        - entity: sensor.daikinap35779_outside_temperature
           name: 'Balcony'
           icon: mdi:weather-partly-cloudy
       control:

@@ -1,11 +1,12 @@
-alias: '[NURSERY] aarlo snapshot'
+alias: "[NURSERY] aarlo snapshot"
+id: nursery_aarlo_snapshot_id
 trigger:
   platform: time_pattern
-  minutes: '/2'
+  minutes: "/2"
 mode: restart
 condition:
   - condition: state
     entity_id: input_boolean.guest_mode
-    state: 'on'
+    state: "on"
 action:
   - service: aarlo.camera_request_snapshot

@@ -1,4 +1,5 @@
 alias: '[KITCHEN] Water Leak ALARM'
+id: kitchen_water_leak_alarm_id
 trigger:
   platform: state
   entity_id: binary_sensor.water_leak_sensor_158_kitchen

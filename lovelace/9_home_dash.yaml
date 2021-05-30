@@ -168,21 +168,21 @@ cards:
               - type: custom:decluttering-card
                 template: aircon
 
-          - type: vertical-stack
-            cards:
-              - type: vertical-stack
-                cards:
-                  - type: custom:atomic-calendar
-                    entities:
-                      - entity: calendar.family
-                    dateSize: 110
-                    titleSize: 120
-                    style: |
-                      ha-card {
-                        font-family: 'Open Sans', sans-serif;
-                        margin-bottom: 10px;
-                        margin-right: 5px;
-                        margin-top: 10px;
-                      }
-                  - type: custom:decluttering-card
-                    template: home_feed
+          # - type: vertical-stack
+          #   cards:
+          #     - type: vertical-stack
+          #       cards:
+          #         - type: custom:atomic-calendar
+          #           entities:
+          #             - entity: calendar.family
+          #           dateSize: 110
+          #           titleSize: 120
+          #           style: |
+          #             ha-card {
+          #               font-family: 'Open Sans', sans-serif;
+          #               margin-bottom: 10px;
+          #               margin-right: 5px;
+          #               margin-top: 10px;
+          #             }
+          #         - type: custom:decluttering-card
+          #           template: home_feed

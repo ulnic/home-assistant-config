@@ -1,7 +1,8 @@
 alias: "[LIVINGROOM] Dim lights During Movie"
+id: livingroom_dim_lights_during_movie_id
 trigger:
   - platform: state
-    entity_id: media_player.apple_tv
+    entity_id: media_player.apple_tv_2
     from: 'paused'
     to: 'playing'
 mode: single

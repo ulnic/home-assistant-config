@@ -1,0 +1,8 @@
+fan_speed_livingroom:
+  name: Ceiling Fan Livingroom
+  initial: 0
+  min: 0
+  max: 100
+  step: 17
+  mode: slider
+  icon: mdi:speedometer

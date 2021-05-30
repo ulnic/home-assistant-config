@@ -1,4 +1,5 @@
 alias: '[HOME] Turn on Bibop (Mon Fri)'
+id: home_turn_on_bibop_id
 trigger:
   platform: time
   at: "10:00:00"
@@ -19,7 +20,7 @@ condition:
 action:
   - service: vacuum.start
     entity_id: vacuum.bibop
-  - service: notify.mobile_app_nicsiphone
+  - service: notify.mobile_app_nics_iphone
     data:
       message: "BiBop was put to action"
       data:

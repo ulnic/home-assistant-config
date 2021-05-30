@@ -1,17 +1,18 @@
-alias: '[HALLWAY] Front Door Opens'
+alias: "[HALLWAY] Front Door Opens"
+id: hallway_front_door_opens_id
 trigger:
   - platform: state
     entity_id: binary_sensor.xi_door_entrance
-    to: 'on'
+    to: "on"
 mode: single
 condition:
   - condition: state
     entity_id: person.nic
-    state: 'home'
+    state: "home"
 action:
-  - service: notify.mobile_app_nicsiphone
+  - service: notify.mobile_app_nics_iphone
     data:
       message: "Front Door Opened"
       data:
         apns_headers:
-          'apns-collapse-id': 'front-door-opened'
+          "apns-collapse-id": "front-door-opened"

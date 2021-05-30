@@ -1,4 +1,5 @@
 alias: '[HOME] Google Home Volume'
+id: home_google_home_volume_id
 description: "Sets google home volume for day and night use"
 trigger:
   - platform: time

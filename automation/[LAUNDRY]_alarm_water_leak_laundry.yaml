@@ -1,8 +1,9 @@
-alias: '[LAUNDRY] Water Leak ALARM laundry'
+alias: "[LAUNDRY] Water Leak ALARM laundry"
+id: laundry_water_leak_alarm_laundry_id
 trigger:
   platform: state
   entity_id: binary_sensor.water_leak_sensor_158_laundry
-  to: 'on'
+  to: "on"
 mode: queued
 action:
   - service: notify.all_ios

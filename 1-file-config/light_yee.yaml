@@ -4,5 +4,4 @@ devices:
     save_on_change: True #(defaults to True)
   192.168.0.44:
     name: TV
-    #transition: 250
     save_on_change: True

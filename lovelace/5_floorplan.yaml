@@ -233,7 +233,7 @@ cards:
               left: 28.5%
           - type: state-icon
             tap_action: toggle
-            entity: binary_sensor.158_door_hallway_cupboard
+            entity: binary_sensor.158_door_hallway_cupboard_v2
             style:
               top: 86%
               left: 24%
@@ -247,7 +247,7 @@ cards:
 
           #Balcony
           - type: state-label
-            entity: sensor.158_temperature_balcony
+            entity: sensor.daikinap35779_outside_temperature
             style:
               top: 8%
               left: 6%

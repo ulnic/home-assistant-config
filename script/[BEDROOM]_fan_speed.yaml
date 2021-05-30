@@ -5,21 +5,23 @@ bedroom_ceilingfan_speed:
     - service: input_select.select_option
       data:
         entity_id: input_select.fan_speed_bedroom
-        option: "{{ speed }}"
+        option: "{{ preset_mode }}"
     - service: remote.send_command
       data:
         entity_id: remote.broadlink_remote
         command: >-
-          {% if speed == 1 %}
+          {% if preset_mode == 0 %}
+            b64:sQ4cAAsNFQ0VGAoYCg0VGAoYChgKGAoYCg0VGAoAAYMAAAAAAAAAAAAAAAA
+          {% elif preset_mode == 1 %}
             b64:sgscAAsMFgwWFwsXCwwWFwsXCxcLDBYXCxcLFwsAAYIAAAAAAAAAAAAAAAA
-          {% elif speed == 2 %}
+          {% elif preset_mode == 2 %}
             b64:shIcAAsMFgwWFwsXCwwWFwsXCxcLDBYYCg0WFwsAAYIAAAAAAAAAAAAAAAA
-          {% elif speed == 3 %}
+          {% elif preset_mode == 3 %}
             b64:shIcAAsMFgwWFwsXCwwWFwsXCwwWGAsYCxcLFwsAAYIAAAAAAAAAAAAAAAA
-          {% elif speed == 4 %}
+          {% elif preset_mode == 4 %}
             b64:sgscAAsMFgwWFwsXCwwWFwsXCwwWDBYXCxcLFwsAAYMAAAAAAAAAAAAAAAA
-          {% elif speed == 5 %}
+          {% elif preset_mode == 5 %}
             b64:shIcAAsMFgwWFwsXCwwWGAsMFhcLFwsXCwwWFwsAAYMAAAAAAAAAAAAAAAA
-          {% elif speed == 6 %}
+          {% elif preset_mode == 6 %}
             b64:shYcAAsMFgwWFwsXCwwWFwsMFhcLFwsXCxcLFwsAAYIAAAAAAAAAAAAAAAA
           {% endif %}

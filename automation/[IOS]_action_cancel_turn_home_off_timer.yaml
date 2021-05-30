@@ -1,5 +1,6 @@
 # Action an iOS action to cancel turn off home timer
 alias: '[IOS] cancel turn home off timer'
+id: ios_cancel_turn_home_off_timer_id
 trigger:
   platform: event
   event_type: ios.notification_action_fired

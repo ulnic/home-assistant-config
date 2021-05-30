@@ -1,3 +1,0 @@
-platform: broadlink
-host: !secret switch_broadlink_host
-mac: !secret switch_broadlink_mac

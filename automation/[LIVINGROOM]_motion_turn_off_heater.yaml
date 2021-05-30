@@ -1,5 +1,6 @@
 alias: '[LIVINGROOM] motion - turn OFF if nobody around'
-initial_state: True
+id: livingroom_motion_turn_off_if_nobody_around_id
+initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.158_motion_livingroom

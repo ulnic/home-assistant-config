@@ -1,5 +1,6 @@
 alias: '[NURSERY] door OPEN at night'
-initial_state: True
+id: nursery_door_open_at_night_id
+initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.door_sensor_158_nursery
@@ -38,7 +39,7 @@ action:
           - light.lifx_bedroom_desk
           - light.desk
           - media_player.denon_amp
-          - media_player.apple_tv
+          - media_player.apple_tv_2
     - service: light.turn_off
       entity_id:
         - light.lifx_dining1
@@ -64,7 +65,7 @@ action:
         entity_id: media_player.denon_amp
         source: "DVD"
     - condition: state
-      entity_id: media_player.apple_tv
+      entity_id: media_player.apple_tv_2
       state: 'playing'
     - service: media_player.media_pause
-      entity_id: media_player.apple_tv
+      entity_id: media_player.apple_tv_2

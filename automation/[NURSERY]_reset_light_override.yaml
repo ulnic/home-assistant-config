@@ -1,5 +1,6 @@
 alias: '[NURSERY] reset light override light menu'
-initial_state: True
+id: nursery_reset_light_override_light_menu_id
+initial_state: true
 trigger:
   platform: state
   entity_id: input_boolean.nursery_sleeping_override

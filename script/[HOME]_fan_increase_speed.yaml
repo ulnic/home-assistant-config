@@ -2,7 +2,7 @@ fan_increase_speed:
   alias: "[HOME] Fan Increase Speed"
   mode: queued
   sequence:
-    - service: fan.set_speed
+    - service: fan.set_preset_mode
       data:
         entity_id: "{{ 'fan.'+ room + '_ceiling_fan' }}"
         speed: >-

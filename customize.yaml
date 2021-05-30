@@ -143,7 +143,7 @@ switch.xmas:
   icon: mdi:pine-tree
 binary_sensor.door_sensor_158_nursery_balcony:
   device_class: door
-binary_sensor.158_door_hallway_cupboard:
+binary_sensor.158_door_hallway_cupboard_v2:
   device_class: door
 binary_sensor.door_sensor_158_nursery:
   device_class: door
@@ -170,3 +170,5 @@ light.tv:
   icon: mdi:filmstrip
 light.led_shelf:
   icon: mdi:track-light
+light.lifx_bedroom_desk:
+  icon: mdi:desk-lamp

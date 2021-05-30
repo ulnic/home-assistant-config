@@ -1,16 +1,17 @@
-alias: '[KITCHEN] motion - turn OFF if nobody around'
-initial_state: True
+alias: "[KITCHEN] motion - turn OFF if nobody around"
+id: kitchen_motion_turn_off_if_nobody_around_id
+initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.motion_sensor_158_kitchen
-  to: 'off'
+  to: "off"
   for:
     minutes: 2
 mode: single
 condition:
   - condition: state
     entity_id: input_boolean.kitchen_light_override
-    state: 'off'
+    state: "off"
 action:
   service: light.turn_off
   data:

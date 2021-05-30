@@ -1,4 +1,5 @@
 alias: "[HOME] Automatic Theme Change"
+id: home_automatic_theme_change_id
 trigger:
   - platform: homeassistant
     event: start

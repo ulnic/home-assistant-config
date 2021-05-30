@@ -1,11 +1,12 @@
 alias: '[KITCHEN] Espresso Machine ON'
 description: "Turns on Espresso machine"
-initial_state: True
+id: kitchen_espresso_machine_on_id
+initial_state: true
 trigger:
   #weekdays
   - platform: time
     at: 
-      - '07:00:00'  #weekdays
+      - '06:30:00'  #weekdays
       - '07:30:00'  #Weekends
   #Weekends
   # - platform: time
@@ -13,7 +14,7 @@ trigger:
 mode: single
 action:
   - choose:
-    #Weekdays, auto turn off
+    #Weekends, auto turn on
     - conditions:
       - condition: time
         after: '07:15:00'
@@ -27,7 +28,7 @@ action:
         - service: switch.turn_on
           entity_id: switch.espresso
     
-    #WeekDAYS, auto turn off
+    #WeekDAYS, auto turn on
     - conditions:
       - condition: time
         before: '07:15:00'

@@ -1,11 +1,12 @@
-alias: '[LAUNDRY] door opens or motion'
+alias: "[LAUNDRY] door opens or motion"
+id: laundry_door_opens_or_motion_id
 trigger:
   - platform: state
     entity_id: binary_sensor.158_motion_laundry
-    to: 'on'
+    to: "on"
   - platform: state
     entity_id: binary_sensor.158_door_laundry
-    to: 'on'
+    to: "on"
 mode: queued
 action:
   - service: light.turn_on

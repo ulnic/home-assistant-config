@@ -1,4 +1,6 @@
 alias: '[HOME] Disarm When Home'
+
+id: home_disarm_when_home
 trigger:
   - platform: state
     entity_id: person.nic

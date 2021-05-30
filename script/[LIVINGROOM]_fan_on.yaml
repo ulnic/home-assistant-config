@@ -5,11 +5,19 @@ livingroom_ceilingfan_on:
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.fan_state_livingroom
-    - service: remote.send_command
-      data:
-        entity_id: remote.broadlink_remote
-        command: b64:shYcAAkOFA0VDRQNFA4UGAoYChgJDhQYChgKGAkAAXwAAAAAAAAAAAAAAAA
+    # - service: remote.send_command
+    #   data:
+    #     entity_id: remote.broadlink_remote
+    #     command: b64:shYcAAkOFA0VDRQNFA4UGAoYChgJDhQYChgKGAkAAXwAAAAAAAAAAAAAAAA
     - service: input_select.select_option
       data:
         entity_id: input_select.fan_speed_livingroom
-        option: "1"
+        option: 1
+    # - service: fan.set_percentage
+    #   data:
+    #     entity_id: fan.livingroom_ceiling_fan
+    #     preset_mode: 17
+    - service: fan.set_preset_mode
+      data:
+        entity_id: fan.livingroom_ceiling_fan
+        preset_mode: 1

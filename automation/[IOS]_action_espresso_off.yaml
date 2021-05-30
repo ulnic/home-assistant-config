@@ -1,5 +1,6 @@
 # Send an iOS notification when the ESPRESSO MACHINE is on for longer than 90 min
 alias: '[IOS] espresso_off'
+id: ios_espresso_off_id
 trigger:
   platform: event
   event_type: ios.notification_action_fired

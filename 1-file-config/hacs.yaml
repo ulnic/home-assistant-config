@@ -1,2 +1,2 @@
-token: !secret HACS_token
+token: !secret hacs_token
 appdaemon: true

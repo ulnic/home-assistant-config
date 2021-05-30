@@ -1,4 +1,4 @@
-id: config_3  # Automatically created id
+id: config_3 # Automatically created id
 icon: mdi:cog
 title: Config
 cards:
@@ -9,11 +9,11 @@ cards:
           - type: custom:button-card
             template: fuel_and_download
             entity: input_boolean.on_holiday
-            name: Holiday 
+            name: Holiday
           - type: custom:button-card
             template: fuel_and_download
             entity: input_boolean.guest_mode
-            name: Guests? 
+            name: Guests?
           - type: custom:button-card
             template: fuel_and_download
             entity: light.gateway_light
@@ -26,15 +26,13 @@ cards:
             state:
               - value: "on"
                 icon: mdi:briefcase-outline
-                label: 'Yupp'
+                label: "Yupp"
               - value: "off"
                 icon: mdi:palm-tree
-                label: 'Nope!'
-
-
+                label: "Nope!"
 
   #Wine Fridge
-  - id: 23987927924khjh343494937493749  # Automatically created id
+  - id: 23987927924khjh343494937493749 # Automatically created id
     type: glance
     title: Wine Fridge
     columns: 4
@@ -45,7 +43,7 @@ cards:
         name: Temp
       - entity: sensor.158_humidity_winefridge
         name: Humidity
-      - entity: sensor.plug_158_winefridge_current_power 
+      - entity: sensor.plug_158_winefridge_current_power
         name: watt
     style: |
       ha-card {
@@ -56,10 +54,9 @@ cards:
         background-color: rgba(0, 0, 0, 0);
       }
 
-
   #DNS
-  - id: 1bd4ca45036648d5a224aed814e4ad72  # Automatically created id
-    type: entities
+  #- id: 1bd4ca45036648d5a224aed814e4ad72 # Automatically created id
+  - type: entities
     title: DNS & IP Address
     show_header_toggle: false
     entities:
@@ -67,7 +64,6 @@ cards:
         name: external IP
       - entity: sensor.dns_domain_resolver
         name: family
-      - sensor.ulnic
 
   #Internet
   - type: custom:vertical-stack-in-card
@@ -134,17 +130,16 @@ cards:
   #           template: fuel_and_download
   #           entity: sensor.nzbget_speed
   #           icon: mdi:cloud-download-outline
-  #           name: DL Speed 
+  #           name: DL Speed
   #         - type: custom:button-card
   #           template: fuel_and_download
   #           entity: sensor.nzbget_queue_size
   #           icon: mdi:tray-full
-  #           name: Queue 
+  #           name: Queue
   #         - type: custom:button-card
   #           template: nzb
   #           entity: sensor.nzbget_download_paused
-  #           name: Toggle 
-
+  #           name: Toggle
 
   #Proximity
   - type: entities
@@ -198,7 +193,6 @@ cards:
             box-shadow: none;
           }
 
-  
   - type: custom:mini-graph-card
     entities:
       - entity: sensor.espresso_current_power

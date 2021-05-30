@@ -1,8 +1,8 @@
 turn_home_off_timer:
-  alias: '[iOS] Turn home off timer'
+  alias: "[iOS] Turn home off timer"
   mode: single
   sequence:
-    - service: notify.mobile_app_nicsiphone
+    - service: notify.mobile_app_nics_iphone
       data:
         message: "I'm turning off the house in 10 min, care to cancel? !"
         data:
@@ -18,6 +18,6 @@ turn_home_off_timer:
       entity_id: climate.daikin
     - service: light.turn_off
       entity_id: all
-    - service: notify.mobile_app_nicsiphone
+    - service: notify.mobile_app_nics_iphone
       data:
         message: "Nobody home, so turned it off!"

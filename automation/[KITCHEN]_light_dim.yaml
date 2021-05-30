@@ -1,5 +1,6 @@
-alias: '[KITCHEN] light dim'
-initial_state: 'on'
+alias: "[KITCHEN] light dim"
+id: kitchen_light_dim_id
+initial_state: true
 trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -10,12 +11,12 @@ mode: queued
 condition:
   - condition: state
     entity_id: light.kitchen_lights
-    state: 'on'
+    state: "on"
 action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.kitchen_light_override
   - service: light.turn_on
-    data: 
+    data:
       entity_id: light.kitchen_lights
       transition: 0.5
       brightness_step_pct: -10

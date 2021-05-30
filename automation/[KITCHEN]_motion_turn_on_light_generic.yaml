@@ -1,5 +1,6 @@
 alias: "[KITCHEN] motion - turn ON light"
-initial_state: True
+id: kitchen_motion_turn_on_light_id
+initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.motion_sensor_158_kitchen

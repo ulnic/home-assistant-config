@@ -1,13 +1,14 @@
-alias: '[BEDROOM] Light On Alert'
+alias: "[BEDROOM] Light On Alert"
+id: bedroom_light_on_alert_id
 trigger:
   platform: state
   entity_id: light.bedroom
-  to: 'on'
+  to: "on"
   for:
     minutes: 20
 mode: single
 action:
-  service: notify.mobile_app_nicsiphone 
+  service: notify.mobile_app_nics_iphone
   data:
     message: "The bedroom light is ON, shall I turn it off?"
     data:

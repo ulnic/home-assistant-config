@@ -1,5 +1,6 @@
 alias: "[LIVINGROOM] turn off heater if balcony open"
-initial_state: True
+id: livingroom_turn_off_heater_if_balcony_open_id
+initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.158_door_balcony
@@ -20,7 +21,7 @@ action:
       {% elif is_state("person.ulli", "home") %}
       notify.mobile_app_ulli_s_iphone 
       {% else %}
-      notify.mobile_app_nicsiphone
+      notify.mobile_app_nics_iphone
       {% endif %}
     data:
       message: "Balcony door opened, so I turned off the AC :) (Go Nature!) "

@@ -1,18 +1,19 @@
-alias: '[HOME] Turn OFF vacation mode when home'
+alias: "[HOME] Turn OFF vacation mode when home"
+id: home_turn_off_vacation_mode_when_home_id
 trigger:
   - platform: state
     entity_id: person.nic
-    from: 'not_home'
-    to: 'home'
+    from: "not_home"
+    to: "home"
   - platform: state
     entity_id: person.ulli
-    from: 'not_home'
-    to: 'home'
+    from: "not_home"
+    to: "home"
 mode: single
 condition:
   - condition: state
     entity_id: input_boolean.on_holiday
-    state: 'on'
+    state: "on"
 action:
   - service: input_boolean.turn_off
     entity_id: input_boolean.on_holiday

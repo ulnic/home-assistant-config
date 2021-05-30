@@ -16,7 +16,7 @@ history:
 logbook:
 # Enables the frontend
 frontend:
-  javascript_version: latest
+  #javascript_version: latest
   themes: !include_dir_merge_named themes
 # Discover some devices automatically
 discovery:
@@ -24,7 +24,7 @@ discovery:
 conversation:
 # Checks for available updates
 updater:
-  reporting: yes
+  #reporting: yes
 # Set recorder options
 recorder: !include 1-file-config/recorder.yaml
 map:
@@ -57,7 +57,7 @@ notify:
   - name: all_ios
     platform: group
     services:
-      - service: mobile_app_nicsiphone
+      - service: mobile_app_nics_iphone
       - service: mobile_app_ulli_s_iphonese
 
 ################################################
@@ -90,11 +90,11 @@ hacs: !include 1-file-config/hacs.yaml
 geo_location:
   - platform: nsw_rural_fire_service_feed
     radius: 50
-google: !include 1-file-config/calendar.yaml
+#google: !include 1-file-config/calendar.yaml
 #xiaomi_aqara: !include 1-file-config/xiaomi_aqara.yaml
 homekit: !include 1-file-config/homekit.yaml
-asuswrt: !include 1-file-config/asuswrt.yaml
-influxdb: !include 1-file-config/influxdb.yaml
+#asuswrt: !include 1-file-config/asuswrt.yaml
+#influxdb: !include 1-file-config/influxdb.yaml
 #climate: !include 1-file-config/climate_broadlink.yaml
 speedtestdotnet: !include 1-file-config/speedtestdotnet.yaml
 cloud:
@@ -110,20 +110,20 @@ fan: !include 1-file-config/fan.yaml
 logger: !include 1-file-config/logger.yaml
 input_boolean: !include 1-file-config/input_boolean.yaml
 input_select: !include 1-file-config/input_select.yaml
-#input_number: !include 1-file-config/input_number.yaml
+input_number: !include 1-file-config/input_number.yaml
 wemo: !include 1-file-config/wemo.yaml
 #switch: !include 1-file-config/switch.yaml
 camera: !include 1-file-config/aarlo_camera.yaml
 aarlo: !include 1-file-config/aarlo.yaml
 proximity: !include 1-file-config/proximity.yaml
-vacuum: !include 1-file-config/vacuum.yaml
+#vacuum: !include 1-file-config/vacuum.yaml
 #hue: !include 1-file-config/light_hue.yaml
 yeelight: !include 1-file-config/light_yee.yaml
 
 ################################################
 ## Component Includes (DIR LIST)
 ################################################
-remote: !include_dir_list remote
+#remote: !include_dir_list remote
 switch: !include_dir_list switch
 automation: !include_dir_list automation
 binary_sensor: !include_dir_list binary_sensor

@@ -6,5 +6,5 @@ logs:
   homeassistant.components.remote: debug
   #homeassistant.components.media_player: fatal
   homeassistant.components.google: debug
+  homeassistant.components.vacuum: debug
   #pyatv: error
-  #custom_components.apple_tv: debug

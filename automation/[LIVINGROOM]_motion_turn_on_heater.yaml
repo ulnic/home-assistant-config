@@ -1,5 +1,6 @@
 alias: '[LIVINGROOM] motion - turn ON Heater'
-initial_state: True
+id: livingroom_motion_turn_on_heater_id
+initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.158_motion_livingroom

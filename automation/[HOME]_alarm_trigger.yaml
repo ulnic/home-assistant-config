@@ -1,4 +1,5 @@
 alias: '[HOME] Trigger Alarm'
+id: home_trigger_alarm_id
 trigger:
   - platform: state
     entity_id: binary_sensor.xi_door_entrance
