@@ -2,10 +2,15 @@ card:
   type: custom:vertical-stack-in-card
   cards:
     - type: custom:simple-thermostat
-      entity: climate.daikin 
-      name: 'Aircon'
+      entity: climate.daikin
+      header:
+        name: "Aircon"
+      layout:
+        step: column
+        mode:
+          names: false
+          headings: false
       step_size: 0.5
-      step_layout: column
       hide:
         state: true
         temperature: true
@@ -13,23 +18,21 @@ card:
         - entity: sensor.158_temperature_livingroom
           icon: mdi:home-thermometer-outline
         - entity: sensor.158_humidity_livingroom
-          name: 'Humidity'
+          name: "Humidity"
           icon: mdi:water-percent
         - entity: sensor.daikinap35779_outside_temperature
-          name: 'Balcony'
+          name: "Balcony"
           icon: mdi:weather-partly-cloudy
       control:
-        _names: false
-        _headings: false
         hvac:
           heat_cool: false
         fan:
           Auto: false
           Silence:
-            icon: mdi:music-note-off-outline 
+            icon: mdi:music-note-off-outline
           1:
-            icon: mdi:numeric-1 
-          2: 
+            icon: mdi:numeric-1
+          2:
             icon: mdi:numeric-2
           3:
             icon: mdi:numeric-3
@@ -93,7 +96,6 @@ card:
                   -moz-box-shadow: none;
                   box-shadow: none;
                 }
-
 
             - type: custom:mini-graph-card
               entities:

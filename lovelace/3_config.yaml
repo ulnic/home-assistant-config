@@ -1,4 +1,4 @@
-id: config_3 # Automatically created id
+#id: config_3 # Automatically created id
 icon: mdi:cog
 title: Config
 cards:
@@ -32,8 +32,8 @@ cards:
                 label: "Nope!"
 
   #Wine Fridge
-  - id: 23987927924khjh343494937493749 # Automatically created id
-    type: glance
+  #- id: 23987927924khjh343494937493749 # Automatically created id
+  - type: glance
     title: Wine Fridge
     columns: 4
     entities:
@@ -45,15 +45,15 @@ cards:
         name: Humidity
       - entity: sensor.plug_158_winefridge_current_power
         name: watt
-    style: |
-      ha-card {
-        background: url(http://www.hotelsienaborgogrondaie.com/sienahotelstuscany-2016/wp-content/uploads/2014/03/1937_vino_03-e1496502091807.jpg);
-        --primary-text-color: rgb(255,255,255);
-        --paper-listbox-background-color: black;
-        text-shadow: 1px 1px 0 #000;
-        background-color: rgba(0, 0, 0, 0);
-      }
 
+    # style: |
+    #   ha-card {
+    #     background: url(http://www.hotelsienaborgogrondaie.com/sienahotelstuscany-2016/wp-content/uploads/2014/03/1937_vino_03-e1496502091807.jpg);
+    #     --primary-text-color: rgb(255,255,255);
+    #     --paper-listbox-background-color: black;
+    #     text-shadow: 1px 1px 0 #000;
+    #     background-color: rgba(0, 0, 0, 0);
+    #   }
   #DNS
   #- id: 1bd4ca45036648d5a224aed814e4ad72 # Automatically created id
   - type: entities

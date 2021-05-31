@@ -23,8 +23,8 @@ discovery:
 # Allows you to issue voice commands from the frontend
 conversation:
 # Checks for available updates
-updater:
-  #reporting: yes
+#updater:
+#reporting: yes
 # Set recorder options
 recorder: !include 1-file-config/recorder.yaml
 map:
