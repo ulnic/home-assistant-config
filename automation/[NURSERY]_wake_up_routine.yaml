@@ -1,0 +1,39 @@
+alias: "[NURSERY] wake up routine"
+id: nursery_wake_up_routine_id
+initial_state: true
+trigger:
+  - platform: time
+    at:
+      - "06:30:00" #weekdays only
+mode: single
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: "on"
+    - condition: state
+      entity_id: input_boolean.on_holiday
+      state: "off"
+action:
+  - service: aarlo.camera_request_snapshot
+    data:
+      entity_id: camera.aarlo_mr_rabbit
+  - service: media_player.media_pause
+    entity_id: media_player.mr_rabbit
+  - service: light.turn_off
+    entity_id: light.aarlo_mr_rabbit
+  - delay: 00:01:00
+  - service: light.turn_on
+    target:
+      entity_id: light.lifx_nursery_1
+    data:
+      brightness_pct: 30
+      transition: 300
+  - delay: 00:15:00
+  - service: light.turn_on
+    target:
+      entity_id: light.lifx_nursery_2
+    data:
+      brightness_pct: 20
+      transition: 300
