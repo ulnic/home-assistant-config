@@ -172,3 +172,5 @@ light.led_shelf:
   icon: mdi:track-light
 light.lifx_bedroom_desk:
   icon: mdi:desk-lamp
+sensor.plug_158_winefridge_current_power:
+  device_class: energy

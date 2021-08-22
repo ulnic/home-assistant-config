@@ -1,15 +1,14 @@
-id: baby_2  # Automatically created id
+#id: baby_2  # Automatically created id
 background: "right/auto linear-gradient(23deg, rgba(151,177,177,1) 0%, rgba(151,177,177,1) 34%, rgba(255,255,255,1) 100%)"
 icon: mdi:baby
 title: Nursery
 cards:
-
   - type: custom:vertical-stack-in-card
     cards:
       - type: custom:simple-weather-card
         entity: weather.dark_sky
         name: outside
-        backdrop: 
+        backdrop:
           fade: true
         secondary_info:
           - precipitation
@@ -33,10 +32,16 @@ cards:
 
   - type: custom:vertical-stack-in-card
     cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:button-card
+            template: fuel_and_download
+            entity: automation.nursery_wake_up_routine
+            name: Wake Up Alarm
       - type: conditional
         conditions:
           - entity: binary_sensor.nursery_show_all_lights
-            state: 'on'
+            state: "on"
         card:
           type: vertical-stack
           cards:
@@ -66,22 +71,22 @@ cards:
                   template: button_fan
                   entity: fan.nursery_ceiling_fan
                   variables:
-                    room: 'nursery'
+                    room: "nursery"
 
             - type: entities
               show_header_toggle: false
               entities:
                 - type: custom:slider-entity-row
-                  entity:  light.nursery_ceiling
+                  entity: light.nursery_ceiling
                   toggle: true
                   full_row: true
                   name: Nursery
                 - type: custom:slider-entity-row
-                  entity:  light.lifx_nursery_1
+                  entity: light.lifx_nursery_1
                   toggle: true
                   name: Balcony
                 - type: custom:slider-entity-row
-                  entity:  light.lifx_nursery_2
+                  entity: light.lifx_nursery_2
                   toggle: true
                   name: Cot
               style: |
@@ -94,7 +99,7 @@ cards:
       - type: conditional
         conditions:
           - entity: binary_sensor.nursery_show_all_lights
-            state: 'off'
+            state: "off"
         card:
           type: horizontal-stack
           cards:
@@ -108,7 +113,7 @@ cards:
               template: button_fan
               entity: fan.nursery_ceiling_fan
               variables:
-                room: 'nursery'
+                room: "nursery"
             - type: custom:button-card
               template: base_button
               entity: input_boolean.nursery_sleeping_override
@@ -219,19 +224,18 @@ cards:
         height: 70
         line_width: 2
         line_color: yellow
-  
 
   - type: custom:vertical-stack-in-card
     cards:
-      - type: 'custom:aarlo-glance'
+      - type: "custom:aarlo-glance"
         entity: camera.aarlo_mr_rabbit
         name: Viggo
         show:
-          - motion 
+          - motion
           #- sound
           - snapshot
           - image_date
-        hide: 'title'
+        hide: "title"
         top_title: false
         top_status: false
         top_date: false
@@ -308,7 +312,6 @@ cards:
             margin-top: 1px;
             margin-bottom: 1px;
           }
-
 
   - type: picture
     image: /local/ergopouch-temperature-guide.jpg

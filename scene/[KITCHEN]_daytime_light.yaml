@@ -1,22 +1,18 @@
 name: Kitchen daytime light
 entities:
   light.lifx_kitchen1:
-    state: on
+    state: "on"
     brightness: 55
     color_temp: 295
-    transition: 2
   light.lifx_kitchen2:
-    state: on
+    state: "on"
     brightness: 55
     color_temp: 295
-    transition: 2
   light.led:
-    state: on
+    state: "on"
     brightness: 255
     color_temp: 347
-    transition: 2
   light.led_shelf:
-    state: on
+    state: "on"
     brightness: 255
     color_temp: 347
-    transition: 2

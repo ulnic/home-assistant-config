@@ -2,12 +2,6 @@
 name: Normal Lighting
 entities:
   light.dining_lights:
-    state: on
-    transition: 1
+    state: "on"
     brightness: 150
-    xy_color: [ 0.4448, 0.4066 ]
-  #light.livingroom:
-  #  state: on
-  #  transition: 3
-  #  brightness: 150
-  #  xy_color: [ 0.4448, 0.4066 ]
+    xy_color: [0.4448, 0.4066]

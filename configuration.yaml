@@ -7,13 +7,8 @@ homeassistant:
       name: Authenticator app
     - type: notify
       message: "I almost forget, to get into my clubhouse, you need to say {}"
-
+default_config:
 http: !include 1-file-config/http.yaml
-sun:
-# Enables support for tracking state changes over time.
-history:
-# View all events in a logbook
-logbook:
 # Enables the frontend
 frontend:
   #javascript_version: latest
@@ -23,13 +18,9 @@ discovery:
 # Allows you to issue voice commands from the frontend
 conversation:
 # Checks for available updates
-#updater:
 #reporting: yes
 # Set recorder options
 recorder: !include 1-file-config/recorder.yaml
-map:
-config:
-system_health:
 lovelace:
   mode: yaml
   resources: !include lovelace/resources.yaml
@@ -49,10 +40,6 @@ lovelace:
       show_in_sidebar: true
       require_admin: false
 
-person:
-mobile_app:
-ssdp:
-zeroconf:
 notify:
   - name: all_ios
     platform: group
@@ -63,7 +50,6 @@ notify:
 ################################################
 ## Test
 ################################################
-#google_domains: !include 1-file-config/google_domain.yaml
 
 ################################################
 ## Add integrations
@@ -96,8 +82,8 @@ homekit: !include 1-file-config/homekit.yaml
 #asuswrt: !include 1-file-config/asuswrt.yaml
 #influxdb: !include 1-file-config/influxdb.yaml
 #climate: !include 1-file-config/climate_broadlink.yaml
-speedtestdotnet: !include 1-file-config/speedtestdotnet.yaml
-cloud:
+#speedtestdotnet: !include 1-file-config/speedtestdotnet.yaml
+# cloud:
 #  google_actions: !include 1-file-config/cloud.yaml
 tts: !include 1-file-config/tts.yaml
 dialogflow:

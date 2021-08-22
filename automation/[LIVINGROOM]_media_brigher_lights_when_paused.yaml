@@ -3,18 +3,21 @@ id: livingroom_paused_stopped_movie_id
 trigger:
   - platform: state
     entity_id: media_player.apple_tv_2
-    from: 'playing'
-    to: 'paused'
+    from: "playing"
+    to: "paused"
 mode: single
 condition:
   condition: and
   conditions:
     - condition: state
       entity_id: input_boolean.tv_movie_lights
-      state: 'on'
+      state: "on"
     - condition: state
       entity_id: sun.sun
-      state: 'below_horizon'
+      state: "below_horizon"
 action:
   service: scene.turn_on
-  entity_id: scene.normal_lighting
+  target:
+    entity_id: scene.normal_lighting
+  data:
+    transition: 2

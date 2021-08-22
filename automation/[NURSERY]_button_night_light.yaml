@@ -9,5 +9,7 @@ trigger:
 mode: single
 action:
   - service: scene.turn_on
-    data:
+    target:
       entity_id: scene.nursery_night_read
+    data:
+      transition: 2

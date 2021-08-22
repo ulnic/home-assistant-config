@@ -1,25 +1,25 @@
-alias: '[NURSERY] door CLOSE at night'
+alias: "[NURSERY] door CLOSE at night"
 id: nursery_door_close_at_night_id
 initial_state: true
 trigger:
   platform: state
   entity_id: binary_sensor.door_sensor_158_nursery
-  to: 'off'
+  to: "off"
 mode: queued
 condition:
   condition: and
   conditions:
     - condition: state
       entity_id: sun.sun
-      state: 'below_horizon'
+      state: "below_horizon"
     - condition: time
-      after: '18:00:00'
+      after: "18:00:00"
       #before: '21:00:00'
     - condition: state
       entity_id: light.nursery_ceiling
-      state: 'off'
+      state: "off"
 action:
   - delay: 00:00:01
   - service: scene.turn_on
-    data:
+    target:
       entity_id: scene.nursery_door

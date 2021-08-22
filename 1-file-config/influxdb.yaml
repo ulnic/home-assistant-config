@@ -1,2 +1,0 @@
-host: !secret influx_host
-port: !secret influx_port

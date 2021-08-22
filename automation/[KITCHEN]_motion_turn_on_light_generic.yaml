@@ -21,6 +21,8 @@ condition:
 action:
   service: scene.turn_on
   data:
+    transition: 2
+  target:
     entity_id: >
       {% if is_state('binary_sensor.morning', 'on') %}
         scene.kitchen_morning_light
