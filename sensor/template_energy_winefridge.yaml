@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  winefridge_power_consumption:
+    value_template: >
+      {{ state_attr("switch.plug_158_winefridge", "load_power") }}
+    friendly_name: 'Wine Fridge Current Power'
+    unit_of_measurement: 'w'

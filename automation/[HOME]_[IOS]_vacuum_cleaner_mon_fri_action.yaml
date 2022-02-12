@@ -24,5 +24,9 @@ action:
     data:
       message: "BiBop was put to action"
       data:
-        push:
-          category: "bibop_started" # Needs to match the top level identifier you used in the ios configuration
+        actions:
+        - action: "bibop_return_home"
+          title: "Go Home Bibop"
+          destructive: yes
+          authenticationRequired: yes
+          activationMode: "background"

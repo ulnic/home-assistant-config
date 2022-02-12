@@ -3,9 +3,10 @@ fan_increase_speed:
   mode: queued
   sequence:
     - service: fan.set_preset_mode
-      data:
+      target:
         entity_id: "{{ 'fan.'+ room + '_ceiling_fan' }}"
-        speed: >-
+      data:
+        preset_mode: >-
           {% if states('input_select.fan_speed_'+ room ) == '6' %}
             1
           {% else %}

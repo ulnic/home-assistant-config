@@ -1,0 +1,6 @@
+platform: integration
+source: sensor.winefridge_power_consumption
+name: winefridge_current_energy
+unit_prefix: k
+round: 2
+method: left

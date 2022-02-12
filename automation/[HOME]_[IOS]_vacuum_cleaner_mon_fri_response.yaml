@@ -1,0 +1,11 @@
+alias: '[IOS] action bibop go home'
+id: ios_action_bubop_go_home
+trigger:
+  platform: event
+  event_type: mobile_app_notification_action
+  event_data:
+    action: "bibop_return_home"
+mode: single
+action:
+  service: vacuum.return_to_base
+  entity_id: vacuum.bibop

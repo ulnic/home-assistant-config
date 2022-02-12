@@ -5,12 +5,16 @@ trigger:
   entity_id: light.bedroom
   to: "on"
   for:
-    minutes: 20
+    minutes: 1
 mode: single
 action:
   service: notify.mobile_app_nics_iphone
   data:
     message: "The bedroom light is ON, shall I turn it off?"
     data:
-      push:
-        category: "bedroom_nic_light_duration" # Needs to match the top level identifier you used in the ios configuration
+      actions:
+        - action: "turn_light_bedroom_off"
+          title: "Turn Off Nics Bedlight"
+          destructive: yes
+          authenticationRequired: yes
+          activationMode: "background"

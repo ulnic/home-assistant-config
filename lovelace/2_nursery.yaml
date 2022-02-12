@@ -227,25 +227,25 @@ cards:
 
   - type: custom:vertical-stack-in-card
     cards:
-      - type: "custom:aarlo-glance"
-        entity: camera.aarlo_mr_rabbit
-        name: Viggo
-        show:
-          - motion
-          #- sound
-          - snapshot
-          - image_date
-        hide: "title"
-        top_title: false
-        top_status: false
-        top_date: false
-        image_click: play
-        style: |
-          ha-card {
-            border-radius: 30px;
-            margin-top: 0px;
-            margin-bottom: 10px;
-          }
+      # - type: "custom:aarlo-glance"
+      #   entity: camera.aarlo_mr_rabbit
+      #   name: Viggo
+      #   show:
+      #     - motion
+      #     #- sound
+      #     - snapshot
+      #     - image_date
+      #   hide: "title"
+      #   top_title: false
+      #   top_status: false
+      #   top_date: false
+      #   image_click: play
+      #   style: |
+      #     ha-card {
+      #       border-radius: 30px;
+      #       margin-top: 0px;
+      #       margin-bottom: 10px;
+      #     }
 
       - type: horizontal-stack
         cards:
@@ -302,16 +302,16 @@ cards:
       #       margin-bottom: 10px;
       #     }
 
-      - type: custom:slider-entity-row
-        entity: light.aarlo_mr_rabbit
-        toggle: true
-        full_row: false
-        style: |
-          ha-card {
-            border-radius: 30px;
-            margin-top: 1px;
-            margin-bottom: 1px;
-          }
+      # - type: custom:slider-entity-row
+      #   entity: light.aarlo_mr_rabbit
+      #   toggle: true
+      #   full_row: false
+      #   style: |
+      #     ha-card {
+      #       border-radius: 30px;
+      #       margin-top: 1px;
+      #       margin-bottom: 1px;
+      #     }
 
   - type: picture
     image: /local/ergopouch-temperature-guide.jpg

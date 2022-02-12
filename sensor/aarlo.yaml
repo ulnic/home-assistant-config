@@ -1,8 +1,0 @@
-platform: aarlo
-monitored_conditions:
-- last_capture
-- recent_activity
-- captured_today
-- temperature
-- humidity
-- air_quality

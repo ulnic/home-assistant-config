@@ -35,24 +35,24 @@ cards:
                         margin-bottom: 5px;
                       }
                     cards:
-                      - type: 'custom:aarlo-glance'
-                        entity: camera.aarlo_mr_rabbit
-                        name: Mr Rabbit
-                        show:
-                          - snapshot
-                          #- captured_today
-                          - image_date
-                        top_title: false
-                        top_status: false
-                        top_date: false
-                        image_click: play
-                        style: |
-                          ha-card {
-                            border-radius: 30px;
-                            margin-top: 10px;
-                            margin-bottom: 10px;
-                          }
-                      ## EXPERIMENT START 
+                      # - type: 'custom:aarlo-glance'
+                      #   entity: camera.aarlo_mr_rabbit
+                      #   name: Mr Rabbit
+                      #   show:
+                      #     - snapshot
+                      #     #- captured_today
+                      #     - image_date
+                      #   top_title: false
+                      #   top_status: false
+                      #   top_date: false
+                      #   image_click: play
+                      #   style: |
+                      #     ha-card {
+                      #       border-radius: 30px;
+                      #       margin-top: 10px;
+                      #       margin-bottom: 10px;
+                      #     }
+                      ## EXPERIMENT START
                       #TODO
                       - type: custom:decluttering-card
                         template: aircon
@@ -74,7 +74,7 @@ cards:
                         template: button_fan
                         entity: fan.bedroom_ceiling_fan
                         variables:
-                          room: 'livingroom'
+                          room: "livingroom"
 
                       - type: "custom:button-card"
                         template: base_button
@@ -93,17 +93,17 @@ cards:
                   - type: custom:decluttering-card
                     template: markdown_card
                     variables:
-                      - entity_1: '#### Living & Dining room'
+                      - entity_1: "#### Living & Dining room"
 
                   - type: horizontal-stack
                     cards:
                       - type: custom:slider-entity-row
-                        entity:  light.living_ceiling_lights
+                        entity: light.living_ceiling_lights
                         toggle: false
                         full_row: true
 
                       - type: custom:slider-entity-row
-                        entity:  light.dining_lights
+                        entity: light.dining_lights
                         toggle: false
                         full_row: true
                   - type: horizontal-stack
@@ -129,7 +129,7 @@ cards:
                   - type: custom:decluttering-card
                     template: markdown_card
                     variables:
-                      - entity_1: '#### Kitchen'
+                      - entity_1: "#### Kitchen"
                   - type: custom:slider-entity-row
                     entity: light.kitchen_lights
                     toggle: true
@@ -153,4 +153,3 @@ cards:
                         template: icon_button
                         entity: light.lifx_kitchen2
                         name: Fridge
-

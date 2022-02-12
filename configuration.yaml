@@ -13,6 +13,8 @@ http: !include 1-file-config/http.yaml
 frontend:
   #javascript_version: latest
   themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /hacsfiles/lovelace-card-mod/card-mod.js
 # Discover some devices automatically
 discovery:
 # Allows you to issue voice commands from the frontend
@@ -89,8 +91,8 @@ tts: !include 1-file-config/tts.yaml
 dialogflow:
 #intent_script: !include 1-file-config/intent_script.yaml
 ios:
-  push:
-    categories: !include 1-file-config/ios_push.yaml
+  # push:
+  #   categories: !include 1-file-config/ios_push.yaml
 alarm_control_panel: !include 1-file-config/alarm.yaml
 fan: !include 1-file-config/fan.yaml
 logger: !include 1-file-config/logger.yaml
@@ -99,8 +101,8 @@ input_select: !include 1-file-config/input_select.yaml
 input_number: !include 1-file-config/input_number.yaml
 wemo: !include 1-file-config/wemo.yaml
 #switch: !include 1-file-config/switch.yaml
-camera: !include 1-file-config/aarlo_camera.yaml
-aarlo: !include 1-file-config/aarlo.yaml
+#camera: !include 1-file-config/aarlo_camera.yaml
+#aarlo: !include 1-file-config/aarlo.yaml
 proximity: !include 1-file-config/proximity.yaml
 #vacuum: !include 1-file-config/vacuum.yaml
 #hue: !include 1-file-config/light_hue.yaml
@@ -110,11 +112,11 @@ yeelight: !include 1-file-config/light_yee.yaml
 ## Component Includes (DIR LIST)
 ################################################
 #remote: !include_dir_list remote
-switch: !include_dir_list switch
+#switch: !include_dir_list switch
 automation: !include_dir_list automation
 binary_sensor: !include_dir_list binary_sensor
 light: !include_dir_list light
-media_player: !include_dir_list media_players
+#media_player: !include_dir_list media_players
 scene: !include_dir_list scene
 sensor: !include_dir_list sensor
 zone: !include_dir_list zone

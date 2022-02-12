@@ -2,9 +2,9 @@ alias: '[IOS] bedroom_lamp_off'
 id: ios_bedroom_lamp_off_id
 trigger:
   platform: event
-  event_type: ios.notification_action_fired
+  event_type: mobile_app_notification_action
   event_data:
-    actionName: turn_light_bedroom_off
+    action: "turn_light_bedroom_off"
 mode: single
 action:
   service: light.turn_off

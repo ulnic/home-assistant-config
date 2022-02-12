@@ -62,7 +62,7 @@ cards:
     entities:
       - entity: sensor.myip
         name: external IP
-      - entity: sensor.dns_domain_resolver
+      - entity: sensor.lindholm_family
         name: family
 
   #Internet

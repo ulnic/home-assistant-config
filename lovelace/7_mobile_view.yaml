@@ -1,5 +1,5 @@
 title: tmp
-icon: mdi:cellphone-iphone
+icon: mdi:cellphone
 background: center / cover no-repeat url("/local/latitude33.jpg") fixed
 #background: "right/auto linear-gradient(23deg, rgba(211,211,211,1) 0%, rgba(223,223,223,1) 34%, rgba(255,255,255,1) 100%)"
 panel: true
@@ -16,7 +16,6 @@ cards:
             template: profile_ulli
           - type: "custom:button-card"
             template: alarm
-      
 
       - type: custom:simple-weather-card
         entity: weather.dark_sky
@@ -55,7 +54,7 @@ cards:
                     template: button_fan
                     entity: fan.livingroom_ceiling_fan
                     variables:
-                      room: 'livingroom'
+                      room: "livingroom"
 
                   - type: "custom:button-card"
                     template: button_switch
@@ -91,9 +90,8 @@ cards:
               - type: "custom:button-card"
                 template: base_button
                 name: All Lights
-                entity: light.master_switch     
+                entity: light.master_switch
 
- 
           - type: vertical-stack
             cards:
               - type: custom:fold-entity-row
@@ -101,7 +99,7 @@ cards:
                   type: custom:decluttering-card
                   template: markdown_card
                   variables:
-                    - entity_1: "#### Living & Dining room 
+                    - entity_1: "#### Living & Dining room
                         [{{ states('sensor.158_temperature_livingroom') }}°C {{ states('sensor.158_humidity_livingroom') }}%]"
                 entities:
                   - type: custom:vertical-stack-in-card
@@ -114,7 +112,7 @@ cards:
                       }
                     cards:
                       - type: horizontal-stack
-                        cards: 
+                        cards:
                           - type: custom:button-card
                             template: icon_button
                             entity: light.lifx_livingroom1
@@ -138,17 +136,16 @@ cards:
                 name: Living
 
               - type: custom:slider-entity-row
-                entity:  light.dining_lights
+                entity: light.dining_lights
                 toggle: true
                 name: Dining
-
 
       - type: custom:vertical-stack-in-card
         cards:
           - type: custom:decluttering-card
             template: markdown_card
             variables:
-              - entity_1: "#### Kitchen 
+              - entity_1: "#### Kitchen
                   [{{ states('sensor.temperature_158_kitchen') }}°C {{ states('sensor.humidity_158_kitchen') }}%]"
           - type: custom:slider-entity-row
             entity: light.kitchen_lights
@@ -174,14 +171,13 @@ cards:
                 entity: light.lifx_kitchen2
                 name: Fridge
 
-
         #Bedroom
       - type: custom:vertical-stack-in-card
         cards:
           - type: custom:decluttering-card
             template: markdown_card
             variables:
-              - entity_1: "#### Bedroom 
+              - entity_1: "#### Bedroom
                   [{{ states('sensor.158_temperature_bedroom') }}°C {{ states('sensor.158_humidity_bedroom') }}%]"
           - type: custom:slider-entity-row
             entity: light.bedroom_ceiling
@@ -194,12 +190,12 @@ cards:
                 template: button_fan
                 entity: fan.bedroom_ceiling_fan
                 variables:
-                  room: 'bedroom'
+                  room: "bedroom"
               - type: custom:button-card
                 template: base_button
                 entity: light.bedroom
                 name: Nightstand
-              
+
               - type: custom:button-card
                 template: base_button
                 entity: light.lifx_bedroom_desk
@@ -212,14 +208,13 @@ cards:
                 template: base_button
                 entity: light.lifx_bedroom2
                 name: Nics ceiling
-              
 
       - type: custom:vertical-stack-in-card
         cards:
           - type: custom:decluttering-card
             template: markdown_card
             variables:
-              - entity_1: '#### Other'
+              - entity_1: "#### Other"
           - type: horizontal-stack
             cards:
               - type: custom:button-card
@@ -231,11 +226,7 @@ cards:
                 entity: light.lifx_laundry
                 name: Laundry
 
-
       # END Main button operations
-
-
-
 
       - type: custom:decluttering-card
         template: aircon
@@ -243,7 +234,7 @@ cards:
       # Sensors
       - type: custom:vertical-stack-in-card
         cards:
-          - type: 'custom:vacuum-card'
+          - type: "custom:vacuum-card"
             entity: vacuum.bibop
             stats:
               default:
@@ -266,7 +257,7 @@ cards:
                 - attribute: cleaning_time
                   unit: minutes
                   subtitle: Cleaning time
-            actions:
+            shortcuts:
               - name: Clean kitchen
                 icon: mdi:stove
                 service: script.kitchen_vacuum
@@ -284,7 +275,7 @@ cards:
                 service: input_boolean.toggle
                 service_data:
                   entity_id: input_boolean.bibop_empty_bin
-                
+
           - type: divider
           - type: horizontal-stack
             cards:
@@ -334,4 +325,3 @@ cards:
                 name: Laundry
           - type: divider
             name: Occupancy
-          

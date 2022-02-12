@@ -15,5 +15,9 @@ action:
     data:
       apns_headers:
         "apns-collapse-id": "espresso-off"
-      push:
-        category: "turn_espresso_off" # Needs to match the top level identifier you used in the ios configuration
+      actions:
+        - action: "turn_espresso_off"
+          title: "Turn Espresso Machine Off"
+          destructive: yes
+          authenticationRequired: yes
+          activationMode: "background"

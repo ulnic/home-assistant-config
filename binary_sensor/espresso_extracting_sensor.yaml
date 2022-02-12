@@ -1,7 +1,0 @@
-platform: template
-sensors:
-  espresso_extracting:
-    value_template: >
-      {{ states('switch.espresso.attributes.current_power_w') | int > 1400 }}
-    friendly_name: 'Espresso Extracting'
-    device_class: moisture

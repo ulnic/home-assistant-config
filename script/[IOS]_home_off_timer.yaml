@@ -6,8 +6,12 @@ turn_home_off_timer:
       data:
         message: "I'm turning off the house in 10 min, care to cancel? !"
         data:
-          push:
-            category: "ios_home_turnoff_cancel"
+          actions:
+            - action: "home_turnoff_cancel"
+              title: "Cancel home turnoff sequence"
+              destructive: yes
+              authenticationRequired: yes
+              activationMode: "background"
     - delay:
         minutes: 10
     - service: homeassistant.turn_off
